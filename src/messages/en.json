@@ -87,6 +87,112 @@
       "yourOddsValue": "1 in {count}",
       "yourOddsPercent": "({percent}% chance per draw)",
       "yourOddsNote": "Deposits extend your lock-in duration, not your odds. Everyone has equal chance per draw."
+    },
+
+    "deposit": {
+      "title": "Deposit USDT",
+      "subtitle": "Add USDT to your balance. 1 USDT is deducted daily to keep you active.",
+
+      "amountLabel": "Amount",
+      "amountPlaceholder": "30.00",
+      "maxButton": "Max",
+
+      "quickSelect": {
+        "label": "Quick select",
+        "one": "1",
+        "thirty": "30",
+        "thirtyRecommended": "Recommended",
+        "hundred": "100",
+        "fiveHundred": "500"
+      },
+
+      "gasBadge": {
+        "poor": "High Gas Overhead",
+        "poorDesc": "You pay network fees too often",
+        "fair": "Fair Gas Efficiency",
+        "fairDesc": "Consider depositing more",
+        "good": "Good Gas Efficiency",
+        "goodDesc": "Covers ~2 weeks of activity",
+        "optimal": "Optimal Gas Efficiency",
+        "optimalDesc": "Covers 1 month of activity"
+      },
+
+      "explainer": {
+        "title": "Why 30 USDT?",
+        "body": "Every deposit costs ~$3 in gas (a fixed network fee). The amount you deposit doesn't change the gas cost.",
+        "row1Label": "Deposit 1 USDT",
+        "row1Value": "$3 gas = 300% overhead (lose 3x your deposit to fees)",
+        "row2Label": "Deposit 30 USDT",
+        "row2Value": "$3 gas = 10% overhead (covers 30 days of activity)",
+        "row3Label": "Deposit 100 USDT",
+        "row3Value": "$3 gas = 3% overhead (covers 100 days of activity)",
+        "conclusion": "30 USDT gives you ~30 days of active status at the lowest practical gas overhead. Larger deposits are even more efficient but lock more capital."
+      },
+
+      "costBreakdown": {
+        "title": "Cost Breakdown",
+        "depositAmount": "Deposit amount",
+        "estGasCost": "Est. gas cost",
+        "gasToDepositRatio": "Gas-to-deposit ratio",
+        "daysOfActivity": "Days of active status",
+        "costPerDay": "Cost per active day",
+        "balanceAfter": "Balance after deposit",
+        "activeUntil": "Active until"
+      },
+
+      "checklist": {
+        "walletConnected": "Wallet connected",
+        "usdtBalance": "USDT balance",
+        "usdtAllowance": "USDT allowance",
+        "sufficient": "sufficient",
+        "insufficient": "insufficient",
+        "needsApproval": "needs approval",
+        "ready": "ready"
+      },
+
+      "wizard": {
+        "step1Title": "Approve USDT",
+        "step1Desc": "Allow the contract to spend your USDT",
+        "step1Button": "Approve USDT",
+        "step1Pending": "Approving USDT...",
+        "step1Confirming": "Waiting for confirmation...",
+        "step1Success": "USDT approved",
+        "step1Error": "Approval failed",
+
+        "step2Title": "Confirm Deposit",
+        "step2Desc": "Deposit USDT into the pool",
+        "step2Button": "Confirm Deposit",
+        "step2Pending": "Depositing...",
+        "step2Confirming": "Waiting for confirmation...",
+        "step2Success": "Deposit successful!",
+        "step2Error": "Deposit failed",
+
+        "skipApproval": "Approval not needed — proceeding to deposit",
+        "currentStep": "Step {current} of {total}"
+      },
+
+      "success": {
+        "title": "Deposit Successful!",
+        "description": "Your USDT has been deposited and you're now active in the pool.",
+        "newBalance": "New balance",
+        "activeFor": "Active for",
+        "viewOnEtherscan": "View on Etherscan",
+        "closeButton": "Close"
+      },
+
+      "errors": {
+        "insufficientBalance": "Insufficient USDT balance in your wallet",
+        "insufficientGas": "Insufficient ETH for gas",
+        "userRejected": "Transaction rejected by user",
+        "networkError": "Network error — please retry",
+        "contractPaused": "Contract is currently paused",
+        "drawInProgress": "A draw is in progress — please wait",
+        "winnerCannotReenter": "You've already won and cannot re-enter"
+      },
+
+      "agreeNote": "By depositing, you agree to the Terms of Service and Risk Disclosure.",
+      "closeButton": "Close",
+      "retryButton": "Retry"
     }
   },
 

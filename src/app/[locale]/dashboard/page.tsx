@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { SiteHeader } from "@/components/landing/SiteHeader";
 import { SiteFooter } from "@/components/landing/SiteFooter";
@@ -9,6 +10,7 @@ import { PoolProgressCard } from "@/components/dashboard/PoolProgressCard";
 import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
 import { SolvencyCard } from "@/components/dashboard/SolvencyCard";
 import { OddsCard } from "@/components/dashboard/OddsCard";
+import { DepositModal } from "@/components/dashboard/DepositModal";
 import { useDashboardData } from "@/hooks/useLottery";
 import { useAccount } from "wagmi";
 import { motion } from "framer-motion";
@@ -24,6 +26,9 @@ function DashboardContent() {
   const t = useTranslations("dashboard");
   const { isConnected, isReconnecting } = useAccount();
   const data = useDashboardData();
+
+  // Modal open state
+  const [depositModalOpen, setDepositModalOpen] = useState(false);
 
   const isLoading = !isConnected || isReconnecting || data.isLoading;
 
@@ -66,10 +71,7 @@ function DashboardContent() {
                     daysRemaining={data.daysRemaining}
                     userStatus={data.userStatus}
                     drawInProgress={data.drawInProgress}
-                    onDeposit={() => {
-                      // Phase 3: open deposit modal
-                      console.log("Open deposit modal");
-                    }}
+                    onDeposit={() => setDepositModalOpen(true)}
                     onWithdraw={() => {
                       // Phase 3: open withdraw modal
                       console.log("Open withdraw modal");
@@ -148,6 +150,15 @@ function DashboardContent() {
         )}
       </main>
       <SiteFooter />
+
+      {/* === Deposit Modal === */}
+      {data.userInfo && (
+        <DepositModal
+          open={depositModalOpen}
+          onOpenChange={setDepositModalOpen}
+          currentBalance={data.userInfo.balance}
+        />
+      )}
     </div>
   );
 }

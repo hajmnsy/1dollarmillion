@@ -87,6 +87,112 @@
       "yourOddsValue": "1 من {count}",
       "yourOddsPercent": "({percent}% لكل سحب)",
       "yourOddsNote": "الإيداع يُطيل مدة اشتراكك، لا احتمالات فوزك. كل مستخدم لديه فرصة متساوية في كل سحب."
+    },
+
+    "deposit": {
+      "title": "إيداع USDT",
+      "subtitle": "أضِف USDT إلى رصيدك. يُخصم 1 دولار يومياً لتبقى نشِطاً.",
+
+      "amountLabel": "المبلغ",
+      "amountPlaceholder": "30.00",
+      "maxButton": "الحد الأقصى",
+
+      "quickSelect": {
+        "label": "اختيار سريع",
+        "one": "1",
+        "thirty": "30",
+        "thirtyRecommended": "مُوصى به",
+        "hundred": "100",
+        "fiveHundred": "500"
+      },
+
+      "gasBadge": {
+        "poor": "تكلفة غاز مرتفعة",
+        "poorDesc": "تدفع رسوم الشبكة كثيراً جداً",
+        "fair": "كفاءة غاز مقبولة",
+        "fairDesc": "يُنصح بإيداع مبلغ أكبر",
+        "good": "كفاءة غاز جيدة",
+        "goodDesc": "تغطي نحو أسبوعين من النشاط",
+        "optimal": "كفاءة غاز مثالية",
+        "optimalDesc": "تغطي شهراً كاملاً من النشاط"
+      },
+
+      "explainer": {
+        "title": "لماذا 30 دولاراً؟",
+        "body": "كل عملية إيداع تكلف نحو 3$ كرسوم غاز (رسوم شبكة ثابتة). مبلغ الإيداع لا يُغيّر تكلفة الغاز.",
+        "row1Label": "إيداع 1 دولار",
+        "row1Value": "3$ غاز = 300% تكلفة إضافية (تخسر 3 أضعاف إيداعك في الرسوم)",
+        "row2Label": "إيداع 30 دولاراً",
+        "row2Value": "3$ غاز = 10% تكلفة إضافية (يغطي 30 يوماً من النشاط)",
+        "row3Label": "إيداع 100 دولار",
+        "row3Value": "3$ غاز = 3% تكلفة إضافية (يغطي 100 يوم من النشاط)",
+        "conclusion": "30 دولاراً تمنحك نحو 30 يوماً من الحالة النشطة بأقل تكلفة غاز عملية. الإيداعات الأكبر أكثر كفاءة لكنها تُجمِّد رأس مال أكثر."
+      },
+
+      "costBreakdown": {
+        "title": "تفاصيل التكلفة",
+        "depositAmount": "مبلغ الإيداع",
+        "estGasCost": "تكلفة الغاز المُقدَّرة",
+        "gasToDepositRatio": "نسبة الغاز إلى الإيداع",
+        "daysOfActivity": "أيام الحالة النشطة",
+        "costPerDay": "التكلفة لكل يوم نشِط",
+        "balanceAfter": "الرصيد بعد الإيداع",
+        "activeUntil": "نشِط حتى"
+      },
+
+      "checklist": {
+        "walletConnected": "المحفظة مربوطة",
+        "usdtBalance": "رصيد USDT",
+        "usdtAllowance": "سماحية USDT",
+        "sufficient": "كافٍ",
+        "insufficient": "غير كافٍ",
+        "needsApproval": "تحتاج موافقة",
+        "ready": "جاهز"
+      },
+
+      "wizard": {
+        "step1Title": "الموافقة على USDT",
+        "step1Desc": "السماح للعقد بصرف USDT الخاص بك",
+        "step1Button": "الموافقة على USDT",
+        "step1Pending": "جارٍ الموافقة على USDT...",
+        "step1Confirming": "بانتظار التأكيد...",
+        "step1Success": "تمت الموافقة على USDT",
+        "step1Error": "فشل الموافقة",
+
+        "step2Title": "تأكيد الإيداع",
+        "step2Desc": "إيداع USDT في الصندوق",
+        "step2Button": "تأكيد الإيداع",
+        "step2Pending": "جارٍ الإيداع...",
+        "step2Confirming": "بانتظار التأكيد...",
+        "step2Success": "تم الإيداع بنجاح!",
+        "step2Error": "فشل الإيداع",
+
+        "skipApproval": "لا حاجة للموافقة — جارٍ الانتقال للإيداع",
+        "currentStep": "الخطوة {current} من {total}"
+      },
+
+      "success": {
+        "title": "تم الإيداع بنجاح!",
+        "description": "تم إيداع USDT وأنت الآن نشِط في الصندوق.",
+        "newBalance": "الرصيد الجديد",
+        "activeFor": "نشِط لمدة",
+        "viewOnEtherscan": "عرض على Etherscan",
+        "closeButton": "إغلاق"
+      },
+
+      "errors": {
+        "insufficientBalance": "رصيد USDT غير كافٍ في محفظتك",
+        "insufficientGas": "ETH غير كافٍ لدفع الغاز",
+        "userRejected": "رفض المستخدم المعاملة",
+        "networkError": "خطأ في الشبكة — يرجى إعادة المحاولة",
+        "contractPaused": "العقد متوقَّف حالياً",
+        "drawInProgress": "السحب جارٍ — يرجى الانتظار",
+        "winnerCannotReenter": "لقد فزت سابقاً ولا يمكنك الدخول مجدداً"
+      },
+
+      "agreeNote": "بإجراء الإيداع، فإنك توافق على شروط الخدمة وإفصاح المخاطر.",
+      "closeButton": "إغلاق",
+      "retryButton": "إعادة المحاولة"
     }
   },
 
