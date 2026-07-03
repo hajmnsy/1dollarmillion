@@ -2,6 +2,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getMessages, setRequestLocale } from "next-intl/server";
+import { getBodyClassName, fontVariables } from "@/lib/fonts";
 
 type Props = {
   children: React.ReactNode;
@@ -29,9 +30,14 @@ export default async function LocaleLayout({ children, params }: Props) {
   const isRTL = locale === "ar";
   const dir = isRTL ? "rtl" : "ltr";
 
+  // Use Cairo font for Arabic, Geist Sans/Mono for English
+  const bodyClassName = isRTL
+    ? `${fontVariables} font-cairo antialiased`
+    : `${fontVariables} font-sans antialiased`;
+
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
-      <body className="antialiased bg-[#0a0a0a] text-white min-h-screen">
+      <body className={`${bodyClassName} bg-[#0a0a0a] text-white min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

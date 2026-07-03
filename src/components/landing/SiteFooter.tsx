@@ -29,21 +29,37 @@ export function SiteFooter() {
           <FooterColumn
             title={t("product")}
             links={[
-              { label: t("productLinks.howItWorks"), href: "/how-it-works" },
+              { label: t("productLinks.howItWorks"), href: "/#how-it-works" },
               { label: t("productLinks.transparency"), href: "/transparency" },
               { label: t("productLinks.winners"), href: "/winners" },
               { label: t("productLinks.faq"), href: "/faq" },
             ]}
           />
 
-          {/* Developers */}
+          {/* Developers — external placeholder links (no real URLs yet) */}
           <FooterColumn
             title={t("developers")}
             links={[
-              { label: t("developerLinks.contract"), href: "#" },
-              { label: t("developerLinks.docs"), href: "#" },
-              { label: t("developerLinks.audit"), href: "#" },
-              { label: t("developerLinks.github"), href: "#" },
+              {
+                label: t("developerLinks.contract"),
+                href: "https://etherscan.io",
+                external: true,
+              },
+              {
+                label: t("developerLinks.docs"),
+                href: "#",
+                external: false,
+              },
+              {
+                label: t("developerLinks.audit"),
+                href: "#",
+                external: false,
+              },
+              {
+                label: t("developerLinks.github"),
+                href: "https://github.com",
+                external: true,
+              },
             ]}
           />
 
@@ -51,9 +67,9 @@ export function SiteFooter() {
           <FooterColumn
             title={t("legal")}
             links={[
-              { label: t("legalLinks.terms"), href: "#" },
-              { label: t("legalLinks.privacy"), href: "#" },
-              { label: t("legalLinks.risk"), href: "#" },
+              { label: t("legalLinks.terms"), href: "/terms" },
+              { label: t("legalLinks.privacy"), href: "/privacy" },
+              { label: t("legalLinks.risk"), href: "/risk" },
             ]}
           />
         </div>
@@ -72,29 +88,42 @@ export function SiteFooter() {
   );
 }
 
-function FooterColumn({
-  title,
-  links,
-}: {
-  title: string;
-  links: { label: string; href: string }[];
-}) {
+type FooterLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
   return (
     <div>
       <h4 className="text-xs font-semibold uppercase tracking-wider text-white/40">
         {title}
       </h4>
       <ul className="mt-4 space-y-2.5">
-        {links.map((link, i) => (
-          <li key={i}>
-            <Link
-              href={link.href as any}
-              className="text-sm text-white/60 transition-colors hover:text-white"
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
+        {links.map((link, i) =>
+          link.external ? (
+            <li key={i}>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white/60 transition-colors hover:text-white"
+              >
+                {link.label}
+              </a>
+            </li>
+          ) : (
+            <li key={i}>
+              <Link
+                href={link.href as any}
+                className="text-sm text-white/60 transition-colors hover:text-white"
+              >
+                {link.label}
+              </Link>
+            </li>
+          )
+        )}
       </ul>
     </div>
   );

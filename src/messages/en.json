@@ -220,12 +220,27 @@
   "languageSwitcher": {
     "label": "Language",
     "en": "English",
-    "ar": "العربية",
-    "es": "Español",
-    "fr": "Français",
-    "pt": "Português",
-    "tr": "Türkçe",
-    "id": "Bahasa Indonesia",
-    "vi": "Tiếng Việt"
+    "ar": "العربية"
+  },
+
+  "legalPages": {
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about the platform, mechanism, and guarantees."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "subtitle": "The terms and conditions that govern your use of the platform."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "How we handle your data and respect your privacy."
+    },
+    "risk": {
+      "title": "Risk Disclosure",
+      "subtitle": "The inherent risks of using decentralized finance protocols."
+    },
+    "backHome": "Back to Home",
+    "comingSoon": "This page is under construction. Full content will be added soon."
   }
 }

@@ -1,13 +1,14 @@
 "use client";
 
 import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, Unlock, Wallet } from "lucide-react";
 
 export function FinalCTA() {
   const t = useTranslations("finalCta");
+  const locale = useLocale();
 
   return (
     <section className="relative py-20 sm:py-28">
@@ -49,15 +50,21 @@ export function FinalCTA() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-white/60">
               <div className="inline-flex items-center gap-1.5">
                 <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-                <span>100% principal protected</span>
+                <span>
+                  {locale === "ar"
+                    ? "رأس المال محمي 100%"
+                    : "100% principal protected"}
+                </span>
               </div>
               <div className="inline-flex items-center gap-1.5">
                 <Unlock className="h-3.5 w-3.5 text-emerald-400" />
-                <span>No lock-up</span>
+                <span>{locale === "ar" ? "بلا قيد" : "No lock-up"}</span>
               </div>
               <div className="inline-flex items-center gap-1.5">
                 <Wallet className="h-3.5 w-3.5 text-emerald-400" />
-                <span>Withdraw anytime</span>
+                <span>
+                  {locale === "ar" ? "سحب في أي وقت" : "Withdraw anytime"}
+                </span>
               </div>
             </div>
           </div>

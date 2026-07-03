@@ -16,23 +16,11 @@ import { useTranslations } from "next-intl";
 const localeLabels: Record<Locale, string> = {
   en: "English",
   ar: "العربية",
-  es: "Español",
-  fr: "Français",
-  pt: "Português",
-  tr: "Türkçe",
-  id: "Bahasa Indonesia",
-  vi: "Tiếng Việt",
 };
 
 const localeFlags: Record<Locale, string> = {
   en: "🇬🇧",
   ar: "🇸🇦",
-  es: "🇪🇸",
-  fr: "🇫🇷",
-  pt: "🇵🇹",
-  tr: "🇹🇷",
-  id: "🇮🇩",
-  vi: "🇻🇳",
 };
 
 export function LanguageSwitcher() {

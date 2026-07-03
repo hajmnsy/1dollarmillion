@@ -9,6 +9,12 @@ import { ArrowRight, ShieldCheck, TrendingUp, Users } from "lucide-react";
 export function Hero() {
   const t = useTranslations("hero");
 
+  // Smooth-scroll to the How It Works section on the same page
+  const scrollToHowItWorks = () => {
+    const el = document.getElementById("how-it-works");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <section className="relative overflow-hidden">
       {/* Background gradient effects */}
@@ -76,12 +82,12 @@ export function Hero() {
               </Link>
             </Button>
             <Button
-              asChild
+              onClick={scrollToHowItWorks}
               size="lg"
               variant="outline"
               className="h-12 w-full rounded-full border-white/20 bg-white/5 px-8 text-base font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:text-white sm:w-auto"
             >
-              <Link href="/how-it-works">{t("ctaSecondary")}</Link>
+              {t("ctaSecondary")}
             </Button>
           </motion.div>
 

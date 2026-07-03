@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { WalletButton } from "@/components/web3/WalletButton";
 import { LanguageSwitcher } from "@/components/web3/LanguageSwitcher";
@@ -8,6 +8,26 @@ import { Sparkles } from "lucide-react";
 
 export function SiteHeader() {
   const t = useTranslations("nav");
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Smooth scroll to a section ID. If not on homepage, navigate there first.
+  const scrollToSection = (sectionId: string) => {
+    const isHome = pathname === "/";
+    if (isHome) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      router.push("/");
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 600);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-xl">
@@ -25,14 +45,15 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — mix of scroll + route links */}
         <nav className="hidden items-center gap-8 md:flex">
-          <Link
-            href="/how-it-works"
+          <button
+            type="button"
+            onClick={() => scrollToSection("how-it-works")}
             className="text-sm font-medium text-white/70 transition-colors hover:text-white"
           >
             {t("howItWorks")}
-          </Link>
+          </button>
           <Link
             href="/transparency"
             className="text-sm font-medium text-white/70 transition-colors hover:text-white"

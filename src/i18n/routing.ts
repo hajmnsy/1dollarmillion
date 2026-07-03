@@ -1,8 +1,9 @@
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-  // All locales supported by the platform
-  locales: ["en", "ar", "es", "fr", "pt", "tr", "id", "vi"],
+  // Only English and Arabic are supported at MVP — removing the stub
+  // locales (es, fr, pt, tr, id, vi) that were never properly translated.
+  locales: ["en", "ar"],
 
   // Default locale used when no prefix is present
   defaultLocale: "en",
