@@ -4,6 +4,92 @@
     "description": "The world's first no-loss lottery powered by Aave V3 yield. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your principal is always safe."
   },
 
+  "dashboard": {
+    "title": "Your Dashboard",
+    "subtitle": "Track your position, watch the pool grow, and stay ready for the next draw.",
+    "walletNotConnected": "Connect your wallet to view your dashboard",
+    "walletNotConnectedDesc": "Once connected, you'll see your deposit balance, active status, and live pool progress in real time.",
+    "connectButton": "Connect Wallet",
+    "backHome": "Back to Home",
+
+    "position": {
+      "title": "My Position",
+      "balance": "Balance",
+      "status": "Status",
+      "active": "Active",
+      "inactive": "Inactive",
+      "winner": "Winner",
+      "paused": "Paused",
+      "daysRemaining": "Days Remaining",
+      "daysRemainingDesc": "At $1/day deduction rate",
+      "lockedAmount": "Locked Amount",
+      "lockedAmountDesc": "10-year advance for daily deductions",
+      "lastDeduction": "Last Sync",
+      "lastDeductionNever": "Never",
+      "justNow": "Just now",
+      "minutesAgo": "{minutes}m ago",
+      "hoursAgo": "{hours}h ago",
+      "daysAgo": "{days}d ago",
+      "depositMore": "Deposit More",
+      "withdraw": "Withdraw",
+      "winnerBadge": "Congratulations! You've won.",
+      "winnerLockNote": "Your 3,650 USDT lock drips into the pool daily.",
+      "inactiveNote": "Deposit USDT to re-enter the pool.",
+      "drawInProgress": "Draw in progress — actions temporarily paused."
+    },
+
+    "pool": {
+      "title": "Live Prize Pool",
+      "subtitle": "Grows from $1/day deductions across all active users.",
+      "currentLabel": "Current Pool",
+      "targetLabel": "Target",
+      "estimateLabel": "Estimated Draw",
+      "estimateDays": "in ~{days} days",
+      "estimateImminent": "DRAW IMMINENT",
+      "estimatePending": "VRF request pending...",
+      "activeUsersLabel": "Active Users",
+      "drawsLabel": "Total Draws",
+      "bonusDrawsLabel": "Bonus Draws"
+    },
+
+    "yield": {
+      "title": "DeFi Yield Bonus Tracker",
+      "subtitle": "Aave V3 interest earned on idle deposits — funds bonus draws.",
+      "currentLabel": "Yield Generated",
+      "targetLabel": "Bonus Draw Target",
+      "apyLabel": "Current APY",
+      "estimateLabel": "Est. Next Bonus Draw",
+      "estimateYears": "in ~{years} years",
+      "estimateReady": "READY TO DRAW",
+      "yieldNote": "Yield accrues 24/7. When it reaches $1M, a bonus draw fires automatically."
+    },
+
+    "solvency": {
+      "title": "Solvency Check",
+      "healthy": "SOLVENT",
+      "healthyDesc": "All deposits fully backed 1:1",
+      "warning": "WARNING",
+      "warningDesc": "Solvency gap below yield — investigate.",
+      "totalAssets": "Total Assets",
+      "principal": "Total Principal",
+      "solvencyGap": "Solvency Gap",
+      "viewOnEtherscan": "Verify on Etherscan"
+    },
+
+    "actions": {
+      "syncState": "Sync My State",
+      "syncStateDesc": "Apply pending daily deductions manually.",
+      "syncing": "Syncing..."
+    },
+
+    "stats": {
+      "yourOdds": "Your Odds",
+      "yourOddsValue": "1 in {count}",
+      "yourOddsPercent": "({percent}% chance per draw)",
+      "yourOddsNote": "Deposits extend your lock-in duration, not your odds. Everyone has equal chance per draw."
+    }
+  },
+
   "nav": {
     "howItWorks": "How It Works",
     "transparency": "Transparency",

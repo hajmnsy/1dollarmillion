@@ -4,6 +4,92 @@
     "description": "أول يانصيب بلا خسارة في العالم مدعوم بعوائد Aave V3. اودع USDT، ابقَ نشطاً مقابل دولار واحد يومياً، واربح جوائز تغير حياتك. رأس مالك دائماً آمن."
   },
 
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "subtitle": "تابع موقعك، شاهد الصندوق ينمو، وابقَ جاهزاً للسحب القادم.",
+    "walletNotConnected": "اربط محفظتك لعرض لوحة التحكم",
+    "walletNotConnectedDesc": "بمجرد الربط، سترى رصيد إيداعك، حالتك النشطة، وتقدم الصندوق المباشر في الوقت الفعلي.",
+    "connectButton": "ربط المحفظة",
+    "backHome": "العودة للرئيسية",
+
+    "position": {
+      "title": "موقعي",
+      "balance": "الرصيد",
+      "status": "الحالة",
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "winner": "فائز",
+      "paused": "متوقف",
+      "daysRemaining": "الأيام المتبقية",
+      "daysRemainingDesc": "بمعدل خصم 1 دولار/يومياً",
+      "lockedAmount": "المبلغ المقفل",
+      "lockedAmountDesc": "دفعة مقدمة لمدة 10 سنوات للخصومات اليومية",
+      "lastDeduction": "آخر مزامنة",
+      "lastDeductionNever": "أبداً",
+      "justNow": "الآن",
+      "minutesAgo": "قبل {minutes} دقيقة",
+      "hoursAgo": "قبل {hours} ساعة",
+      "daysAgo": "قبل {days} يوم",
+      "depositMore": "اودع المزيد",
+      "withdraw": "سحب",
+      "winnerBadge": "تهانينا! لقد فزت.",
+      "winnerLockNote": "قفلك البالغ 3,650 USDT يضاف للصندوق يومياً.",
+      "inactiveNote": "اودع USDT لإعادة الدخول للصندوق.",
+      "drawInProgress": "السحب جارٍ — الإجراءات متوقفة مؤقتاً."
+    },
+
+    "pool": {
+      "title": "صندوق الجوائز المباشر",
+      "subtitle": "ينمو من خصومات 1 دولار/يومياً عبر جميع المستخدمين النشطين.",
+      "currentLabel": "الصندوق الحالي",
+      "targetLabel": "الهدف",
+      "estimateLabel": "السحب المقدر",
+      "estimateDays": "خلال ~{days} يوم",
+      "estimateImminent": "السحب وشيك",
+      "estimatePending": "طلب VRF معلق...",
+      "activeUsersLabel": "المستخدمون النشطون",
+      "drawsLabel": "إجمالي السحوبات",
+      "bonusDrawsLabel": "سحوبات المكافآت"
+    },
+
+    "yield": {
+      "title": "متتبع عوائد DeFi",
+      "subtitle": "فائدة Aave V3 المكتسبة على الودائع الخاملة — تموّل سحوبات المكافآت.",
+      "currentLabel": "العوائد المُولّدة",
+      "targetLabel": "هدف سحب المكافأة",
+      "apyLabel": "APY الحالي",
+      "estimateLabel": "تقدير السحب التالي",
+      "estimateYears": "خلال ~{years} سنة",
+      "estimateReady": "جاهز للسحب",
+      "yieldNote": "تتراكم العوائد على مدار الساعة. عند بلوغها 1 مليون دولار، يطلق سحب مكافأة تلقائياً."
+    },
+
+    "solvency": {
+      "title": "فحص الملاءة",
+      "healthy": "مُلِيّ",
+      "healthyDesc": "جميع الودائع مدعومة بالكامل 1:1",
+      "warning": "تحذير",
+      "warningDesc": "فجوة الملاءة أقل من العائد — يلزم التحقيق.",
+      "totalAssets": "إجمالي الأصول",
+      "principal": "إجمالي رأس المال",
+      "solvencyGap": "فجوة الملاءة",
+      "viewOnEtherscan": "تحقق على Etherscan"
+    },
+
+    "actions": {
+      "syncState": "مزامنة حالتي",
+      "syncStateDesc": "تطبيق الخصومات اليومية المعلقة يدوياً.",
+      "syncing": "جاري المزامنة..."
+    },
+
+    "stats": {
+      "yourOdds": "احتمالاتك",
+      "yourOddsValue": "1 من {count}",
+      "yourOddsPercent": "({percent}% فرصة لكل سحب)",
+      "yourOddsNote": "الإيداعات تمدد مدة القفل، وليس احتمالاتك. كل شخص لديه فرصة متساوية لكل سحب."
+    }
+  },
+
   "nav": {
     "howItWorks": "كيف يعمل",
     "transparency": "الشفافية",
