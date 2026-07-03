@@ -570,6 +570,19 @@ contract HybridRoscaLotteryV2 is ReentrancyGuard, Ownable, VRFConsumerBaseV2 {
 
         usdt.safeTransfer(winner, WINNER_PAYOUT);
 
+        // Defensive solvency fix-up (same logic as bonus draw — see comments there)
+        {
+            uint256 _yield = _getYield();
+            uint256 _totalAssets = usdt.balanceOf(address(this)) + aUsdt.balanceOf(address(this));
+            uint256 _principal = getTotalPrincipal();
+            if (_totalAssets >= _principal) {
+                uint256 _solvencyGap = _totalAssets - _principal;
+                if (_yield > _solvencyGap) {
+                    totalPrincipalSupplied += (_yield - _solvencyGap);
+                }
+            }
+        }
+
         emit DrawCompleted(requestId, winner, WINNER_PAYOUT, WINNER_LOCK_AMOUNT);
         emit FeesClaimed(owner(), OPERATIONAL_FEE);
 
@@ -625,6 +638,30 @@ contract HybridRoscaLotteryV2 is ReentrancyGuard, Ownable, VRFConsumerBaseV2 {
         accumulatedFees -= OPERATIONAL_FEE;
 
         usdt.safeTransfer(winner, WINNER_PAYOUT);
+
+        // ============================================================
+        // SOLVENCY FIX-UP (V2.1.1 — bugfix for invariant violation)
+        // ============================================================
+        // The bonus draw pays out from yield, but _ensureLiquidity may have
+        // consumed principal-backed USDT buffer alongside yield from Aave.
+        // _getYield() = aUsdtBal - totalPrincipalSupplied does NOT reflect
+        // the buffer consumption, so yield can be over-reported.
+        // Reclassify phantom yield as principal to maintain:
+        //   solvencyGap >= yield  <=>  usdtBal + totalPrincipalSupplied >= principal
+        //
+        // This also handles the lock conversion: WINNER_LOCK_AMOUNT of yield
+        // is now backing principal (the lock), so it should be reclassified.
+        {
+            uint256 _yield = _getYield();
+            uint256 _totalAssets = usdt.balanceOf(address(this)) + aUsdt.balanceOf(address(this));
+            uint256 _principal = getTotalPrincipal();
+            if (_totalAssets >= _principal) {
+                uint256 _solvencyGap = _totalAssets - _principal;
+                if (_yield > _solvencyGap) {
+                    totalPrincipalSupplied += (_yield - _solvencyGap);
+                }
+            }
+        }
 
         emit BonusDrawCompleted(requestId, winner, WINNER_PAYOUT, WINNER_LOCK_AMOUNT);
         emit FeesClaimed(owner(), OPERATIONAL_FEE);
