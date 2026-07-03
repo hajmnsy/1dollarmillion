@@ -11,6 +11,8 @@ import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
 import { SolvencyCard } from "@/components/dashboard/SolvencyCard";
 import { OddsCard } from "@/components/dashboard/OddsCard";
 import { DepositModal } from "@/components/dashboard/DepositModal";
+import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
 import { useDashboardData } from "@/hooks/useLottery";
 import { useAccount } from "wagmi";
 import { motion } from "framer-motion";
@@ -29,6 +31,7 @@ function DashboardContent() {
 
   // Modal open state
   const [depositModalOpen, setDepositModalOpen] = useState(false);
+  const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
 
   const isLoading = !isConnected || isReconnecting || data.isLoading;
 
@@ -72,10 +75,7 @@ function DashboardContent() {
                     userStatus={data.userStatus}
                     drawInProgress={data.drawInProgress}
                     onDeposit={() => setDepositModalOpen(true)}
-                    onWithdraw={() => {
-                      // Phase 3: open withdraw modal
-                      console.log("Open withdraw modal");
-                    }}
+                    onWithdraw={() => setWithdrawModalOpen(true)}
                   />
                 ) : (
                   <SkeletonCard />
@@ -134,17 +134,8 @@ function DashboardContent() {
                 userIsActive={data.userStatus === "active"}
               />
 
-              {/* Activity feed placeholder for Phase 4 */}
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
-                <h3 className="mb-4 text-sm font-bold text-white">
-                  Recent Activity
-                </h3>
-                <div className="space-y-3 text-xs text-white/40">
-                  <div className="flex items-center justify-between rounded-lg bg-white/[0.02] px-3 py-2">
-                    <span>Connect your wallet to see activity</span>
-                  </div>
-                </div>
-              </div>
+              {/* Real Activity Feed (Phase 4) */}
+              <ActivityFeed />
             </motion.div>
           </div>
         )}
@@ -156,6 +147,15 @@ function DashboardContent() {
         <DepositModal
           open={depositModalOpen}
           onOpenChange={setDepositModalOpen}
+          currentBalance={data.userInfo.balance}
+        />
+      )}
+
+      {/* === Withdraw Modal === */}
+      {data.userInfo && (
+        <WithdrawModal
+          open={withdrawModalOpen}
+          onOpenChange={setWithdrawModalOpen}
           currentBalance={data.userInfo.balance}
         />
       )}

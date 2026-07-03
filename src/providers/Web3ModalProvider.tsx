@@ -4,6 +4,7 @@ import { type ReactNode, useMemo } from "react";
 import { WagmiProvider, createConfig, http } from "wagmi";
 import {
   mainnet,
+  sepolia,
   polygon,
   arbitrum,
   optimism,
@@ -24,7 +25,8 @@ import {
 export const projectId =
   process.env.NEXT_PUBLIC_WC_PROJECT_ID || "DEMO_PROJECT_ID_REPLACE_ME";
 
-const chains = [mainnet, polygon, arbitrum, optimism, base, bsc] as const;
+// Sepolia first — it's our primary testnet target. Users connect to Sepolia by default.
+const chains = [sepolia, mainnet, polygon, arbitrum, optimism, base, bsc] as const;
 
 // SSR-safe storage: falls back to a no-op in-memory store when window is undefined
 const ssrSafeStorage = {
@@ -81,6 +83,7 @@ const wagmiConfig = createConfig({
   ssr: true,
   multiInjectedProviderDiscovery: true,
   transports: {
+    [sepolia.id]: http("https://ethereum-sepolia-rpc.publicnode.com"),
     [mainnet.id]: http(),
     [polygon.id]: http(),
     [arbitrum.id]: http(),

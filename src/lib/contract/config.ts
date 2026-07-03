@@ -1,23 +1,30 @@
 /**
  * Smart Contract Configuration
  *
- * IMPORTANT: The address below is a placeholder for SEPOLIA TESTNET.
- * Replace with the actual deployed V2.1.1 contract address before going live.
+ * SEPOLIA TESTNET DEPLOYMENT
+ * ---------------------------
+ * The addresses below are placeholders. After running `DeploySepolia.s.sol`,
+ * replace them with the addresses printed in the deployment summary.
+ *
+ * Target network: Sepolia Testnet (Chain ID: 11155111)
+ * RPC: https://ethereum-sepolia-rpc.publicnode.com
+ * Explorer: https://sepolia.etherscan.io
  */
 
 import { mainnet, sepolia } from "wagmi/chains";
 
-// === Contract Addresses (REPLACE BEFORE MAINNET) =====================
+// === Contract Addresses (REPLACE AFTER DEPLOYMENT) ==================
+// These will be filled in after running `forge script script/DeploySepolia.s.sol`
 export const LOTTERY_CONTRACT_ADDRESS =
-  "0x0000000000000000000000000000000000000001" as `0x${string}`;
+  "0x0000000000000000000000000000000000000001" as `0x${string}`; // ← replace
 
 export const USDT_CONTRACT_ADDRESS =
-  "0x0000000000000000000000000000000000000002" as `0x${string}`;
+  "0x0000000000000000000000000000000000000002" as `0x${string}`; // ← replace
 
 // === Network Config =================================================
-// Default to sepolia for development. Switch to mainnet for production.
+// Sepolia testnet — switch to `mainnet` for production deployment.
 export const TARGET_CHAIN = sepolia;
-export const TARGET_CHAIN_ID = sepolia.id;
+export const TARGET_CHAIN_ID = sepolia.id; // 11155111
 
 // === Token Constants (mirror contract) ==============================
 export const TOKEN_DECIMALS = 6;

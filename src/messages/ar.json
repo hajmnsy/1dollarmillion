@@ -193,6 +193,110 @@
       "agreeNote": "بإجراء الإيداع، فإنك توافق على شروط الخدمة وإفصاح المخاطر.",
       "closeButton": "إغلاق",
       "retryButton": "إعادة المحاولة"
+    },
+
+    "withdraw": {
+      "title": "سحب USDT",
+      "subtitle": "اسحب أي مبلغ من رصيدك. بلا قيد — أموالك متاحة دائماً.",
+
+      "amountLabel": "المبلغ المراد سحبه",
+      "amountPlaceholder": "0.00",
+      "maxButton": "الحد الأقصى",
+
+      "lowBalanceWarning": {
+        "title": "تحذير: انخفاض الرصيد بعد السحب",
+        "body": "سينخفض رصيدك إلى أقل من 1 دولار. ستُعلَّم كغير نشِط وتُستبعَد من السحوبات اليومية على المليون دولار. أودِع مرة أخرى لإعادة الدخول إلى الصندوق."
+      },
+
+      "costBreakdown": {
+        "title": "ملخّص السحب",
+        "withdrawAmount": "المبلغ المراد سحبه",
+        "remainingBalance": "الرصيد المتبقي",
+        "statusAfter": "الحالة بعد السحب",
+        "estGasCost": "تكلفة الغاز المُقدَّرة",
+        "activeAfter": "نشِط لمدة"
+      },
+
+      "statusAfter": {
+        "active": "نشِط",
+        "inactive": "غير نشِط",
+        "activeForDays": "{days} يوماً"
+      },
+
+      "wizard": {
+        "title": "تأكيد السحب",
+        "desc": "سحب USDT من رصيدك إلى محفظتك",
+        "button": "سحب USDT",
+        "pending": "جارٍ السحب...",
+        "confirming": "بانتظار التأكيد...",
+        "success": "تم السحب بنجاح!",
+        "error": "فشل السحب"
+      },
+
+      "success": {
+        "title": "تم السحب بنجاح!",
+        "description": "تم إرسال USDT إلى محفظتك.",
+        "withdrawnAmount": "المبلغ المسحوب",
+        "newBalance": "الرصيد الجديد",
+        "viewOnEtherscan": "عرض على Etherscan",
+        "closeButton": "إغلاق"
+      },
+
+      "errors": {
+        "insufficientBalance": "رصيد غير كافٍ في حسابك",
+        "insufficientGas": "ETH غير كافٍ لدفع الغاز",
+        "userRejected": "رفض المستخدم المعاملة",
+        "networkError": "خطأ في الشبكة — يرجى إعادة المحاولة",
+        "contractPaused": "العقد متوقَّف حالياً",
+        "drawInProgress": "السحب جارٍ — يرجى الانتظار"
+      },
+
+      "agreeNote": "بإجراء السحب، فإنك توافق على شروط الخدمة وإفصاح المخاطر.",
+      "closeButton": "إغلاق",
+      "retryButton": "إعادة المحاولة"
+    },
+
+    "activity": {
+      "title": "النشاط الأخير",
+      "subtitle": "أحدث الإيداعات والخصومات والسحوبات",
+      "empty": "لا يوجد نشاط بعد. قم بأول إيداع لترى سجلّك هنا.",
+      "viewAll": "عرض الكل",
+
+      "types": {
+        "deposit": "إيداع",
+        "withdraw": "سحب",
+        "deduction": "خصم يومي",
+        "win": "جائزة مكسوبة",
+        "lockDrip": "تقطير القفل",
+        "sync": "مزامنة الحالة"
+      },
+
+      "descriptions": {
+        "deposit": "تم إيداع {amount}",
+        "withdraw": "تم سحب {amount}",
+        "deduction": "خصم يومي: {amount}",
+        "win": "الفوز بسحب {drawType}",
+        "lockDrip": "تقطير القفل: {amount}",
+        "sync": "تمت مزامنة الحالة"
+      },
+
+      "drawTypes": {
+        "regular": "المليون دولار",
+        "bonus": "المكافأة"
+      },
+
+      "timestamps": {
+        "justNow": "الآن",
+        "minutesAgo": "قبل {minutes} دقيقة",
+        "hoursAgo": "قبل {hours} ساعة",
+        "yesterday": "أمس",
+        "daysAgo": "قبل {days} يوماً"
+      },
+
+      "statuses": {
+        "confirmed": "مؤكَّد",
+        "pending": "قيد الانتظار"
+      }
     }
   },
 

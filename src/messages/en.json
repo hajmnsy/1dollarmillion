@@ -193,6 +193,110 @@
       "agreeNote": "By depositing, you agree to the Terms of Service and Risk Disclosure.",
       "closeButton": "Close",
       "retryButton": "Retry"
+    },
+
+    "withdraw": {
+      "title": "Withdraw USDT",
+      "subtitle": "Withdraw any amount from your balance. No lock-up — your funds are always accessible.",
+
+      "amountLabel": "Amount to withdraw",
+      "amountPlaceholder": "0.00",
+      "maxButton": "Max",
+
+      "lowBalanceWarning": {
+        "title": "Warning: Low balance after withdrawal",
+        "body": "Your balance will drop below 1 USDT. You will be marked as Inactive and excluded from the daily Million Dollar draws. Deposit again to re-enter the pool."
+      },
+
+      "costBreakdown": {
+        "title": "Withdrawal Summary",
+        "withdrawAmount": "Amount to withdraw",
+        "remainingBalance": "Remaining balance",
+        "statusAfter": "Status after withdrawal",
+        "estGasCost": "Est. gas cost",
+        "activeAfter": "Active for"
+      },
+
+      "statusAfter": {
+        "active": "Active",
+        "inactive": "Inactive",
+        "activeForDays": "{days} days"
+      },
+
+      "wizard": {
+        "title": "Confirm Withdrawal",
+        "desc": "Withdraw USDT from your balance to your wallet",
+        "button": "Withdraw USDT",
+        "pending": "Withdrawing...",
+        "confirming": "Waiting for confirmation...",
+        "success": "Withdrawal successful!",
+        "error": "Withdrawal failed"
+      },
+
+      "success": {
+        "title": "Withdrawal Successful!",
+        "description": "Your USDT has been sent to your wallet.",
+        "withdrawnAmount": "Withdrawn amount",
+        "newBalance": "New balance",
+        "viewOnEtherscan": "View on Etherscan",
+        "closeButton": "Close"
+      },
+
+      "errors": {
+        "insufficientBalance": "Insufficient balance in your position",
+        "insufficientGas": "Insufficient ETH for gas",
+        "userRejected": "Transaction rejected by user",
+        "networkError": "Network error — please retry",
+        "contractPaused": "Contract is currently paused",
+        "drawInProgress": "A draw is in progress — please wait"
+      },
+
+      "agreeNote": "By withdrawing, you agree to the Terms of Service and Risk Disclosure.",
+      "closeButton": "Close",
+      "retryButton": "Retry"
+    },
+
+    "activity": {
+      "title": "Recent Activity",
+      "subtitle": "Your latest deposits, deductions, and withdrawals",
+      "empty": "No activity yet. Make your first deposit to see your history here.",
+      "viewAll": "View all",
+
+      "types": {
+        "deposit": "Deposit",
+        "withdraw": "Withdrawal",
+        "deduction": "Daily deduction",
+        "win": "Prize won",
+        "lockDrip": "Lock drip",
+        "sync": "State sync"
+      },
+
+      "descriptions": {
+        "deposit": "Deposited {amount}",
+        "withdraw": "Withdrew {amount}",
+        "deduction": "Daily deduction: {amount}",
+        "win": "Won the {drawType} draw",
+        "lockDrip": "Lock dripped: {amount}",
+        "sync": "State synced"
+      },
+
+      "drawTypes": {
+        "regular": "Million Dollar",
+        "bonus": "Bonus"
+      },
+
+      "timestamps": {
+        "justNow": "Just now",
+        "minutesAgo": "{minutes}m ago",
+        "hoursAgo": "{hours}h ago",
+        "yesterday": "Yesterday",
+        "daysAgo": "{days}d ago"
+      },
+
+      "statuses": {
+        "confirmed": "Confirmed",
+        "pending": "Pending"
+      }
     }
   },
 
