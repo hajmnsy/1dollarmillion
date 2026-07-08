@@ -18,6 +18,15 @@ export async function LegalPage({ params, pageKey }: Props) {
   const t = await getTranslations(`legalPages.${pageKey}`);
   const tCommon = await getTranslations("legalPages");
 
+  // For terms/privacy/risk, render 5 sections (section1Title through section5Body)
+  const sections =
+    pageKey === "terms" || pageKey === "privacy" || pageKey === "risk"
+      ? [1, 2, 3, 4, 5].map((n) => ({
+          title: t(`section${n}Title`),
+          body: t(`section${n}Body`),
+        }))
+      : [];
+
   return (
     <div className="flex min-h-screen flex-col bg-[#0a0a0a]">
       <SiteHeader />
@@ -35,13 +44,20 @@ export async function LegalPage({ params, pageKey }: Props) {
             </div>
           </PageAnimation>
 
-          <PageAnimation delay={0.1}>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">
-              <p className="text-sm leading-relaxed text-white/60">
-                {tCommon("comingSoon")}
-              </p>
-            </div>
-          </PageAnimation>
+          <div className="space-y-6">
+            {sections.map((section, i) => (
+              <PageAnimation key={i} delay={0.05 * (i + 1)}>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">
+                  <h2 className="mb-3 text-lg font-bold text-white">
+                    {section.title}
+                  </h2>
+                  <p className="text-sm leading-relaxed text-white/60">
+                    {section.body}
+                  </p>
+                </div>
+              </PageAnimation>
+            ))}
+          </div>
 
           <div className="mt-8">
             <Button

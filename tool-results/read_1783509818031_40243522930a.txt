@@ -1,0 +1,530 @@
+     1→{
+     2→  "metadata": {
+     3→    "title": "HybridRoSCA Lottery — Deposit USDT. Win $1,000,000. Never Lose Your Principal.",
+     4→    "description": "The world's first no-loss lottery powered by Aave V3 yield. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your principal is always safe."
+     5→  },
+     6→
+     7→  "dashboard": {
+     8→    "title": "Your Dashboard",
+     9→    "subtitle": "Track your position, watch the pool grow, and stay ready for the next draw.",
+    10→    "walletNotConnected": "Connect your wallet to view your dashboard",
+    11→    "walletNotConnectedDesc": "Once connected, you'll see your deposit balance, active status, and live pool progress in real time.",
+    12→    "connectButton": "Connect Wallet",
+    13→    "backHome": "Back to Home",
+    14→
+    15→    "position": {
+    16→      "title": "My Position",
+    17→      "balance": "Balance",
+    18→      "status": "Status",
+    19→      "active": "Active",
+    20→      "inactive": "Inactive",
+    21→      "winner": "Winner",
+    22→      "paused": "Paused",
+    23→      "daysRemaining": "Days Remaining",
+    24→      "daysRemainingDesc": "At $1/day deduction rate",
+    25→      "lockedAmount": "Locked Amount",
+    26→      "lockedAmountDesc": "10-year advance for daily deductions",
+    27→      "lastDeduction": "Last Sync",
+    28→      "lastDeductionNever": "Never",
+    29→      "justNow": "Just now",
+    30→      "minutesAgo": "{minutes}m ago",
+    31→      "hoursAgo": "{hours}h ago",
+    32→      "daysAgo": "{days}d ago",
+    33→      "depositMore": "Deposit More",
+    34→      "withdraw": "Withdraw",
+    35→      "winnerBadge": "Congratulations! You've won.",
+    36→      "winnerLockNote": "Your 3,650 USDT lock drips into the pool daily.",
+    37→      "inactiveNote": "Deposit USDT to re-enter the pool.",
+    38→      "drawInProgress": "Draw in progress — actions temporarily paused."
+    39→    },
+    40→
+    41→    "pool": {
+    42→      "title": "Live Prize Pool",
+    43→      "subtitle": "Grows from $1/day deductions across all active users.",
+    44→      "currentLabel": "Current Pool",
+    45→      "targetLabel": "Target",
+    46→      "estimateLabel": "Estimated Draw",
+    47→      "estimateDays": "in ~{days} days",
+    48→      "estimateImminent": "DRAW IMMINENT",
+    49→      "estimatePending": "VRF request pending...",
+    50→      "activeUsersLabel": "Active Users",
+    51→      "drawsLabel": "Total Draws",
+    52→      "bonusDrawsLabel": "Bonus Draws"
+    53→    },
+    54→
+    55→    "yield": {
+    56→      "title": "DeFi Yield Bonus Tracker",
+    57→      "subtitle": "Aave V3 interest earned on idle deposits — funds bonus draws.",
+    58→      "currentLabel": "Yield Generated",
+    59→      "targetLabel": "Bonus Draw Target",
+    60→      "apyLabel": "Current APY",
+    61→      "estimateLabel": "Est. Next Bonus Draw",
+    62→      "estimateYears": "in ~{years} years",
+    63→      "estimateReady": "READY TO DRAW",
+    64→      "yieldNote": "Yield accrues 24/7. When it reaches $1M, a bonus draw fires automatically."
+    65→    },
+    66→
+    67→    "solvency": {
+    68→      "title": "Solvency Check",
+    69→      "healthy": "SOLVENT",
+    70→      "healthyDesc": "All deposits fully backed 1:1",
+    71→      "warning": "WARNING",
+    72→      "warningDesc": "Solvency gap below yield — investigate.",
+    73→      "totalAssets": "Total Assets",
+    74→      "principal": "Total Principal",
+    75→      "solvencyGap": "Solvency Gap",
+    76→      "viewOnEtherscan": "Verify on Etherscan"
+    77→    },
+    78→
+    79→    "actions": {
+    80→      "syncState": "Sync My State",
+    81→      "syncStateDesc": "Apply pending daily deductions manually.",
+    82→      "syncing": "Syncing..."
+    83→    },
+    84→
+    85→    "stats": {
+    86→      "yourOdds": "Your Odds",
+    87→      "yourOddsValue": "1 in {count}",
+    88→      "yourOddsPercent": "({percent}% chance per draw)",
+    89→      "yourOddsNote": "Deposits extend your lock-in duration, not your odds. Everyone has equal chance per draw."
+    90→    },
+    91→
+    92→    "deposit": {
+    93→      "title": "Deposit USDT",
+    94→      "subtitle": "Add USDT to your balance. 1 USDT is deducted daily to keep you active.",
+    95→
+    96→      "amountLabel": "Amount",
+    97→      "amountPlaceholder": "30.00",
+    98→      "maxButton": "Max",
+    99→
+   100→      "quickSelect": {
+   101→        "label": "Quick select",
+   102→        "one": "1",
+   103→        "thirty": "30",
+   104→        "thirtyRecommended": "Recommended",
+   105→        "hundred": "100",
+   106→        "fiveHundred": "500"
+   107→      },
+   108→
+   109→      "gasBadge": {
+   110→        "poor": "High Gas Overhead",
+   111→        "poorDesc": "You pay network fees too often",
+   112→        "fair": "Fair Gas Efficiency",
+   113→        "fairDesc": "Consider depositing more",
+   114→        "good": "Good Gas Efficiency",
+   115→        "goodDesc": "Covers ~2 weeks of activity",
+   116→        "optimal": "Optimal Gas Efficiency",
+   117→        "optimalDesc": "Covers 1 month of activity"
+   118→      },
+   119→
+   120→      "explainer": {
+   121→        "title": "Why 30 USDT?",
+   122→        "body": "Every deposit costs ~$3 in gas (a fixed network fee). The amount you deposit doesn't change the gas cost.",
+   123→        "row1Label": "Deposit 1 USDT",
+   124→        "row1Value": "$3 gas = 300% overhead (lose 3x your deposit to fees)",
+   125→        "row2Label": "Deposit 30 USDT",
+   126→        "row2Value": "$3 gas = 10% overhead (covers 30 days of activity)",
+   127→        "row3Label": "Deposit 100 USDT",
+   128→        "row3Value": "$3 gas = 3% overhead (covers 100 days of activity)",
+   129→        "conclusion": "30 USDT gives you ~30 days of active status at the lowest practical gas overhead. Larger deposits are even more efficient but lock more capital."
+   130→      },
+   131→
+   132→      "costBreakdown": {
+   133→        "title": "Cost Breakdown",
+   134→        "depositAmount": "Deposit amount",
+   135→        "estGasCost": "Est. gas cost",
+   136→        "gasToDepositRatio": "Gas-to-deposit ratio",
+   137→        "daysOfActivity": "Days of active status",
+   138→        "costPerDay": "Cost per active day",
+   139→        "balanceAfter": "Balance after deposit",
+   140→        "activeUntil": "Active until"
+   141→      },
+   142→
+   143→      "checklist": {
+   144→        "walletConnected": "Wallet connected",
+   145→        "usdtBalance": "USDT balance",
+   146→        "usdtAllowance": "USDT allowance",
+   147→        "sufficient": "sufficient",
+   148→        "insufficient": "insufficient",
+   149→        "needsApproval": "needs approval",
+   150→        "ready": "ready"
+   151→      },
+   152→
+   153→      "wizard": {
+   154→        "step1Title": "Approve USDT",
+   155→        "step1Desc": "Allow the contract to spend your USDT",
+   156→        "step1Button": "Approve USDT",
+   157→        "step1Pending": "Approving USDT...",
+   158→        "step1Confirming": "Waiting for confirmation...",
+   159→        "step1Success": "USDT approved",
+   160→        "step1Error": "Approval failed",
+   161→
+   162→        "step2Title": "Confirm Deposit",
+   163→        "step2Desc": "Deposit USDT into the pool",
+   164→        "step2Button": "Confirm Deposit",
+   165→        "step2Pending": "Depositing...",
+   166→        "step2Confirming": "Waiting for confirmation...",
+   167→        "step2Success": "Deposit successful!",
+   168→        "step2Error": "Deposit failed",
+   169→
+   170→        "skipApproval": "Approval not needed — proceeding to deposit",
+   171→        "currentStep": "Step {current} of {total}"
+   172→      },
+   173→
+   174→      "success": {
+   175→        "title": "Deposit Successful!",
+   176→        "description": "Your USDT has been deposited and you're now active in the pool.",
+   177→        "newBalance": "New balance",
+   178→        "activeFor": "Active for",
+   179→        "viewOnEtherscan": "View on Etherscan",
+   180→        "closeButton": "Close"
+   181→      },
+   182→
+   183→      "errors": {
+   184→        "insufficientBalance": "Insufficient USDT balance in your wallet",
+   185→        "insufficientGas": "Insufficient ETH for gas",
+   186→        "userRejected": "Transaction rejected by user",
+   187→        "networkError": "Network error — please retry",
+   188→        "contractPaused": "Contract is currently paused",
+   189→        "drawInProgress": "A draw is in progress — please wait",
+   190→        "winnerCannotReenter": "You've already won and cannot re-enter"
+   191→      },
+   192→
+   193→      "agreeNote": "By depositing, you agree to the Terms of Service and Risk Disclosure.",
+   194→      "closeButton": "Close",
+   195→      "retryButton": "Retry"
+   196→    },
+   197→
+   198→    "network": {
+   199→      "wrongChainTitle": "Wrong Network",
+   200→      "wrongChainDesc": "You're connected to {connectedChain}. This app runs on Sepolia Testnet.",
+   201→      "switchButton": "Switch to Sepolia",
+   202→      "switching": "Switching network...",
+   203→      "alreadyConnected": "Connected to Sepolia"
+   204→    },
+   205→
+   206→    "withdraw": {
+   207→      "title": "Withdraw USDT",
+   208→      "subtitle": "Withdraw any amount from your balance. No lock-up — your funds are always accessible.",
+   209→
+   210→      "amountLabel": "Amount to withdraw",
+   211→      "amountPlaceholder": "0.00",
+   212→      "maxButton": "Max",
+   213→
+   214→      "lowBalanceWarning": {
+   215→        "title": "Warning: Low balance after withdrawal",
+   216→        "body": "Your balance will drop below 1 USDT. You will be marked as Inactive and excluded from the daily Million Dollar draws. Deposit again to re-enter the pool."
+   217→      },
+   218→
+   219→      "costBreakdown": {
+   220→        "title": "Withdrawal Summary",
+   221→        "withdrawAmount": "Amount to withdraw",
+   222→        "remainingBalance": "Remaining balance",
+   223→        "statusAfter": "Status after withdrawal",
+   224→        "estGasCost": "Est. gas cost",
+   225→        "activeAfter": "Active for"
+   226→      },
+   227→
+   228→      "statusAfter": {
+   229→        "active": "Active",
+   230→        "inactive": "Inactive",
+   231→        "activeForDays": "{days} days"
+   232→      },
+   233→
+   234→      "wizard": {
+   235→        "title": "Confirm Withdrawal",
+   236→        "desc": "Withdraw USDT from your balance to your wallet",
+   237→        "button": "Withdraw USDT",
+   238→        "pending": "Withdrawing...",
+   239→        "confirming": "Waiting for confirmation...",
+   240→        "success": "Withdrawal successful!",
+   241→        "error": "Withdrawal failed"
+   242→      },
+   243→
+   244→      "success": {
+   245→        "title": "Withdrawal Successful!",
+   246→        "description": "Your USDT has been sent to your wallet.",
+   247→        "withdrawnAmount": "Withdrawn amount",
+   248→        "newBalance": "New balance",
+   249→        "viewOnEtherscan": "View on Etherscan",
+   250→        "closeButton": "Close"
+   251→      },
+   252→
+   253→      "errors": {
+   254→        "insufficientBalance": "Insufficient balance in your position",
+   255→        "insufficientGas": "Insufficient ETH for gas",
+   256→        "userRejected": "Transaction rejected by user",
+   257→        "networkError": "Network error — please retry",
+   258→        "contractPaused": "Contract is currently paused",
+   259→        "drawInProgress": "A draw is in progress — please wait"
+   260→      },
+   261→
+   262→      "agreeNote": "By withdrawing, you agree to the Terms of Service and Risk Disclosure.",
+   263→      "closeButton": "Close",
+   264→      "retryButton": "Retry"
+   265→    },
+   266→
+   267→    "activity": {
+   268→      "title": "Recent Activity",
+   269→      "subtitle": "Your latest deposits, deductions, and withdrawals",
+   270→      "empty": "No activity yet. Make your first deposit to see your history here.",
+   271→      "viewAll": "View all",
+   272→
+   273→      "types": {
+   274→        "deposit": "Deposit",
+   275→        "withdraw": "Withdrawal",
+   276→        "deduction": "Daily deduction",
+   277→        "win": "Prize won",
+   278→        "lockDrip": "Lock drip",
+   279→        "sync": "State sync"
+   280→      },
+   281→
+   282→      "descriptions": {
+   283→        "deposit": "Deposited {amount}",
+   284→        "withdraw": "Withdrew {amount}",
+   285→        "deduction": "Daily deduction: {amount}",
+   286→        "win": "Won the {drawType} draw",
+   287→        "lockDrip": "Lock dripped: {amount}",
+   288→        "sync": "State synced"
+   289→      },
+   290→
+   291→      "drawTypes": {
+   292→        "regular": "Million Dollar",
+   293→        "bonus": "Bonus"
+   294→      },
+   295→
+   296→      "timestamps": {
+   297→        "justNow": "Just now",
+   298→        "minutesAgo": "{minutes}m ago",
+   299→        "hoursAgo": "{hours}h ago",
+   300→        "yesterday": "Yesterday",
+   301→        "daysAgo": "{days}d ago"
+   302→      },
+   303→
+   304→      "statuses": {
+   305→        "confirmed": "Confirmed",
+   306→        "pending": "Pending"
+   307→      }
+   308→    }
+   309→  },
+   310→
+   311→  "nav": {
+   312→    "howItWorks": "How It Works",
+   313→    "transparency": "Transparency",
+   314→    "winners": "Winners",
+   315→    "faq": "FAQ",
+   316→    "dashboard": "Dashboard",
+   317→    "connect": "Connect Wallet",
+   318→    "connectShort": "Connect"
+   319→  },
+   320→
+   321→  "wallet": {
+   322→    "connect": "Connect Wallet",
+   323→    "connectShort": "Connect",
+   324→    "connecting": "Connecting...",
+   325→    "wrongNetwork": "Wrong Network",
+   326→    "switchNetwork": "Switch to Ethereum"
+   327→  },
+   328→
+   329→  "hero": {
+   330→    "badge": "Powered by Chainlink VRF + Aave V3",
+   331→    "titleLine1": "Deposit USDT.",
+   332→    "titleLine2": "Win $1,000,000.",
+   333→    "titleLine3": "Never lose your principal.",
+   334→    "subtitle": "The world's first no-loss lottery where your deposits earn DeFi yield on Aave V3. Stay active for just $1 a day, and when the pool hits $1 million, a provably-fair winner takes home $995,350 — guaranteed.",
+   335→    "ctaPrimary": "Deposit & Enter",
+   336→    "ctaSecondary": "How It Works",
+   337→    "livePoolLabel": "Live Pool",
+   338→    "livePoolValue": "$847,231",
+   339→    "livePoolTarget": "of $1,000,000",
+   340→    "activeUsersLabel": "Active Users",
+   341→    "activeUsersValue": "12,847",
+   342→    "yieldLabel": "Yield Earned",
+   343→    "yieldValue": "$23,402",
+   344→    "trustLine": "Backed by Chainlink VRF · Aave V3 · OpenZeppelin",
+   345→    "minDepositNote": "Start with as little as $1 USDT"
+   346→  },
+   347→
+   348→  "howItWorks": {
+   349→    "title": "How It Works",
+   350→    "subtitle": "Three simple steps between you and life-changing wealth — with your principal never at risk.",
+   351→    "step1Title": "Deposit USDT",
+   352→    "step1Description": "Connect your wallet and deposit any amount of USDT — minimum is just $1, but we recommend $30 to minimize gas overhead. Your deposit is held securely by the smart contract, never touched by anyone.",
+   353→    "step2Title": "Stay Active for $1/Day",
+   354→    "step2Description": "The contract logically deducts exactly 1 USDT per day to keep you eligible for the draw. This deduction feeds the prize pool. With $30 deposited, you're entered for 30 days. With $1,000, you're entered for nearly three years.",
+   355→    "step3Title": "Win $995,350",
+   356→    "step3Description": "When the pool reaches exactly $1,000,000, Chainlink VRF selects one provably-random winner from all active users. The winner receives $995,350 directly to their wallet — instantly, transparently, no questions asked.",
+   357→    "bonusTitle": "Plus: DeFi Yield Bonus Draws",
+   358→    "bonusDescription": "Your idle deposits earn yield on Aave V3. When that yield alone reaches $1,000,000, an additional bonus draw fires — same prize, same fairness, no extra cost to you. You're automatically entered into both draws.",
+   359→    "bonusBadge": "Free Money"
+   360→  },
+   361→
+   362→  "transparency": {
+   363→    "title": "Radical Transparency. Verifiable Solvency.",
+   364→    "subtitle": "Every number on this platform is read live from the blockchain. Verify anything you see here in under 3 clicks — on Etherscan, on Aave, on Chainlink.",
+   365→    "poolCardTitle": "Live Prize Pool",
+   366→    "poolCardDesc": "Grows daily from $1 deductions across all active users. Triggers a draw at $1,000,000.",
+   367→    "yieldCardTitle": "DeFi Yield Generated",
+   368→    "yieldCardDesc": "Interest earned from Aave V3 on your idle deposits. Funds bonus draws when it reaches $1,000,000.",
+   369→    "solvencyCardTitle": "Solvency Proof",
+   370→    "solvencyCardDesc": "Total assets always exceed total principal owed. This is the core invariant — verifiable on-chain at any time.",
+   371→    "drawCardTitle": "Next Draw Estimate",
+   372→    "drawCardDesc": "Based on the 7-day moving average of pool growth. Estimate, not a guarantee.",
+   373→    "verifiableOn": "Verifiable on",
+   374→    "solvencyHealthy": "SOLVENT",
+   375→    "solvencyHealthyDesc": "All user deposits fully backed 1:1",
+   376→    "viewOnEtherscan": "View on Etherscan",
+   377→    "viewOnAave": "View on Aave",
+   378→    "verifyVRF": "Verify on Chainlink"
+   379→  },
+   380→
+   381→  "trust": {
+   382→    "title": "Built on the Most Trusted Infrastructure in Web3",
+   383→    "subtitle": "We use industry-grade security primitives so you can sleep at night.",
+   384→    "chainlinkTitle": "Chainlink VRF v2",
+   385→    "chainlinkDesc": "Provably fair randomness. Every winner is selected by a verifiable random number — no one, not even us, can predict or manipulate the result.",
+   386→    "aaveTitle": "Aave V3",
+   387→    "aaveDesc": "The largest decentralized money market. Your deposits are supplied to Aave to earn interest, secured by $12B+ in TVL and audited by 7 leading firms.",
+   388→    "openzeppelinTitle": "OpenZeppelin",
+   389→    "openzeppelinDesc": "Battle-tested smart contract libraries. Our contract inherits ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code.",
+   390→    "auditTitle": "Audit Ready",
+   391→    "auditDesc": "Contract source code is verified on Etherscan and ready for third-party audit. We are transparent because we have nothing to hide."
+   392→  },
+   393→
+   394→  "stats": {
+   395→    "totalDisbursed": "Total Disbursed to Winners",
+   396→    "totalDisbursedValue": "$4,976,750",
+   397→    "drawsCompleted": "Draws Completed",
+   398→    "drawsCompletedValue": "5",
+   399→    "totalUsers": "Total Users",
+   400→    "totalUsersValue": "12,847",
+   401→    "avgApy": "Current Aave APY",
+   402→    "avgApyValue": "4.32%"
+   403→  },
+   404→
+   405→  "finalCta": {
+   406→    "title": "Your money is waiting.",
+   407→    "subtitle": "Join 12,847 users already in the pool. Deposit as little as $1 USDT — or $30 for optimal gas efficiency — and you could be the next $995,350 winner.",
+   408→    "button": "Deposit & Enter Now",
+   409→    "guarantee": "100% principal protected · No lock-up · Withdraw anytime"
+   410→  },
+   411→
+   412→  "footer": {
+   413→    "tagline": "The world's first hybrid ROSCA + No-Loss Lottery, powered by DeFi.",
+   414→    "product": "Product",
+   415→    "productLinks": {
+   416→      "howItWorks": "How It Works",
+   417→      "transparency": "Transparency Dashboard",
+   418→      "winners": "Winner Hall of Fame",
+   419→      "faq": "FAQ"
+   420→    },
+   421→    "developers": "Developers",
+   422→    "developerLinks": {
+   423→      "contract": "Contract on Etherscan",
+   424→      "docs": "Documentation",
+   425→      "audit": "Audit Report",
+   426→      "github": "GitHub"
+   427→    },
+   428→    "legal": "Legal",
+   429→    "legalLinks": {
+   430→      "terms": "Terms of Service",
+   431→      "privacy": "Privacy Policy",
+   432→      "risk": "Risk Disclosure"
+   433→    },
+   434→    "disclaimer": "HybridRoSCA Lottery is a decentralized protocol. Smart contract interactions carry inherent risk. Never deposit more than you can afford to lose. Past performance does not guarantee future results.",
+   435→    "rights": "All rights reserved."
+   436→  },
+   437→
+   438→  "languageSwitcher": {
+   439→    "label": "Language",
+   440→    "en": "English",
+   441→    "ar": "العربية",
+   442→    "es": "Español",
+   443→    "fr": "Français",
+   444→    "zh": "中文",
+   445→    "hi": "हिन्दी",
+   446→    "ru": "Русский",
+   447→    "pt": "Português"
+   448→  },
+   449→
+   450→  "legalPages": {
+   451→    "faq": {
+   452→      "title": "Frequently Asked Questions",
+   453→      "subtitle": "Everything you need to know about the platform, mechanism, and guarantees.",
+   454→      "q1": "How does the $1/day deduction work?",
+   455→      "a1": "When you deposit USDT, the contract logically deducts 1 USDT per day to keep you 'Active' and eligible for the draw. This is a lazy deduction — it's calculated on-chain but only applied when you (or anyone) interacts with your account (deposit, withdraw, or sync). The deducted amount feeds directly into the prize pool. If your balance reaches zero, you're marked Inactive and excluded from draws until you deposit again.",
+   456→      "q2": "Is my principal safe? Can I lose my deposit?",
+   457→      "a2": "Your principal is always safe. The contract never invests your deposit in risky assets — it only supplies idle USDT to Aave V3 (the largest audited DeFi money market with $12B+ TVL) to earn interest. That interest funds bonus draws; it does not risk your deposit. You can withdraw your remaining balance at any time, subject to a 5% liquidity buffer that ensures the contract always has enough USDT on hand.",
+   458→      "q3": "How is the winner chosen? Is it fair?",
+   459→      "a3": "The winner is selected using Chainlink VRF v2 (Verifiable Random Function) — the gold standard for on-chain randomness. When the pool reaches $1,000,000, the contract requests a random number from Chainlink's oracle network. That number is cryptographically verifiable, meaning no one (not even the contract owner) can predict or manipulate the result. The winner is selected as `activeUsers[randomNumber % activeUserCount]`, giving every active user an equal chance.",
+   460→      "q4": "What are the fees?",
+   461→      "a4": "When a draw completes, the $1,000,000 pool is split as follows: $995,350 (99.535%) goes directly to the winner's wallet; $3,650 (0.365%) is locked in the contract under the winner's name as a 10-year advance for their daily deductions; $1,000 (0.100%) goes to the platform owner as an operational fee. There are no hidden fees, no subscription costs, and no charges for deposits or withdrawals (you only pay Ethereum gas fees).",
+   462→      "q5": "What happens if I win?",
+   463→      "a5": "If you win, $995,350 USDT is transferred directly to your wallet instantly — no claim required. You're then excluded from future regular draws (to spread the wealth), but your $3,650 lock continues to drip $1/day into the pool for 10 years, keeping you in the bonus draw pool. You can withdraw any remaining locked amount after the 10-year lock period matures.",
+   464→      "q6": "What are Bonus Draws?",
+   465→      "a6": "Bonus Draws are funded entirely by Aave V3 yield — not from your deposits. When the contract's accrued interest reaches $1,000,000, a bonus draw fires automatically using the same Chainlink VRF mechanism. Same $995,350 prize, same fairness. You're automatically entered into both regular and bonus draws as long as you're Active. This is the 'no-loss' part — your principal generates yield that funds additional prizes."
+   466→    },
+   467→    "terms": {
+   468→      "title": "Terms of Service",
+   469→      "subtitle": "The terms and conditions that govern your use of the HybridRoSCA Lottery protocol.",
+   470→      "section1Title": "1. Acceptance of Terms",
+   471→      "section1Body": "By connecting your wallet and interacting with the HybridRoSCA Lottery smart contract, you agree to these Terms of Service. If you do not agree, do not use the protocol. These terms constitute a binding agreement between you and the protocol.",
+   472→      "section2Title": "2. Nature of the Protocol",
+   473→      "section2Body": "HybridRoSCA Lottery is a decentralized, non-custodial smart contract protocol deployed on the Ethereum blockchain. The protocol has no central operator — all logic is executed by immutable smart contracts. The contract owner can only pause the protocol in emergencies and claim accumulated operational fees; they cannot access user deposits, alter the draw mechanism, or change the prize distribution.",
+   474→      "section3Title": "3. User Responsibilities",
+   475→      "section3Body": "You are solely responsible for: (a) maintaining the security of your private keys and wallet; (b) ensuring you have sufficient ETH for gas fees; (c) understanding the risks of interacting with DeFi protocols; (d) complying with your local tax and regulatory obligations. The protocol does not custody your wallet or keys.",
+   476→      "section4Title": "4. No Warranties",
+   477→      "section4Body": "The protocol is provided 'as is' without warranties of any kind. Smart contracts may contain undiscovered bugs or vulnerabilities. The protocol does not guarantee uninterrupted operation, specific yield rates, or that the pool will reach $1,000,000 within any timeframe.",
+   478→      "section5Title": "5. Limitation of Liability",
+   479→      "section5Body": "To the maximum extent permitted by law, neither the protocol developers nor the contract owner shall be liable for any indirect, incidental, or consequential damages arising from your use of the protocol. Your maximum remedy is limited to the amount of fees you have directly paid to the protocol."
+   480→    },
+   481→    "privacy": {
+   482→      "title": "Privacy Policy",
+   483→      "subtitle": "How we handle your data and respect your privacy.",
+   484→      "section1Title": "1. Decentralized by Design",
+   485→      "section1Body": "HybridRoSCA Lottery is a fully decentralized protocol. There is no central server, no user database, and no account system. All data is stored on the public Ethereum blockchain. We do not collect, store, or process any personal information.",
+   486→      "section2Title": "2. On-Chain Transparency",
+   487→      "section2Body": "All transactions — deposits, withdrawals, deductions, and draw results — are publicly visible on the blockchain. Your wallet address, transaction amounts, and timestamps are visible to anyone via block explorers like Etherscan. This is a fundamental property of decentralized protocols, not a privacy breach.",
+   488→      "section3Title": "3. Frontend Analytics",
+   489→      "section3Body": "Our frontend may collect anonymous usage analytics (page views, click events) to improve the user experience. We do not collect wallet addresses, IP addresses, or any personally identifiable information. Analytics are aggregated and cannot be traced back to individual users.",
+   490→      "section4Title": "4. Third-Party Services",
+   491→      "section4Body": "The protocol integrates with third-party services: Chainlink VRF (for randomness), Aave V3 (for yield), and WalletConnect (for wallet connections). These services have their own privacy policies. We recommend reviewing them before use.",
+   492→      "section5Title": "5. Cookies",
+   493→      "section5Body": "Our frontend uses local storage to remember your language preference and wallet connection state. We do not use tracking cookies, advertising cookies, or third-party cookie services."
+   494→    },
+   495→    "risk": {
+   496→      "title": "Risk Disclosure",
+   497→      "subtitle": "The inherent risks of using decentralized finance protocols. Read carefully.",
+   498→      "section1Title": "1. Smart Contract Risk",
+   499→      "section1Body": "Smart contracts are immutable code that executes automatically. Despite security audits and best practices, contracts may contain undiscovered bugs, vulnerabilities, or logic errors that could result in partial or total loss of funds. The protocol uses OpenZeppelin's battle-tested libraries and follows the Checks-Effects-Interactions pattern, but no smart contract can be guaranteed 100% secure.",
+   500→      "section2Title": "2. DeFi Protocol Risk",
+   501→      "section2Body": "The protocol supplies idle USDT to Aave V3 to generate yield. Aave is one of the largest and most audited DeFi protocols, but it is not risk-free. Potential risks include: smart contract vulnerabilities in Aave, liquidity crises, oracle failures, governance attacks, and regulatory actions. If Aave is compromised, a portion of the protocol's funds could be at risk.",
+   502→      "section3Title": "3. Chainlink VRF Risk",
+   503→      "section3Body": "The protocol relies on Chainlink VRF v2 for random winner selection. While Chainlink is the industry standard for on-chain randomness, potential risks include: oracle network failures, delayed fulfillments, or (extremely unlikely) compromised oracle nodes. If VRF fails, the draw is paused until the oracle recovers — your funds are not at risk, but the draw may be delayed.",
+   504→      "section4Title": "4. Market and Gas Risks",
+   505→      "section4Body": "Ethereum gas fees can be volatile and may make small deposits economically impractical. The protocol recommends depositing at least 30 USDT to minimize gas overhead. USDT is a stablecoin pegged to the USD, but stablecoin de-pegging events have occurred historically and could affect the value of your deposits.",
+   506→      "section5Title": "5. No Guarantee of Returns",
+   507→      "section5Body": "The protocol does not guarantee that you will win any draw. Your odds of winning depend on the number of active users. Deposits extend your eligibility duration, not your odds per draw. Never deposit more than you can afford to lose. Past performance does not guarantee future results."
+   508→    },
+   509→    "winners": {
+   510→      "title": "Winner Hall of Fame",
+   511→      "subtitle": "Every winner is verifiable on-chain via Chainlink VRF and Etherscan.",
+   512→      "emptyTitle": "The Pool is Growing!",
+   513→      "emptyBody": "The first Million Dollar draw is coming soon. Once the pool reaches $1,000,000 USDT, a provably-fair winner will be selected via Chainlink VRF and their address will be displayed here permanently.",
+   514→      "emptyBadge": "Coming Soon"
+   515→    },
+   516→    "transparency": {
+   517→      "title": "Transparency Dashboard",
+   518→      "subtitle": "Every number is verifiable on-chain. Here's how the protocol works under the hood.",
+   519→      "contractTitle": "Open-Source Smart Contract",
+   520→      "contractBody": "The HybridRoSCA V2.1.1 contract is fully open-source and verified on Etherscan. Anyone can read the source code, audit the logic, and verify that the prize distribution (995,350 / 3,650 / 1,000 split) is hardcoded and cannot be changed. The contract inherits OpenZeppelin's ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code. The owner can only pause the contract in emergencies and claim accumulated fees; they cannot access user deposits or alter the draw mechanism.",
+   521→      "solvencyTitle": "The Solvency Invariant",
+   522→      "solvencyBody": "The protocol maintains a strict solvency invariant: total assets (raw USDT + aUSDT) must always be greater than or equal to total principal (user balances + pool + locked amounts + fees). This is enforced by the contract's accounting logic and a post-draw fix-up block that reclassifies phantom yield as principal if needed. You can verify this at any time by calling the accountingSummary() function — if the solvencyGap is green, the protocol is healthy.",
+   523→      "yieldTitle": "How Aave Yield Funds Bonus Draws",
+   524→      "yieldBody": "When you deposit USDT, the contract keeps a 5% liquidity buffer in raw USDT (for instant withdrawals) and supplies the rest to Aave V3. Aave mints interest-bearing aUSDT to the contract, which accrues yield 24/7. The contract tracks 'principal supplied' separately from 'yield earned' (yield = aUSDT balance − principal supplied). When yield alone reaches $1,000,000, a bonus draw fires automatically — same Chainlink VRF selection, same $995,350 prize. Your principal is never at risk; only the interest is paid out."
+   525→    },
+   526→    "backHome": "Back to Home",
+   527→    "comingSoon": "This page is under construction. Full content will be added soon."
+   528→  }
+   529→}
+   530→

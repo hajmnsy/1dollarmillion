@@ -26,11 +26,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   // Provide all messages to the client
   const messages = await getMessages();
 
-  // Detect RTL for Arabic
+  // Detect RTL for Arabic (other locales are LTR)
   const isRTL = locale === "ar";
   const dir = isRTL ? "rtl" : "ltr";
 
-  // Use Cairo font for Arabic, Geist Sans/Mono for English
+  // Use Cairo font for Arabic, Geist Sans/Mono for all other locales
   const bodyClassName = isRTL
     ? `${fontVariables} font-cairo antialiased`
     : `${fontVariables} font-sans antialiased`;

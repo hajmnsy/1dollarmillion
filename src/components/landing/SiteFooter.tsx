@@ -2,7 +2,7 @@
 
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { Sparkles } from "lucide-react";
+import { Logo } from "@/components/landing/Logo";
 
 export function SiteFooter() {
   const t = useTranslations("footer");
@@ -14,12 +14,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600">
-                <Sparkles className="h-4 w-4 text-black" />
-              </div>
-              <span className="text-base font-bold text-white">HybridRoSCA</span>
-            </div>
+            <Logo size={28} showText={true} textClassName="text-sm" />
             <p className="mt-3 text-xs leading-relaxed text-white/50">
               {t("tagline")}
             </p>

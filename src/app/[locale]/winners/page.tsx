@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/landing/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Trophy } from "lucide-react";
 import { PageAnimation } from "@/components/landing/PageAnimation";
+import { WinnersEmptyState } from "@/components/landing/WinnersEmptyState";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -14,7 +15,7 @@ type Props = {
 export default async function WinnersPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const tNav = await getTranslations("nav");
+  const t = await getTranslations("legalPages.winners");
   const tCommon = await getTranslations("legalPages");
 
   return (
@@ -28,12 +29,19 @@ export default async function WinnersPage({ params }: Props) {
                 <Trophy className="h-7 w-7 text-amber-400" />
               </div>
               <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                {tNav("winners")}
+                {t("title")}
               </h1>
-              <p className="mt-2 text-base text-white/60">
-                {tCommon("comingSoon")}
-              </p>
+              <p className="mt-2 text-base text-white/60">{t("subtitle")}</p>
             </div>
+          </PageAnimation>
+
+          <PageAnimation delay={0.1}>
+            <WinnersEmptyState
+              badge={t("emptyBadge")}
+              title={t("emptyTitle")}
+              body={t("emptyBody")}
+              ctaLabel={tCommon("backHome")}
+            />
           </PageAnimation>
 
           <div className="mt-8">

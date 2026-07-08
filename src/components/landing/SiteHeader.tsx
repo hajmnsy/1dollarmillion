@@ -4,7 +4,7 @@ import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { WalletButton } from "@/components/web3/WalletButton";
 import { LanguageSwitcher } from "@/components/web3/LanguageSwitcher";
-import { Sparkles } from "lucide-react";
+import { Logo } from "@/components/landing/Logo";
 
 export function SiteHeader() {
   const t = useTranslations("nav");
@@ -35,14 +35,9 @@ export function SiteHeader() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 transition-opacity hover:opacity-80"
+          className="flex items-center transition-opacity hover:opacity-80"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/30">
-            <Sparkles className="h-5 w-5 text-black" />
-          </div>
-          <span className="text-lg font-bold tracking-tight text-white">
-            HybridRoSCA
-          </span>
+          <Logo size={32} showText={true} textClassName="text-base" />
         </Link>
 
         {/* Desktop nav — mix of scroll + route links */}
