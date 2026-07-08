@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**" },
     ],
   },
+  // Allow the preview sandbox hostname to access Next.js dev resources
+  allowedDevOrigins: ["*.space-z.ai"],
 };
 
 export default withNextIntl(nextConfig);

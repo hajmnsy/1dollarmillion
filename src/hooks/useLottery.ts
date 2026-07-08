@@ -1,6 +1,6 @@
 "use client";
 
-import { useAccount, useReadContract, useBalance } from "wagmi";
+import { useAccount, useReadContract } from "wagmi";
 import {
   LOTTERY_CONTRACT_ADDRESS,
   USDT_CONTRACT_ADDRESS,
@@ -10,6 +10,7 @@ import {
   DAILY_DEDUCTION,
   POOL_TARGET,
   BONUS_DRAW_TARGET,
+  TARGET_CHAIN_ID,
   type UserInfo,
   type AccountingSummary,
 } from "@/lib/contract/config";
@@ -100,6 +101,7 @@ export function useCurrentPool() {
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
     functionName: "currentPool",
+    chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: FAST,
       select: (data) => data as bigint,
@@ -115,6 +117,7 @@ export function useYieldBalance() {
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
     functionName: "getYieldBalance",
+    chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: NORMAL,
       select: (data) => data as bigint,
@@ -130,6 +133,7 @@ export function useActiveUserCount() {
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
     functionName: "getActiveUserCount",
+    chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: SLOW,
       select: (data) => data as bigint,
@@ -147,6 +151,7 @@ export function useAccountingSummary() {
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
     functionName: "accountingSummary",
+    chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: SLOW,
       select: (data) => {
@@ -181,6 +186,7 @@ export function useUserInfo() {
     abi: lotteryAbi,
     functionName: "getUserInfo",
     args: [address!],
+    chainId: TARGET_CHAIN_ID,
     query: {
       enabled: !!address,
       refetchInterval: NORMAL,
@@ -212,6 +218,7 @@ export function useUserUsdtBalance() {
     abi: usdtAbi,
     functionName: "balanceOf",
     args: [address!],
+    chainId: TARGET_CHAIN_ID,
     query: {
       enabled: !!address,
       refetchInterval: NORMAL,
@@ -232,6 +239,7 @@ export function useUserUsdtAllowance() {
     abi: usdtAbi,
     functionName: "allowance",
     args: [address!, LOTTERY_CONTRACT_ADDRESS],
+    chainId: TARGET_CHAIN_ID,
     query: {
       enabled: !!address,
       refetchInterval: NORMAL,
@@ -251,6 +259,7 @@ export function useDrawInProgress() {
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
     functionName: "drawInProgress",
+    chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: FAST,
       select: (data) => data as boolean,
@@ -266,6 +275,7 @@ export function useIsPaused() {
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
     functionName: "paused",
+    chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: FAST,
       select: (data) => data as boolean,
@@ -281,6 +291,7 @@ export function useDrawCounts() {
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
     functionName: "regularDrawCount",
+    chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: SLOW,
       select: (data) => data as bigint,
@@ -291,6 +302,7 @@ export function useDrawCounts() {
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
     functionName: "bonusDrawCount",
+    chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: SLOW,
       select: (data) => data as bigint,
@@ -322,12 +334,23 @@ export function useDashboardData() {
   const isPaused = useIsPaused();
   const drawCounts = useDrawCounts();
 
+  // Loading is only true if we're actually fetching AND haven't errored.
+  // Once a read errors (e.g. wrong chain), we treat it as "loaded with default"
+  // so the dashboard doesn't stay stuck on the spinner forever.
+  const hasError =
+    pool.isError ||
+    yield_.isError ||
+    activeUsers.isError ||
+    accounting.isError ||
+    drawInProgress.isError;
+
   const isLoading =
-    pool.isLoading ||
-    yield_.isLoading ||
-    activeUsers.isLoading ||
-    accounting.isLoading ||
-    drawInProgress.isLoading;
+    !hasError &&
+    (pool.isLoading ||
+      yield_.isLoading ||
+      activeUsers.isLoading ||
+      accounting.isLoading ||
+      drawInProgress.isLoading);
 
   // Derive convenience values
   const poolProgress = pool.data

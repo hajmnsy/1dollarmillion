@@ -123,34 +123,47 @@ const BrowserIcon = () => (
   </svg>
 );
 
-const walletIcons: Record<string, React.ReactNode> = {
-  metaMask: <MetaMaskIcon />,
-  walletConnect: <WalletConnectIcon />,
-  coinbaseWallet: <CoinbaseIcon />,
-  injected: <BrowserIcon />,
-};
+/**
+ * Match a wagmi v2 connector to the correct brand SVG icon.
+ *
+ * wagmi v2 connector IDs don't always match the simple keys we'd expect:
+ *   - MetaMask connector → id: "com.metaMask"
+ *   - Coinbase Wallet   → id: "coinbaseWallet"
+ *   - WalletConnect      → id: "walletConnect"
+ *   - Injected           → id: "injected"
+ *
+ * So we match by checking if the id/name contains a known brand keyword.
+ */
+function getWalletIcon(connectorId: string, connectorName: string): React.ReactNode {
+  const id = connectorId.toLowerCase();
+  const name = connectorName.toLowerCase();
 
-const walletMeta: Record<
-  string,
-  { label: string; desc: string }
-> = {
-  metaMask: {
-    label: "MetaMask",
-    desc: "The most popular Web3 wallet",
-  },
-  walletConnect: {
-    label: "WalletConnect",
-    desc: "Scan with 300+ wallets",
-  },
-  coinbaseWallet: {
-    label: "Coinbase Wallet",
-    desc: "Connect with Coinbase Wallet",
-  },
-  injected: {
-    label: "Browser Wallet",
-    desc: "Any injected EIP-1193 wallet",
-  },
-};
+  if (id.includes("metamask") || name.includes("metamask")) return <MetaMaskIcon />;
+  if (id.includes("walletconnect") || name.includes("wallet connect") || name.includes("walletconnect"))
+    return <WalletConnectIcon />;
+  if (id.includes("coinbase") || name.includes("coinbase")) return <CoinbaseIcon />;
+  // Default: generic Ethereum diamond for any other injected wallet
+  return <BrowserIcon />;
+}
+
+function getWalletMeta(connectorId: string, connectorName: string) {
+  const id = connectorId.toLowerCase();
+  const name = connectorName.toLowerCase();
+
+  if (id.includes("metamask") || name.includes("metamask"))
+    return { label: "MetaMask", desc: "The most popular Web3 wallet" };
+  if (id.includes("walletconnect") || name.includes("walletconnect"))
+    return { label: "WalletConnect", desc: "Scan with 300+ wallets" };
+  if (id.includes("coinbase") || name.includes("coinbase"))
+    return { label: "Coinbase Wallet", desc: "Connect with Coinbase Wallet" };
+  return { label: connectorName || "Browser Wallet", desc: "Any injected EIP-1193 wallet" };
+}
+
+function isWalletConnectConnector(connectorId: string, connectorName: string): boolean {
+  const id = connectorId.toLowerCase();
+  const name = connectorName.toLowerCase();
+  return id.includes("walletconnect") || name.includes("walletconnect");
+}
 
 /**
  * WalletButton — universal wallet connect button.
@@ -253,13 +266,9 @@ export function WalletButton() {
 
           <div className="mt-4 grid grid-cols-1 gap-2">
             {connectors.map((connector) => {
-              const icon =
-                walletIcons[connector.id] || <BrowserIcon />;
-              const meta =
-                walletMeta[connector.id] || {
-                  label: connector.name,
-                  desc: "Connect your wallet",
-                };
+              const icon = getWalletIcon(connector.id, connector.name);
+              const meta = getWalletMeta(connector.id, connector.name);
+              const isWc = isWalletConnectConnector(connector.id, connector.name);
 
               return (
                 <button
@@ -284,7 +293,7 @@ export function WalletButton() {
                     </div>
                     <div className="text-xs text-white/40">{meta.desc}</div>
                   </div>
-                  {connector.id === "walletConnect" && (
+                  {isWc && (
                     <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
                       300+
                     </span>

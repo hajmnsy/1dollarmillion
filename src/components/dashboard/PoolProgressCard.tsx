@@ -107,17 +107,17 @@ export function PoolProgressCard({
           <Stat
             icon={<Users className="h-4 w-4 text-blue-400" />}
             label={t("activeUsersLabel")}
-            value={activeUserCount.toLocaleString()}
+            value={Number(activeUserCount).toLocaleString()}
           />
           <Stat
             icon={<Trophy className="h-4 w-4 text-emerald-400" />}
             label={t("drawsLabel")}
-            value={regularDrawCount.toString()}
+            value={Number(regularDrawCount).toString()}
           />
           <Stat
             icon={<Gift className="h-4 w-4 text-purple-400" />}
             label={t("bonusDrawsLabel")}
-            value={bonusDrawCount.toString()}
+            value={Number(bonusDrawCount).toString()}
           />
         </div>
       </div>

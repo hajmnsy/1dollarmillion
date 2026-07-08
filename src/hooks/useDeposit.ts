@@ -9,6 +9,7 @@ import {
   usdtAbi,
   TOKEN_DECIMALS_BI,
   MIN_DEPOSIT,
+  TARGET_CHAIN_ID,
 } from "@/lib/contract/config";
 import { useUserUsdtAllowance } from "@/hooks/useLottery";
 
@@ -93,6 +94,7 @@ export function useDeposit(amount: bigint): UseDepositReturn {
         abi: usdtAbi,
         functionName: "approve",
         args: [LOTTERY_CONTRACT_ADDRESS, amount],
+        chainId: TARGET_CHAIN_ID,
       });
       setApproveTxHash(hash);
       setStep("approved");
@@ -118,6 +120,7 @@ export function useDeposit(amount: bigint): UseDepositReturn {
         abi: lotteryAbi,
         functionName: "deposit",
         args: [amount],
+        chainId: TARGET_CHAIN_ID,
       });
       setDepositTxHash(hash);
       setStep("done");

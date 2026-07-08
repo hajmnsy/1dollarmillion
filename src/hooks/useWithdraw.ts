@@ -6,6 +6,7 @@ import {
   LOTTERY_CONTRACT_ADDRESS,
   lotteryAbi,
   MIN_DEPOSIT,
+  TARGET_CHAIN_ID,
 } from "@/lib/contract/config";
 
 // Approximate gas cost in USD for a single withdraw transaction
@@ -55,6 +56,7 @@ export function useWithdraw(amount: bigint): UseWithdrawReturn {
         abi: lotteryAbi,
         functionName: "withdraw",
         args: [amount],
+        chainId: TARGET_CHAIN_ID,
       });
       setWithdrawTxHash(hash);
       setStep("done");
