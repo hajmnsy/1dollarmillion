@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "HybridRoSCA Lottery — Deposite USDT. Ganhe $1,000,000. Nunca Perca Seu Principal.",
+    "title": "1DollarMillion — Deposite USDT. Ganhe $1,000,000. Nunca Perca Seu Principal.",
     "description": "A primeira loteria sem perdas do mundo, movida pelo rendimento da Aave V3. Deposite USDT, mantenha-se ativo por apenas $1/dia e ganhe prêmios que mudam vidas. Seu principal está sempre seguro."
   },
 
@@ -431,7 +431,7 @@
       "privacy": "Política de Privacidade",
       "risk": "Divulgação de Riscos"
     },
-    "disclaimer": "A HybridRoSCA Lottery é um protocolo descentralizado. Interações com smart contracts carregam risco inerente. Nunca deposite mais do que você pode perder. Desempenho passado não garante resultados futuros.",
+    "disclaimer": "A 1DollarMillion é um protocolo descentralizado. Interações com smart contracts carregam risco inerente. Nunca deposite mais do que você pode perder. Desempenho passado não garante resultados futuros.",
     "rights": "Todos os direitos reservados."
   },
 
@@ -466,11 +466,11 @@
     },
     "terms": {
       "title": "Termos de Serviço",
-      "subtitle": "Os termos e condições que regem o uso do protocolo HybridRoSCA Lottery.",
+      "subtitle": "Os termos e condições que regem o uso do protocolo 1DollarMillion.",
       "section1Title": "1. Aceitação dos Termos",
-      "section1Body": "Ao conectar sua carteira e interagir com o smart contract da HybridRoSCA Lottery, você concorda com estes Termos de Serviço. Se você não concorda, não use o protocolo. Estes termos constituem um acordo vinculante entre você e o protocolo.",
+      "section1Body": "Ao conectar sua carteira e interagir com o smart contract da 1DollarMillion, você concorda com estes Termos de Serviço. Se você não concorda, não use o protocolo. Estes termos constituem um acordo vinculante entre você e o protocolo.",
       "section2Title": "2. Natureza do Protocolo",
-      "section2Body": "A HybridRoSCA Lottery é um protocolo de smart contract descentralizado e não custodial implantado na blockchain da Ethereum. O protocolo não tem operador central — toda a lógica é executada por smart contracts imutáveis. O dono do contrato só pode pausar o protocolo em emergências e reivindicar taxas operacionais acumuladas; ele não pode acessar depósitos de usuários, alterar o mecanismo de sorteio ou mudar a distribuição de prêmios.",
+      "section2Body": "A 1DollarMillion é um protocolo de smart contract descentralizado e não custodial implantado na blockchain da Ethereum. O protocolo não tem operador central — toda a lógica é executada por smart contracts imutáveis. O dono do contrato só pode pausar o protocolo em emergências e reivindicar taxas operacionais acumuladas; ele não pode acessar depósitos de usuários, alterar o mecanismo de sorteio ou mudar a distribuição de prêmios.",
       "section3Title": "3. Responsabilidades do Usuário",
       "section3Body": "Você é o único responsável por: (a) manter a segurança de suas chaves privadas e carteira; (b) garantir que tenha ETH suficiente para taxas de gas; (c) compreender os riscos de interagir com protocolos DeFi; (d) cumprir suas obrigações tributárias e regulatórias locais. O protocolo não custodia sua carteira ou chaves.",
       "section4Title": "4. Sem Garantias",
@@ -482,7 +482,7 @@
       "title": "Política de Privacidade",
       "subtitle": "Como tratamos seus dados e respeitamos sua privacidade.",
       "section1Title": "1. Descentralizado por Design",
-      "section1Body": "A HybridRoSCA Lottery é um protocolo totalmente descentralizado. Não há servidor central, banco de dados de usuários ou sistema de contas. Todos os dados são armazenados na blockchain pública da Ethereum. Não coletamos, armazenamos ou processamos nenhuma informação pessoal.",
+      "section1Body": "A 1DollarMillion é um protocolo totalmente descentralizado. Não há servidor central, banco de dados de usuários ou sistema de contas. Todos os dados são armazenados na blockchain pública da Ethereum. Não coletamos, armazenamos ou processamos nenhuma informação pessoal.",
       "section2Title": "2. Transparência On-Chain",
       "section2Body": "Todas as transações — depósitos, saques, deduções e resultados de sorteios — são publicamente visíveis na blockchain. Seu endereço de carteira, valores de transações e carimbos de data/hora são visíveis para qualquer pessoa via exploradores de blocos como o Etherscan. Esta é uma propriedade fundamental de protocolos descentralizados, não uma violação de privacidade.",
       "section3Title": "3. Analytics do Frontend",
@@ -517,7 +517,7 @@
       "title": "Painel de Transparência",
       "subtitle": "Cada número é verificável on-chain. Veja como o protocolo funciona nos bastidores.",
       "contractTitle": "Smart Contract de Código Aberto",
-      "contractBody": "O contrato HybridRoSCA V2.1.1 é totalmente de código aberto e verificado no Etherscan. Qualquer pessoa pode ler o código-fonte, auditar a lógica e verificar que a distribuição de prêmios (divisão 995,350 / 3,650 / 1,000) está embutida no código e não pode ser alterada. O contrato herda ReentrancyGuard, SafeERC20 e Ownable da OpenZeppelin — o padrão ouro para código DeFi seguro. O dono só pode pausar o contrato em emergências e reivindicar taxas acumuladas; ele não pode acessar depósitos de usuários ou alterar o mecanismo de sorteio.",
+      "contractBody": "O contrato 1DollarMillion V2.1.1 é totalmente de código aberto e verificado no Etherscan. Qualquer pessoa pode ler o código-fonte, auditar a lógica e verificar que a distribuição de prêmios (divisão 995,350 / 3,650 / 1,000) está embutida no código e não pode ser alterada. O contrato herda ReentrancyGuard, SafeERC20 e Ownable da OpenZeppelin — o padrão ouro para código DeFi seguro. O dono só pode pausar o contrato em emergências e reivindicar taxas acumuladas; ele não pode acessar depósitos de usuários ou alterar o mecanismo de sorteio.",
       "solvencyTitle": "A Invariante de Solvência",
       "solvencyBody": "O protocolo mantém uma invariante de solvência estrita: o total de ativos (USDT bruto + aUSDT) deve ser sempre maior ou igual ao principal total (saldos de usuários + pool + valores bloqueados + taxas). Isso é imposto pela lógica de contabilidade do contrato e por um bloco de correção pós-sorteio que reclassifica rendimento fantasma como principal, se necessário. Você pode verificar isso a qualquer momento chamando a função accountingSummary() — se o solvencyGap estiver verde, o protocolo está saudável.",
       "yieldTitle": "Como o Rendimento da Aave Financia Sorteios Bônus",

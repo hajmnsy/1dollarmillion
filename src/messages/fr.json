@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Loterie HybridRoSCA — Déposez de l'USDT. Gagnez 1 000 000 $. Ne perdez jamais votre capital.",
+    "title": "Loterie 1DollarMillion — Déposez de l'USDT. Gagnez 1 000 000 $. Ne perdez jamais votre capital.",
     "description": "La première loterie sans perte au monde, propulsée par le rendement Aave V3. Déposez de l'USDT, restez actif pour seulement 1 $/jour, et tentez de remporter des gains qui changeront votre vie. Votre capital est toujours en sécurité."
   },
 
@@ -431,7 +431,7 @@
       "privacy": "Politique de Confidentialité",
       "risk": "Divulgation des Risques"
     },
-    "disclaimer": "HybridRoSCA Lottery est un protocole décentralisé. Les interactions avec les smart contracts comportent des risques inhérents. Ne déposez jamais plus que ce que vous pouvez vous permettre de perdre. Les performances passées ne garantissent pas les résultats futurs.",
+    "disclaimer": "1DollarMillion est un protocole décentralisé. Les interactions avec les smart contracts comportent des risques inhérents. Ne déposez jamais plus que ce que vous pouvez vous permettre de perdre. Les performances passées ne garantissent pas les résultats futurs.",
     "rights": "Tous droits réservés."
   },
 
@@ -466,11 +466,11 @@
     },
     "terms": {
       "title": "Conditions d'Utilisation",
-      "subtitle": "Les termes et conditions qui régissent votre utilisation du protocole HybridRoSCA Lottery.",
+      "subtitle": "Les termes et conditions qui régissent votre utilisation du protocole 1DollarMillion.",
       "section1Title": "1. Acceptation des Conditions",
-      "section1Body": "En connectant votre wallet et en interagissant avec le smart contract HybridRoSCA Lottery, vous acceptez ces Conditions d'Utilisation. Si vous n'acceptez pas, n'utilisez pas le protocole. Ces termes constituent un accord contraignant entre vous et le protocole.",
+      "section1Body": "En connectant votre wallet et en interagissant avec le smart contract 1DollarMillion, vous acceptez ces Conditions d'Utilisation. Si vous n'acceptez pas, n'utilisez pas le protocole. Ces termes constituent un accord contraignant entre vous et le protocole.",
       "section2Title": "2. Nature du Protocole",
-      "section2Body": "HybridRoSCA Lottery est un protocole de smart contract décentralisé et non-dépositaire déployé sur la blockchain Ethereum. Le protocole n'a aucun opérateur central — toute la logique est exécutée par des smart contracts immuables. Le propriétaire du contrat peut uniquement mettre le protocole en pause en cas d'urgence et réclamer les frais opérationnels accumulés ; il ne peut pas accéder aux dépôts des utilisateurs, modifier le mécanisme de tirage ou changer la distribution des prix.",
+      "section2Body": "1DollarMillion est un protocole de smart contract décentralisé et non-dépositaire déployé sur la blockchain Ethereum. Le protocole n'a aucun opérateur central — toute la logique est exécutée par des smart contracts immuables. Le propriétaire du contrat peut uniquement mettre le protocole en pause en cas d'urgence et réclamer les frais opérationnels accumulés ; il ne peut pas accéder aux dépôts des utilisateurs, modifier le mécanisme de tirage ou changer la distribution des prix.",
       "section3Title": "3. Responsabilités de l'Utilisateur",
       "section3Body": "Vous êtes seul responsable de : (a) maintenir la sécurité de vos clés privées et de votre wallet ; (b) vous assurer d'avoir suffisamment d'ETH pour les frais de gas ; (c) comprendre les risques liés à l'interaction avec les protocoles DeFi ; (d) vous conformer à vos obligations fiscales et réglementaires locales. Le protocole ne conserve pas votre wallet ni vos clés.",
       "section4Title": "4. Aucune Garantie",
@@ -482,7 +482,7 @@
       "title": "Politique de Confidentialité",
       "subtitle": "Comment nous gérons vos données et respectons votre vie privée.",
       "section1Title": "1. Décentralisé par Conception",
-      "section1Body": "HybridRoSCA Lottery est un protocole entièrement décentralisé. Il n'y a aucun serveur central, aucune base de données utilisateur et aucun système de compte. Toutes les données sont stockées sur la blockchain publique Ethereum. Nous ne collectons, ne stockons ni ne traitons aucune information personnelle.",
+      "section1Body": "1DollarMillion est un protocole entièrement décentralisé. Il n'y a aucun serveur central, aucune base de données utilisateur et aucun système de compte. Toutes les données sont stockées sur la blockchain publique Ethereum. Nous ne collectons, ne stockons ni ne traitons aucune information personnelle.",
       "section2Title": "2. Transparence On-Chain",
       "section2Body": "Toutes les transactions — dépôts, retraits, déductions et résultats de tirage — sont publiquement visibles sur la blockchain. Votre adresse de wallet, les montants des transactions et les horodatages sont visibles par tous via des explorateurs de blocs comme Etherscan. C'est une propriété fondamentale des protocoles décentralisés, pas une violation de la vie privée.",
       "section3Title": "3. Analytique du Frontend",
@@ -517,7 +517,7 @@
       "title": "Tableau de Transparence",
       "subtitle": "Chaque chiffre est vérifiable on-chain. Voici comment le protocole fonctionne sous le capot.",
       "contractTitle": "Smart Contract Open-Source",
-      "contractBody": "Le contrat HybridRoSCA V2.1.1 est entièrement open-source et vérifié sur Etherscan. N'importe qui peut lire le code source, auditer la logique et vérifier que la distribution des prix (répartition 995 350 / 3 650 / 1 000) est codée en dur et ne peut être modifiée. Le contrat hérite de ReentrancyGuard, SafeERC20 et Ownable d'OpenZeppelin — le standard d'or du code DeFi sécurisé. Le propriétaire peut uniquement mettre le contrat en pause en cas d'urgence et réclamer les frais accumulés ; il ne peut pas accéder aux dépôts des utilisateurs ni modifier le mécanisme de tirage.",
+      "contractBody": "Le contrat 1DollarMillion V2.1.1 est entièrement open-source et vérifié sur Etherscan. N'importe qui peut lire le code source, auditer la logique et vérifier que la distribution des prix (répartition 995 350 / 3 650 / 1 000) est codée en dur et ne peut être modifiée. Le contrat hérite de ReentrancyGuard, SafeERC20 et Ownable d'OpenZeppelin — le standard d'or du code DeFi sécurisé. Le propriétaire peut uniquement mettre le contrat en pause en cas d'urgence et réclamer les frais accumulés ; il ne peut pas accéder aux dépôts des utilisateurs ni modifier le mécanisme de tirage.",
       "solvencyTitle": "L'Invariant de Solvabilité",
       "solvencyBody": "Le protocole maintient un invariant de solvabilité strict : le total des actifs (USDT brut + aUSDT) doit toujours être supérieur ou égal au capital total (soldes utilisateurs + cagnotte + montants verrouillés + frais). Ceci est appliqué par la logique comptable du contrat et un bloc de correction post-tirage qui reclassifie le rendement fantôme en capital si nécessaire. Vous pouvez vérifier cela à tout moment en appelant la fonction accountingSummary() — si le solvencyGap est vert, le protocole est sain.",
       "yieldTitle": "Comment le Rendement Aave Finance les Tirages Bonus",

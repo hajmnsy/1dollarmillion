@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "HybridRoSCA 彩票 — 存入 USDT，赢取 $1,000,000，本金永不受损。",
+    "title": "1DollarMillion 彩票 — 存入 USDT，赢取 $1,000,000，本金永不受损。",
     "description": "全球首个由 Aave V3 收益驱动的无损彩票。存入 USDT，仅需 $1/天保持活跃，即可赢取改变人生的大奖。您的本金始终安全。"
   },
 
@@ -431,7 +431,7 @@
       "privacy": "隐私政策",
       "risk": "风险披露"
     },
-    "disclaimer": "HybridRoSCA 彩票是一个去中心化协议。与 smart contract 交互存在固有风险。请勿存入超出您承受能力的资金。过往表现不代表未来收益。",
+    "disclaimer": "1DollarMillion 彩票是一个去中心化协议。与 smart contract 交互存在固有风险。请勿存入超出您承受能力的资金。过往表现不代表未来收益。",
     "rights": "保留所有权利。"
   },
 
@@ -466,11 +466,11 @@
     },
     "terms": {
       "title": "服务条款",
-      "subtitle": "约束您使用 HybridRoSCA 彩票协议的条款与条件。",
+      "subtitle": "约束您使用 1DollarMillion 彩票协议的条款与条件。",
       "section1Title": "1. 条款接受",
-      "section1Body": "通过连接您的钱包并与 HybridRoSCA 彩票 smart contract 交互，即表示您同意本《服务条款》。若您不同意，请勿使用本协议。本条款构成您与协议之间具有约束力的协议。",
+      "section1Body": "通过连接您的钱包并与 1DollarMillion 彩票 smart contract 交互，即表示您同意本《服务条款》。若您不同意，请勿使用本协议。本条款构成您与协议之间具有约束力的协议。",
       "section2Title": "2. 协议性质",
-      "section2Body": "HybridRoSCA 彩票是一个部署在 Ethereum blockchain 上的去中心化、非托管的 smart contract 协议。本协议无中心化运营方 — 所有逻辑均由不可变 smart contract 执行。合约拥有者仅可在紧急情况下暂停协议并领取累积的运营费用；他们无法访问用户存款、更改开奖机制或修改奖金分配。",
+      "section2Body": "1DollarMillion 彩票是一个部署在 Ethereum blockchain 上的去中心化、非托管的 smart contract 协议。本协议无中心化运营方 — 所有逻辑均由不可变 smart contract 执行。合约拥有者仅可在紧急情况下暂停协议并领取累积的运营费用；他们无法访问用户存款、更改开奖机制或修改奖金分配。",
       "section3Title": "3. 用户责任",
       "section3Body": "您需独自负责：(a) 维护私钥与钱包的安全；(b) 确保拥有充足的 ETH 以支付 gas 费；(c) 理解与 DeFi 协议交互的风险；(d) 遵守您当地的税务与监管义务。本协议不托管您的钱包或私钥。",
       "section4Title": "4. 免责声明",
@@ -482,7 +482,7 @@
       "title": "隐私政策",
       "subtitle": "我们如何处理您的数据并尊重您的隐私。",
       "section1Title": "1. 天生去中心化",
-      "section1Body": "HybridRoSCA 彩票是一个完全去中心化的协议。无中心服务器、无用户数据库、无账户系统。所有数据均存储在公开的 Ethereum blockchain 上。我们不收集、存储或处理任何个人信息。",
+      "section1Body": "1DollarMillion 彩票是一个完全去中心化的协议。无中心服务器、无用户数据库、无账户系统。所有数据均存储在公开的 Ethereum blockchain 上。我们不收集、存储或处理任何个人信息。",
       "section2Title": "2. 链上透明",
       "section2Body": "所有交易 — 存款、提取、扣减与开奖结果 — 均在 blockchain 上公开可见。您的钱包地址、交易金额与时间戳可被任何人通过 Etherscan 等区块浏览器查看。这是去中心化协议的根本属性，并非隐私泄露。",
       "section3Title": "3. 前端分析",
@@ -517,7 +517,7 @@
       "title": "透明度面板",
       "subtitle": "每个数字均可在链上验证。以下是协议底层运作机制。",
       "contractTitle": "开源 smart contract",
-      "contractBody": "HybridRoSCA V2.1.1 合约完全开源，并在 Etherscan 上通过验证。任何人都可阅读源代码、审计逻辑，并验证奖金分配（995,350 / 3,650 / 1,000 的拆分）已硬编码且无法更改。合约继承了 OpenZeppelin 的 ReentrancyGuard、SafeERC20 与 Ownable — 安全 DeFi 代码的黄金标准。拥有者仅可在紧急情况下暂停合约并领取累积费用；他们无法访问用户存款或更改开奖机制。",
+      "contractBody": "1DollarMillion V2.1.1 合约完全开源，并在 Etherscan 上通过验证。任何人都可阅读源代码、审计逻辑，并验证奖金分配（995,350 / 3,650 / 1,000 的拆分）已硬编码且无法更改。合约继承了 OpenZeppelin 的 ReentrancyGuard、SafeERC20 与 Ownable — 安全 DeFi 代码的黄金标准。拥有者仅可在紧急情况下暂停合约并领取累积费用；他们无法访问用户存款或更改开奖机制。",
       "solvencyTitle": "偿付能力不变式",
       "solvencyBody": "协议维持严格的偿付能力不变式：总资产（原始 USDT + aUSDT）必须始终大于或等于总本金（用户余额 + 奖金池 + 锁定金额 + 费用）。这由合约的会计逻辑与开奖后修正块强制执行，必要时会将幻影收益重新归类为本金。您可随时通过调用 accountingSummary() 函数进行验证 — 若 solvencyGap 显示为绿色，则协议健康。",
       "yieldTitle": "Aave 收益如何资助额外抽奖",

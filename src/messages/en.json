@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "HybridRoSCA Lottery — Deposit USDT. Win $1,000,000. Never Lose Your Principal.",
+    "title": "1DollarMillion — Deposit USDT. Win $1,000,000. Never Lose Your Principal.",
     "description": "The world's first no-loss lottery powered by Aave V3 yield. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your principal is always safe."
   },
 
@@ -431,7 +431,7 @@
       "privacy": "Privacy Policy",
       "risk": "Risk Disclosure"
     },
-    "disclaimer": "HybridRoSCA Lottery is a decentralized protocol. Smart contract interactions carry inherent risk. Never deposit more than you can afford to lose. Past performance does not guarantee future results.",
+    "disclaimer": "1DollarMillion is a decentralized protocol. Smart contract interactions carry inherent risk. Never deposit more than you can afford to lose. Past performance does not guarantee future results.",
     "rights": "All rights reserved."
   },
 
@@ -466,11 +466,11 @@
     },
     "terms": {
       "title": "Terms of Service",
-      "subtitle": "The terms and conditions that govern your use of the HybridRoSCA Lottery protocol.",
+      "subtitle": "The terms and conditions that govern your use of the 1DollarMillion protocol.",
       "section1Title": "1. Acceptance of Terms",
-      "section1Body": "By connecting your wallet and interacting with the HybridRoSCA Lottery smart contract, you agree to these Terms of Service. If you do not agree, do not use the protocol. These terms constitute a binding agreement between you and the protocol.",
+      "section1Body": "By connecting your wallet and interacting with the 1DollarMillion smart contract, you agree to these Terms of Service. If you do not agree, do not use the protocol. These terms constitute a binding agreement between you and the protocol.",
       "section2Title": "2. Nature of the Protocol",
-      "section2Body": "HybridRoSCA Lottery is a decentralized, non-custodial smart contract protocol deployed on the Ethereum blockchain. The protocol has no central operator — all logic is executed by immutable smart contracts. The contract owner can only pause the protocol in emergencies and claim accumulated operational fees; they cannot access user deposits, alter the draw mechanism, or change the prize distribution.",
+      "section2Body": "1DollarMillion is a decentralized, non-custodial smart contract protocol deployed on the Ethereum blockchain. The protocol has no central operator — all logic is executed by immutable smart contracts. The contract owner can only pause the protocol in emergencies and claim accumulated operational fees; they cannot access user deposits, alter the draw mechanism, or change the prize distribution.",
       "section3Title": "3. User Responsibilities",
       "section3Body": "You are solely responsible for: (a) maintaining the security of your private keys and wallet; (b) ensuring you have sufficient ETH for gas fees; (c) understanding the risks of interacting with DeFi protocols; (d) complying with your local tax and regulatory obligations. The protocol does not custody your wallet or keys.",
       "section4Title": "4. No Warranties",
@@ -482,7 +482,7 @@
       "title": "Privacy Policy",
       "subtitle": "How we handle your data and respect your privacy.",
       "section1Title": "1. Decentralized by Design",
-      "section1Body": "HybridRoSCA Lottery is a fully decentralized protocol. There is no central server, no user database, and no account system. All data is stored on the public Ethereum blockchain. We do not collect, store, or process any personal information.",
+      "section1Body": "1DollarMillion is a fully decentralized protocol. There is no central server, no user database, and no account system. All data is stored on the public Ethereum blockchain. We do not collect, store, or process any personal information.",
       "section2Title": "2. On-Chain Transparency",
       "section2Body": "All transactions — deposits, withdrawals, deductions, and draw results — are publicly visible on the blockchain. Your wallet address, transaction amounts, and timestamps are visible to anyone via block explorers like Etherscan. This is a fundamental property of decentralized protocols, not a privacy breach.",
       "section3Title": "3. Frontend Analytics",
@@ -517,7 +517,7 @@
       "title": "Transparency Dashboard",
       "subtitle": "Every number is verifiable on-chain. Here's how the protocol works under the hood.",
       "contractTitle": "Open-Source Smart Contract",
-      "contractBody": "The HybridRoSCA V2.1.1 contract is fully open-source and verified on Etherscan. Anyone can read the source code, audit the logic, and verify that the prize distribution (995,350 / 3,650 / 1,000 split) is hardcoded and cannot be changed. The contract inherits OpenZeppelin's ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code. The owner can only pause the contract in emergencies and claim accumulated fees; they cannot access user deposits or alter the draw mechanism.",
+      "contractBody": "The 1DollarMillion V2.1.1 contract is fully open-source and verified on Etherscan. Anyone can read the source code, audit the logic, and verify that the prize distribution (995,350 / 3,650 / 1,000 split) is hardcoded and cannot be changed. The contract inherits OpenZeppelin's ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code. The owner can only pause the contract in emergencies and claim accumulated fees; they cannot access user deposits or alter the draw mechanism.",
       "solvencyTitle": "The Solvency Invariant",
       "solvencyBody": "The protocol maintains a strict solvency invariant: total assets (raw USDT + aUSDT) must always be greater than or equal to total principal (user balances + pool + locked amounts + fees). This is enforced by the contract's accounting logic and a post-draw fix-up block that reclassifies phantom yield as principal if needed. You can verify this at any time by calling the accountingSummary() function — if the solvencyGap is green, the protocol is healthy.",
       "yieldTitle": "How Aave Yield Funds Bonus Draws",

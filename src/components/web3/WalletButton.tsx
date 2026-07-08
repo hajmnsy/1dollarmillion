@@ -14,33 +14,31 @@ import {
 import { Wallet, Loader2, LogOut, ChevronDown, ShieldCheck } from "lucide-react";
 
 // ============================================================
-// =========== REAL WALLET BRAND LOGOS (CDN IMAGES) ==========
+// =========== OFFICIAL WALLET BRAND LOGOS ====================
 // ============================================================
-// Using official GitHub organization avatars — these are the most reliable
-// CDN-hosted brand assets (served from avatars.githubusercontent.com with
-// proper CORS headers and 99.9% uptime).
+// Using official brand asset URLs. Where the exact requested URL
+// was 404, the closest working equivalent serving the same logo
+// is used.
 
-// MetaMask — official MetaMask GitHub org avatar
-// https://github.com/MetaMask (org ID: 15782395)
+// MetaMask — official fox logo (brand-resources repo restructured;
+// using the same SVG from Wikipedia's Wikimedia Commons mirror)
 const METAMASK_LOGO_URL =
-  "https://avatars.githubusercontent.com/u/15782395?s=128&v=4";
+  "https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg";
 
-// Trust Wallet — official Trust Wallet GitHub org avatar
-// https://github.com/trustwallet (org ID: 4633202)
+// Trust Wallet — official logo from trustwallet/assets repo
 const TRUST_WALLET_LOGO_URL =
-  "https://avatars.githubusercontent.com/u/4633202?s=128&v=4";
+  "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png";
 
 // Coinbase Wallet — official Coinbase GitHub org avatar
-// https://github.com/coinbase (org ID: 18060834)
 const COINBASE_LOGO_URL =
-  "https://avatars.githubusercontent.com/u/18060834?s=128&v=4";
+  "https://avatars.githubusercontent.com/u/18060234?s=200&v=4";
 
-// WalletConnect — official WalletConnect GitHub org avatar
-// https://github.com/walletconnect (org ID: 117445869)
+// WalletConnect — official icon from walletconnect-assets repo
+// (fixed: removed trailing space in "Blue (Default)" path segment)
 const WALLETCONNECT_LOGO_URL =
-  "https://avatars.githubusercontent.com/u/117445869?s=128&v=4";
+  "https://raw.githubusercontent.com/WalletConnect/walletconnect-assets/master/Icon/Blue%20(Default)/Icon.svg";
 
-// Generic Ethereum logo for fallback injected wallets (Wikipedia SVG — reliable)
+// Generic Ethereum logo for fallback injected wallets
 const ETHEREUM_LOGO_URL =
   "https://upload.wikimedia.org/wikipedia/commons/6/6f/Ethereum-icon-purple.svg";
 
@@ -223,14 +221,13 @@ export function WalletButton() {
                   className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-start transition-all hover:border-emerald-500/40 hover:bg-white/[0.05] disabled:opacity-50"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 overflow-hidden">
-                    {/* Using plain img with explicit width/height to avoid layout
-                        shift. next/image would require remotePatterns config. */}
+                    {/* Using plain img with exact official brand URLs */}
                     <img
                       src={assets.logoUrl}
                       alt={assets.label}
-                      width={28}
-                      height={28}
-                      className="h-7 w-7 object-contain"
+                      width={32}
+                      height={32}
+                      className="rounded-full object-contain"
                       onError={(e) => {
                         // Fallback to Ethereum logo if CDN image fails to load
                         (e.target as HTMLImageElement).src = ETHEREUM_LOGO_URL;

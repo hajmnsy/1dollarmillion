@@ -64,14 +64,14 @@ const ssrSafeStorage = {
 const wagmiConfig = createConfig({
   chains,
   connectors: [
-    metaMask({ dappMetadata: { name: "HybridRoSCA Lottery" } }),
+    metaMask({ dappMetadata: { name: "1DollarMillion" } }),
     injected({ shimDisconnect: true }),
-    coinbaseWallet({ appName: "HybridRoSCA Lottery", headlessMode: false }),
+    coinbaseWallet({ appName: "1DollarMillion", headlessMode: false }),
     walletConnect({
       projectId,
       showQrModal: true,
       metadata: {
-        name: "HybridRoSCA Lottery",
+        name: "1DollarMillion",
         description: "Deposit USDT. Win $1,000,000. Never lose your principal.",
         url: "https://hybridrosca.xyz",
         icons: ["https://avatars.githubusercontent.com/u/179552466"],

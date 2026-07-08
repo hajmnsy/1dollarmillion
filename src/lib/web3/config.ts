@@ -10,7 +10,7 @@ import { walletConnect, injected, coinbaseWallet } from "wagmi/connectors";
 export const projectId = process.env.NEXT_PUBLIC_WC_PROJECT_ID || "DEMO_PROJECT_ID_REPLACE_ME";
 
 // Chains supported by the platform.
-// The HybridRoSCA contract is deployed on Ethereum mainnet (and L2s in future).
+// The 1DollarMillion contract is deployed on Ethereum mainnet (and L2s in future).
 export const supportedChains = [mainnet, polygon, arbitrum, optimism, base, bsc] as const;
 
 // Wagmi v2 config — uses cookie storage so SSR works correctly with Next.js.
@@ -19,7 +19,7 @@ export const wagmiConfig = createConfig({
   connectors: [
     walletConnect({ projectId, showQrModal: false }),
     injected({ shimDisconnect: true }),
-    coinbaseWallet({ appName: "HybridRoSCA Lottery" }),
+    coinbaseWallet({ appName: "1DollarMillion" }),
   ],
   storage: createStorage({ storage: cookieStorage }),
   ssr: true,
@@ -38,7 +38,7 @@ export const wagmiConfig = createConfig({
 export const chainImages: Record<number, string> = {};
 
 export const wagmiConfigMetadata = {
-  name: "HybridRoSCA Lottery",
+  name: "1DollarMillion",
   description: "Deposit USDT. Win $1,000,000. Never lose your principal.",
   url: "https://hybridrosca.xyz",
   icons: ["https://avatars.githubusercontent.com/u/179552466"],

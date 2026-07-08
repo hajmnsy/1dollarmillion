@@ -14,7 +14,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Logo size={28} showText={true} textClassName="text-sm" />
+            <Logo className="w-7 h-7" />
             <p className="mt-3 text-xs leading-relaxed text-white/50">
               {t("tagline")}
             </p>
@@ -75,7 +75,7 @@ export function SiteFooter() {
             {t("disclaimer")}
           </p>
           <p className="mt-3 text-xs text-white/30">
-            © {year} HybridRoSCA Lottery. {t("rights")}
+            © {year} 1DollarMillion. {t("rights")}
           </p>
         </div>
       </div>

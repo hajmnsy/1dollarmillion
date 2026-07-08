@@ -40,7 +40,7 @@ export const WINNER_LOCK_AMOUNT = 3_650n * TOKEN_DECIMALS_BI;
 export const WINNER_PAYOUT = 995_350n * TOKEN_DECIMALS_BI;
 
 // === Contract ABI (only the functions the frontend needs) ===========
-// Pruned from HybridRoscaLotteryV2.1.1 — read functions + write hooks.
+// Pruned from HybridRoscaLotteryV2.1.1 (1DollarMillion) — read functions + write hooks.
 // Adding only what the UI consumes keeps the bundle small.
 export const lotteryAbi = [
   {

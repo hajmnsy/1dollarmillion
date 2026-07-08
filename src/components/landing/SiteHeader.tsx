@@ -37,7 +37,7 @@ export function SiteHeader() {
           href="/"
           className="flex items-center transition-opacity hover:opacity-80"
         >
-          <Logo size={32} showText={true} textClassName="text-base" />
+          <Logo className="w-8 h-8" />
         </Link>
 
         {/* Desktop nav — mix of scroll + route links */}
