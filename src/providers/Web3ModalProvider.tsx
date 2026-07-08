@@ -102,6 +102,32 @@ const wagmiConfig = createConfig({
  *
  * Zero cost to the platform — WalletConnect Cloud is free up to massive volume.
  */
+
+// Polyfill indexedDB on the server — WalletConnect's storage layer references
+// `indexedDB` at module load time, which doesn't exist in Node. This silences
+// the "indexedDB is not defined" unhandled rejection that shows up as an error
+// overlay in Next.js dev mode.
+if (typeof window === "undefined" && typeof globalThis !== "undefined") {
+  try {
+    // @ts-ignore — assigning to a read-only global; cast to any
+    (globalThis as any).indexedDB =
+      (globalThis as any).indexedDB ||
+      {
+        open: () => ({
+          onupgradeneeded: null,
+          onsuccess: null,
+          onerror: null,
+          result: {},
+        }),
+        getItem: () => null,
+        setItem: () => {},
+        removeItem: () => {},
+      };
+  } catch {
+    // Silently ignore — the polyfill is best-effort
+  }
+}
+
 export function Web3ModalProvider({ children }: { children: ReactNode }) {
   const queryClient = useMemo(
     () =>

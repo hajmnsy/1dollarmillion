@@ -195,6 +195,14 @@
       "retryButton": "إعادة المحاولة"
     },
 
+    "network": {
+      "wrongChainTitle": "شبكة خاطئة",
+      "wrongChainDesc": "أنت متصل بـ {connectedChain}. هذا التطبيق يعمل على شبكة Sepolia التجريبية.",
+      "switchButton": "التبديل إلى Sepolia",
+      "switching": "جارٍ تبديل الشبكة...",
+      "alreadyConnected": "متصل بـ Sepolia"
+    },
+
     "withdraw": {
       "title": "سحب USDT",
       "subtitle": "اسحب أي مبلغ من رصيدك. بلا قيد — أموالك متاحة دائماً.",

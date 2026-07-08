@@ -34,6 +34,8 @@ import {
 } from "@/lib/contract/config";
 import { useUserUsdtBalance, formatUsd } from "@/hooks/useLottery";
 import { useDeposit, computeGasEfficiency, EST_GAS_COST_USD } from "@/hooks/useDeposit";
+import { useNetworkGuard } from "@/hooks/useNetworkGuard";
+import { NetworkSwitchBanner } from "@/components/dashboard/NetworkSwitchBanner";
 
 interface DepositModalProps {
   open: boolean;
@@ -80,6 +82,9 @@ export function DepositModal({
 
   // === Deposit hook ===
   const deposit = useDeposit(amountBigInt);
+
+  // === Network guard (chain mismatch detection) ===
+  const { isWrongChain } = useNetworkGuard();
 
   // === Derived days of activity ===
   const daysOfActivity = useMemo(() => {
@@ -171,6 +176,9 @@ export function DepositModal({
             />
           ) : (
             <>
+              {/* === Network Switch Banner (shows if on wrong chain) === */}
+              <NetworkSwitchBanner />
+
               {/* === Amount Input + Quick Select (Layer 1 & 2) === */}
               <div className="mb-5">
                 <div className="mb-2 flex items-center justify-between">
@@ -413,6 +421,7 @@ export function DepositModal({
                     onClick={handleApprove}
                     disabled={
                       !hasEnoughUsdt ||
+                      isWrongChain ||
                       deposit.step === "approving" ||
                       deposit.step === "depositing"
                     }
@@ -441,6 +450,7 @@ export function DepositModal({
                     onClick={handleDeposit}
                     disabled={
                       !hasEnoughUsdt ||
+                      isWrongChain ||
                       deposit.step === "approving" ||
                       deposit.step === "depositing"
                     }

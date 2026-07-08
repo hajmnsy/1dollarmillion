@@ -195,6 +195,14 @@
       "retryButton": "Retry"
     },
 
+    "network": {
+      "wrongChainTitle": "Wrong Network",
+      "wrongChainDesc": "You're connected to {connectedChain}. This app runs on Sepolia Testnet.",
+      "switchButton": "Switch to Sepolia",
+      "switching": "Switching network...",
+      "alreadyConnected": "Connected to Sepolia"
+    },
+
     "withdraw": {
       "title": "Withdraw USDT",
       "subtitle": "Withdraw any amount from your balance. No lock-up — your funds are always accessible.",

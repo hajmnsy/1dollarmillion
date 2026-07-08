@@ -26,6 +26,8 @@ import {
 } from "@/lib/contract/config";
 import { formatUsd } from "@/hooks/useLottery";
 import { useWithdraw, EST_WITHDRAW_GAS_USD } from "@/hooks/useWithdraw";
+import { useNetworkGuard } from "@/hooks/useNetworkGuard";
+import { NetworkSwitchBanner } from "@/components/dashboard/NetworkSwitchBanner";
 
 interface WithdrawModalProps {
   open: boolean;
@@ -62,6 +64,9 @@ export function WithdrawModal({
 
   // === Withdraw hook ===
   const withdraw = useWithdraw(amountBigInt);
+
+  // === Network guard (chain mismatch detection) ===
+  const { isWrongChain } = useNetworkGuard();
 
   // === Derived values ===
   const remainingBalance =
@@ -140,6 +145,9 @@ export function WithdrawModal({
             />
           ) : (
             <>
+              {/* === Network Switch Banner (shows if on wrong chain) === */}
+              <NetworkSwitchBanner />
+
               {/* === Amount Input === */}
               <div className="mb-5">
                 <div className="mb-2 flex items-center justify-between">
@@ -258,6 +266,7 @@ export function WithdrawModal({
                   onClick={handleWithdraw}
                   disabled={
                     !withdraw.canWithdraw ||
+                    isWrongChain ||
                     exceedsBalance ||
                     withdraw.step === "withdrawing"
                   }
