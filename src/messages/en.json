@@ -3,7 +3,6 @@
     "title": "1DollarMillion — Deposit USDT. Win $1,000,000. Never Lose Your Principal.",
     "description": "The world's first no-loss lottery powered by Aave V3 yield. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your principal is always safe."
   },
-
   "dashboard": {
     "title": "Your Dashboard",
     "subtitle": "Track your position, watch the pool grow, and stay ready for the next draw.",
@@ -11,7 +10,6 @@
     "walletNotConnectedDesc": "Once connected, you'll see your deposit balance, active status, and live pool progress in real time.",
     "connectButton": "Connect Wallet",
     "backHome": "Back to Home",
-
     "position": {
       "title": "My Position",
       "balance": "Balance",
@@ -37,7 +35,6 @@
       "inactiveNote": "Deposit USDT to re-enter the pool.",
       "drawInProgress": "Draw in progress — actions temporarily paused."
     },
-
     "pool": {
       "title": "Live Prize Pool",
       "subtitle": "Grows from $1/day deductions across all active users.",
@@ -51,7 +48,6 @@
       "drawsLabel": "Total Draws",
       "bonusDrawsLabel": "Bonus Draws"
     },
-
     "yield": {
       "title": "DeFi Yield Bonus Tracker",
       "subtitle": "Aave V3 interest earned on idle deposits — funds bonus draws.",
@@ -63,7 +59,6 @@
       "estimateReady": "READY TO DRAW",
       "yieldNote": "Yield accrues 24/7. When it reaches $1M, a bonus draw fires automatically."
     },
-
     "solvency": {
       "title": "Solvency Check",
       "healthy": "SOLVENT",
@@ -75,28 +70,23 @@
       "solvencyGap": "Solvency Gap",
       "viewOnEtherscan": "Verify on Etherscan"
     },
-
     "actions": {
       "syncState": "Sync My State",
       "syncStateDesc": "Apply pending daily deductions manually.",
       "syncing": "Syncing..."
     },
-
     "stats": {
       "yourOdds": "Your Odds",
       "yourOddsValue": "1 in {count}",
       "yourOddsPercent": "({percent}% chance per draw)",
       "yourOddsNote": "Deposits extend your lock-in duration, not your odds. Everyone has equal chance per draw."
     },
-
     "deposit": {
       "title": "Deposit USDT",
       "subtitle": "Add USDT to your balance. 1 USDT is deducted daily to keep you active.",
-
       "amountLabel": "Amount",
       "amountPlaceholder": "30.00",
       "maxButton": "Max",
-
       "quickSelect": {
         "label": "Quick select",
         "one": "1",
@@ -105,7 +95,6 @@
         "hundred": "100",
         "fiveHundred": "500"
       },
-
       "gasBadge": {
         "poor": "High Gas Overhead",
         "poorDesc": "You pay network fees too often",
@@ -116,7 +105,6 @@
         "optimal": "Optimal Gas Efficiency",
         "optimalDesc": "Covers 1 month of activity"
       },
-
       "explainer": {
         "title": "Why 30 USDT?",
         "body": "Every deposit costs ~$3 in gas (a fixed network fee). The amount you deposit doesn't change the gas cost.",
@@ -128,7 +116,6 @@
         "row3Value": "$3 gas = 3% overhead (covers 100 days of activity)",
         "conclusion": "30 USDT gives you ~30 days of active status at the lowest practical gas overhead. Larger deposits are even more efficient but lock more capital."
       },
-
       "costBreakdown": {
         "title": "Cost Breakdown",
         "depositAmount": "Deposit amount",
@@ -139,7 +126,6 @@
         "balanceAfter": "Balance after deposit",
         "activeUntil": "Active until"
       },
-
       "checklist": {
         "walletConnected": "Wallet connected",
         "usdtBalance": "USDT balance",
@@ -149,7 +135,6 @@
         "needsApproval": "needs approval",
         "ready": "ready"
       },
-
       "wizard": {
         "step1Title": "Approve USDT",
         "step1Desc": "Allow the contract to spend your USDT",
@@ -158,7 +143,6 @@
         "step1Confirming": "Waiting for confirmation...",
         "step1Success": "USDT approved",
         "step1Error": "Approval failed",
-
         "step2Title": "Confirm Deposit",
         "step2Desc": "Deposit USDT into the pool",
         "step2Button": "Confirm Deposit",
@@ -166,11 +150,9 @@
         "step2Confirming": "Waiting for confirmation...",
         "step2Success": "Deposit successful!",
         "step2Error": "Deposit failed",
-
         "skipApproval": "Approval not needed — proceeding to deposit",
         "currentStep": "Step {current} of {total}"
       },
-
       "success": {
         "title": "Deposit Successful!",
         "description": "Your USDT has been deposited and you're now active in the pool.",
@@ -179,7 +161,6 @@
         "viewOnEtherscan": "View on Etherscan",
         "closeButton": "Close"
       },
-
       "errors": {
         "insufficientBalance": "Insufficient USDT balance in your wallet",
         "insufficientGas": "Insufficient ETH for gas",
@@ -189,12 +170,10 @@
         "drawInProgress": "A draw is in progress — please wait",
         "winnerCannotReenter": "You've already won and cannot re-enter"
       },
-
       "agreeNote": "By depositing, you agree to the Terms of Service and Risk Disclosure.",
       "closeButton": "Close",
       "retryButton": "Retry"
     },
-
     "network": {
       "wrongChainTitle": "Wrong Network",
       "wrongChainDesc": "You're connected to {connectedChain}. This app runs on Sepolia Testnet.",
@@ -202,20 +181,16 @@
       "switching": "Switching network...",
       "alreadyConnected": "Connected to Sepolia"
     },
-
     "withdraw": {
       "title": "Withdraw USDT",
       "subtitle": "Withdraw any amount from your balance. No lock-up — your funds are always accessible.",
-
       "amountLabel": "Amount to withdraw",
       "amountPlaceholder": "0.00",
       "maxButton": "Max",
-
       "lowBalanceWarning": {
         "title": "Warning: Low balance after withdrawal",
         "body": "Your balance will drop below 1 USDT. You will be marked as Inactive and excluded from the daily Million Dollar draws. Deposit again to re-enter the pool."
       },
-
       "costBreakdown": {
         "title": "Withdrawal Summary",
         "withdrawAmount": "Amount to withdraw",
@@ -224,13 +199,11 @@
         "estGasCost": "Est. gas cost",
         "activeAfter": "Active for"
       },
-
       "statusAfter": {
         "active": "Active",
         "inactive": "Inactive",
         "activeForDays": "{days} days"
       },
-
       "wizard": {
         "title": "Confirm Withdrawal",
         "desc": "Withdraw USDT from your balance to your wallet",
@@ -240,7 +213,6 @@
         "success": "Withdrawal successful!",
         "error": "Withdrawal failed"
       },
-
       "success": {
         "title": "Withdrawal Successful!",
         "description": "Your USDT has been sent to your wallet.",
@@ -249,7 +221,6 @@
         "viewOnEtherscan": "View on Etherscan",
         "closeButton": "Close"
       },
-
       "errors": {
         "insufficientBalance": "Insufficient balance in your position",
         "insufficientGas": "Insufficient ETH for gas",
@@ -258,18 +229,15 @@
         "contractPaused": "Contract is currently paused",
         "drawInProgress": "A draw is in progress — please wait"
       },
-
       "agreeNote": "By withdrawing, you agree to the Terms of Service and Risk Disclosure.",
       "closeButton": "Close",
       "retryButton": "Retry"
     },
-
     "activity": {
       "title": "Recent Activity",
       "subtitle": "Your latest deposits, deductions, and withdrawals",
       "empty": "No activity yet. Make your first deposit to see your history here.",
       "viewAll": "View all",
-
       "types": {
         "deposit": "Deposit",
         "withdraw": "Withdrawal",
@@ -278,7 +246,6 @@
         "lockDrip": "Lock drip",
         "sync": "State sync"
       },
-
       "descriptions": {
         "deposit": "Deposited {amount}",
         "withdraw": "Withdrew {amount}",
@@ -287,12 +254,10 @@
         "lockDrip": "Lock dripped: {amount}",
         "sync": "State synced"
       },
-
       "drawTypes": {
         "regular": "Million Dollar",
         "bonus": "Bonus"
       },
-
       "timestamps": {
         "justNow": "Just now",
         "minutesAgo": "{minutes}m ago",
@@ -300,14 +265,12 @@
         "yesterday": "Yesterday",
         "daysAgo": "{days}d ago"
       },
-
       "statuses": {
         "confirmed": "Confirmed",
         "pending": "Pending"
       }
     }
   },
-
   "nav": {
     "howItWorks": "How It Works",
     "transparency": "Transparency",
@@ -317,7 +280,6 @@
     "connect": "Connect Wallet",
     "connectShort": "Connect"
   },
-
   "wallet": {
     "connect": "Connect Wallet",
     "connectShort": "Connect",
@@ -325,7 +287,6 @@
     "wrongNetwork": "Wrong Network",
     "switchNetwork": "Switch to Ethereum"
   },
-
   "hero": {
     "badge": "Powered by Chainlink VRF + Aave V3",
     "titleLine1": "Deposit USDT.",
@@ -344,7 +305,6 @@
     "trustLine": "Backed by Chainlink VRF · Aave V3 · OpenZeppelin",
     "minDepositNote": "Start with as little as $1 USDT"
   },
-
   "howItWorks": {
     "title": "How It Works",
     "subtitle": "Three simple steps between you and life-changing wealth — with your principal never at risk.",
@@ -358,7 +318,6 @@
     "bonusDescription": "Your idle deposits earn yield on Aave V3. When that yield alone reaches $1,000,000, an additional bonus draw fires — same prize, same fairness, no extra cost to you. You're automatically entered into both draws.",
     "bonusBadge": "Free Money"
   },
-
   "transparency": {
     "title": "Radical Transparency. Verifiable Solvency.",
     "subtitle": "Every number on this platform is read live from the blockchain. Verify anything you see here in under 3 clicks — on Etherscan, on Aave, on Chainlink.",
@@ -377,7 +336,6 @@
     "viewOnAave": "View on Aave",
     "verifyVRF": "Verify on Chainlink"
   },
-
   "trust": {
     "title": "Built on the Most Trusted Infrastructure in Web3",
     "subtitle": "We use industry-grade security primitives so you can sleep at night.",
@@ -390,7 +348,6 @@
     "auditTitle": "Audit Ready",
     "auditDesc": "Contract source code is verified on Etherscan and ready for third-party audit. We are transparent because we have nothing to hide."
   },
-
   "stats": {
     "totalDisbursed": "Total Disbursed to Winners",
     "totalDisbursedValue": "$4,976,750",
@@ -401,14 +358,12 @@
     "avgApy": "Current Aave APY",
     "avgApyValue": "4.32%"
   },
-
   "finalCta": {
     "title": "Your money is waiting.",
     "subtitle": "Join 12,847 users already in the pool. Deposit as little as $1 USDT — or $30 for optimal gas efficiency — and you could be the next $995,350 winner.",
     "button": "Deposit & Enter Now",
     "guarantee": "100% principal protected · No lock-up · Withdraw anytime"
   },
-
   "footer": {
     "tagline": "The world's first hybrid ROSCA + No-Loss Lottery, powered by DeFi.",
     "product": "Product",
@@ -434,7 +389,6 @@
     "disclaimer": "1DollarMillion is a decentralized protocol. Smart contract interactions carry inherent risk. Never deposit more than you can afford to lose. Past performance does not guarantee future results.",
     "rights": "All rights reserved."
   },
-
   "languageSwitcher": {
     "label": "Language",
     "en": "English",
@@ -446,7 +400,6 @@
     "ru": "Русский",
     "pt": "Português"
   },
-
   "legalPages": {
     "faq": {
       "title": "Frequently Asked Questions",
@@ -524,6 +477,48 @@
       "yieldBody": "When you deposit USDT, the contract keeps a 5% liquidity buffer in raw USDT (for instant withdrawals) and supplies the rest to Aave V3. Aave mints interest-bearing aUSDT to the contract, which accrues yield 24/7. The contract tracks 'principal supplied' separately from 'yield earned' (yield = aUSDT balance − principal supplied). When yield alone reaches $1,000,000, a bonus draw fires automatically — same Chainlink VRF selection, same $995,350 prize. Your principal is never at risk; only the interest is paid out."
     },
     "backHome": "Back to Home",
-    "comingSoon": "This page is under construction. Full content will be added soon."
+    "comingSoon": "This page is under construction. Full content will be added soon.",
+    "docs": {
+      "title": "Documentation",
+      "subtitle": "The complete technical documentation for the 1DollarMillion protocol.",
+      "section1Title": "1. Protocol Overview",
+      "section1Body": "The 1DollarMillion protocol is a no-loss lottery running on the Ethereum network. The protocol combines a Rotating Savings and Credit Association (ROSCA) with DeFi yield from Aave V3 to create a prize pool that grows automatically. When the pool reaches $1,000,000, a winner is selected randomly via Chainlink VRF.",
+      "section2Title": "2. Tokenomics",
+      "section2Body": "The contract deducts 1 USDT per day from each active user to keep them eligible for the draw. These deductions feed the prize pool. At the same time, idle deposits are invested in Aave V3 to generate yield that funds additional bonus draws.",
+      "section3Title": "3. Prize Distribution",
+      "section3Body": "When a draw completes, the $1,000,000 is distributed as follows: $995,350 to the winner, $3,650 locked for 10 years, $1,000 operational fee. No hidden fees.",
+      "section4Title": "4. Contract Addresses",
+      "section4Body": "Main contract: 0x94C7099665f061658c8e2C07afBa617392e5B716 (Sepolia). USDT: 0xC8A1b8558001Db2cc8042e6a98Bae25bD985B9d3. Verify the full source code on Etherscan.",
+      "section5Title": "5. Frontend Integration",
+      "section5Body": "The frontend is built with Next.js 16 + wagmi v2 + viem. Use the pruned ABI from lib/contract/config.ts to read contract data. All read calls target Sepolia (Chain ID: 11155111)."
+    },
+    "audit": {
+      "title": "Audit Report",
+      "subtitle": "Security audit status for the 1DollarMillion protocol.",
+      "section1Title": "1. Audit Status",
+      "section1Body": "The smart contract is ready for third-party audit. It uses OpenZeppelin battle-tested libraries and follows the Checks-Effects-Interactions pattern. A formal audit by an external firm will be conducted before mainnet launch.",
+      "section2Title": "2. Security Features",
+      "section2Body": "The contract includes: ReentrancyGuard to prevent reentrancy attacks, SafeERC20 for safe token transfers, Ownable for admin control. A solvency fix-up block runs after each draw to maintain the solvencyGap >= yield invariant.",
+      "section3Title": "3. Foundry Tests",
+      "section3Body": "40+ Foundry tests have been written covering: normal flow, yield flow, edge cases (zero-buffer withdrawal, dual-draw race), and invariants (solvency). All tests pass.",
+      "section4Title": "4. Etherscan Verification",
+      "section4Body": "The contract source code is verified on Etherscan Sepolia. Anyone can review the logic and verify that the prize distribution is hardcoded and cannot be changed.",
+      "section5Title": "5. Bug Bounty",
+      "section5Body": "A bug bounty program will be launched after the formal audit. Follow the GitHub page for updates."
+    },
+    "github": {
+      "title": "GitHub Repository",
+      "subtitle": "The open-source repository for the 1DollarMillion protocol.",
+      "section1Title": "1. Open Source Status",
+      "section1Body": "The smart contract is fully open-source and verified on Etherscan. The public GitHub repository will be published soon with full license and README files.",
+      "section2Title": "2. Tech Stack",
+      "section2Body": "Smart Contract: Solidity 0.8.20 + OpenZeppelin v5 + Chainlink VRF v2. Frontend: Next.js 16 + TypeScript + Tailwind CSS + wagmi v2. Tests: Foundry (40+ tests). Deployment: Sepolia Testnet.",
+      "section3Title": "3. Contributing",
+      "section3Body": "Community contributions are welcome. Contribution guidelines will be published with the public repo. Bug reports can be submitted via the Audit Report page.",
+      "section4Title": "4. License",
+      "section4Body": "The smart contract is licensed under MIT. The frontend is licensed separately. Full details will be in the LICENSE file upon publication.",
+      "section5Title": "5. Community",
+      "section5Body": "Join the 1DollarMillion community. Discord and Telegram channels will be announced soon. For technical questions, see the FAQ page."
+    }
   }
 }
