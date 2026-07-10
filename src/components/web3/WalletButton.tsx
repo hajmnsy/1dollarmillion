@@ -14,68 +14,61 @@ import {
 import { Wallet, LogOut, ChevronDown, ShieldCheck } from "lucide-react";
 
 // ============================================================
-// =========== OFFICIAL WALLET BRAND LOGOS ====================
+// =========== WALLET LOGO URLS (CDN, no CSP blocking) =======
 // ============================================================
+// MetaMask: Wikimedia (no CSP, confirmed working)
+// Trust Wallet: jsDelivr CDN (proxies GitHub, no CSP blocking)
+// WalletConnect: jsDelivr CDN (proxies GitHub, no CSP blocking)
+// Coinbase: inline SVG (no external dependency)
 
 const METAMASK_LOGO_URL =
-  "https://avatars.githubusercontent.com/u/15782395?s=128&v=4";
+  "https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg";
+
 const TRUST_WALLET_LOGO_URL =
-  "https://avatars.githubusercontent.com/u/4633202?s=128&v=4";
-const COINBASE_LOGO_URL =
-  "https://avatars.githubusercontent.com/u/18060234?s=200&v=4";
+  "https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/ethereum/info/logo.png";
+
 const WALLETCONNECT_LOGO_URL =
-  "https://avatars.githubusercontent.com/u/117445869?s=128&v=4";
+  "https://cdn.jsdelivr.net/gh/WalletConnect/walletconnect-assets@master/Icon/Blue%20(Default)/Icon.svg";
 
 // ============================================================
-// ====== INLINE SVG FALLBACKS (guaranteed to render) =========
+// ====== INLINE SVG LOGOS (guaranteed to render) =============
 // ============================================================
+// Used as primary for Coinbase, and as fallback for all others.
 
-function MetaMaskFallback() {
+function MetaMaskSvg() {
   return (
     <svg viewBox="0 0 32 32" className="h-8 w-8">
       <circle cx="16" cy="16" r="16" fill="#F6851B" />
-      <path
-        d="M21.5 8.5l-3 2.5L16 9l-2.5 2L10.5 8.5 9 22l5-3.5L16 21l2-2.5 5 3.5-1.5-13z"
-        fill="#fff"
-      />
+      <path d="M21.5 8.5l-3 2.5L16 9l-2.5 2L10.5 8.5 9 22l5-3.5L16 21l2-2.5 5 3.5-1.5-13z" fill="#fff" />
     </svg>
   );
 }
 
-function TrustWalletFallback() {
+function TrustWalletSvg() {
   return (
     <svg viewBox="0 0 32 32" className="h-8 w-8">
       <circle cx="16" cy="16" r="16" fill="#0C8CE9" />
-      <path
-        d="M16 6L9 9v6c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V9l-7-3z"
-        fill="#fff"
-      />
+      <path d="M16 6L9 9v6c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V9l-7-3z" fill="#fff" />
     </svg>
   );
 }
 
-function CoinbaseFallback() {
+function WalletConnectSvg() {
+  return (
+    <svg viewBox="0 0 32 32" className="h-8 w-8">
+      <circle cx="16" cy="16" r="16" fill="#3B99FC" />
+      <path d="M10.5 12.3c3.03-2.97 7.94-2.97 10.97 0l.36.36c.15.15.15.39 0 .53l-1.25 1.22c-.07.07-.2.07-.27 0l-.5-.49c-2.12-2.07-5.55-2.07-7.66 0l-.53.52c-.07.07-.2.07-.27 0l-1.25-1.22a.36.36 0 010-.53l.4-.39z" fill="#fff" />
+      <path d="M23.05 14.8l1.11 1.08c.15.15.15.39 0 .53l-5.01 4.9c-.15.14-.39.14-.54 0l-3.56-3.48a.1.1 0 00-.14 0l-3.56 3.48c-.15.14-.39.14-.54 0l-5.01-4.9a.36.36 0 010-.53l1.11-1.08a.4.4 0 01.54 0l3.56 3.48a.1.1 0 00.14 0l3.55-3.48a.4.4 0 01.55 0l3.55 3.48a.1.1 0 00.14 0l3.56-3.48a.4.4 0 01.55 0z" fill="#fff" />
+    </svg>
+  );
+}
+
+function CoinbaseSvg() {
   return (
     <svg viewBox="0 0 32 32" className="h-8 w-8">
       <circle cx="16" cy="16" r="16" fill="#0052FF" />
       <circle cx="16" cy="16" r="6" fill="none" stroke="#fff" strokeWidth="2.5" />
       <rect x="14.75" y="6" width="2.5" height="6" fill="#fff" />
-    </svg>
-  );
-}
-
-function WalletConnectFallback() {
-  return (
-    <svg viewBox="0 0 32 32" className="h-8 w-8">
-      <circle cx="16" cy="16" r="16" fill="#3B99FC" />
-      <path
-        d="M10.5 12.3c3.03-2.97 7.94-2.97 10.97 0l.36.36c.15.15.15.39 0 .53l-1.25 1.22c-.07.07-.2.07-.27 0l-.5-.49c-2.12-2.07-5.55-2.07-7.66 0l-.53.52c-.07.07-.2.07-.27 0l-1.25-1.22a.36.36 0 010-.53l.4-.39z"
-        fill="#fff"
-      />
-      <path
-        d="M23.05 14.8l1.11 1.08c.15.15.15.39 0 .53l-5.01 4.9c-.15.14-.39.14-.54 0l-3.56-3.48a.1.1 0 00-.14 0l-3.56 3.48c-.15.14-.39.14-.54 0l-5.01-4.9a.36.36 0 010-.53l1.11-1.08a.4.4 0 01.54 0l3.56 3.48a.1.1 0 00.14 0l3.55-3.48a.4.4 0 01.55 0l3.55 3.48a.1.1 0 00.14 0l3.56-3.48a.4.4 0 01.55 0z"
-        fill="#fff"
-      />
     </svg>
   );
 }
@@ -88,13 +81,19 @@ function WalletImage({
   src,
   fallback,
   alt,
+  useSvgFirst = false,
 }: {
-  src: string;
+  src?: string;
   fallback: React.ReactNode;
   alt: string;
+  useSvgFirst?: boolean;
 }) {
-  const [errored, setErrored] = useState(false);
-  if (errored) return <>{fallback}</>;
+  const [useFallback, setUseFallback] = useState(useSvgFirst);
+
+  if (useFallback || !src) {
+    return <>{fallback}</>;
+  }
+
   return (
     <img
       src={src}
@@ -102,7 +101,7 @@ function WalletImage({
       width={32}
       height={32}
       className="rounded-full object-contain"
-      onError={() => setErrored(true)}
+      onError={() => setUseFallback(true)}
     />
   );
 }
@@ -115,8 +114,9 @@ interface WalletOption {
   key: string;
   label: string;
   desc: string;
-  logoUrl: string;
+  logoUrl?: string;
   fallback: React.ReactNode;
+  useSvgFirst: boolean;
   badge: string | null;
   findConnector: (connectors: any[]) => any | undefined;
 }
@@ -127,7 +127,8 @@ const WALLET_OPTIONS: WalletOption[] = [
     label: "MetaMask",
     desc: "The most popular Web3 wallet",
     logoUrl: METAMASK_LOGO_URL,
-    fallback: <MetaMaskFallback />,
+    fallback: <MetaMaskSvg />,
+    useSvgFirst: false,
     badge: null,
     findConnector: (c) => c.find((x) => x.id.includes("metaMask") || x.id === "injected"),
   },
@@ -136,7 +137,8 @@ const WALLET_OPTIONS: WalletOption[] = [
     label: "Trust Wallet",
     desc: "Connect with Trust Wallet",
     logoUrl: TRUST_WALLET_LOGO_URL,
-    fallback: <TrustWalletFallback />,
+    fallback: <TrustWalletSvg />,
+    useSvgFirst: false,
     badge: null,
     findConnector: (c) => c.find((x) => x.id.includes("trust") || x.id === "injected"),
   },
@@ -145,7 +147,8 @@ const WALLET_OPTIONS: WalletOption[] = [
     label: "WalletConnect",
     desc: "Scan with 300+ wallets",
     logoUrl: WALLETCONNECT_LOGO_URL,
-    fallback: <WalletConnectFallback />,
+    fallback: <WalletConnectSvg />,
+    useSvgFirst: false,
     badge: "300+",
     findConnector: (c) => c.find((x) => x.id.includes("walletConnect") || x.id.includes("walletconnect")),
   },
@@ -153,8 +156,9 @@ const WALLET_OPTIONS: WalletOption[] = [
     key: "coinbase",
     label: "Coinbase Wallet",
     desc: "Connect with Coinbase Wallet",
-    logoUrl: COINBASE_LOGO_URL,
-    fallback: <CoinbaseFallback />,
+    logoUrl: undefined,
+    fallback: <CoinbaseSvg />,
+    useSvgFirst: true,
     badge: null,
     findConnector: (c) => c.find((x) => x.id.includes("coinbase") || x.id.includes("Coinbase")),
   },
@@ -163,14 +167,6 @@ const WALLET_OPTIONS: WalletOption[] = [
 // ============================================================
 // =========== BULLETPROOF WalletButton =======================
 // ============================================================
-// Uses a strict useEffect mount guard. Returns null during SSR
-// and the first client render. After mount, renders the real
-// button. This completely eliminates hydration mismatches.
-//
-// CRITICAL: No spinner. The button is always enabled. We never
-// show isConnecting/isReconnecting as a disabled spinner state
-// because wagmi can get stuck in those states permanently when
-// WalletConnect fails to initialize, causing an infinite loop.
 
 export function WalletButton() {
   const [mounted, setMounted] = useState(false);
@@ -179,11 +175,7 @@ export function WalletButton() {
     setMounted(true);
   }, []);
 
-  // During SSR and first client render: return null
-  // This prevents any hydration mismatch because the server
-  // renders nothing, and the client's first render also renders
-  // nothing. The real button appears after mount.
-  if (!mounted) return null;
+  if (!mounted) return <div className="w-32 h-10 bg-gray-800 rounded-md"></div>;
 
   return <WalletButtonClient />;
 }
@@ -315,6 +307,7 @@ function WalletButtonClient() {
                       src={option.logoUrl}
                       fallback={option.fallback}
                       alt={option.label}
+                      useSvgFirst={option.useSvgFirst}
                     />
                   </div>
                   <div className="flex-1">
@@ -344,7 +337,7 @@ function WalletButtonClient() {
           )}
 
           <p className="mt-4 text-center text-xs text-white/40">
-            {t("connectShort") === "ربطل"
+            {t("connectShort") === "ربط"
               ? "بإجراء الربط، فإنك توافق على شروط الخدمة وإفصاح المخاطر."
               : "By connecting, you agree to the Terms of Service and Risk Disclosure."}
           </p>
