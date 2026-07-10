@@ -14,109 +14,66 @@ import {
 import { Wallet, LogOut, ChevronDown, ShieldCheck } from "lucide-react";
 
 // ============================================================
-// =========== WALLET LOGO URLS (CDN, no CSP blocking) =======
+// ====== PURE INLINE SVG WALLET LOGOS (no external URLs) =====
 // ============================================================
-// MetaMask: Wikimedia (no CSP, confirmed working)
-// Trust Wallet: jsDelivr CDN (proxies GitHub, no CSP blocking)
-// WalletConnect: jsDelivr CDN (proxies GitHub, no CSP blocking)
-// Coinbase: inline SVG (no external dependency)
+// 100% reliable. No CSP issues, no broken links, no network
+// dependencies. These are simplified but recognizable brand
+// marks rendered as inline SVG paths.
 
-const METAMASK_LOGO_URL =
-  "https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg";
-
-const TRUST_WALLET_LOGO_URL =
-  "https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/ethereum/info/logo.png";
-
-const WALLETCONNECT_LOGO_URL =
-  "https://cdn.jsdelivr.net/gh/WalletConnect/walletconnect-assets@master/Icon/Blue%20(Default)/Icon.svg";
-
-// ============================================================
-// ====== INLINE SVG LOGOS (guaranteed to render) =============
-// ============================================================
-// Used as primary for Coinbase, and as fallback for all others.
-
-function MetaMaskSvg() {
+function MetaMaskIcon({ size = 32 }: { size?: number }) {
   return (
-    <svg viewBox="0 0 32 32" className="h-8 w-8">
-      <circle cx="16" cy="16" r="16" fill="#F6851B" />
-      <path d="M21.5 8.5l-3 2.5L16 9l-2.5 2L10.5 8.5 9 22l5-3.5L16 21l2-2.5 5 3.5-1.5-13z" fill="#fff" />
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M27.86 4l-8.06 6.02L21.18 6 27.86 4z" fill="#E2761B"/>
+      <path d="M4.14 4l8 6.04L10.74 6 4.14 4z" fill="#E4761B"/>
+      <path d="M24.18 22.42l-2.15 3.3 4.6 1.27 1.32-4.5-3.77-.07zm-17.72.07l1.31 4.5 4.6-1.27-2.14-3.3-3.77.07z" fill="#E4761B"/>
+      <path d="M9.92 14.26l-1.28 1.93 4.57.2-.16-4.93-3.13 2.8zm12.16 0l-3.2-2.86-.1 4.97 4.55-.2-1.25-1.91z" fill="#E4761B"/>
+      <path d="M5.62 21.42l2.55 4.32 4.84-2.16-2.6-3.18-4.79 1.02zm15.36-.02l-4.79-1.04-2.6 3.2 4.85 2.16 2.54-4.32z" fill="#F6851B"/>
+      <path d="M13.01 25.74l3-.02.79-4.35-4.57-.4.78 4.77z" fill="#763D16"/>
+      <path d="M19.4 26.04l-2.94-3.04-1.94.6 1.95.69.79 1.74.69-.16-1.36-1.62 2.81 1.79zm-7.16-2.04l.79.16.69-1.74 1.95-.69-1.94-.6-2.94 3.04 2.81-1.79-1.36 1.62z" fill="#F6851B"/>
+      <path d="M16.69 24.18l1.36 1.62-1.93-.4-.7 1.4-.71-1.4-1.94.4 1.36-1.62-2.81 1.79 4.05 2.4 4.06-2.4-2.74-1.79z" fill="#E2761B"/>
+      <path d="M27.86 4l-8.06 6.02L21.18 6l6.68-2z" fill="#E2761B" opacity="0.8"/>
     </svg>
   );
 }
 
-function TrustWalletSvg() {
+function TrustWalletIcon({ size = 32 }: { size?: number }) {
   return (
-    <svg viewBox="0 0 32 32" className="h-8 w-8">
-      <circle cx="16" cy="16" r="16" fill="#0C8CE9" />
-      <path d="M16 6L9 9v6c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V9l-7-3z" fill="#fff" />
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="16" fill="#0C8CE9"/>
+      <path d="M16 6L9 9v6c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V9l-7-3z" fill="#fff"/>
+      <path d="M16 6L9 9v6c0 4.5 3 8.5 7 10V6z" fill="#fff" fillOpacity="0.7"/>
     </svg>
   );
 }
 
-function WalletConnectSvg() {
+function WalletConnectIcon({ size = 32 }: { size?: number }) {
   return (
-    <svg viewBox="0 0 32 32" className="h-8 w-8">
-      <circle cx="16" cy="16" r="16" fill="#3B99FC" />
-      <path d="M10.5 12.3c3.03-2.97 7.94-2.97 10.97 0l.36.36c.15.15.15.39 0 .53l-1.25 1.22c-.07.07-.2.07-.27 0l-.5-.49c-2.12-2.07-5.55-2.07-7.66 0l-.53.52c-.07.07-.2.07-.27 0l-1.25-1.22a.36.36 0 010-.53l.4-.39z" fill="#fff" />
-      <path d="M23.05 14.8l1.11 1.08c.15.15.15.39 0 .53l-5.01 4.9c-.15.14-.39.14-.54 0l-3.56-3.48a.1.1 0 00-.14 0l-3.56 3.48c-.15.14-.39.14-.54 0l-5.01-4.9a.36.36 0 010-.53l1.11-1.08a.4.4 0 01.54 0l3.56 3.48a.1.1 0 00.14 0l3.55-3.48a.4.4 0 01.55 0l3.55 3.48a.1.1 0 00.14 0l3.56-3.48a.4.4 0 01.55 0z" fill="#fff" />
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="16" fill="#3B99FC"/>
+      <path d="M10.5 12.3c3.03-2.97 7.94-2.97 10.97 0l.36.36c.15.15.15.39 0 .53l-1.25 1.22c-.07.07-.2.07-.27 0l-.5-.49c-2.12-2.07-5.55-2.07-7.66 0l-.53.52c-.07.07-.2.07-.27 0l-1.25-1.22a.36.36 0 010-.53l.4-.39z" fill="#fff"/>
+      <path d="M23.05 14.8l1.11 1.08c.15.15.15.39 0 .53l-5.01 4.9c-.15.14-.39.14-.54 0l-3.56-3.48a.1.1 0 00-.14 0l-3.56 3.48c-.15.14-.39.14-.54 0l-5.01-4.9a.36.36 0 010-.53l1.11-1.08a.4.4 0 01.54 0l3.56 3.48a.1.1 0 00.14 0l3.55-3.48a.4.4 0 01.55 0l3.55 3.48a.1.1 0 00.14 0l3.56-3.48a.4.4 0 01.55 0z" fill="#fff"/>
     </svg>
   );
 }
 
-function CoinbaseSvg() {
+function CoinbaseIcon({ size = 32 }: { size?: number }) {
   return (
-    <svg viewBox="0 0 32 32" className="h-8 w-8">
-      <circle cx="16" cy="16" r="16" fill="#0052FF" />
-      <circle cx="16" cy="16" r="6" fill="none" stroke="#fff" strokeWidth="2.5" />
-      <rect x="14.75" y="6" width="2.5" height="6" fill="#fff" />
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="16" fill="#0052FF"/>
+      <path d="M16 6c-5.25 0-9.5 4.25-9.5 9.5 0 5.06 3.97 9.19 8.97 9.49v-6.5H12.5V16h2.97v-2.4c0-2.93 1.78-4.55 4.42-4.55 1.28 0 2.62.23 2.62.23v2.88h-1.48c-1.45 0-1.91.9-1.91 1.83V16h3.25l-.52 2.99h-2.73v6.5c5-.3 8.97-4.43 8.97-9.49 0-5.25-4.25-9.5-9.5-9.5z" fill="#fff"/>
     </svg>
   );
 }
 
 // ============================================================
-// ====== WALLET IMAGE (img with SVG fallback) ================
-// ============================================================
-
-function WalletImage({
-  src,
-  fallback,
-  alt,
-  useSvgFirst = false,
-}: {
-  src?: string;
-  fallback: React.ReactNode;
-  alt: string;
-  useSvgFirst?: boolean;
-}) {
-  const [useFallback, setUseFallback] = useState(useSvgFirst);
-
-  if (useFallback || !src) {
-    return <>{fallback}</>;
-  }
-
-  return (
-    <img
-      src={src}
-      alt={alt}
-      width={32}
-      height={32}
-      className="rounded-full object-contain"
-      onError={() => setUseFallback(true)}
-    />
-  );
-}
-
-// ============================================================
-// ====== HARDCODED WALLET OPTIONS ============================
+// ====== WALLET OPTION DEFINITIONS ===========================
 // ============================================================
 
 interface WalletOption {
   key: string;
   label: string;
   desc: string;
-  logoUrl?: string;
-  fallback: React.ReactNode;
-  useSvgFirst: boolean;
+  icon: React.ReactNode;
   badge: string | null;
   findConnector: (connectors: any[]) => any | undefined;
 }
@@ -126,9 +83,7 @@ const WALLET_OPTIONS: WalletOption[] = [
     key: "metamask",
     label: "MetaMask",
     desc: "The most popular Web3 wallet",
-    logoUrl: METAMASK_LOGO_URL,
-    fallback: <MetaMaskSvg />,
-    useSvgFirst: false,
+    icon: <MetaMaskIcon size={32} />,
     badge: null,
     findConnector: (c) => c.find((x) => x.id.includes("metaMask") || x.id === "injected"),
   },
@@ -136,9 +91,7 @@ const WALLET_OPTIONS: WalletOption[] = [
     key: "trust",
     label: "Trust Wallet",
     desc: "Connect with Trust Wallet",
-    logoUrl: TRUST_WALLET_LOGO_URL,
-    fallback: <TrustWalletSvg />,
-    useSvgFirst: false,
+    icon: <TrustWalletIcon size={32} />,
     badge: null,
     findConnector: (c) => c.find((x) => x.id.includes("trust") || x.id === "injected"),
   },
@@ -146,9 +99,7 @@ const WALLET_OPTIONS: WalletOption[] = [
     key: "walletconnect",
     label: "WalletConnect",
     desc: "Scan with 300+ wallets",
-    logoUrl: WALLETCONNECT_LOGO_URL,
-    fallback: <WalletConnectSvg />,
-    useSvgFirst: false,
+    icon: <WalletConnectIcon size={32} />,
     badge: "300+",
     findConnector: (c) => c.find((x) => x.id.includes("walletConnect") || x.id.includes("walletconnect")),
   },
@@ -156,9 +107,7 @@ const WALLET_OPTIONS: WalletOption[] = [
     key: "coinbase",
     label: "Coinbase Wallet",
     desc: "Connect with Coinbase Wallet",
-    logoUrl: undefined,
-    fallback: <CoinbaseSvg />,
-    useSvgFirst: true,
+    icon: <CoinbaseIcon size={32} />,
     badge: null,
     findConnector: (c) => c.find((x) => x.id.includes("coinbase") || x.id.includes("Coinbase")),
   },
@@ -167,6 +116,17 @@ const WALLET_OPTIONS: WalletOption[] = [
 // ============================================================
 // =========== BULLETPROOF WalletButton =======================
 // ============================================================
+//
+// The entire component (button + modal) is gated behind a mount
+// guard. During SSR, a plain skeleton div is rendered. The real
+// button + modal only render after useEffect confirms mount.
+// This eliminates ALL hydration mismatches because:
+//   1. Server renders: <div class="w-32 h-10 bg-gray-800 rounded-md"></div>
+//   2. Client first render: same skeleton div (perfect match)
+//   3. After useEffect: real button renders
+//
+// No spinner. No isConnecting/isReconnecting. The button is
+// always enabled and opens the modal on click.
 
 export function WalletButton() {
   const [mounted, setMounted] = useState(false);
@@ -181,7 +141,7 @@ export function WalletButton() {
 }
 
 // ============================================================
-// =========== WalletButtonClient (client-only) ===============
+// =========== WalletButtonClient =============================
 // ============================================================
 
 function WalletButtonClient() {
@@ -242,7 +202,7 @@ function WalletButtonClient() {
     );
   }
 
-  // === Disconnected state — NO SPINNER, always enabled ===
+  // === Disconnected state — NO SPINNER ===
   return (
     <>
       <Button
@@ -303,12 +263,7 @@ function WalletButtonClient() {
                   className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-start transition-all hover:border-emerald-500/40 hover:bg-white/[0.05] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 overflow-hidden">
-                    <WalletImage
-                      src={option.logoUrl}
-                      fallback={option.fallback}
-                      alt={option.label}
-                      useSvgFirst={option.useSvgFirst}
-                    />
+                    {option.icon}
                   </div>
                   <div className="flex-1">
                     <div className="text-sm font-semibold text-white">
@@ -337,7 +292,7 @@ function WalletButtonClient() {
           )}
 
           <p className="mt-4 text-center text-xs text-white/40">
-            {t("connectShort") === "ربط"
+            {t("connectShort") === "ربطل"
               ? "بإجراء الربط، فإنك توافق على شروط الخدمة وإفصاح المخاطر."
               : "By connecting, you agree to the Terms of Service and Risk Disclosure."}
           </p>
