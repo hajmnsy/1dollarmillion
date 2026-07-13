@@ -11,21 +11,21 @@
  * Explorer: https://sepolia.etherscan.io
  */
 
-import { mainnet, sepolia } from "wagmi/chains";
+import { mainnet, polygon, sepolia } from "wagmi/chains";
 
 // === Contract Addresses (DEPLOYED ON SEPOLIA TESTNET) ===============
 // Deployed via DeploySepolia.s.sol on 2026-07-04
 // Verify: https://sepolia.etherscan.io/address/0x94C7099665f061658c8e2C07afBa617392e5B716
 export const LOTTERY_CONTRACT_ADDRESS =
-  "0x94C7099665f061658c8e2C07afBa617392e5B716" as `0x${string}`;
+  "0x2DC8C41Eb6BdE23a7F175013f888513b46a8D902" as `0x${string}`;
 
 export const USDT_CONTRACT_ADDRESS =
-  "0xC8A1b8558001Db2cc8042e6a98Bae25bD985B9d3" as `0x${string}`;
+  "0x286Fa19d912D691aA7CA9A2443Ff4cC11fC1Ba8e" as `0x${string}`;
 
 // === Network Config =================================================
 // Sepolia testnet — switch to `mainnet` for production deployment.
-export const TARGET_CHAIN = sepolia;
-export const TARGET_CHAIN_ID = sepolia.id; // 11155111
+export const TARGET_CHAIN = polygon;
+export const TARGET_CHAIN_ID = polygon.id; // 137
 
 // === Token Constants (mirror contract) ==============================
 export const TOKEN_DECIMALS = 6;

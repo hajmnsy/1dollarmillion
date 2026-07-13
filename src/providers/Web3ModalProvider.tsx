@@ -19,48 +19,11 @@ import {
   metaMask,
 } from "wagmi/connectors";
 
-// WalletConnect Cloud Project ID — get one for FREE at https://cloud.walletconnect.com
-// This is the only "key" required, and it costs nothing — supports MetaMask, Trust,
-// Coinbase, Rainbow, OKX, and 300+ other wallets out of the box.
 export const projectId =
   process.env.NEXT_PUBLIC_WC_PROJECT_ID || "DEMO_PROJECT_ID_REPLACE_ME";
 
-// Sepolia first — it's our primary testnet target. Users connect to Sepolia by default.
-const chains = [sepolia, mainnet, polygon, arbitrum, optimism, base, bsc] as const;
+const chains = [polygon, mainnet, sepolia, arbitrum, optimism, base, bsc] as const;
 
-// SSR-safe storage: falls back to a no-op in-memory store when window is undefined
-const ssrSafeStorage = {
-  getItem: (key: string) => {
-    if (typeof window === "undefined") return null;
-    try {
-      return window.localStorage.getItem(key);
-    } catch {
-      return null;
-    }
-  },
-  setItem: (key: string, value: string) => {
-    if (typeof window === "undefined") return;
-    try {
-      window.localStorage.setItem(key, value);
-    } catch {}
-  },
-  removeItem: (key: string) => {
-    if (typeof window === "undefined") return;
-    try {
-      window.localStorage.removeItem(key);
-    } catch {}
-  },
-};
-
-/**
- * Wagmi v2 config — SSR-safe with localStorage persistence.
- * Connectors:
- *   - metaMask:        direct MetaMask injection (most users)
- *   - injected:        generic EIP-1193 fallback for any browser wallet
- *   - coinbaseWallet:  Coinbase browser extension + Coinbase Wallet mobile
- *   - walletConnect:   universal WalletConnect protocol — opens a QR modal
- *                       that supports 300+ wallets (Trust, Rainbow, OKX, etc.)
- */
 const wagmiConfig = createConfig({
   chains,
   connectors: [
@@ -73,19 +36,17 @@ const wagmiConfig = createConfig({
       metadata: {
         name: "1DollarMillion",
         description: "Deposit USDT. Win $1,000,000. Never lose your principal.",
-        url: "https://hybridrosca.xyz",
+        url: "https://1dollarmillion.com",
         icons: ["https://avatars.githubusercontent.com/u/179552466"],
       },
     }),
   ],
-  // Use SSR-safe storage instead of cookieStorage (which triggers indexedDB issues
-  // in WalletConnect's internal storage layer on Node SSR)
   ssr: true,
   multiInjectedProviderDiscovery: true,
   transports: {
+    [polygon.id]: http("https://polygon-bor-rpc.publicnode.com"),
     [sepolia.id]: http("https://ethereum-sepolia-rpc.publicnode.com"),
     [mainnet.id]: http(),
-    [polygon.id]: http(),
     [arbitrum.id]: http(),
     [optimism.id]: http(),
     [base.id]: http(),
@@ -93,39 +54,17 @@ const wagmiConfig = createConfig({
   },
 });
 
-/**
- * Web3ModalProvider — wraps the entire app with Wagmi + TanStack Query.
- *
- * Wallet UI is rendered by our custom WalletButton component using wagmi's
- * useConnect / useAccount hooks. The WalletConnect modal is opened
- * automatically by wagmi's walletConnect connector (showQrModal: true).
- *
- * Zero cost to the platform — WalletConnect Cloud is free up to massive volume.
- */
-
-// Polyfill indexedDB on the server — WalletConnect's storage layer references
-// `indexedDB` at module load time, which doesn't exist in Node. This silences
-// the "indexedDB is not defined" unhandled rejection that shows up as an error
-// overlay in Next.js dev mode.
 if (typeof window === "undefined" && typeof globalThis !== "undefined") {
   try {
-    // @ts-ignore — assigning to a read-only global; cast to any
     (globalThis as any).indexedDB =
       (globalThis as any).indexedDB ||
       {
-        open: () => ({
-          onupgradeneeded: null,
-          onsuccess: null,
-          onerror: null,
-          result: {},
-        }),
+        open: () => ({ onupgradeneeded: null, onsuccess: null, onerror: null, result: {} }),
         getItem: () => null,
         setItem: () => {},
         removeItem: () => {},
       };
-  } catch {
-    // Silently ignore — the polyfill is best-effort
-  }
+  } catch {}
 }
 
 export function Web3ModalProvider({ children }: { children: ReactNode }) {
