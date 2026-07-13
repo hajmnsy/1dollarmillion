@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "### 1. Website/Application Details  \n- **URL**: `https://1dollarmillion-3q3m-five.vercel.app/ar`  \n- **Page Title**: `1DollarMillion` (visible in the browser tab)  \n- **Header Text**: `1DollarMillion $` (top-right corner of the page, partially visible behind the modal)  \n\n\n### 2. Wallet Connection Dialog/Modal  \nA **dark-themed modal** is open, centered on the screen, with the following structure:  \n- **Title**: \"اختر محفظتك\" (Arabic for \"Choose your wallet\").  \n- **Subtitle**: \"اختر محفظتك لتتمكن من الدخول إلى تطبيق 1DollarMillion\" (Arabic for \"Choose your wallet to access the 1DollarMillion application\").  \n- **Wallet Options**: A vertical list of wallet providers, each with an icon, name, and descriptive text.  \n- **Footer Text**: \"By connecting, you agree to the Terms of Service and Risk Disclosure\" (English, centered at the bottom of the modal).  \n\n\n### 3. Visible Wallet Icons/Images  \nThe modal displays the following wallet options (each with a distinct icon):  \n- **MetaMask**: Orange fox logo (standard MetaMask icon).  \n- **Trust Wallet**: Blue circular icon with a white \"T\" (standard Trust Wallet icon).  \n- **WalletConnect**: Blue circular icon with a white wave pattern (standard WalletConnect icon).  \n- **Coinbase Wallet**: Blue circular icon with a white \"C\" (standard Coinbase Wallet icon).  \n- **Phantom**: Purple circular icon with a white \"P\" (standard Phantom icon).  \n\n\n### 4. Broken/Missing Wallet Icons  \nAll wallet icons are **fully visible and properly loaded**—no broken images, placeholders, or empty boxes are present.  \n\n\n### 5. Error Messages  \nNo error messages are visible anywhere in the screenshot.  \n\n\n### 6. Exact Text Content  \n- **Modal Title**: \"اختر محفظتك\"  \n- **Modal Subtitle**: \"اختر محفظتك لتتمكن من الدخول إلى تطبيق 1DollarMillion\"  \n- **Wallet Options**:  \n  - \"MetaMask\" + \"The most popular Web3 wallet\"  \n  - \"Trust Wallet\" + \"Connect with Trust Wallet\"  \n  - \"WalletConnect\" + \"Scan with 300+ wallets\" (with a green \"+300\" badge to the left of the name)  \n  - \"Coinbase Wallet\" + \"Connect with Coinbase Wallet\"  \n  - \"Phantom\" + \"Multi-chain wallet for Solana & EVM\"  \n- **Footer Text**: \"By connecting, you agree to the Terms of Service and Risk Disclosure\"  \n- **Browser Tab Title**: \"1DollarMillion\"  \n- **Page Header**: \"1DollarMillion $\" (partially visible)  \n\n\n### 7. User’s Next Action  \nThe user is being asked to **select a wallet** from the list to connect to the 1DollarMillion application. The modal provides five options (MetaMask, Trust Wallet, WalletConnect, Coinbase Wallet, Phantom), and the user must click one to proceed with authentication.  \n\n\n### Additional Context  \n- The page is in **Arabic** (modal text) with English labels for wallet names and descriptions.  \n- The browser tab shows \"1DollarMillion\" and the URL includes `/ar`, indicating an Arabic-language version of the site.  \n- The modal is the primary focus, obscuring the underlying page content (which appears to have a dark background with faint text).",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1784037289,
+  "id": "20260714215437a457261a0b244eb5",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "20260714215437a457261a0b244eb5",
+  "usage": {
+    "completion_tokens": 769,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1491,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 2260
+  }
+}

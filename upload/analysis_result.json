@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "The screenshot displays a **GitHub commit page** for the repository `hajimnsy/1dollarmillion`. Here’s a detailed breakdown:  \n\n\n### 1. Top Navigation & Header  \n- **Repository Path**: `hajimnsy / 1dollarmillion` (with a dropdown arrow next to `1dollarmillion`).  \n- **Search Bar**: “Type / to search” (with a magnifying glass icon).  \n- **Icons**: GitHub’s standard navigation icons (e.g., notifications, settings, profile) on the right.  \n- **Tab Bar**: Links for `Code`, `Issues`, `Pull requests`, `Actions`, `Projects`, `Security and quality`, `Insights`, `Settings`.  \n\n\n### 2. Commit Details  \n- **Title**: `Commit 10fe8c6` (with a “Browse files” button on the right).  \n- **Author/Time**: `hajimnsy authored 1 hour ago` (with a “Verified” badge).  \n- **Commit Stats**: `× 0 / 1` (likely indicating no merges or 1 parent).  \n- **Commit Message**: `Add shadcn/ui components`.  \n- **Branch Info**: `main` (branch name) with `1 parent a186cee commit 10fe8c6` (parent commit hash).  \n- **File Changes**: `48 files changed` with a green “+5,399” (indicating added lines).  \n\n\n### 3. Hidden Content Alert  \nA yellow banner with:  \n- **Warning Icon**: Exclamation mark.  \n- **Text**: `Some content is hidden` (bold) + `Large Commits have some content hidden by default. Use the searchbox below for content that may be hidden.`  \n- **Close Button**: “×” on the right.  \n\n\n### Context  \nThis is a GitHub page showing a specific commit (`10fe8c6`) in the `1dollarmillion` repository. The commit adds UI components (via `shadcn/ui`), with 48 files modified and 5,399 lines added. The yellow alert indicates GitHub hides content in large commits by default, prompting users to search for hidden details.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1784021985,
+  "id": "2026071417391457301549910f4cd1",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "2026071417391457301549910f4cd1",
+  "usage": {
+    "completion_tokens": 464,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2246,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "total_tokens": 2710
+  }
+}
