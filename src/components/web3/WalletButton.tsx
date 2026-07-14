@@ -17,8 +17,7 @@ import { Wallet, LogOut, ChevronDown, ShieldCheck } from "lucide-react";
 // ====== PURE INLINE SVG WALLET LOGOS (no external URLs) =====
 // ============================================================
 // 100% reliable. No CSP issues, no broken links, no network
-// dependencies. These are simplified but recognizable brand
-// marks rendered as inline SVG paths.
+// dependencies. Professional brand marks as inline SVG.
 
 function MetaMaskIcon({ size = 32 }: { size?: number }) {
   return (
@@ -40,8 +39,14 @@ function TrustWalletIcon({ size = 32 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="16" cy="16" r="16" fill="#0C8CE9"/>
-      <path d="M16 6L9 9v6c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V9l-7-3z" fill="#fff"/>
-      <path d="M16 6L9 9v6c0 4.5 3 8.5 7 10V6z" fill="#fff" fillOpacity="0.7"/>
+      <path
+        d="M16 7.5c-2.4 0-4.5 1.8-4.5 4.2 0 2.9 2.1 5.6 4.5 7.5 2.4-1.9 4.5-4.6 4.5-7.5 0-2.4-2.1-4.2-4.5-4.2z"
+        fill="#fff"
+      />
+      <path
+        d="M9.5 13c-1.4 0-2.5 1.1-2.5 2.5 0 3.2 3.4 6 6.5 7.3.7.3 1.6.5 2.5.5s1.8-.2 2.5-.5c3.1-1.3 6.5-4.1 6.5-7.3 0-1.4-1.1-2.5-2.5-2.5-1.1 0-2 .7-2.4 1.7.2.4.4.8.4 1.3 0 2.2-1.8 4-4 4.5-.6.1-1.2.1-1.8 0-2.2-.5-4-2.3-4-4.5 0-.5.1-.9.4-1.3C11.5 13.7 10.6 13 9.5 13z"
+        fill="#fff"
+      />
     </svg>
   );
 }
@@ -61,6 +66,18 @@ function CoinbaseIcon({ size = 32 }: { size?: number }) {
     <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="16" cy="16" r="16" fill="#0052FF"/>
       <path d="M16 6c-5.25 0-9.5 4.25-9.5 9.5 0 5.06 3.97 9.19 8.97 9.49v-6.5H12.5V16h2.97v-2.4c0-2.93 1.78-4.55 4.42-4.55 1.28 0 2.62.23 2.62.23v2.88h-1.48c-1.45 0-1.91.9-1.91 1.83V16h3.25l-.52 2.99h-2.73v6.5c5-.3 8.97-4.43 8.97-9.49 0-5.25-4.25-9.5-9.5-9.5z" fill="#fff"/>
+    </svg>
+  );
+}
+
+function PhantomIcon({ size = 32 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="16" fill="#AB9FF2"/>
+      <path
+        d="M21.5 11.2c-.3-.5-.9-.7-1.4-.4l-7.4 4.3c-.3.2-.4.5-.4.8 0 .2.1.4.3.5l1.2.9c.2.1.4.2.6.2.2 0 .3-.1.5-.2l4.6-2.7-3.7 4c-.2.2-.3.5-.3.8v2.8c0 .3.4.5.6.3l1.4-1.4c.1-.1.3-.1.4 0l1.6 1.2c.3.2.7.1.8-.2l1.7-9.4c.1-.4 0-.7-.5-.9z"
+        fill="#fff"
+      />
     </svg>
   );
 }
@@ -111,22 +128,19 @@ const WALLET_OPTIONS: WalletOption[] = [
     badge: null,
     findConnector: (c) => c.find((x) => x.id.includes("coinbase") || x.id.includes("Coinbase")),
   },
+  {
+    key: "phantom",
+    label: "Phantom",
+    desc: "Multi-chain wallet for Solana & EVM",
+    icon: <PhantomIcon size={32} />,
+    badge: null,
+    findConnector: (c) => c.find((x) => x.id.includes("phantom") || x.id.includes("Phantom")),
+  },
 ];
 
 // ============================================================
 // =========== BULLETPROOF WalletButton =======================
 // ============================================================
-//
-// The entire component (button + modal) is gated behind a mount
-// guard. During SSR, a plain skeleton div is rendered. The real
-// button + modal only render after useEffect confirms mount.
-// This eliminates ALL hydration mismatches because:
-//   1. Server renders: <div class="w-32 h-10 bg-gray-800 rounded-md"></div>
-//   2. Client first render: same skeleton div (perfect match)
-//   3. After useEffect: real button renders
-//
-// No spinner. No isConnecting/isReconnecting. The button is
-// always enabled and opens the modal on click.
 
 export function WalletButton() {
   const [mounted, setMounted] = useState(false);
@@ -202,7 +216,7 @@ function WalletButtonClient() {
     );
   }
 
-  // === Disconnected state — NO SPINNER ===
+  // === Disconnected state ===
   return (
     <>
       <Button
@@ -218,7 +232,7 @@ function WalletButtonClient() {
       </Button>
 
       <Dialog open={showPicker} onOpenChange={setShowPicker}>
-        <DialogContent className="border-white/10 bg-[#111] p-6 sm:max-w-md">
+        <DialogContent className="border-white/10 bg-[#111] p-6 sm:max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-white">
               {t("connect")}
