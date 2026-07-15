@@ -1,0 +1,1155 @@
+     1→14:15:51.367 Running build in Washington, D.C., USA (East) – iad1
+     2→14:15:51.370 Build machine configuration: 2 cores, 8 GB
+     3→14:15:51.553 Cloning github.com/hajmnsy/1dollarmillion (Branch: main, Commit: 0d9739c)
+     4→14:15:51.555 Previous build caches not available.
+     5→14:15:51.806 Cloning completed: 253.000ms
+     6→14:15:52.080 Running "vercel build"
+     7→14:15:52.095 Vercel CLI 55.0.0
+     8→14:15:52.451 Installing dependencies...
+     9→14:15:52.486 bun install v1.3.12 (700fc117)
+    10→14:16:16.120 
+    11→14:16:16.121 + @tailwindcss/postcss@4.1.18
+    12→14:16:16.121 + @types/react@19.2.8
+    13→14:16:16.121 + @types/react-dom@19.2.3
+    14→14:16:16.121 + bun-types@1.3.6
+    15→14:16:16.121 + eslint@9.39.2
+    16→14:16:16.121 + eslint-config-next@16.1.3
+    17→14:16:16.121 + tailwindcss@4.1.18
+    18→14:16:16.122 + tw-animate-css@1.4.0
+    19→14:16:16.122 + typescript@5.9.3
+    20→14:16:16.122 + @dnd-kit/core@6.3.1
+    21→14:16:16.122 + @dnd-kit/sortable@10.0.0
+    22→14:16:16.122 + @dnd-kit/utilities@3.2.2
+    23→14:16:16.122 + @hookform/resolvers@5.2.2
+    24→14:16:16.122 + @mdxeditor/editor@3.52.3
+    25→14:16:16.122 + @prisma/client@6.19.2
+    26→14:16:16.122 + @radix-ui/react-accordion@1.2.12
+    27→14:16:16.122 + @radix-ui/react-alert-dialog@1.1.15
+    28→14:16:16.122 + @radix-ui/react-aspect-ratio@1.1.8
+    29→14:16:16.122 + @radix-ui/react-avatar@1.1.11
+    30→14:16:16.122 + @radix-ui/react-checkbox@1.3.3
+    31→14:16:16.122 + @radix-ui/react-collapsible@1.1.12
+    32→14:16:16.122 + @radix-ui/react-context-menu@2.2.16
+    33→14:16:16.122 + @radix-ui/react-dialog@1.1.15
+    34→14:16:16.122 + @radix-ui/react-dropdown-menu@2.1.16
+    35→14:16:16.122 + @radix-ui/react-hover-card@1.1.15
+    36→14:16:16.123 + @radix-ui/react-label@2.1.8
+    37→14:16:16.123 + @radix-ui/react-menubar@1.1.16
+    38→14:16:16.123 + @radix-ui/react-navigation-menu@1.2.14
+    39→14:16:16.123 + @radix-ui/react-popover@1.1.15
+    40→14:16:16.123 + @radix-ui/react-progress@1.1.8
+    41→14:16:16.123 + @radix-ui/react-radio-group@1.3.8
+    42→14:16:16.123 + @radix-ui/react-scroll-area@1.2.10
+    43→14:16:16.123 + @radix-ui/react-select@2.2.6
+    44→14:16:16.123 + @radix-ui/react-separator@1.1.8
+    45→14:16:16.123 + @radix-ui/react-slider@1.3.6
+    46→14:16:16.123 + @radix-ui/react-slot@1.2.4
+    47→14:16:16.123 + @radix-ui/react-switch@1.2.6
+    48→14:16:16.123 + @radix-ui/react-tabs@1.1.13
+    49→14:16:16.123 + @radix-ui/react-toast@1.2.15
+    50→14:16:16.123 + @radix-ui/react-toggle@1.1.10
+    51→14:16:16.123 + @radix-ui/react-toggle-group@1.1.11
+    52→14:16:16.124 + @radix-ui/react-tooltip@1.2.8
+    53→14:16:16.124 + @reactuses/core@6.1.9
+    54→14:16:16.124 + @tanstack/react-query@5.101.2
+    55→14:16:16.124 + @tanstack/react-table@8.21.3
+    56→14:16:16.124 + @wagmi/connectors@8.0.20
+    57→14:16:16.124 + @wagmi/core@2.22.1
+    58→14:16:16.124 + class-variance-authority@0.7.1
+    59→14:16:16.124 + clsx@2.1.1
+    60→14:16:16.124 + cmdk@1.1.1
+    61→14:16:16.124 + date-fns@4.1.0
+    62→14:16:16.124 + embla-carousel-react@8.6.0
+    63→14:16:16.124 + framer-motion@12.26.2
+    64→14:16:16.124 + input-otp@1.4.2
+    65→14:16:16.124 + lucide-react@0.525.0
+    66→14:16:16.124 + next@16.1.3
+    67→14:16:16.124 + next-auth@4.24.13
+    68→14:16:16.124 + next-intl@4.7.0
+    69→14:16:16.124 + next-themes@0.4.6
+    70→14:16:16.124 + prisma@6.19.2
+    71→14:16:16.125 + react@19.2.3
+    72→14:16:16.125 + react-day-picker@9.13.0
+    73→14:16:16.125 + react-dom@19.2.3
+    74→14:16:16.125 + react-hook-form@7.71.1
+    75→14:16:16.125 + react-markdown@10.1.0
+    76→14:16:16.125 + react-resizable-panels@3.0.6
+    77→14:16:16.125 + react-syntax-highlighter@15.6.6
+    78→14:16:16.125 + recharts@2.15.4
+    79→14:16:16.125 + sharp@0.34.5
+    80→14:16:16.125 + sonner@2.0.7
+    81→14:16:16.125 + tailwind-merge@3.4.0
+    82→14:16:16.125 + tailwindcss-animate@1.0.7
+    83→14:16:16.125 + uuid@11.1.0
+    84→14:16:16.125 + vaul@1.1.2
+    85→14:16:16.125 + viem@2.54.2
+    86→14:16:16.125 + wagmi@2.19.5
+    87→14:16:16.126 + z-ai-web-dev-sdk@0.0.18
+    88→14:16:16.126 + zod@4.3.5
+    89→14:16:16.126 + zustand@5.0.10
+    90→14:16:16.126 
+    91→14:16:16.126 1158 packages installed [23.65s]
+    92→14:16:18.281 Detected Next.js version: 16.1.3
+    93→14:16:18.282 Running "next build"
+    94→14:16:19.434 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+    95→14:16:19.435 This information is used to shape Next.js' roadmap and prioritize features.
+    96→14:16:19.435 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+    97→14:16:19.435 https://nextjs.org/telemetry
+    98→14:16:19.435 
+    99→14:16:19.549 ▲ Next.js 16.1.3 (Turbopack)
+   100→14:16:19.550 
+   101→14:16:19.556 ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+   102→14:16:19.878   Creating an optimized production build ...
+   103→14:16:35.003 
+   104→14:16:35.004 > Build error occurred
+   105→14:16:35.015 Error: Turbopack build failed with 49 errors:
+   106→14:16:35.016 ./app/[locale]/activity-preview/page.tsx:3:1
+   107→14:16:35.016 Module not found: Can't resolve '@/components/dashboard/ActivityFeed'
+   108→14:16:35.016   1 | "use client";
+   109→14:16:35.017   2 |
+   110→14:16:35.017 > 3 | import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+   111→14:16:35.018     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   112→14:16:35.018   4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   113→14:16:35.019   5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   114→14:16:35.019   6 | import { Calendar } from "lucide-react";
+   115→14:16:35.019 
+   116→14:16:35.019 Import map: aliased to relative './src/components/dashboard/ActivityFeed' inside of [project]/
+   117→14:16:35.020 
+   118→14:16:35.020 
+   119→14:16:35.020 Import traces:
+   120→14:16:35.020   Client Component Browser:
+   121→14:16:35.020     ./app/[locale]/activity-preview/page.tsx [Client Component Browser]
+   122→14:16:35.021     ./app/[locale]/activity-preview/page.tsx [Server Component]
+   123→14:16:35.021 
+   124→14:16:35.021   Client Component SSR:
+   125→14:16:35.021     ./app/[locale]/activity-preview/page.tsx [Client Component SSR]
+   126→14:16:35.021     ./app/[locale]/activity-preview/page.tsx [Server Component]
+   127→14:16:35.022 
+   128→14:16:35.022 https://nextjs.org/docs/messages/module-not-found
+   129→14:16:35.022 
+   130→14:16:35.022 
+   131→14:16:35.022 ./app/[locale]/dashboard/page.tsx:15:1
+   132→14:16:35.022 Module not found: Can't resolve '@/components/dashboard/ActivityFeed'
+   133→14:16:35.023   13 | import { DepositModal } from "@/components/dashboard/DepositModal";
+   134→14:16:35.023   14 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+   135→14:16:35.023 > 15 | import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+   136→14:16:35.024      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   137→14:16:35.024   16 | import { useDashboardData } from "@/hooks/useLottery";
+   138→14:16:35.024   17 | import { useAccount } from "wagmi";
+   139→14:16:35.025   18 | import { motion } from "framer-motion";
+   140→14:16:35.025 
+   141→14:16:35.025 Import map: aliased to relative './src/components/dashboard/ActivityFeed' inside of [project]/
+   142→14:16:35.025 
+   143→14:16:35.026 
+   144→14:16:35.026 Import traces:
+   145→14:16:35.026   Client Component Browser:
+   146→14:16:35.026     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   147→14:16:35.026     ./app/[locale]/dashboard/page.tsx [Server Component]
+   148→14:16:35.028 
+   149→14:16:35.028   Client Component SSR:
+   150→14:16:35.028     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   151→14:16:35.028     ./app/[locale]/dashboard/page.tsx [Server Component]
+   152→14:16:35.029 
+   153→14:16:35.029 https://nextjs.org/docs/messages/module-not-found
+   154→14:16:35.029 
+   155→14:16:35.029 
+   156→14:16:35.029 ./app/[locale]/dashboard/page.tsx:13:1
+   157→14:16:35.030 Module not found: Can't resolve '@/components/dashboard/DepositModal'
+   158→14:16:35.030   11 | import { SolvencyCard } from "@/components/dashboard/SolvencyCard";
+   159→14:16:35.030   12 | import { OddsCard } from "@/components/dashboard/OddsCard";
+   160→14:16:35.030 > 13 | import { DepositModal } from "@/components/dashboard/DepositModal";
+   161→14:16:35.031      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   162→14:16:35.031   14 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+   163→14:16:35.031   15 | import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+   164→14:16:35.031   16 | import { useDashboardData } from "@/hooks/useLottery";
+   165→14:16:35.031 
+   166→14:16:35.032 Import map: aliased to relative './src/components/dashboard/DepositModal' inside of [project]/
+   167→14:16:35.032 
+   168→14:16:35.032 
+   169→14:16:35.032 Import traces:
+   170→14:16:35.032   Client Component Browser:
+   171→14:16:35.033     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   172→14:16:35.033     ./app/[locale]/dashboard/page.tsx [Server Component]
+   173→14:16:35.033 
+   174→14:16:35.033   Client Component SSR:
+   175→14:16:35.033     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   176→14:16:35.034     ./app/[locale]/dashboard/page.tsx [Server Component]
+   177→14:16:35.034 
+   178→14:16:35.034 https://nextjs.org/docs/messages/module-not-found
+   179→14:16:35.034 
+   180→14:16:35.034 
+   181→14:16:35.035 ./app/[locale]/deposit-preview/page.tsx:4:1
+   182→14:16:35.035 Module not found: Can't resolve '@/components/dashboard/DepositModal'
+   183→14:16:35.035   2 |
+   184→14:16:35.035   3 | import { useState } from "react";
+   185→14:16:35.035 > 4 | import { DepositModal } from "@/components/dashboard/DepositModal";
+   186→14:16:35.036     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   187→14:16:35.036   5 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+   188→14:16:35.036   6 | import { Button } from "@/components/ui/button";
+   189→14:16:35.036   7 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   190→14:16:35.036 
+   191→14:16:35.037 Import map: aliased to relative './src/components/dashboard/DepositModal' inside of [project]/
+   192→14:16:35.037 
+   193→14:16:35.037 
+   194→14:16:35.037 Import traces:
+   195→14:16:35.037   Client Component Browser:
+   196→14:16:35.038     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+   197→14:16:35.038     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   198→14:16:35.038 
+   199→14:16:35.038   Client Component SSR:
+   200→14:16:35.038     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+   201→14:16:35.038     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   202→14:16:35.039 
+   203→14:16:35.039 https://nextjs.org/docs/messages/module-not-found
+   204→14:16:35.039 
+   205→14:16:35.039 
+   206→14:16:35.039 ./app/[locale]/dashboard/page.tsx:12:1
+   207→14:16:35.039 Module not found: Can't resolve '@/components/dashboard/OddsCard'
+   208→14:16:35.040   10 | import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
+   209→14:16:35.040   11 | import { SolvencyCard } from "@/components/dashboard/SolvencyCard";
+   210→14:16:35.040 > 12 | import { OddsCard } from "@/components/dashboard/OddsCard";
+   211→14:16:35.040      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   212→14:16:35.040   13 | import { DepositModal } from "@/components/dashboard/DepositModal";
+   213→14:16:35.041   14 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+   214→14:16:35.041   15 | import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+   215→14:16:35.041 
+   216→14:16:35.041 Import map: aliased to relative './src/components/dashboard/OddsCard' inside of [project]/
+   217→14:16:35.041 
+   218→14:16:35.041 
+   219→14:16:35.042 Import traces:
+   220→14:16:35.042   Client Component Browser:
+   221→14:16:35.042     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   222→14:16:35.042     ./app/[locale]/dashboard/page.tsx [Server Component]
+   223→14:16:35.042 
+   224→14:16:35.042   Client Component SSR:
+   225→14:16:35.043     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   226→14:16:35.043     ./app/[locale]/dashboard/page.tsx [Server Component]
+   227→14:16:35.043 
+   228→14:16:35.043 https://nextjs.org/docs/messages/module-not-found
+   229→14:16:35.043 
+   230→14:16:35.043 
+   231→14:16:35.044 ./app/[locale]/dashboard/page.tsx:9:1
+   232→14:16:35.044 Module not found: Can't resolve '@/components/dashboard/PoolProgressCard'
+   233→14:16:35.044    7 | import { WalletNotConnected } from "@/components/dashboard/WalletNotConnected";
+   234→14:16:35.044    8 | import { PositionCard } from "@/components/dashboard/PositionCard";
+   235→14:16:35.044 >  9 | import { PoolProgressCard } from "@/components/dashboard/PoolProgressCard";
+   236→14:16:35.044      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   237→14:16:35.045   10 | import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
+   238→14:16:35.045   11 | import { SolvencyCard } from "@/components/dashboard/SolvencyCard";
+   239→14:16:35.045   12 | import { OddsCard } from "@/components/dashboard/OddsCard";
+   240→14:16:35.045 
+   241→14:16:35.045 Import map: aliased to relative './src/components/dashboard/PoolProgressCard' inside of [project]/
+   242→14:16:35.046 
+   243→14:16:35.046 
+   244→14:16:35.046 Import traces:
+   245→14:16:35.046   Client Component Browser:
+   246→14:16:35.046     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   247→14:16:35.046     ./app/[locale]/dashboard/page.tsx [Server Component]
+   248→14:16:35.046 
+   249→14:16:35.047   Client Component SSR:
+   250→14:16:35.047     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   251→14:16:35.047     ./app/[locale]/dashboard/page.tsx [Server Component]
+   252→14:16:35.047 
+   253→14:16:35.047 https://nextjs.org/docs/messages/module-not-found
+   254→14:16:35.047 
+   255→14:16:35.048 
+   256→14:16:35.048 ./app/[locale]/dashboard/page.tsx:8:1
+   257→14:16:35.048 Module not found: Can't resolve '@/components/dashboard/PositionCard'
+   258→14:16:35.048    6 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   259→14:16:35.048    7 | import { WalletNotConnected } from "@/components/dashboard/WalletNotConnected";
+   260→14:16:35.048 >  8 | import { PositionCard } from "@/components/dashboard/PositionCard";
+   261→14:16:35.049      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   262→14:16:35.049    9 | import { PoolProgressCard } from "@/components/dashboard/PoolProgressCard";
+   263→14:16:35.049   10 | import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
+   264→14:16:35.049   11 | import { SolvencyCard } from "@/components/dashboard/SolvencyCard";
+   265→14:16:35.049 
+   266→14:16:35.050 Import map: aliased to relative './src/components/dashboard/PositionCard' inside of [project]/
+   267→14:16:35.050 
+   268→14:16:35.050 
+   269→14:16:35.050 Import traces:
+   270→14:16:35.050   Client Component Browser:
+   271→14:16:35.050     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   272→14:16:35.050     ./app/[locale]/dashboard/page.tsx [Server Component]
+   273→14:16:35.051 
+   274→14:16:35.051   Client Component SSR:
+   275→14:16:35.051     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   276→14:16:35.051     ./app/[locale]/dashboard/page.tsx [Server Component]
+   277→14:16:35.051 
+   278→14:16:35.051 https://nextjs.org/docs/messages/module-not-found
+   279→14:16:35.051 
+   280→14:16:35.051 
+   281→14:16:35.051 ./app/[locale]/dashboard/page.tsx:11:1
+   282→14:16:35.051 Module not found: Can't resolve '@/components/dashboard/SolvencyCard'
+   283→14:16:35.051    9 | import { PoolProgressCard } from "@/components/dashboard/PoolProgressCard";
+   284→14:16:35.052   10 | import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
+   285→14:16:35.052 > 11 | import { SolvencyCard } from "@/components/dashboard/SolvencyCard";
+   286→14:16:35.052      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   287→14:16:35.052   12 | import { OddsCard } from "@/components/dashboard/OddsCard";
+   288→14:16:35.052   13 | import { DepositModal } from "@/components/dashboard/DepositModal";
+   289→14:16:35.052   14 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+   290→14:16:35.052 
+   291→14:16:35.053 Import map: aliased to relative './src/components/dashboard/SolvencyCard' inside of [project]/
+   292→14:16:35.053 
+   293→14:16:35.053 
+   294→14:16:35.054 Import traces:
+   295→14:16:35.054   Client Component Browser:
+   296→14:16:35.054     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   297→14:16:35.054     ./app/[locale]/dashboard/page.tsx [Server Component]
+   298→14:16:35.054 
+   299→14:16:35.054   Client Component SSR:
+   300→14:16:35.054     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   301→14:16:35.055     ./app/[locale]/dashboard/page.tsx [Server Component]
+   302→14:16:35.055 
+   303→14:16:35.055 https://nextjs.org/docs/messages/module-not-found
+   304→14:16:35.055 
+   305→14:16:35.055 
+   306→14:16:35.055 ./app/[locale]/dashboard/page.tsx:7:1
+   307→14:16:35.056 Module not found: Can't resolve '@/components/dashboard/WalletNotConnected'
+   308→14:16:35.056    5 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   309→14:16:35.056    6 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   310→14:16:35.056 >  7 | import { WalletNotConnected } from "@/components/dashboard/WalletNotConnected";
+   311→14:16:35.056      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   312→14:16:35.056    8 | import { PositionCard } from "@/components/dashboard/PositionCard";
+   313→14:16:35.057    9 | import { PoolProgressCard } from "@/components/dashboard/PoolProgressCard";
+   314→14:16:35.057   10 | import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
+   315→14:16:35.057 
+   316→14:16:35.057 Import map: aliased to relative './src/components/dashboard/WalletNotConnected' inside of [project]/
+   317→14:16:35.057 
+   318→14:16:35.057 
+   319→14:16:35.058 Import traces:
+   320→14:16:35.058   Client Component Browser:
+   321→14:16:35.058     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   322→14:16:35.058     ./app/[locale]/dashboard/page.tsx [Server Component]
+   323→14:16:35.058 
+   324→14:16:35.058   Client Component SSR:
+   325→14:16:35.059     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   326→14:16:35.059     ./app/[locale]/dashboard/page.tsx [Server Component]
+   327→14:16:35.059 
+   328→14:16:35.059 https://nextjs.org/docs/messages/module-not-found
+   329→14:16:35.059 
+   330→14:16:35.059 
+   331→14:16:35.060 ./app/[locale]/dashboard/page.tsx:14:1
+   332→14:16:35.060 Module not found: Can't resolve '@/components/dashboard/WithdrawModal'
+   333→14:16:35.060   12 | import { OddsCard } from "@/components/dashboard/OddsCard";
+   334→14:16:35.060   13 | import { DepositModal } from "@/components/dashboard/DepositModal";
+   335→14:16:35.060 > 14 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+   336→14:16:35.060      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   337→14:16:35.061   15 | import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+   338→14:16:35.061   16 | import { useDashboardData } from "@/hooks/useLottery";
+   339→14:16:35.061   17 | import { useAccount } from "wagmi";
+   340→14:16:35.061 
+   341→14:16:35.061 Import map: aliased to relative './src/components/dashboard/WithdrawModal' inside of [project]/
+   342→14:16:35.061 
+   343→14:16:35.061 
+   344→14:16:35.061 Import traces:
+   345→14:16:35.061   Client Component Browser:
+   346→14:16:35.062     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   347→14:16:35.062     ./app/[locale]/dashboard/page.tsx [Server Component]
+   348→14:16:35.062 
+   349→14:16:35.062   Client Component SSR:
+   350→14:16:35.062     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   351→14:16:35.062     ./app/[locale]/dashboard/page.tsx [Server Component]
+   352→14:16:35.062 
+   353→14:16:35.062 https://nextjs.org/docs/messages/module-not-found
+   354→14:16:35.062 
+   355→14:16:35.062 
+   356→14:16:35.062 ./app/[locale]/deposit-preview/page.tsx:5:1
+   357→14:16:35.063 Module not found: Can't resolve '@/components/dashboard/WithdrawModal'
+   358→14:16:35.063   3 | import { useState } from "react";
+   359→14:16:35.063   4 | import { DepositModal } from "@/components/dashboard/DepositModal";
+   360→14:16:35.063 > 5 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+   361→14:16:35.063     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   362→14:16:35.063   6 | import { Button } from "@/components/ui/button";
+   363→14:16:35.063   7 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   364→14:16:35.063   8 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   365→14:16:35.063 
+   366→14:16:35.064 Import map: aliased to relative './src/components/dashboard/WithdrawModal' inside of [project]/
+   367→14:16:35.064 
+   368→14:16:35.064 
+   369→14:16:35.064 Import traces:
+   370→14:16:35.064   Client Component Browser:
+   371→14:16:35.064     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+   372→14:16:35.064     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   373→14:16:35.064 
+   374→14:16:35.064   Client Component SSR:
+   375→14:16:35.064     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+   376→14:16:35.065     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   377→14:16:35.065 
+   378→14:16:35.065 https://nextjs.org/docs/messages/module-not-found
+   379→14:16:35.065 
+   380→14:16:35.065 
+   381→14:16:35.065 ./app/[locale]/dashboard/page.tsx:10:1
+   382→14:16:35.065 Module not found: Can't resolve '@/components/dashboard/YieldTrackerCard'
+   383→14:16:35.065    8 | import { PositionCard } from "@/components/dashboard/PositionCard";
+   384→14:16:35.065    9 | import { PoolProgressCard } from "@/components/dashboard/PoolProgressCard";
+   385→14:16:35.065 > 10 | import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
+   386→14:16:35.066      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   387→14:16:35.066   11 | import { SolvencyCard } from "@/components/dashboard/SolvencyCard";
+   388→14:16:35.066   12 | import { OddsCard } from "@/components/dashboard/OddsCard";
+   389→14:16:35.066   13 | import { DepositModal } from "@/components/dashboard/DepositModal";
+   390→14:16:35.066 
+   391→14:16:35.066 Import map: aliased to relative './src/components/dashboard/YieldTrackerCard' inside of [project]/
+   392→14:16:35.066 
+   393→14:16:35.066 
+   394→14:16:35.066 Import traces:
+   395→14:16:35.066   Client Component Browser:
+   396→14:16:35.066     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   397→14:16:35.067     ./app/[locale]/dashboard/page.tsx [Server Component]
+   398→14:16:35.067 
+   399→14:16:35.067   Client Component SSR:
+   400→14:16:35.067     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   401→14:16:35.067     ./app/[locale]/dashboard/page.tsx [Server Component]
+   402→14:16:35.067 
+   403→14:16:35.067 https://nextjs.org/docs/messages/module-not-found
+   404→14:16:35.067 
+   405→14:16:35.067 
+   406→14:16:35.068 ./app/[locale]/page.tsx:7:1
+   407→14:16:35.068 Module not found: Can't resolve '@/components/landing/FinalCTA'
+   408→14:16:35.068    5 | import { TransparencySection } from "@/components/landing/TransparencySection";
+   409→14:16:35.068    6 | import { TrustSection } from "@/components/landing/TrustSection";
+   410→14:16:35.068 >  7 | import { FinalCTA } from "@/components/landing/FinalCTA";
+   411→14:16:35.068      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   412→14:16:35.068    8 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   413→14:16:35.068    9 |
+   414→14:16:35.068   10 | type Props = {
+   415→14:16:35.068 
+   416→14:16:35.068 Import map: aliased to relative './src/components/landing/FinalCTA' inside of [project]/
+   417→14:16:35.069 
+   418→14:16:35.069 
+   419→14:16:35.069 https://nextjs.org/docs/messages/module-not-found
+   420→14:16:35.069 
+   421→14:16:35.069 
+   422→14:16:35.069 ./app/[locale]/page.tsx:3:1
+   423→14:16:35.069 Module not found: Can't resolve '@/components/landing/Hero'
+   424→14:16:35.069   1 | import { setRequestLocale } from "next-intl/server";
+   425→14:16:35.069   2 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   426→14:16:35.069 > 3 | import { Hero } from "@/components/landing/Hero";
+   427→14:16:35.070     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   428→14:16:35.070   4 | import { HowItWorks } from "@/components/landing/HowItWorks";
+   429→14:16:35.070   5 | import { TransparencySection } from "@/components/landing/TransparencySection";
+   430→14:16:35.070   6 | import { TrustSection } from "@/components/landing/TrustSection";
+   431→14:16:35.070 
+   432→14:16:35.070 Import map: aliased to relative './src/components/landing/Hero' inside of [project]/
+   433→14:16:35.070 
+   434→14:16:35.070 
+   435→14:16:35.070 https://nextjs.org/docs/messages/module-not-found
+   436→14:16:35.070 
+   437→14:16:35.071 
+   438→14:16:35.071 ./app/[locale]/page.tsx:4:1
+   439→14:16:35.071 Module not found: Can't resolve '@/components/landing/HowItWorks'
+   440→14:16:35.071   2 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   441→14:16:35.071   3 | import { Hero } from "@/components/landing/Hero";
+   442→14:16:35.071 > 4 | import { HowItWorks } from "@/components/landing/HowItWorks";
+   443→14:16:35.072     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   444→14:16:35.072   5 | import { TransparencySection } from "@/components/landing/TransparencySection";
+   445→14:16:35.072   6 | import { TrustSection } from "@/components/landing/TrustSection";
+   446→14:16:35.072   7 | import { FinalCTA } from "@/components/landing/FinalCTA";
+   447→14:16:35.072 
+   448→14:16:35.072 Import map: aliased to relative './src/components/landing/HowItWorks' inside of [project]/
+   449→14:16:35.072 
+   450→14:16:35.073 
+   451→14:16:35.073 https://nextjs.org/docs/messages/module-not-found
+   452→14:16:35.073 
+   453→14:16:35.073 
+   454→14:16:35.081 ./app/[locale]/audit/page.tsx:1:1
+   455→14:16:35.081 Module not found: Can't resolve '@/components/landing/LegalPage'
+   456→14:16:35.082 > 1 | import { LegalPage } from "@/components/landing/LegalPage";
+   457→14:16:35.082     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   458→14:16:35.082   2 |
+   459→14:16:35.082   3 | type Props = {
+   460→14:16:35.082   4 |   params: Promise<{ locale: string }>;
+   461→14:16:35.083 
+   462→14:16:35.083 Import map: aliased to relative './src/components/landing/LegalPage' inside of [project]/
+   463→14:16:35.083 
+   464→14:16:35.083 
+   465→14:16:35.083 https://nextjs.org/docs/messages/module-not-found
+   466→14:16:35.083 
+   467→14:16:35.083 
+   468→14:16:35.084 ./app/[locale]/docs/page.tsx:1:1
+   469→14:16:35.084 Module not found: Can't resolve '@/components/landing/LegalPage'
+   470→14:16:35.084 > 1 | import { LegalPage } from "@/components/landing/LegalPage";
+   471→14:16:35.084     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   472→14:16:35.084   2 |
+   473→14:16:35.085   3 | type Props = {
+   474→14:16:35.085   4 |   params: Promise<{ locale: string }>;
+   475→14:16:35.085 
+   476→14:16:35.085 Import map: aliased to relative './src/components/landing/LegalPage' inside of [project]/
+   477→14:16:35.085 
+   478→14:16:35.085 
+   479→14:16:35.086 https://nextjs.org/docs/messages/module-not-found
+   480→14:16:35.086 
+   481→14:16:35.086 
+   482→14:16:35.086 ./app/[locale]/github/page.tsx:1:1
+   483→14:16:35.086 Module not found: Can't resolve '@/components/landing/LegalPage'
+   484→14:16:35.086 > 1 | import { LegalPage } from "@/components/landing/LegalPage";
+   485→14:16:35.087     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   486→14:16:35.087   2 |
+   487→14:16:35.087   3 | type Props = {
+   488→14:16:35.087   4 |   params: Promise<{ locale: string }>;
+   489→14:16:35.087 
+   490→14:16:35.087 Import map: aliased to relative './src/components/landing/LegalPage' inside of [project]/
+   491→14:16:35.088 
+   492→14:16:35.088 
+   493→14:16:35.088 https://nextjs.org/docs/messages/module-not-found
+   494→14:16:35.088 
+   495→14:16:35.088 
+   496→14:16:35.088 ./app/[locale]/privacy/page.tsx:1:1
+   497→14:16:35.088 Module not found: Can't resolve '@/components/landing/LegalPage'
+   498→14:16:35.089 > 1 | import { LegalPage } from "@/components/landing/LegalPage";
+   499→14:16:35.089     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   500→14:16:35.089   2 |
+   501→14:16:35.089   3 | type Props = {
+   502→14:16:35.089   4 |   params: Promise<{ locale: string }>;
+   503→14:16:35.089 
+   504→14:16:35.090 Import map: aliased to relative './src/components/landing/LegalPage' inside of [project]/
+   505→14:16:35.090 
+   506→14:16:35.090 
+   507→14:16:35.090 https://nextjs.org/docs/messages/module-not-found
+   508→14:16:35.090 
+   509→14:16:35.090 
+   510→14:16:35.091 ./app/[locale]/risk/page.tsx:1:1
+   511→14:16:35.091 Module not found: Can't resolve '@/components/landing/LegalPage'
+   512→14:16:35.091 > 1 | import { LegalPage } from "@/components/landing/LegalPage";
+   513→14:16:35.091     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   514→14:16:35.091   2 |
+   515→14:16:35.091   3 | type Props = {
+   516→14:16:35.092   4 |   params: Promise<{ locale: string }>;
+   517→14:16:35.092 
+   518→14:16:35.092 Import map: aliased to relative './src/components/landing/LegalPage' inside of [project]/
+   519→14:16:35.092 
+   520→14:16:35.092 
+   521→14:16:35.092 https://nextjs.org/docs/messages/module-not-found
+   522→14:16:35.093 
+   523→14:16:35.093 
+   524→14:16:35.093 ./app/[locale]/terms/page.tsx:1:1
+   525→14:16:35.093 Module not found: Can't resolve '@/components/landing/LegalPage'
+   526→14:16:35.093 > 1 | import { LegalPage } from "@/components/landing/LegalPage";
+   527→14:16:35.093     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   528→14:16:35.094   2 |
+   529→14:16:35.094   3 | type Props = {
+   530→14:16:35.094   4 |   params: Promise<{ locale: string }>;
+   531→14:16:35.094 
+   532→14:16:35.094 Import map: aliased to relative './src/components/landing/LegalPage' inside of [project]/
+   533→14:16:35.094 
+   534→14:16:35.095 
+   535→14:16:35.095 https://nextjs.org/docs/messages/module-not-found
+   536→14:16:35.095 
+   537→14:16:35.095 
+   538→14:16:35.095 ./app/[locale]/faq/page.tsx:8:1
+   539→14:16:35.095 Module not found: Can't resolve '@/components/landing/PageAnimation'
+   540→14:16:35.096    6 | import { Button } from "@/components/ui/button";
+   541→14:16:35.096    7 | import { ArrowLeft, HelpCircle } from "lucide-react";
+   542→14:16:35.096 >  8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   543→14:16:35.096      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   544→14:16:35.096    9 |
+   545→14:16:35.096   10 | type Props = {
+   546→14:16:35.097   11 |   params: Promise<{ locale: string }>;
+   547→14:16:35.097 
+   548→14:16:35.097 Import map: aliased to relative './src/components/landing/PageAnimation' inside of [project]/
+   549→14:16:35.097 
+   550→14:16:35.097 
+   551→14:16:35.097 https://nextjs.org/docs/messages/module-not-found
+   552→14:16:35.098 
+   553→14:16:35.098 
+   554→14:16:35.098 ./app/[locale]/transparency/page.tsx:8:1
+   555→14:16:35.098 Module not found: Can't resolve '@/components/landing/PageAnimation'
+   556→14:16:35.098    6 | import { Button } from "@/components/ui/button";
+   557→14:16:35.098    7 | import { ArrowLeft, ShieldCheck, Code, TrendingUp } from "lucide-react";
+   558→14:16:35.099 >  8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   559→14:16:35.099      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   560→14:16:35.099    9 |
+   561→14:16:35.099   10 | type Props = {
+   562→14:16:35.099   11 |   params: Promise<{ locale: string }>;
+   563→14:16:35.099 
+   564→14:16:35.100 Import map: aliased to relative './src/components/landing/PageAnimation' inside of [project]/
+   565→14:16:35.100 
+   566→14:16:35.100 
+   567→14:16:35.100 https://nextjs.org/docs/messages/module-not-found
+   568→14:16:35.100 
+   569→14:16:35.100 
+   570→14:16:35.100 ./app/[locale]/winners/page.tsx:8:1
+   571→14:16:35.100 Module not found: Can't resolve '@/components/landing/PageAnimation'
+   572→14:16:35.100    6 | import { Button } from "@/components/ui/button";
+   573→14:16:35.101    7 | import { ArrowLeft, Trophy } from "lucide-react";
+   574→14:16:35.101 >  8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   575→14:16:35.101      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   576→14:16:35.101    9 | import { WinnersEmptyState } from "@/components/landing/WinnersEmptyState";
+   577→14:16:35.101   10 |
+   578→14:16:35.101   11 | type Props = {
+   579→14:16:35.101 
+   580→14:16:35.101 Import map: aliased to relative './src/components/landing/PageAnimation' inside of [project]/
+   581→14:16:35.101 
+   582→14:16:35.102 
+   583→14:16:35.102 https://nextjs.org/docs/messages/module-not-found
+   584→14:16:35.102 
+   585→14:16:35.102 
+   586→14:16:35.102 ./app/[locale]/activity-preview/page.tsx:5:1
+   587→14:16:35.102 Module not found: Can't resolve '@/components/landing/SiteFooter'
+   588→14:16:35.102   3 | import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+   589→14:16:35.102   4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   590→14:16:35.102 > 5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   591→14:16:35.103     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   592→14:16:35.103   6 | import { Calendar } from "lucide-react";
+   593→14:16:35.103   7 |
+   594→14:16:35.103   8 | // Preview page for the Activity Feed component. Shows the feed with mock data.
+   595→14:16:35.103 
+   596→14:16:35.103 Import map: aliased to relative './src/components/landing/SiteFooter' inside of [project]/
+   597→14:16:35.103 
+   598→14:16:35.103 
+   599→14:16:35.103 Import traces:
+   600→14:16:35.103   Client Component Browser:
+   601→14:16:35.103     ./app/[locale]/activity-preview/page.tsx [Client Component Browser]
+   602→14:16:35.104     ./app/[locale]/activity-preview/page.tsx [Server Component]
+   603→14:16:35.104 
+   604→14:16:35.104   Client Component SSR:
+   605→14:16:35.104     ./app/[locale]/activity-preview/page.tsx [Client Component SSR]
+   606→14:16:35.104     ./app/[locale]/activity-preview/page.tsx [Server Component]
+   607→14:16:35.104 
+   608→14:16:35.104 https://nextjs.org/docs/messages/module-not-found
+   609→14:16:35.104 
+   610→14:16:35.104 
+   611→14:16:35.104 ./app/[locale]/dashboard/page.tsx:6:1
+   612→14:16:35.105 Module not found: Can't resolve '@/components/landing/SiteFooter'
+   613→14:16:35.105   4 | import { useTranslations } from "next-intl";
+   614→14:16:35.105   5 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   615→14:16:35.105 > 6 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   616→14:16:35.105     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   617→14:16:35.105   7 | import { WalletNotConnected } from "@/components/dashboard/WalletNotConnected";
+   618→14:16:35.105   8 | import { PositionCard } from "@/components/dashboard/PositionCard";
+   619→14:16:35.105   9 | import { PoolProgressCard } from "@/components/dashboard/PoolProgressCard";
+   620→14:16:35.105 
+   621→14:16:35.105 Import map: aliased to relative './src/components/landing/SiteFooter' inside of [project]/
+   622→14:16:35.105 
+   623→14:16:35.106 
+   624→14:16:35.106 Import traces:
+   625→14:16:35.106   Client Component Browser:
+   626→14:16:35.106     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   627→14:16:35.106     ./app/[locale]/dashboard/page.tsx [Server Component]
+   628→14:16:35.106 
+   629→14:16:35.106   Client Component SSR:
+   630→14:16:35.106     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   631→14:16:35.106     ./app/[locale]/dashboard/page.tsx [Server Component]
+   632→14:16:35.106 
+   633→14:16:35.106 https://nextjs.org/docs/messages/module-not-found
+   634→14:16:35.107 
+   635→14:16:35.107 
+   636→14:16:35.107 ./app/[locale]/deposit-preview/page.tsx:8:1
+   637→14:16:35.108 Module not found: Can't resolve '@/components/landing/SiteFooter'
+   638→14:16:35.108    6 | import { Button } from "@/components/ui/button";
+   639→14:16:35.108    7 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   640→14:16:35.108 >  8 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   641→14:16:35.108      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   642→14:16:35.109    9 | import { TrendingDown, ArrowUpFromLine } from "lucide-react";
+   643→14:16:35.109   10 |
+   644→14:16:35.109   11 | // Preview page — opens deposit & withdraw modals directly without requiring
+   645→14:16:35.109 
+   646→14:16:35.109 Import map: aliased to relative './src/components/landing/SiteFooter' inside of [project]/
+   647→14:16:35.110 
+   648→14:16:35.110 
+   649→14:16:35.110 Import traces:
+   650→14:16:35.110   Client Component Browser:
+   651→14:16:35.110     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+   652→14:16:35.110     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   653→14:16:35.111 
+   654→14:16:35.111   Client Component SSR:
+   655→14:16:35.111     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+   656→14:16:35.111     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   657→14:16:35.111 
+   658→14:16:35.111 https://nextjs.org/docs/messages/module-not-found
+   659→14:16:35.112 
+   660→14:16:35.112 
+   661→14:16:35.112 ./app/[locale]/faq/page.tsx:5:1
+   662→14:16:35.112 Module not found: Can't resolve '@/components/landing/SiteFooter'
+   663→14:16:35.113   3 | import { Link } from "@/i18n/navigation";
+   664→14:16:35.113   4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   665→14:16:35.113 > 5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   666→14:16:35.114     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   667→14:16:35.114   6 | import { Button } from "@/components/ui/button";
+   668→14:16:35.114   7 | import { ArrowLeft, HelpCircle } from "lucide-react";
+   669→14:16:35.114   8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   670→14:16:35.114 
+   671→14:16:35.115 Import map: aliased to relative './src/components/landing/SiteFooter' inside of [project]/
+   672→14:16:35.115 
+   673→14:16:35.115 
+   674→14:16:35.115 https://nextjs.org/docs/messages/module-not-found
+   675→14:16:35.115 
+   676→14:16:35.115 
+   677→14:16:35.116 ./app/[locale]/page.tsx:8:1
+   678→14:16:35.116 Module not found: Can't resolve '@/components/landing/SiteFooter'
+   679→14:16:35.116    6 | import { TrustSection } from "@/components/landing/TrustSection";
+   680→14:16:35.116    7 | import { FinalCTA } from "@/components/landing/FinalCTA";
+   681→14:16:35.116 >  8 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   682→14:16:35.117      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   683→14:16:35.117    9 |
+   684→14:16:35.117   10 | type Props = {
+   685→14:16:35.117   11 |   params: Promise<{ locale: string }>;
+   686→14:16:35.117 
+   687→14:16:35.117 Import map: aliased to relative './src/components/landing/SiteFooter' inside of [project]/
+   688→14:16:35.118 
+   689→14:16:35.118 
+   690→14:16:35.118 https://nextjs.org/docs/messages/module-not-found
+   691→14:16:35.118 
+   692→14:16:35.118 
+   693→14:16:35.118 ./app/[locale]/transparency/page.tsx:5:1
+   694→14:16:35.119 Module not found: Can't resolve '@/components/landing/SiteFooter'
+   695→14:16:35.119   3 | import { Link } from "@/i18n/navigation";
+   696→14:16:35.119   4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   697→14:16:35.119 > 5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   698→14:16:35.119     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   699→14:16:35.119   6 | import { Button } from "@/components/ui/button";
+   700→14:16:35.120   7 | import { ArrowLeft, ShieldCheck, Code, TrendingUp } from "lucide-react";
+   701→14:16:35.120   8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   702→14:16:35.120 
+   703→14:16:35.120 Import map: aliased to relative './src/components/landing/SiteFooter' inside of [project]/
+   704→14:16:35.120 
+   705→14:16:35.120 
+   706→14:16:35.120 https://nextjs.org/docs/messages/module-not-found
+   707→14:16:35.121 
+   708→14:16:35.121 
+   709→14:16:35.121 ./app/[locale]/winners/page.tsx:5:1
+   710→14:16:35.121 Module not found: Can't resolve '@/components/landing/SiteFooter'
+   711→14:16:35.121   3 | import { Link } from "@/i18n/navigation";
+   712→14:16:35.121   4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   713→14:16:35.122 > 5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   714→14:16:35.122     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   715→14:16:35.122   6 | import { Button } from "@/components/ui/button";
+   716→14:16:35.122   7 | import { ArrowLeft, Trophy } from "lucide-react";
+   717→14:16:35.122   8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   718→14:16:35.123 
+   719→14:16:35.123 Import map: aliased to relative './src/components/landing/SiteFooter' inside of [project]/
+   720→14:16:35.123 
+   721→14:16:35.123 
+   722→14:16:35.123 https://nextjs.org/docs/messages/module-not-found
+   723→14:16:35.123 
+   724→14:16:35.123 
+   725→14:16:35.124 ./app/[locale]/activity-preview/page.tsx:4:1
+   726→14:16:35.124 Module not found: Can't resolve '@/components/landing/SiteHeader'
+   727→14:16:35.124   2 |
+   728→14:16:35.124   3 | import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+   729→14:16:35.124 > 4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   730→14:16:35.125     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   731→14:16:35.125   5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   732→14:16:35.125   6 | import { Calendar } from "lucide-react";
+   733→14:16:35.125   7 |
+   734→14:16:35.125 
+   735→14:16:35.127 Import map: aliased to relative './src/components/landing/SiteHeader' inside of [project]/
+   736→14:16:35.127 
+   737→14:16:35.127 
+   738→14:16:35.127 Import traces:
+   739→14:16:35.127   Client Component Browser:
+   740→14:16:35.127     ./app/[locale]/activity-preview/page.tsx [Client Component Browser]
+   741→14:16:35.128     ./app/[locale]/activity-preview/page.tsx [Server Component]
+   742→14:16:35.128 
+   743→14:16:35.128   Client Component SSR:
+   744→14:16:35.128     ./app/[locale]/activity-preview/page.tsx [Client Component SSR]
+   745→14:16:35.128     ./app/[locale]/activity-preview/page.tsx [Server Component]
+   746→14:16:35.128 
+   747→14:16:35.129 https://nextjs.org/docs/messages/module-not-found
+   748→14:16:35.129 
+   749→14:16:35.129 
+   750→14:16:35.129 ./app/[locale]/dashboard/page.tsx:5:1
+   751→14:16:35.129 Module not found: Can't resolve '@/components/landing/SiteHeader'
+   752→14:16:35.129   3 | import { useState } from "react";
+   753→14:16:35.130   4 | import { useTranslations } from "next-intl";
+   754→14:16:35.130 > 5 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   755→14:16:35.130     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   756→14:16:35.130   6 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   757→14:16:35.130   7 | import { WalletNotConnected } from "@/components/dashboard/WalletNotConnected";
+   758→14:16:35.130   8 | import { PositionCard } from "@/components/dashboard/PositionCard";
+   759→14:16:35.131 
+   760→14:16:35.131 Import map: aliased to relative './src/components/landing/SiteHeader' inside of [project]/
+   761→14:16:35.131 
+   762→14:16:35.131 
+   763→14:16:35.131 Import traces:
+   764→14:16:35.131   Client Component Browser:
+   765→14:16:35.131     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+   766→14:16:35.132     ./app/[locale]/dashboard/page.tsx [Server Component]
+   767→14:16:35.132 
+   768→14:16:35.132   Client Component SSR:
+   769→14:16:35.132     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+   770→14:16:35.132     ./app/[locale]/dashboard/page.tsx [Server Component]
+   771→14:16:35.132 
+   772→14:16:35.133 https://nextjs.org/docs/messages/module-not-found
+   773→14:16:35.133 
+   774→14:16:35.133 
+   775→14:16:35.133 ./app/[locale]/deposit-preview/page.tsx:7:1
+   776→14:16:35.133 Module not found: Can't resolve '@/components/landing/SiteHeader'
+   777→14:16:35.133    5 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+   778→14:16:35.134    6 | import { Button } from "@/components/ui/button";
+   779→14:16:35.134 >  7 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   780→14:16:35.134      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   781→14:16:35.134    8 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   782→14:16:35.134    9 | import { TrendingDown, ArrowUpFromLine } from "lucide-react";
+   783→14:16:35.134   10 |
+   784→14:16:35.135 
+   785→14:16:35.135 Import map: aliased to relative './src/components/landing/SiteHeader' inside of [project]/
+   786→14:16:35.135 
+   787→14:16:35.135 
+   788→14:16:35.135 Import traces:
+   789→14:16:35.135   Client Component Browser:
+   790→14:16:35.136     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+   791→14:16:35.136     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   792→14:16:35.136 
+   793→14:16:35.136   Client Component SSR:
+   794→14:16:35.136     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+   795→14:16:35.136     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   796→14:16:35.136 
+   797→14:16:35.137 https://nextjs.org/docs/messages/module-not-found
+   798→14:16:35.137 
+   799→14:16:35.137 
+   800→14:16:35.137 ./app/[locale]/faq/page.tsx:4:1
+   801→14:16:35.137 Module not found: Can't resolve '@/components/landing/SiteHeader'
+   802→14:16:35.137   2 | import { getTranslations } from "next-intl/server";
+   803→14:16:35.138   3 | import { Link } from "@/i18n/navigation";
+   804→14:16:35.138 > 4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   805→14:16:35.138     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   806→14:16:35.143   5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   807→14:16:35.144   6 | import { Button } from "@/components/ui/button";
+   808→14:16:35.144   7 | import { ArrowLeft, HelpCircle } from "lucide-react";
+   809→14:16:35.144 
+   810→14:16:35.144 Import map: aliased to relative './src/components/landing/SiteHeader' inside of [project]/
+   811→14:16:35.144 
+   812→14:16:35.144 
+   813→14:16:35.145 https://nextjs.org/docs/messages/module-not-found
+   814→14:16:35.145 
+   815→14:16:35.145 
+   816→14:16:35.145 ./app/[locale]/page.tsx:2:1
+   817→14:16:35.145 Module not found: Can't resolve '@/components/landing/SiteHeader'
+   818→14:16:35.146   1 | import { setRequestLocale } from "next-intl/server";
+   819→14:16:35.146 > 2 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   820→14:16:35.146     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   821→14:16:35.146   3 | import { Hero } from "@/components/landing/Hero";
+   822→14:16:35.146   4 | import { HowItWorks } from "@/components/landing/HowItWorks";
+   823→14:16:35.146   5 | import { TransparencySection } from "@/components/landing/TransparencySection";
+   824→14:16:35.147 
+   825→14:16:35.147 Import map: aliased to relative './src/components/landing/SiteHeader' inside of [project]/
+   826→14:16:35.147 
+   827→14:16:35.147 
+   828→14:16:35.147 https://nextjs.org/docs/messages/module-not-found
+   829→14:16:35.147 
+   830→14:16:35.147 
+   831→14:16:35.148 ./app/[locale]/transparency/page.tsx:4:1
+   832→14:16:35.148 Module not found: Can't resolve '@/components/landing/SiteHeader'
+   833→14:16:35.148   2 | import { getTranslations } from "next-intl/server";
+   834→14:16:35.148   3 | import { Link } from "@/i18n/navigation";
+   835→14:16:35.148 > 4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   836→14:16:35.148     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   837→14:16:35.149   5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   838→14:16:35.149   6 | import { Button } from "@/components/ui/button";
+   839→14:16:35.149   7 | import { ArrowLeft, ShieldCheck, Code, TrendingUp } from "lucide-react";
+   840→14:16:35.149 
+   841→14:16:35.149 Import map: aliased to relative './src/components/landing/SiteHeader' inside of [project]/
+   842→14:16:35.149 
+   843→14:16:35.149 
+   844→14:16:35.150 https://nextjs.org/docs/messages/module-not-found
+   845→14:16:35.150 
+   846→14:16:35.150 
+   847→14:16:35.150 ./app/[locale]/winners/page.tsx:4:1
+   848→14:16:35.150 Module not found: Can't resolve '@/components/landing/SiteHeader'
+   849→14:16:35.150   2 | import { getTranslations } from "next-intl/server";
+   850→14:16:35.150   3 | import { Link } from "@/i18n/navigation";
+   851→14:16:35.151 > 4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   852→14:16:35.151     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   853→14:16:35.151   5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   854→14:16:35.151   6 | import { Button } from "@/components/ui/button";
+   855→14:16:35.151   7 | import { ArrowLeft, Trophy } from "lucide-react";
+   856→14:16:35.151 
+   857→14:16:35.153 Import map: aliased to relative './src/components/landing/SiteHeader' inside of [project]/
+   858→14:16:35.153 
+   859→14:16:35.153 
+   860→14:16:35.153 https://nextjs.org/docs/messages/module-not-found
+   861→14:16:35.154 
+   862→14:16:35.154 
+   863→14:16:35.154 ./app/[locale]/page.tsx:5:1
+   864→14:16:35.154 Module not found: Can't resolve '@/components/landing/TransparencySection'
+   865→14:16:35.154   3 | import { Hero } from "@/components/landing/Hero";
+   866→14:16:35.154   4 | import { HowItWorks } from "@/components/landing/HowItWorks";
+   867→14:16:35.155 > 5 | import { TransparencySection } from "@/components/landing/TransparencySection";
+   868→14:16:35.155     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   869→14:16:35.155   6 | import { TrustSection } from "@/components/landing/TrustSection";
+   870→14:16:35.155   7 | import { FinalCTA } from "@/components/landing/FinalCTA";
+   871→14:16:35.155   8 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   872→14:16:35.155 
+   873→14:16:35.156 Import map: aliased to relative './src/components/landing/TransparencySection' inside of [project]/
+   874→14:16:35.156 
+   875→14:16:35.156 
+   876→14:16:35.156 https://nextjs.org/docs/messages/module-not-found
+   877→14:16:35.156 
+   878→14:16:35.156 
+   879→14:16:35.157 ./app/[locale]/page.tsx:6:1
+   880→14:16:35.157 Module not found: Can't resolve '@/components/landing/TrustSection'
+   881→14:16:35.157   4 | import { HowItWorks } from "@/components/landing/HowItWorks";
+   882→14:16:35.157   5 | import { TransparencySection } from "@/components/landing/TransparencySection";
+   883→14:16:35.157 > 6 | import { TrustSection } from "@/components/landing/TrustSection";
+   884→14:16:35.157     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   885→14:16:35.158   7 | import { FinalCTA } from "@/components/landing/FinalCTA";
+   886→14:16:35.158   8 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   887→14:16:35.158   9 |
+   888→14:16:35.158 
+   889→14:16:35.158 Import map: aliased to relative './src/components/landing/TrustSection' inside of [project]/
+   890→14:16:35.158 
+   891→14:16:35.158 
+   892→14:16:35.159 https://nextjs.org/docs/messages/module-not-found
+   893→14:16:35.159 
+   894→14:16:35.159 
+   895→14:16:35.159 ./app/[locale]/winners/page.tsx:9:1
+   896→14:16:35.159 Module not found: Can't resolve '@/components/landing/WinnersEmptyState'
+   897→14:16:35.159    7 | import { ArrowLeft, Trophy } from "lucide-react";
+   898→14:16:35.160    8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   899→14:16:35.160 >  9 | import { WinnersEmptyState } from "@/components/landing/WinnersEmptyState";
+   900→14:16:35.160      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   901→14:16:35.160   10 |
+   902→14:16:35.160   11 | type Props = {
+   903→14:16:35.160   12 |   params: Promise<{ locale: string }>;
+   904→14:16:35.161 
+   905→14:16:35.161 Import map: aliased to relative './src/components/landing/WinnersEmptyState' inside of [project]/
+   906→14:16:35.161 
+   907→14:16:35.161 
+   908→14:16:35.161 https://nextjs.org/docs/messages/module-not-found
+   909→14:16:35.161 
+   910→14:16:35.162 
+   911→14:16:35.162 ./app/[locale]/deposit-preview/page.tsx:6:1
+   912→14:16:35.162 Module not found: Can't resolve '@/components/ui/button'
+   913→14:16:35.162   4 | import { DepositModal } from "@/components/dashboard/DepositModal";
+   914→14:16:35.162   5 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+   915→14:16:35.162 > 6 | import { Button } from "@/components/ui/button";
+   916→14:16:35.163     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   917→14:16:35.163   7 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   918→14:16:35.163   8 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   919→14:16:35.163   9 | import { TrendingDown, ArrowUpFromLine } from "lucide-react";
+   920→14:16:35.163 
+   921→14:16:35.163 Import map: aliased to relative './src/components/ui/button' inside of [project]/
+   922→14:16:35.164 
+   923→14:16:35.164 
+   924→14:16:35.164 Import traces:
+   925→14:16:35.164   Client Component Browser:
+   926→14:16:35.164     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+   927→14:16:35.164     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   928→14:16:35.165 
+   929→14:16:35.165   Client Component SSR:
+   930→14:16:35.165     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+   931→14:16:35.165     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+   932→14:16:35.165 
+   933→14:16:35.165 https://nextjs.org/docs/messages/module-not-found
+   934→14:16:35.165 
+   935→14:16:35.166 
+   936→14:16:35.166 ./app/[locale]/faq/page.tsx:6:1
+   937→14:16:35.166 Module not found: Can't resolve '@/components/ui/button'
+   938→14:16:35.166   4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   939→14:16:35.166   5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   940→14:16:35.166 > 6 | import { Button } from "@/components/ui/button";
+   941→14:16:35.167     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   942→14:16:35.167   7 | import { ArrowLeft, HelpCircle } from "lucide-react";
+   943→14:16:35.167   8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   944→14:16:35.167   9 |
+   945→14:16:35.167 
+   946→14:16:35.167 Import map: aliased to relative './src/components/ui/button' inside of [project]/
+   947→14:16:35.168 
+   948→14:16:35.168 
+   949→14:16:35.168 https://nextjs.org/docs/messages/module-not-found
+   950→14:16:35.168 
+   951→14:16:35.168 
+   952→14:16:35.168 ./app/[locale]/transparency/page.tsx:6:1
+   953→14:16:35.168 Module not found: Can't resolve '@/components/ui/button'
+   954→14:16:35.169   4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   955→14:16:35.169   5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   956→14:16:35.169 > 6 | import { Button } from "@/components/ui/button";
+   957→14:16:35.169     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   958→14:16:35.169   7 | import { ArrowLeft, ShieldCheck, Code, TrendingUp } from "lucide-react";
+   959→14:16:35.170   8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   960→14:16:35.170   9 |
+   961→14:16:35.170 
+   962→14:16:35.170 Import map: aliased to relative './src/components/ui/button' inside of [project]/
+   963→14:16:35.170 
+   964→14:16:35.170 
+   965→14:16:35.170 https://nextjs.org/docs/messages/module-not-found
+   966→14:16:35.171 
+   967→14:16:35.171 
+   968→14:16:35.171 ./app/[locale]/winners/page.tsx:6:1
+   969→14:16:35.171 Module not found: Can't resolve '@/components/ui/button'
+   970→14:16:35.171   4 | import { SiteHeader } from "@/components/landing/SiteHeader";
+   971→14:16:35.171   5 | import { SiteFooter } from "@/components/landing/SiteFooter";
+   972→14:16:35.172 > 6 | import { Button } from "@/components/ui/button";
+   973→14:16:35.172     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   974→14:16:35.172   7 | import { ArrowLeft, Trophy } from "lucide-react";
+   975→14:16:35.172   8 | import { PageAnimation } from "@/components/landing/PageAnimation";
+   976→14:16:35.172   9 | import { WinnersEmptyState } from "@/components/landing/WinnersEmptyState";
+   977→14:16:35.172 
+   978→14:16:35.173 Import map: aliased to relative './src/components/ui/button' inside of [project]/
+   979→14:16:35.173 
+   980→14:16:35.173 
+   981→14:16:35.173 https://nextjs.org/docs/messages/module-not-found
+   982→14:16:35.173 
+   983→14:16:35.173 
+   984→14:16:35.174 ./app/layout.tsx:3:1
+   985→14:16:35.174 Module not found: Can't resolve '@/components/ui/toaster'
+   986→14:16:35.174   1 | import type { Metadata } from "next";
+   987→14:16:35.174   2 | import "./globals.css";
+   988→14:16:35.174 > 3 | import { Toaster } from "@/components/ui/toaster";
+   989→14:16:35.174     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   990→14:16:35.175   4 | import { Web3ModalProvider } from "@/providers/Web3ModalProvider";
+   991→14:16:35.175   5 |
+   992→14:16:35.175   6 | export const metadata: Metadata = {
+   993→14:16:35.175 
+   994→14:16:35.175 Import map: aliased to relative './src/components/ui/toaster' inside of [project]/
+   995→14:16:35.176 
+   996→14:16:35.176 
+   997→14:16:35.176 https://nextjs.org/docs/messages/module-not-found
+   998→14:16:35.176 
+   999→14:16:35.176 
+  1000→14:16:35.176 ./app/[locale]/dashboard/page.tsx:16:1
+  1001→14:16:35.177 Module not found: Can't resolve '@/hooks/useLottery'
+  1002→14:16:35.177   14 | import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
+  1003→14:16:35.177   15 | import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+  1004→14:16:35.177 > 16 | import { useDashboardData } from "@/hooks/useLottery";
+  1005→14:16:35.177      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  1006→14:16:35.178   17 | import { useAccount } from "wagmi";
+  1007→14:16:35.178   18 | import { motion } from "framer-motion";
+  1008→14:16:35.178   19 | import { Loader2 } from "lucide-react";
+  1009→14:16:35.178 
+  1010→14:16:35.178 Import map: aliased to relative './src/hooks/useLottery' inside of [project]/
+  1011→14:16:35.179 
+  1012→14:16:35.179 
+  1013→14:16:35.179 Import traces:
+  1014→14:16:35.179   Client Component Browser:
+  1015→14:16:35.179     ./app/[locale]/dashboard/page.tsx [Client Component Browser]
+  1016→14:16:35.180     ./app/[locale]/dashboard/page.tsx [Server Component]
+  1017→14:16:35.180 
+  1018→14:16:35.180   Client Component SSR:
+  1019→14:16:35.180     ./app/[locale]/dashboard/page.tsx [Client Component SSR]
+  1020→14:16:35.180     ./app/[locale]/dashboard/page.tsx [Server Component]
+  1021→14:16:35.181 
+  1022→14:16:35.181 https://nextjs.org/docs/messages/module-not-found
+  1023→14:16:35.182 
+  1024→14:16:35.183 
+  1025→14:16:35.183 ./app/[locale]/layout.tsx:5:1
+  1026→14:16:35.183 Module not found: Can't resolve '@/lib/fonts'
+  1027→14:16:35.183   3 | import { routing } from "@/i18n/routing";
+  1028→14:16:35.184   4 | import { getMessages, setRequestLocale } from "next-intl/server";
+  1029→14:16:35.184 > 5 | import { getBodyClassName, fontVariables } from "@/lib/fonts";
+  1030→14:16:35.184     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  1031→14:16:35.184   6 |
+  1032→14:16:35.184   7 | type Props = {
+  1033→14:16:35.185   8 |   children: React.ReactNode;
+  1034→14:16:35.185 
+  1035→14:16:35.185 Import map: aliased to relative './src/lib/fonts' inside of [project]/
+  1036→14:16:35.185 
+  1037→14:16:35.185 
+  1038→14:16:35.185 https://nextjs.org/docs/messages/module-not-found
+  1039→14:16:35.186 
+  1040→14:16:35.186 
+  1041→14:16:35.186 ./app/layout.tsx:4:1
+  1042→14:16:35.186 Module not found: Can't resolve '@/providers/Web3ModalProvider'
+  1043→14:16:35.186   2 | import "./globals.css";
+  1044→14:16:35.186   3 | import { Toaster } from "@/components/ui/toaster";
+  1045→14:16:35.186 > 4 | import { Web3ModalProvider } from "@/providers/Web3ModalProvider";
+  1046→14:16:35.187     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  1047→14:16:35.187   5 |
+  1048→14:16:35.187   6 | export const metadata: Metadata = {
+  1049→14:16:35.187   7 |   title: "1DollarMillion — No-Loss Lottery Powered by DeFi",
+  1050→14:16:35.187 
+  1051→14:16:35.188 Import map: aliased to relative './src/providers/Web3ModalProvider' inside of [project]/
+  1052→14:16:35.188 
+  1053→14:16:35.188 
+  1054→14:16:35.188 https://nextjs.org/docs/messages/module-not-found
+  1055→14:16:35.188 
+  1056→14:16:35.189 
+  1057→14:16:35.189     at <unknown> (./app/[locale]/activity-preview/page.tsx:3:1)
+  1058→14:16:35.189     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1059→14:16:35.189     at <unknown> (./app/[locale]/dashboard/page.tsx:15:1)
+  1060→14:16:35.189     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1061→14:16:35.190     at <unknown> (./app/[locale]/dashboard/page.tsx:13:1)
+  1062→14:16:35.190     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1063→14:16:35.190     at <unknown> (./app/[locale]/deposit-preview/page.tsx:4:1)
+  1064→14:16:35.190     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1065→14:16:35.190     at <unknown> (./app/[locale]/dashboard/page.tsx:12:1)
+  1066→14:16:35.191     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1067→14:16:35.191     at <unknown> (./app/[locale]/dashboard/page.tsx:9:1)
+  1068→14:16:35.191     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1069→14:16:35.191     at <unknown> (./app/[locale]/dashboard/page.tsx:8:1)
+  1070→14:16:35.191     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1071→14:16:35.191     at <unknown> (./app/[locale]/dashboard/page.tsx:11:1)
+  1072→14:16:35.192     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1073→14:16:35.192     at <unknown> (./app/[locale]/dashboard/page.tsx:7:1)
+  1074→14:16:35.192     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1075→14:16:35.192     at <unknown> (./app/[locale]/dashboard/page.tsx:14:1)
+  1076→14:16:35.192     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1077→14:16:35.192     at <unknown> (./app/[locale]/deposit-preview/page.tsx:5:1)
+  1078→14:16:35.193     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1079→14:16:35.193     at <unknown> (./app/[locale]/dashboard/page.tsx:10:1)
+  1080→14:16:35.193     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1081→14:16:35.193     at <unknown> (./app/[locale]/page.tsx:7:1)
+  1082→14:16:35.193     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1083→14:16:35.193     at <unknown> (./app/[locale]/page.tsx:3:1)
+  1084→14:16:35.194     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1085→14:16:35.194     at <unknown> (./app/[locale]/page.tsx:4:1)
+  1086→14:16:35.194     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1087→14:16:35.194     at <unknown> (./app/[locale]/audit/page.tsx:1:1)
+  1088→14:16:35.194     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1089→14:16:35.195     at <unknown> (./app/[locale]/docs/page.tsx:1:1)
+  1090→14:16:35.195     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1091→14:16:35.195     at <unknown> (./app/[locale]/github/page.tsx:1:1)
+  1092→14:16:35.195     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1093→14:16:35.195     at <unknown> (./app/[locale]/privacy/page.tsx:1:1)
+  1094→14:16:35.195     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1095→14:16:35.196     at <unknown> (./app/[locale]/risk/page.tsx:1:1)
+  1096→14:16:35.196     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1097→14:16:35.196     at <unknown> (./app/[locale]/terms/page.tsx:1:1)
+  1098→14:16:35.196     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1099→14:16:35.196     at <unknown> (./app/[locale]/faq/page.tsx:8:1)
+  1100→14:16:35.196     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1101→14:16:35.196     at <unknown> (./app/[locale]/transparency/page.tsx:8:1)
+  1102→14:16:35.197     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1103→14:16:35.199     at <unknown> (./app/[locale]/winners/page.tsx:8:1)
+  1104→14:16:35.199     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1105→14:16:35.199     at <unknown> (./app/[locale]/activity-preview/page.tsx:5:1)
+  1106→14:16:35.199     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1107→14:16:35.200     at <unknown> (./app/[locale]/dashboard/page.tsx:6:1)
+  1108→14:16:35.200     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1109→14:16:35.200     at <unknown> (./app/[locale]/deposit-preview/page.tsx:8:1)
+  1110→14:16:35.200     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1111→14:16:35.200     at <unknown> (./app/[locale]/faq/page.tsx:5:1)
+  1112→14:16:35.201     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1113→14:16:35.201     at <unknown> (./app/[locale]/page.tsx:8:1)
+  1114→14:16:35.201     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1115→14:16:35.201     at <unknown> (./app/[locale]/transparency/page.tsx:5:1)
+  1116→14:16:35.201     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1117→14:16:35.202     at <unknown> (./app/[locale]/winners/page.tsx:5:1)
+  1118→14:16:35.202     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1119→14:16:35.202     at <unknown> (./app/[locale]/activity-preview/page.tsx:4:1)
+  1120→14:16:35.202     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1121→14:16:35.202     at <unknown> (./app/[locale]/dashboard/page.tsx:5:1)
+  1122→14:16:35.202     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1123→14:16:35.203     at <unknown> (./app/[locale]/deposit-preview/page.tsx:7:1)
+  1124→14:16:35.203     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1125→14:16:35.203     at <unknown> (./app/[locale]/faq/page.tsx:4:1)
+  1126→14:16:35.203     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1127→14:16:35.203     at <unknown> (./app/[locale]/page.tsx:2:1)
+  1128→14:16:35.203     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1129→14:16:35.203     at <unknown> (./app/[locale]/transparency/page.tsx:4:1)
+  1130→14:16:35.204     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1131→14:16:35.204     at <unknown> (./app/[locale]/winners/page.tsx:4:1)
+  1132→14:16:35.204     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1133→14:16:35.205     at <unknown> (./app/[locale]/page.tsx:5:1)
+  1134→14:16:35.205     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1135→14:16:35.206     at <unknown> (./app/[locale]/page.tsx:6:1)
+  1136→14:16:35.206     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1137→14:16:35.206     at <unknown> (./app/[locale]/winners/page.tsx:9:1)
+  1138→14:16:35.206     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1139→14:16:35.206     at <unknown> (./app/[locale]/deposit-preview/page.tsx:6:1)
+  1140→14:16:35.207     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1141→14:16:35.207     at <unknown> (./app/[locale]/faq/page.tsx:6:1)
+  1142→14:16:35.207     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1143→14:16:35.207     at <unknown> (./app/[locale]/transparency/page.tsx:6:1)
+  1144→14:16:35.207     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1145→14:16:35.207     at <unknown> (./app/[locale]/winners/page.tsx:6:1)
+  1146→14:16:35.207     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1147→14:16:35.208     at <unknown> (./app/layout.tsx:3:1)
+  1148→14:16:35.208     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1149→14:16:35.208     at <unknown> (./app/[locale]/dashboard/page.tsx:16:1)
+  1150→14:16:35.208     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1151→14:16:35.208     at <unknown> (./app/[locale]/layout.tsx:5:1)
+  1152→14:16:35.208     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1153→14:16:35.209     at <unknown> (./app/layout.tsx:4:1)
+  1154→14:16:35.209     at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+  1155→14:16:35.234 Error: Command "next build" exited with 1

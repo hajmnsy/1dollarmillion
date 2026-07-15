@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useChainId } from "wagmi";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
@@ -11,66 +11,76 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { Wallet, LogOut, ChevronDown, ShieldCheck } from "lucide-react";
+import { Wallet, Loader2, LogOut, ChevronDown, ShieldCheck } from "lucide-react";
 
 // ============================================================
-// ====== OFFICIAL WALLET BRAND LOGOS (HIGH FIDELITY) =========
+// =========== OFFICIAL WALLET BRAND LOGOS ====================
+// ============================================================
+// Using GitHub org avatars (avatars.githubusercontent.com) which have
+// proper CORS headers (`access-control-allow-origin: *`) and 99.9%
+// uptime. GitHub raw content URLs are blocked by CSP in browsers.
+
+const METAMASK_LOGO_URL =
+  "https://avatars.githubusercontent.com/u/15782395?s=128&v=4";
+
+const TRUST_WALLET_LOGO_URL =
+  "https://avatars.githubusercontent.com/u/4633202?s=128&v=4";
+
+const COINBASE_LOGO_URL =
+  "https://avatars.githubusercontent.com/u/18060234?s=200&v=4";
+
+const WALLETCONNECT_LOGO_URL =
+  "https://avatars.githubusercontent.com/u/117445869?s=128&v=4";
+
+// ============================================================
+// ====== INLINE SVG FALLBACKS (guaranteed to render) =========
 // ============================================================
 
-function MetaMaskIcon({ size = 40 }: { size?: number }) {
+function MetaMaskFallback() {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* MetaMask fox - official colors */}
-      <path d="M27.86 4l-8.06 6.02L21.18 6 27.86 4z" fill="#E2761B"/>
-      <path d="M4.14 4l8 6.04L10.74 6 4.14 4z" fill="#E4761B"/>
-      <path d="M24.18 22.42l-2.15 3.3 4.6 1.27 1.32-4.5-3.77-.07zm-17.72.07l1.31 4.5 4.6-1.27-2.14-3.3-3.77.07z" fill="#E4761B"/>
-      <path d="M9.92 14.26l-1.28 1.93 4.57.2-.16-4.93-3.13 2.8zm12.16 0l-3.2-2.86-.1 4.97 4.55-.2-1.25-1.91z" fill="#E4761B"/>
-      <path d="M5.62 21.42l2.55 4.32 4.84-2.16-2.6-3.18-4.79 1.02zm15.36-.02l-4.79-1.04-2.6 3.2 4.85 2.16 2.54-4.32z" fill="#F6851B"/>
-      <path d="M13.01 25.74l3-.02.79-4.35-4.57-.4.78 4.77z" fill="#763D16"/>
-      <path d="M19.4 26.04l-2.94-3.04-1.94.6 1.95.69.79 1.74.69-.16-1.36-1.62 2.81 1.79zm-7.16-2.04l.79.16.69-1.74 1.95-.69-1.94-.6-2.94 3.04 2.81-1.79-1.36 1.62z" fill="#F6851B"/>
-      <path d="M16.69 24.18l1.36 1.62-1.93-.4-.7 1.4-.71-1.4-1.94.4 1.36-1.62-2.81 1.79 4.05 2.4 4.06-2.4-2.74-1.79z" fill="#E2761B"/>
-      {/* Face highlights */}
-      <path d="M16 6l-2.4 2.4.16 4.93.4-2.94L16 9.5l1.84 1.89.4 2.94.16-4.93L16 6z" fill="#D7C1B3" opacity="0.7"/>
-      <path d="M22.08 14.26l-3.2-2.86-.1 4.97 4.55-.2-1.25-1.91zm-12.16 0l-3.13 2.8-.16 4.93 4.57-.2-1.28-1.93V14.26z" fill="#E4761B" opacity="0.5"/>
-      {/* Eyes */}
-      <ellipse cx="13.5" cy="13" rx="0.8" ry="1.1" fill="#000"/>
-      <ellipse cx="18.5" cy="13" rx="0.8" ry="1.1" fill="#000"/>
-      {/* Nose */}
-      <ellipse cx="16" cy="15" rx="0.9" ry="0.6" fill="#000"/>
-    </svg>
-  );
-}
-
-function TrustWalletIcon({ size = 40 }: { size?: number }) {
-  // Official Trust Wallet logo - blue circle with white shield
-  return (
-    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="16" fill="#0C8CE9"/>
-      {/* Shield shape */}
+    <svg viewBox="0 0 32 32" className="h-8 w-8" aria-label="MetaMask">
+      <circle cx="16" cy="16" r="16" fill="#F6851B" />
       <path
-        d="M16 6L9.5 8.7v5.6c0 4.4 2.8 8.4 6.5 9.8 3.7-1.4 6.5-5.4 6.5-9.8V8.7L16 6z"
+        d="M21.5 8.5l-3 2.5L16 9l-2.5 2L10.5 8.5 9 22l5-3.5L16 21l2-2.5 5 3.5-1.5-13z"
         fill="#fff"
-      />
-      <path
-        d="M16 6L9.5 8.7v5.6c0 4.4 2.8 8.4 6.5 9.8V6z"
-        fill="#fff"
-        fillOpacity="0.85"
-      />
-      {/* Keyhole in shield */}
-      <circle cx="16" cy="14.5" r="1.5" fill="#0C8CE9"/>
-      <path
-        d="M15.5 15h1l.3 2.5h-2.1l.3-2.5z"
-        fill="#0C8CE9"
       />
     </svg>
   );
 }
 
-function WalletConnectIcon({ size = 40 }: { size?: number }) {
-  // Official WalletConnect logo - blue circle with white WC pattern
+function TrustWalletFallback() {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="16" fill="#3B99FC"/>
+    <svg viewBox="0 0 32 32" className="h-8 w-8" aria-label="Trust Wallet">
+      <circle cx="16" cy="16" r="16" fill="#0C8CE9" />
+      <path
+        d="M16 6L9 9v6c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V9l-7-3z"
+        fill="#fff"
+      />
+    </svg>
+  );
+}
+
+function CoinbaseFallback() {
+  return (
+    <svg viewBox="0 0 32 32" className="h-8 w-8" aria-label="Coinbase">
+      <circle cx="16" cy="16" r="16" fill="#0052FF" />
+      <circle
+        cx="16"
+        cy="16"
+        r="6"
+        fill="none"
+        stroke="#fff"
+        strokeWidth="2.5"
+      />
+      <rect x="14.75" y="6" width="2.5" height="6" fill="#fff" />
+    </svg>
+  );
+}
+
+function WalletConnectFallback() {
+  return (
+    <svg viewBox="0 0 32 32" className="h-8 w-8" aria-label="WalletConnect">
+      <circle cx="16" cy="16" r="16" fill="#3B99FC" />
       <path
         d="M10.5 12.3c3.03-2.97 7.94-2.97 10.97 0l.36.36c.15.15.15.39 0 .53l-1.25 1.22c-.07.07-.2.07-.27 0l-.5-.49c-2.12-2.07-5.55-2.07-7.66 0l-.53.52c-.07.07-.2.07-.27 0l-1.25-1.22a.36.36 0 010-.53l.4-.39z"
         fill="#fff"
@@ -83,47 +93,47 @@ function WalletConnectIcon({ size = 40 }: { size?: number }) {
   );
 }
 
-function CoinbaseIcon({ size = 40 }: { size?: number }) {
-  // Official Coinbase logo - blue circle with white "C" in a small circle
-  return (
-    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="16" fill="#0052FF"/>
-      {/* Inner white circle with C */}
-      <circle cx="16" cy="16" r="7" fill="#fff"/>
-      <path
-        d="M16 11.5c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5c2 0 3.7-1.3 4.3-3.1h-1.6c-.5 1-1.5 1.7-2.7 1.7-1.6 0-2.9-1.3-2.9-2.9s1.3-2.9 2.9-2.9c1.2 0 2.2.7 2.7 1.7h1.6c-.6-1.8-2.3-3.1-4.3-3.1z"
-        fill="#0052FF"
-      />
-    </svg>
-  );
-}
+// ============================================================
+// ====== WALLET IMAGE (img with SVG fallback) ================
+// ============================================================
 
-function PhantomIcon({ size = 40 }: { size?: number }) {
-  // Official Phantom logo - purple circle with white ghost
+function WalletImage({
+  src,
+  fallback,
+  alt,
+}: {
+  src: string;
+  fallback: React.ReactNode;
+  alt: string;
+}) {
+  const [errored, setErrored] = useState(false);
+
+  if (errored) {
+    return <>{fallback}</>;
+  }
+
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="16" fill="#AB9FF2"/>
-      {/* Ghost shape */}
-      <path
-        d="M16 7c-3.3 0-6 2.7-6 6v8.5c0 .8.9 1.3 1.6.8l1.2-.9c.4-.3.9-.3 1.3 0l1.4 1c.4.3.9.3 1.3 0l1.4-1c.4-.3.9-.3 1.3 0l1.4 1c.4.3.9.3 1.3 0l1.2-.9c.7-.5 1.6 0 1.6-.8V13c0-3.3-2.7-6-6-6z"
-        fill="#fff"
-      />
-      {/* Eyes */}
-      <circle cx="13.5" cy="13" r="1" fill="#AB9FF2"/>
-      <circle cx="18.5" cy="13" r="1" fill="#AB9FF2"/>
-    </svg>
+    <img
+      src={src}
+      alt={alt}
+      width={32}
+      height={32}
+      className="rounded-full object-contain"
+      onError={() => setErrored(true)}
+    />
   );
 }
 
 // ============================================================
-// ====== WALLET OPTION DEFINITIONS ===========================
+// ====== HARDCODED WALLET OPTIONS (always 4 visible) =========
 // ============================================================
 
 interface WalletOption {
   key: string;
   label: string;
   desc: string;
-  icon: React.ReactNode;
+  logoUrl: string;
+  fallback: React.ReactNode;
   badge: string | null;
   findConnector: (connectors: any[]) => any | undefined;
 }
@@ -133,73 +143,69 @@ const WALLET_OPTIONS: WalletOption[] = [
     key: "metamask",
     label: "MetaMask",
     desc: "The most popular Web3 wallet",
-    icon: <MetaMaskIcon size={40} />,
+    logoUrl: METAMASK_LOGO_URL,
+    fallback: <MetaMaskFallback />,
     badge: null,
-    findConnector: (c) => c.find((x) => x.id.includes("metaMask") || x.id === "injected"),
+    findConnector: (connectors) =>
+      connectors.find(
+        (c) => c.id.includes("metaMask") || c.id === "injected"
+      ),
   },
   {
     key: "trust",
     label: "Trust Wallet",
     desc: "Connect with Trust Wallet",
-    icon: <TrustWalletIcon size={40} />,
+    logoUrl: TRUST_WALLET_LOGO_URL,
+    fallback: <TrustWalletFallback />,
     badge: null,
-    findConnector: (c) => c.find((x) => x.id.includes("trust") || x.id === "injected"),
+    findConnector: (connectors) =>
+      connectors.find(
+        (c) => c.id.includes("trust") || c.id === "injected"
+      ),
   },
   {
     key: "walletconnect",
     label: "WalletConnect",
     desc: "Scan with 300+ wallets",
-    icon: <WalletConnectIcon size={40} />,
+    logoUrl: WALLETCONNECT_LOGO_URL,
+    fallback: <WalletConnectFallback />,
     badge: "300+",
-    findConnector: (c) => c.find((x) => x.id.includes("walletConnect") || x.id.includes("walletconnect")),
+    findConnector: (connectors) =>
+      connectors.find(
+        (c) =>
+          c.id.includes("walletConnect") || c.id.includes("walletconnect")
+      ),
   },
   {
     key: "coinbase",
     label: "Coinbase Wallet",
     desc: "Connect with Coinbase Wallet",
-    icon: <CoinbaseIcon size={40} />,
+    logoUrl: COINBASE_LOGO_URL,
+    fallback: <CoinbaseFallback />,
     badge: null,
-    findConnector: (c) => c.find((x) => x.id.includes("coinbase") || x.id.includes("Coinbase")),
-  },
-  {
-    key: "phantom",
-    label: "Phantom",
-    desc: "Multi-chain wallet for Solana & EVM",
-    icon: <PhantomIcon size={40} />,
-    badge: null,
-    findConnector: (c) => c.find((x) => x.id.includes("phantom") || x.id.includes("Phantom")),
+    findConnector: (connectors) =>
+      connectors.find(
+        (c) => c.id.includes("coinbase") || c.id.includes("Coinbase")
+      ),
   },
 ];
 
-// ============================================================
-// =========== BULLETPROOF WalletButton =======================
-// ============================================================
-
-export function WalletButton() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return <div className="w-32 h-10 bg-gray-800 rounded-md"></div>;
-
-  return <WalletButtonClient />;
-}
-
-// ============================================================
-// =========== WalletButtonClient =============================
-// ============================================================
-
-function WalletButtonClient() {
+/**
+ * WalletButtonInner — the actual wallet button with all wagmi hooks.
+ *
+ * This component is ONLY rendered on the client (via next/dynamic
+ * with ssr:false in WalletButton.tsx), so it never causes hydration
+ * mismatches.
+ */
+export function WalletButtonInner() {
   const t = useTranslations("wallet");
-  const { address } = useAccount();
-  const { connectors, connectAsync } = useConnect();
+  const { address, isConnecting, isReconnecting } = useAccount();
+  const { connectors, connectAsync, isPending } = useConnect();
   const { disconnect } = useDisconnect();
   const chainId = useChainId();
   const [showPicker, setShowPicker] = useState(false);
   const [showAccountMenu, setShowAccountMenu] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [connectionError, setConnectionError] = useState<string | null>(null);
 
   // === Connected state ===
   if (address) {
@@ -220,13 +226,18 @@ function WalletButtonClient() {
 
         {showAccountMenu && (
           <>
-            <div className="fixed inset-0 z-40" onClick={() => setShowAccountMenu(false)} />
+            <div
+              className="fixed inset-0 z-40"
+              onClick={() => setShowAccountMenu(false)}
+            />
             <div className="absolute end-0 mt-2 w-56 overflow-hidden rounded-xl border border-white/10 bg-[#111] shadow-2xl z-50">
               <div className="border-b border-white/5 px-4 py-3">
                 <div className="text-xs font-medium uppercase tracking-wider text-white/40">
                   Connected
                 </div>
-                <div className="mt-1 font-mono text-xs text-white/80">{address}</div>
+                <div className="mt-1 font-mono text-xs text-white/80">
+                  {address}
+                </div>
                 <div className="mt-1 flex items-center gap-1.5 text-xs text-emerald-400">
                   <ShieldCheck className="h-3 w-3" />
                   Chain ID: {chainId}
@@ -253,19 +264,27 @@ function WalletButtonClient() {
   return (
     <>
       <Button
-        onClick={() => {
-          setError(null);
-          setShowPicker(true);
-        }}
-        className="h-10 gap-2 rounded-full bg-emerald-500 px-4 sm:px-5 text-sm font-semibold text-black shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400 hover:shadow-emerald-500/40"
+        onClick={() => setShowPicker(true)}
+        disabled={isConnecting || isReconnecting}
+        className="h-10 gap-2 rounded-full bg-emerald-500 px-4 sm:px-5 text-sm font-semibold text-black shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400 hover:shadow-emerald-500/40 disabled:opacity-60"
       >
-        <Wallet className="h-4 w-4" />
-        <span className="hidden xs:inline">{t("connect")}</span>
-        <span className="xs:hidden">{t("connectShort")}</span>
+        {isConnecting || isReconnecting ? (
+          <>
+            <Loader2 className="h-4 w-4 animate-spin" />
+            <span className="hidden xs:inline">{t("connecting")}</span>
+            <span className="xs:hidden">{t("connectShort")}</span>
+          </>
+        ) : (
+          <>
+            <Wallet className="h-4 w-4" />
+            <span className="hidden xs:inline">{t("connect")}</span>
+            <span className="xs:hidden">{t("connectShort")}</span>
+          </>
+        )}
       </Button>
 
       <Dialog open={showPicker} onOpenChange={setShowPicker}>
-        <DialogContent className="border-white/10 bg-[#111] p-6 sm:max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto">
+        <DialogContent className="border-white/10 bg-[#111] p-6 sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-white">
               {t("connect")}
@@ -286,11 +305,11 @@ function WalletButtonClient() {
               return (
                 <button
                   key={option.key}
-                  disabled={isWalletConnect && !isAvailable}
+                  disabled={isPending || (isWalletConnect && !isAvailable)}
                   onClick={async () => {
-                    setError(null);
+                    setConnectionError(null);
                     if (!connector) {
-                      setError(
+                      setConnectionError(
                         `${option.label} is not available. Please install the extension or use WalletConnect.`
                       );
                       return;
@@ -300,7 +319,7 @@ function WalletButtonClient() {
                       setShowPicker(false);
                     } catch (e: any) {
                       console.error(`Connect to ${option.label} failed:`, e);
-                      setError(
+                      setConnectionError(
                         e?.shortMessage ||
                           e?.message ||
                           `Failed to connect to ${option.label}`
@@ -309,8 +328,12 @@ function WalletButtonClient() {
                   }}
                   className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-start transition-all hover:border-emerald-500/40 hover:bg-white/[0.05] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 overflow-hidden">
-                    {option.icon}
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 overflow-hidden">
+                    <WalletImage
+                      src={option.logoUrl}
+                      fallback={option.fallback}
+                      alt={option.label}
+                    />
                   </div>
                   <div className="flex-1">
                     <div className="text-sm font-semibold text-white">
@@ -332,14 +355,14 @@ function WalletButtonClient() {
             })}
           </div>
 
-          {error && (
+          {connectionError && (
             <div className="mt-3 rounded-lg border border-red-500/30 bg-red-500/5 p-3 text-xs text-red-300">
-              {error}
+              {connectionError}
             </div>
           )}
 
           <p className="mt-4 text-center text-xs text-white/40">
-            {t("connectShort") === "ربطل"
+            {t("connectShort") === "ربط"
               ? "بإجراء الربط، فإنك توافق على شروط الخدمة وإفصاح المخاطر."
               : "By connecting, you agree to the Terms of Service and Risk Disclosure."}
           </p>
