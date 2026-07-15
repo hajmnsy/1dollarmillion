@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Task 1: vrf.chain.link/polygon#/side-drawer/subscription/polygon/5138795994368458865858465733297478458437338427540524283346653360622... (text is truncated)  \nTask 2: 513879...5716  \nTask 3: 0x0f07...1d57  \nTask 4: 513879 (next to 'ID' label), 5716 (next to 'ID' label), 0 (next to 'Consumers' label), 0 (next to 'Fulfillments' label), 2.5 (next to 'Version' label)",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1784195585,
+  "id": "2026071617525749cc9f89955e47d9",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "2026071617525749cc9f89955e47d9",
+  "usage": {
+    "completion_tokens": 167,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1578,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 1745
+  }
+}
