@@ -17,7 +17,7 @@ import { mainnet, polygon, sepolia } from "wagmi/chains";
 // Deployed via DeploySepolia.s.sol on 2026-07-04
 // Verify: https://sepolia.etherscan.io/address/0x94C7099665f061658c8e2C07afBa617392e5B716
 export const LOTTERY_CONTRACT_ADDRESS =
-  "0x2DC8C41Eb6BdE23a7F175013f888513b46a8D902" as `0x${string}`;
+  "0xcf8e2713FCD5653B4Bf9d440CF43c5F05524365F" as `0x${string}`;
 
 export const USDT_CONTRACT_ADDRESS =
   "0x286Fa19d912D691aA7CA9A2443Ff4cC11fC1Ba8e" as `0x${string}`;
