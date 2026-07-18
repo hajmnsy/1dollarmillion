@@ -13,14 +13,24 @@
 
 import { mainnet, polygon, sepolia } from "wagmi/chains";
 
-// === Contract Addresses (DEPLOYED ON SEPOLIA TESTNET) ===============
-// Deployed via DeploySepolia.s.sol on 2026-07-04
-// Verify: https://sepolia.etherscan.io/address/0x94C7099665f061658c8e2C07afBa617392e5B716
+// === Contract Addresses (DEPLOYED ON POLYGON MAINNET - V3 with VRF v2.5) ===
+// Deployed on 2026-07-16 via Remix IDE
+// Verify: https://polygonscan.com/address/0xcf8e2713FCD5653B4Bf9d440CF43c5F05524365F
 export const LOTTERY_CONTRACT_ADDRESS =
   "0xcf8e2713FCD5653B4Bf9d440CF43c5F05524365F" as `0x${string}`;
 
+// USDT on Polygon Mainnet (real USDT, 6 decimals)
 export const USDT_CONTRACT_ADDRESS =
-  "0x286Fa19d912D691aA7CA9A2443Ff4cC11fC1Ba8e" as `0x${string}`;
+  "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" as `0x${string}`;
+
+// External verification URLs (Polygon Mainnet)
+export const POLYGONSCAN_CONTRACT_URL = `https://polygonscan.com/address/${LOTTERY_CONTRACT_ADDRESS}`;
+export const POLYGONSCAN_USDT_URL = `https://polygonscan.com/address/${USDT_CONTRACT_ADDRESS}`;
+export const AAVE_POOL_URL = "https://app.aave.com/reserve-overview/?underlyingAsset=0xc2132d05d31c914a87c6611c10748aeb04b58e8f&marketName=proto_polygon_v3";
+export const CHAINLINK_VRF_URL = "https://vrf.chain.link/polygon";
+
+// VRF Subscription ID for transparency
+export const VRF_SUBSCRIPTION_ID = "5138795994368458865858465733297478458437338427540524283346653360622563975716";
 
 // === Network Config =================================================
 // Sepolia testnet — switch to `mainnet` for production deployment.
@@ -162,9 +172,12 @@ export const lotteryAbi = [
     stateMutability: "view",
     type: "function",
   },
-  // === Write functions (for Phase 3) ===
+  // === Write functions (V3 with referral support) ===
   {
-    inputs: [{ name: "amount", type: "uint256" }],
+    inputs: [
+      { name: "amount", type: "uint256" },
+      { name: "referrer", type: "address" },
+    ],
     name: "deposit",
     outputs: [],
     stateMutability: "nonpayable",
@@ -182,6 +195,18 @@ export const lotteryAbi = [
     name: "syncUserState",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ name: "userAddr", type: "address" }],
+    name: "getReferralInfo",
+    outputs: [
+      { name: "referrer", type: "address" },
+      { name: "referralCount", type: "uint256" },
+      { name: "referralEarnings", type: "uint256" },
+      { name: "bonusDays", type: "uint256" },
+    ],
+    stateMutability: "view",
     type: "function",
   },
 ] as const;
