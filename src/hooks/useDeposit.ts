@@ -115,11 +115,21 @@ export function useDeposit(amount: bigint): UseDepositReturn {
     setErrorMessage("");
 
     try {
+      // V3 contract: deposit(uint256 amount, address referrer)
+      // Read referrer from localStorage (stored by ReferralCard on landing)
+      let referrer: `0x${string}` = "0x0000000000000000000000000000000000000000" as `0x${string}`;
+      if (typeof window !== "undefined") {
+        const stored = localStorage.getItem("1dm_referrer");
+        if (stored && stored.startsWith("0x") && stored.length === 42) {
+          referrer = stored as `0x${string}`;
+        }
+      }
+
       const hash = await depositWrite.writeContractAsync({
         address: LOTTERY_CONTRACT_ADDRESS,
         abi: lotteryAbi,
         functionName: "deposit",
-        args: [amount],
+        args: [amount, referrer],
         chainId: TARGET_CHAIN_ID,
       });
       setDepositTxHash(hash);
