@@ -18,7 +18,8 @@ export const metadata: Metadata = {
     "Web3",
   ],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/logo-main.png",
+    apple: "/logo-main.png",
   },
   openGraph: {
     title: "1DollarMillion",
