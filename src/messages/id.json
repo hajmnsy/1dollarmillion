@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "title": "HybridRoSCA Lottery — Deposit USDT. Win $1,000,000. Never Lose Your Principal.",
+    "description": "The world's first no-loss lottery powered by Aave V3 yield. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your principal is always safe."
+  },
+
+  "nav": {
+    "howItWorks": "How It Works",
+    "transparency": "Transparency",
+    "winners": "Winners",
+    "faq": "FAQ",
+    "dashboard": "Dashboard",
+    "connect": "Connect Wallet",
+    "connectShort": "Connect"
+  },
+
+  "wallet": {
+    "connect": "Connect Wallet",
+    "connectShort": "Connect",
+    "connecting": "Connecting...",
+    "wrongNetwork": "Wrong Network",
+    "switchNetwork": "Switch to Ethereum"
+  },
+
+  "hero": {
+    "badge": "Powered by Chainlink VRF + Aave V3",
+    "titleLine1": "Deposit USDT.",
+    "titleLine2": "Win $1,000,000.",
+    "titleLine3": "Never lose your principal.",
+    "subtitle": "The world's first no-loss lottery where your deposits earn DeFi yield on Aave V3. Stay active for just $1 a day, and when the pool hits $1 million, a provably-fair winner takes home $995,350 — guaranteed.",
+    "ctaPrimary": "Deposit & Enter",
+    "ctaSecondary": "How It Works",
+    "livePoolLabel": "Live Pool",
+    "livePoolValue": "$847,231",
+    "livePoolTarget": "of $1,000,000",
+    "activeUsersLabel": "Active Users",
+    "activeUsersValue": "12,847",
+    "yieldLabel": "Yield Earned",
+    "yieldValue": "$23,402",
+    "trustLine": "Backed by Chainlink VRF · Aave V3 · OpenZeppelin",
+    "minDepositNote": "Start with as little as $1 USDT"
+  },
+
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Three simple steps between you and life-changing wealth — with your principal never at risk.",
+    "step1Title": "Deposit USDT",
+    "step1Description": "Connect your wallet and deposit any amount of USDT — minimum is just $1, but we recommend $30 to minimize gas overhead. Your deposit is held securely by the smart contract, never touched by anyone.",
+    "step2Title": "Stay Active for $1/Day",
+    "step2Description": "The contract logically deducts exactly 1 USDT per day to keep you eligible for the draw. This deduction feeds the prize pool. With $30 deposited, you're entered for 30 days. With $1,000, you're entered for nearly three years.",
+    "step3Title": "Win $995,350",
+    "step3Description": "When the pool reaches exactly $1,000,000, Chainlink VRF selects one provably-random winner from all active users. The winner receives $995,350 directly to their wallet — instantly, transparently, no questions asked.",
+    "bonusTitle": "Plus: DeFi Yield Bonus Draws",
+    "bonusDescription": "Your idle deposits earn yield on Aave V3. When that yield alone reaches $1,000,000, an additional bonus draw fires — same prize, same fairness, no extra cost to you. You're automatically entered into both draws.",
+    "bonusBadge": "Free Money"
+  },
+
+  "transparency": {
+    "title": "Radical Transparency. Verifiable Solvency.",
+    "subtitle": "Every number on this platform is read live from the blockchain. Verify anything you see here in under 3 clicks — on Etherscan, on Aave, on Chainlink.",
+    "poolCardTitle": "Live Prize Pool",
+    "poolCardDesc": "Grows daily from $1 deductions across all active users. Triggers a draw at $1,000,000.",
+    "yieldCardTitle": "DeFi Yield Generated",
+    "yieldCardDesc": "Interest earned from Aave V3 on your idle deposits. Funds bonus draws when it reaches $1,000,000.",
+    "solvencyCardTitle": "Solvency Proof",
+    "solvencyCardDesc": "Total assets always exceed total principal owed. This is the core invariant — verifiable on-chain at any time.",
+    "drawCardTitle": "Next Draw Estimate",
+    "drawCardDesc": "Based on the 7-day moving average of pool growth. Estimate, not a guarantee.",
+    "verifiableOn": "Verifiable on",
+    "solvencyHealthy": "SOLVENT",
+    "solvencyHealthyDesc": "All user deposits fully backed 1:1",
+    "viewOnEtherscan": "View on Etherscan",
+    "viewOnAave": "View on Aave",
+    "verifyVRF": "Verify on Chainlink"
+  },
+
+  "trust": {
+    "title": "Built on the Most Trusted Infrastructure in Web3",
+    "subtitle": "We use industry-grade security primitives so you can sleep at night.",
+    "chainlinkTitle": "Chainlink VRF v2",
+    "chainlinkDesc": "Provably fair randomness. Every winner is selected by a verifiable random number — no one, not even us, can predict or manipulate the result.",
+    "aaveTitle": "Aave V3",
+    "aaveDesc": "The largest decentralized money market. Your deposits are supplied to Aave to earn interest, secured by $12B+ in TVL and audited by 7 leading firms.",
+    "openzeppelinTitle": "OpenZeppelin",
+    "openzeppelinDesc": "Battle-tested smart contract libraries. Our contract inherits ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code.",
+    "auditTitle": "Audit Ready",
+    "auditDesc": "Contract source code is verified on Etherscan and ready for third-party audit. We are transparent because we have nothing to hide."
+  },
+
+  "stats": {
+    "totalDisbursed": "Total Disbursed to Winners",
+    "totalDisbursedValue": "$4,976,750",
+    "drawsCompleted": "Draws Completed",
+    "drawsCompletedValue": "5",
+    "totalUsers": "Total Users",
+    "totalUsersValue": "12,847",
+    "avgApy": "Current Aave APY",
+    "avgApyValue": "4.32%"
+  },
+
+  "finalCta": {
+    "title": "Your money is waiting.",
+    "subtitle": "Join 12,847 users already in the pool. Deposit as little as $1 USDT — or $30 for optimal gas efficiency — and you could be the next $995,350 winner.",
+    "button": "Deposit & Enter Now",
+    "guarantee": "100% principal protected · No lock-up · Withdraw anytime"
+  },
+
+  "footer": {
+    "tagline": "The world's first hybrid ROSCA + No-Loss Lottery, powered by DeFi.",
+    "product": "Product",
+    "productLinks": {
+      "howItWorks": "How It Works",
+      "transparency": "Transparency Dashboard",
+      "winners": "Winner Hall of Fame",
+      "faq": "FAQ"
+    },
+    "developers": "Developers",
+    "developerLinks": {
+      "contract": "Contract on Etherscan",
+      "docs": "Documentation",
+      "audit": "Audit Report",
+      "github": "GitHub"
+    },
+    "legal": "Legal",
+    "legalLinks": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "risk": "Risk Disclosure"
+    },
+    "disclaimer": "HybridRoSCA Lottery is a decentralized protocol. Smart contract interactions carry inherent risk. Never deposit more than you can afford to lose. Past performance does not guarantee future results.",
+    "rights": "All rights reserved."
+  },
+
+  "languageSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "ar": "العربية",
+    "es": "Español",
+    "fr": "Français",
+    "pt": "Português",
+    "tr": "Türkçe",
+    "id": "Bahasa Indonesia",
+    "vi": "Tiếng Việt"
+  }
+}
