@@ -480,6 +480,48 @@
       "yieldBody": "जब आप USDT जमा करते हैं, कॉन्ट्रैक्ट रॉ USDT में 5% लिक्विडिटी बफर रखता है (तुरंत निकासी के लिए) और बाकी को Aave V3 में आपूर्ति करता है। Aave कॉन्ट्रैक्ट को ब्याज-वहन करने वाला aUSDT मिंट करता है, जो 24/7 यील्ड जमा करता है। कॉन्ट्रैक्ट 'प्रिंसिपल सप्लाई' को 'अर्जित यील्ड' से अलग ट्रैक करता है (यील्ड = aUSDT बैलेंस − प्रिंसिपल सप्लाई)। जब केवल यील्ड $1,000,000 तक पहुंचती है, एक बोनस ड्रॉ स्वचालित रूप से चालू होता है — समान Chainlink VRF चयन, समान $995,350 पुरस्कार। आपकी मूलधन कभी जोखिम में नहीं; केवल ब्याज का भुगतान किया जाता है।"
     },
     "backHome": "होम पर वापस जाएं",
-    "comingSoon": "यह पेज निर्माणाधीन है। पूरी सामग्री जल्द जोड़ी जाएगी।"
+    "comingSoon": "यह पेज निर्माणाधीन है। पूरी सामग्री जल्द जोड़ी जाएगी।",
+    "docs": {
+      "title": "Documentation",
+      "subtitle": "The complete technical documentation for the 1DollarMillion protocol.",
+      "section1Title": "1. Protocol Overview",
+      "section1Body": "1DollarMillion is a no-loss lottery on Polygon combining ROSCA with DeFi yield from Aave V3. The prize pool grows automatically from $1/day deductions. When it reaches $1,000,000, a winner is selected via Chainlink VRF v2.5.",
+      "section2Title": "2. Tokenomics",
+      "section2Body": "The contract deducts 1 USDT per day from each active user. These deductions feed the prize pool. Idle deposits are invested in Aave V3 to generate yield that funds bonus draws.",
+      "section3Title": "3. Prize Distribution",
+      "section3Body": "When a draw completes: $995,350 to winner (or $985,397 with referrer), $3,650 locked for 10 years, $1,000 operational fee, $9,953 to referrer (if applicable). No hidden fees.",
+      "section4Title": "4. Contract Addresses (Polygon Mainnet)",
+      "section4Body": "Lottery V3: 0xcf8e2713FCD5653B4Bf9d440CF43c5F05524365F. USDT: 0xc2132D05D31c914a87C6611C10748AEb04B58e8F. Verify full source code on Polygonscan.",
+      "section5Title": "5. Frontend Integration",
+      "section5Body": "Frontend built with Next.js 16 + wagmi v2 + viem. Uses pruned ABI from lib/contract/config.ts. All read calls target Polygon Mainnet (Chain ID: 137)."
+    },
+    "audit": {
+      "title": "Audit Report",
+      "subtitle": "Security audit status for the 1DollarMillion protocol.",
+      "section1Title": "1. Audit Status",
+      "section1Body": "The smart contract is ready for third-party audit. Uses OpenZeppelin battle-tested libraries and follows Checks-Effects-Interactions pattern. Formal audit by external firm will be conducted before mass launch.",
+      "section2Title": "2. Security Features",
+      "section2Body": "Contract includes: ReentrancyGuard (anti-reentrancy), SafeERC20 (safe transfers), Ownable (admin control). Solvency fix-up runs after each draw to maintain solvencyGap >= yield invariant.",
+      "section3Title": "3. Foundry Tests",
+      "section3Body": "40+ Foundry tests covering: normal flow, yield flow, edge cases (zero-buffer withdrawal, dual-draw race), and invariants (solvency). All tests pass.",
+      "section4Title": "4. Polygonscan Verification",
+      "section4Body": "Contract source code is verified on Polygonscan. Anyone can review the logic and verify that prize distribution is hardcoded and cannot be changed.",
+      "section5Title": "5. Bug Bounty",
+      "section5Body": "A bug bounty program will be launched after the formal audit. Follow the GitHub page for updates."
+    },
+    "github": {
+      "title": "GitHub Repository",
+      "subtitle": "Open-source code for the 1DollarMillion protocol.",
+      "section1Title": "1. Source Code",
+      "section1Body": "The full source code is available on GitHub at github.com/hajmnsy/1dollarmillion. Anyone can review, fork, or contribute.",
+      "section2Title": "2. Smart Contract",
+      "section2Body": "The HybridRoscaLotteryV3 smart contract is written in Solidity 0.8.20 using OpenZeppelin v5 libraries and Chainlink VRF v2.5.",
+      "section3Title": "3. Frontend",
+      "section3Body": "Built with Next.js 16, wagmi v2, viem, and Tailwind CSS. Supports 11 languages with RTL support for Arabic and Persian.",
+      "section4Title": "4. License",
+      "section4Body": "MIT License. Feel free to use, modify, and distribute.",
+      "section5Title": "5. Contributing",
+      "section5Body": "Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change."
+    }
   }
 }
