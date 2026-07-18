@@ -737,7 +737,7 @@ function SuccessView({
 
       {txHash && (
         <a
-          href={`https://etherscan.io/tx/${txHash}`}
+          href={`https://polygonscan.com/tx/${txHash}`}
           target="_blank"
           rel="noopener noreferrer"
           className="mb-4 inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400 transition-colors hover:text-emerald-300"

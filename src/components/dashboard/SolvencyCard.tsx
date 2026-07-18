@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/card";
 import { formatUsd } from "@/hooks/useLottery";
 import type { AccountingSummary } from "@/lib/contract/config";
+import { POLYGONSCAN_CONTRACT_URL } from "@/lib/contract/config";
 import { ShieldCheck, AlertTriangle, ExternalLink } from "lucide-react";
 
 interface SolvencyCardProps {
@@ -70,7 +71,9 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
 
         {/* Verify link */}
         <a
-          href="#"
+          href={POLYGONSCAN_CONTRACT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-white/40 transition-colors hover:text-white"
         >
           {t("viewOnEtherscan")}
