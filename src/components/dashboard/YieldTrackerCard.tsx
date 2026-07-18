@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/card";
 import { ProgressBar } from "./ProgressBar";
 import { formatUsd } from "@/hooks/useLottery";
-import { BONUS_DRAW_TARGET } from "@/lib/contract/config";
-import { Sparkles, TrendingUp, Calendar } from "lucide-react";
+import { BONUS_DRAW_TARGET, AAVE_POOL_URL } from "@/lib/contract/config";
+import { Sparkles, TrendingUp, Calendar, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface YieldTrackerCardProps {
@@ -125,6 +125,17 @@ export function YieldTrackerCard({
         <p className="mt-4 rounded-lg bg-white/[0.02] p-3 text-xs leading-relaxed text-white/50">
           {t("yieldNote")}
         </p>
+
+        {/* View on Aave */}
+        <a
+          href={AAVE_POOL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-white/40 transition-colors hover:text-white"
+        >
+          {t("viewOnAave")}
+          <ExternalLink className="h-3 w-3" />
+        </a>
       </div>
     </Card>
   );

@@ -46,7 +46,8 @@
       "estimatePending": "VRF request pending...",
       "activeUsersLabel": "Active Users",
       "drawsLabel": "Total Draws",
-      "bonusDrawsLabel": "Bonus Draws"
+      "bonusDrawsLabel": "Bonus Draws",
+      "viewOnEtherscan": "View on Polygonscan"
     },
     "yield": {
       "title": "DeFi Yield Bonus Tracker",
@@ -57,7 +58,8 @@
       "estimateLabel": "Est. Next Bonus Draw",
       "estimateYears": "in ~{years} years",
       "estimateReady": "READY TO DRAW",
-      "yieldNote": "Yield accrues 24/7. When it reaches $1M, a bonus draw fires automatically."
+      "yieldNote": "Yield accrues 24/7. When it reaches $1M, a bonus draw fires automatically.",
+      "viewOnAave": "View on Aave"
     },
     "solvency": {
       "title": "Solvency Check",
@@ -79,7 +81,8 @@
       "yourOdds": "Your Odds",
       "yourOddsValue": "1 in {count}",
       "yourOddsPercent": "({percent}% chance per draw)",
-      "yourOddsNote": "Deposits extend your lock-in duration, not your odds. Everyone has equal chance per draw."
+      "yourOddsNote": "Deposits extend your lock-in duration, not your odds. Everyone has equal chance per draw.",
+      "verifyOnChainlink": "Verify on Chainlink"
     },
     "deposit": {
       "title": "Deposit USDT",

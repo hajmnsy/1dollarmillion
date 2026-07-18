@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/card";
 import { ProgressBar } from "./ProgressBar";
 import { formatUsd, formatUsdCompact } from "@/hooks/useLottery";
-import { POOL_TARGET } from "@/lib/contract/config";
-import { Users, Trophy, Gift, Calendar } from "lucide-react";
+import { POOL_TARGET, POLYGONSCAN_CONTRACT_URL } from "@/lib/contract/config";
+import { Users, Trophy, Gift, Calendar, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface PoolProgressCardProps {
@@ -120,6 +120,17 @@ export function PoolProgressCard({
             value={Number(bonusDrawCount).toString()}
           />
         </div>
+
+        {/* Verify on Polygonscan */}
+        <a
+          href={POLYGONSCAN_CONTRACT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-white/40 transition-colors hover:text-white"
+        >
+          {t("viewOnEtherscan")}
+          <ExternalLink className="h-3 w-3" />
+        </a>
       </div>
     </Card>
   );

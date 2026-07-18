@@ -2,7 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/card";
-import { Info } from "lucide-react";
+import { Info, ExternalLink } from "lucide-react";
+import { CHAINLINK_VRF_URL } from "@/lib/contract/config";
 
 interface OddsCardProps {
   activeUserCount: bigint;
@@ -45,6 +46,17 @@ export function OddsCard({ activeUserCount, userIsActive }: OddsCardProps) {
           <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-blue-400" />
           <span>{t("yourOddsNote")}</span>
         </div>
+
+        {/* Verify on Chainlink VRF */}
+        <a
+          href={CHAINLINK_VRF_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-white/40 transition-colors hover:text-white"
+        >
+          {t("verifyOnChainlink")}
+          <ExternalLink className="h-3 w-3" />
+        </a>
       </div>
     </Card>
   );

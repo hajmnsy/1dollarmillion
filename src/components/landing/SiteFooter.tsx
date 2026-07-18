@@ -31,28 +31,28 @@ export function SiteFooter() {
             ]}
           />
 
-          {/* Developers — external placeholder links (no real URLs yet) */}
+          {/* Developers — links to real resources */}
           <FooterColumn
             title={t("developers")}
             links={[
               {
                 label: t("developerLinks.contract"),
-                href: "https://etherscan.io",
+                href: "https://polygonscan.com/address/0xcf8e2713FCD5653B4Bf9d440CF43c5F05524365F",
                 external: true,
               },
               {
                 label: t("developerLinks.docs"),
-                href: "#",
+                href: "/docs",
                 external: false,
               },
               {
                 label: t("developerLinks.audit"),
-                href: "#",
+                href: "/audit",
                 external: false,
               },
               {
                 label: t("developerLinks.github"),
-                href: "https://github.com",
+                href: "https://github.com/hajmnsy/1dollarmillion",
                 external: true,
               },
             ]}
