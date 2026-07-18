@@ -18,8 +18,15 @@ export const metadata: Metadata = {
     "Web3",
   ],
   icons: {
-    icon: "/logo-main.png",
-    apple: "/logo-main.png",
+    icon: [
+      { url: "/logo-main.png", sizes: "any" },
+      { url: "/logo-main.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo-main.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logo-main.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/logo-main.png",
   },
   openGraph: {
     title: "1DollarMillion",
