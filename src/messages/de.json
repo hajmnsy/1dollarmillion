@@ -46,7 +46,8 @@
       "estimatePending": "VRF-Anfrage ausstehend...",
       "activeUsersLabel": "Aktive Nutzer",
       "drawsLabel": "Ziehungen gesamt",
-      "bonusDrawsLabel": "Bonus-Ziehungen"
+      "bonusDrawsLabel": "Bonus-Ziehungen",
+      "viewOnEtherscan": "Auf Polygonscan ansehen"
     },
     "yield": {
       "title": "DeFi-Yield-Bonus-Tracker",
@@ -57,7 +58,8 @@
       "estimateLabel": "Geschätzte nächste Bonus-Ziehung",
       "estimateYears": "in ~{years} Jahren",
       "estimateReady": "BEREIT FÜR ZIEHUNG",
-      "yieldNote": "Yield wird rund um die Uhr angesammelt. Wenn er $1M erreicht, wird automatisch eine Bonus-Ziehung ausgelöst."
+      "yieldNote": "Yield wird rund um die Uhr angesammelt. Wenn er $1M erreicht, wird automatisch eine Bonus-Ziehung ausgelöst.",
+      "viewOnAave": "Auf Aave ansehen"
     },
     "solvency": {
       "title": "Solvenz-Prüfung",
@@ -79,7 +81,8 @@
       "yourOdds": "Deine Gewinnchancen",
       "yourOddsValue": "1 zu {count}",
       "yourOddsPercent": "({percent}% Chance pro Ziehung)",
-      "yourOddsNote": "Einzahlungen verlängern deine Sperrdauer, nicht deine Gewinnchancen. Jeder hat pro Ziehung die gleiche Chance."
+      "yourOddsNote": "Einzahlungen verlängern deine Sperrdauer, nicht deine Gewinnchancen. Jeder hat pro Ziehung die gleiche Chance.",
+      "verifyOnChainlink": "Auf Chainlink verifizieren"
     },
     "deposit": {
       "title": "USDT einzahlen",

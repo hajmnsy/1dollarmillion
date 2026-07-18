@@ -3,7 +3,6 @@
     "title": "1DollarMillion 彩票 — 存入 USDT，赢取 $1,000,000，本金永不受损。",
     "description": "全球首个由 Aave V3 收益驱动的无损彩票。存入 USDT，仅需 $1/天保持活跃，即可赢取改变人生的大奖。您的本金始终安全。"
   },
-
   "dashboard": {
     "title": "我的仪表盘",
     "subtitle": "跟踪您的仓位，见证奖金池增长，随时为下一次开奖做好准备。",
@@ -11,7 +10,6 @@
     "walletNotConnectedDesc": "连接后，您将实时看到存款余额、活跃状态以及奖金池的实时进度。",
     "connectButton": "连接钱包",
     "backHome": "返回首页",
-
     "position": {
       "title": "我的仓位",
       "balance": "余额",
@@ -37,7 +35,6 @@
       "inactiveNote": "存入 USDT 即可重新加入奖金池。",
       "drawInProgress": "开奖进行中 — 操作已暂时暂停。"
     },
-
     "pool": {
       "title": "实时奖金池",
       "subtitle": "由所有活跃用户的 $1/天扣减累积而成。",
@@ -49,9 +46,9 @@
       "estimatePending": "VRF 请求中...",
       "activeUsersLabel": "活跃用户",
       "drawsLabel": "累计开奖",
-      "bonusDrawsLabel": "额外抽奖"
+      "bonusDrawsLabel": "额外抽奖",
+      "viewOnEtherscan": "在 Polygonscan 上查看"
     },
-
     "yield": {
       "title": "DeFi 收益奖励追踪器",
       "subtitle": "由 Aave V3 在闲置存款上产生的利息 — 用于资助额外抽奖。",
@@ -61,9 +58,9 @@
       "estimateLabel": "预计下次额外抽奖",
       "estimateYears": "约 {years} 年后",
       "estimateReady": "已可开奖",
-      "yieldNote": "收益 7×24 小时持续累积。当达到 $1M 时，将自动触发额外抽奖。"
+      "yieldNote": "收益 7×24 小时持续累积。当达到 $1M 时，将自动触发额外抽奖。",
+      "viewOnAave": "在 Aave 上查看"
     },
-
     "solvency": {
       "title": "偿付能力检查",
       "healthy": "健康",
@@ -75,28 +72,24 @@
       "solvencyGap": "偿付缺口",
       "viewOnEtherscan": "在 Etherscan 上验证"
     },
-
     "actions": {
       "syncState": "同步我的状态",
       "syncStateDesc": "手动应用待处理的每日扣减。",
       "syncing": "同步中..."
     },
-
     "stats": {
       "yourOdds": "您的胜率",
       "yourOddsValue": "1 / {count}",
       "yourOddsPercent": "（每次开奖 {percent}% 概率）",
-      "yourOddsNote": "存款延长您的锁定时长，而非提高胜率。每次开奖，人人机会均等。"
+      "yourOddsNote": "存款延长您的锁定时长，而非提高胜率。每次开奖，人人机会均等。",
+      "verifyOnChainlink": "在 Chainlink 上验证"
     },
-
     "deposit": {
       "title": "存入 USDT",
       "subtitle": "向您的余额添加 USDT。每日扣除 1 USDT 以保持活跃。",
-
       "amountLabel": "金额",
       "amountPlaceholder": "30.00",
       "maxButton": "最大",
-
       "quickSelect": {
         "label": "快速选择",
         "one": "1",
@@ -105,7 +98,6 @@
         "hundred": "100",
         "fiveHundred": "500"
       },
-
       "gasBadge": {
         "poor": "gas 效率较差",
         "poorDesc": "您支付网络费用的频率过高",
@@ -116,7 +108,6 @@
         "optimal": "gas 效率最佳",
         "optimalDesc": "可覆盖 1 个月活跃期"
       },
-
       "explainer": {
         "title": "为什么是 30 USDT？",
         "body": "每次存款约需支付 $3 的 gas 费（固定的网络费用）。您存入的金额不会改变 gas 成本。",
@@ -128,7 +119,6 @@
         "row3Value": "$3 gas = 3% 开销（覆盖 100 天活跃期）",
         "conclusion": "30 USDT 让您以最低的实际 gas 开销获得约 30 天的活跃状态。更大额存款效率更高，但会锁定更多资金。"
       },
-
       "costBreakdown": {
         "title": "成本明细",
         "depositAmount": "存款金额",
@@ -139,7 +129,6 @@
         "balanceAfter": "存款后余额",
         "activeUntil": "活跃至"
       },
-
       "checklist": {
         "walletConnected": "钱包已连接",
         "usdtBalance": "USDT 余额",
@@ -149,7 +138,6 @@
         "needsApproval": "需授权",
         "ready": "就绪"
       },
-
       "wizard": {
         "step1Title": "授权 USDT",
         "step1Desc": "允许合约支配您的 USDT",
@@ -158,7 +146,6 @@
         "step1Confirming": "等待确认中...",
         "step1Success": "USDT 已授权",
         "step1Error": "授权失败",
-
         "step2Title": "确认存款",
         "step2Desc": "将 USDT 存入奖金池",
         "step2Button": "确认存款",
@@ -166,11 +153,9 @@
         "step2Confirming": "等待确认中...",
         "step2Success": "存款成功！",
         "step2Error": "存款失败",
-
         "skipApproval": "无需授权 — 直接进入存款步骤",
         "currentStep": "第 {current} 步，共 {total} 步"
       },
-
       "success": {
         "title": "存款成功！",
         "description": "您的 USDT 已存入，您已加入奖金池并处于活跃状态。",
@@ -179,7 +164,6 @@
         "viewOnEtherscan": "在 Etherscan 上查看",
         "closeButton": "关闭"
       },
-
       "errors": {
         "insufficientBalance": "钱包内 USDT 余额不足",
         "insufficientGas": "ETH 余额不足以支付 gas",
@@ -189,12 +173,10 @@
         "drawInProgress": "开奖正在进行中 — 请稍候",
         "winnerCannotReenter": "您已中奖，无法再次加入"
       },
-
       "agreeNote": "存款即表示您同意《服务条款》与《风险披露》。",
       "closeButton": "关闭",
       "retryButton": "重试"
     },
-
     "network": {
       "wrongChainTitle": "网络错误",
       "wrongChainDesc": "您当前连接的是 {connectedChain}。本应用运行于 Sepolia 测试网。",
@@ -202,20 +184,16 @@
       "switching": "正在切换网络...",
       "alreadyConnected": "已连接至 Sepolia"
     },
-
     "withdraw": {
       "title": "提取 USDT",
       "subtitle": "可从余额中提取任意金额。无锁定期 — 您的资金始终可自由支配。",
-
       "amountLabel": "提取金额",
       "amountPlaceholder": "0.00",
       "maxButton": "最大",
-
       "lowBalanceWarning": {
         "title": "警告：提取后余额过低",
         "body": "您的余额将低于 1 USDT，会被标记为「未活跃」并被排除在每日百万美元开奖之外。请再次存款以重新加入奖金池。"
       },
-
       "costBreakdown": {
         "title": "提取摘要",
         "withdrawAmount": "提取金额",
@@ -224,13 +202,11 @@
         "estGasCost": "预计 gas 成本",
         "activeAfter": "活跃时长"
       },
-
       "statusAfter": {
         "active": "活跃",
         "inactive": "未活跃",
         "activeForDays": "{days} 天"
       },
-
       "wizard": {
         "title": "确认提取",
         "desc": "从您的余额中提取 USDT 至您的钱包",
@@ -240,7 +216,6 @@
         "success": "提取成功！",
         "error": "提取失败"
       },
-
       "success": {
         "title": "提取成功！",
         "description": "您的 USDT 已发送至您的钱包。",
@@ -249,7 +224,6 @@
         "viewOnEtherscan": "在 Etherscan 上查看",
         "closeButton": "关闭"
       },
-
       "errors": {
         "insufficientBalance": "仓位余额不足",
         "insufficientGas": "ETH 余额不足以支付 gas",
@@ -258,18 +232,15 @@
         "contractPaused": "合约当前已暂停",
         "drawInProgress": "开奖正在进行中 — 请稍候"
       },
-
       "agreeNote": "提取即表示您同意《服务条款》与《风险披露》。",
       "closeButton": "关闭",
       "retryButton": "重试"
     },
-
     "activity": {
       "title": "近期活动",
       "subtitle": "您最近的存款、扣减与提取记录",
       "empty": "暂无活动记录。完成首次存款后即可在此查看您的历史记录。",
       "viewAll": "查看全部",
-
       "types": {
         "deposit": "存款",
         "withdraw": "提取",
@@ -278,7 +249,6 @@
         "lockDrip": "锁定 drip",
         "sync": "状态同步"
       },
-
       "descriptions": {
         "deposit": "已存入 {amount}",
         "withdraw": "已提取 {amount}",
@@ -287,12 +257,10 @@
         "lockDrip": "锁定 drip：{amount}",
         "sync": "状态已同步"
       },
-
       "drawTypes": {
         "regular": "百万美元",
         "bonus": "额外"
       },
-
       "timestamps": {
         "justNow": "刚刚",
         "minutesAgo": "{minutes} 分钟前",
@@ -300,14 +268,12 @@
         "yesterday": "昨天",
         "daysAgo": "{days} 天前"
       },
-
       "statuses": {
         "confirmed": "已确认",
         "pending": "处理中"
       }
     }
   },
-
   "nav": {
     "howItWorks": "运作机制",
     "transparency": "透明度",
@@ -317,7 +283,6 @@
     "connect": "连接钱包",
     "connectShort": "连接"
   },
-
   "wallet": {
     "connect": "连接钱包",
     "connectShort": "连接",
@@ -325,7 +290,6 @@
     "wrongNetwork": "网络错误",
     "switchNetwork": "切换至 Ethereum"
   },
-
   "hero": {
     "badge": "由 Chainlink VRF + Aave V3 驱动",
     "titleLine1": "存入 USDT。",
@@ -344,7 +308,6 @@
     "trustLine": "由 Chainlink VRF · Aave V3 · OpenZeppelin 提供支持",
     "minDepositNote": "低至 $1 USDT 即可开始"
   },
-
   "howItWorks": {
     "title": "运作机制",
     "subtitle": "三步即可迈向改变人生的财富 — 您的本金始终零风险。",
@@ -358,7 +321,6 @@
     "bonusDescription": "您的闲置存款将在 Aave V3 上赚取收益。当收益单独达到 $1,000,000 时，将自动触发一次额外抽奖 — 同样的奖金、同样的公平，您无需任何额外成本。两次抽奖您都将自动参与。",
     "bonusBadge": "免费福利"
   },
-
   "transparency": {
     "title": "极致透明，可验证的偿付能力。",
     "subtitle": "本平台上的每一个数字均实时从 blockchain 读取。无需 3 次点击即可验证您在此看到的任何内容 — 在 Etherscan、Aave、Chainlink 上均可。",
@@ -377,7 +339,6 @@
     "viewOnAave": "在 Aave 上查看",
     "verifyVRF": "在 Chainlink 上验证"
   },
-
   "trust": {
     "title": "构建于 Web3 最受信赖的基础设施之上",
     "subtitle": "我们采用工业级安全原语，让您夜晚也能安心入眠。",
@@ -390,7 +351,6 @@
     "auditTitle": "审计就绪",
     "auditDesc": "合约源代码已在 Etherscan 上验证，随时可接受第三方审计。我们透明，因为我们无可隐瞒。"
   },
-
   "stats": {
     "totalDisbursed": "已发放给中奖者的总额",
     "totalDisbursedValue": "$4,976,750",
@@ -401,14 +361,12 @@
     "avgApy": "当前 Aave APY",
     "avgApyValue": "4.32%"
   },
-
   "finalCta": {
     "title": "您的财富，正在等候。",
     "subtitle": "加入已参与奖金池的 12,847 位用户。低至 $1 USDT 即可存款 — 或 $30 以获得最佳 gas 效率 — 您就有可能成为下一位 $995,350 中奖者。",
     "button": "立即存款并参与",
     "guarantee": "100% 本金保障 · 无锁定期 · 随时提取"
   },
-
   "footer": {
     "tagline": "全球首个由 DeFi 驱动的混合 ROSCA + 无损彩票。",
     "product": "产品",
@@ -434,7 +392,6 @@
     "disclaimer": "1DollarMillion 彩票是一个去中心化协议。与 smart contract 交互存在固有风险。请勿存入超出您承受能力的资金。过往表现不代表未来收益。",
     "rights": "保留所有权利。"
   },
-
   "languageSwitcher": {
     "label": "语言",
     "en": "English",
@@ -446,7 +403,6 @@
     "ru": "Русский",
     "pt": "Português"
   },
-
   "legalPages": {
     "faq": {
       "title": "常见问题",

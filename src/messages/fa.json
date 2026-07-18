@@ -46,7 +46,8 @@
       "estimatePending": "درخواست VRF در انتظار...",
       "activeUsersLabel": "کاربران فعال",
       "drawsLabel": "کل قرعه‌کشی‌ها",
-      "bonusDrawsLabel": "قرعه‌کشی‌های پاداش"
+      "bonusDrawsLabel": "قرعه‌کشی‌های پاداش",
+      "viewOnEtherscan": "نمایش در Polygonscan"
     },
     "yield": {
       "title": "ردیاب پاداش بازدهی DeFi",
@@ -57,7 +58,8 @@
       "estimateLabel": "تخمین قرعه‌کشی پاداش بعدی",
       "estimateYears": "در حدود {years} سال",
       "estimateReady": "آماده قرعه‌کشی",
-      "yieldNote": "بازدهی به‌صورت ۲۴/۷ جمع می‌شود. وقتی به $1M رسید، قرعه‌کشی پاداش به‌طور خودکار فعال می‌شود."
+      "yieldNote": "بازدهی به‌صورت ۲۴/۷ جمع می‌شود. وقتی به $1M رسید، قرعه‌کشی پاداش به‌طور خودکار فعال می‌شود.",
+      "viewOnAave": "نمایش در Aave"
     },
     "solvency": {
       "title": "بررسی توانایی پرداخت",
@@ -79,7 +81,8 @@
       "yourOdds": "شانس شما",
       "yourOddsValue": "۱ از {count}",
       "yourOddsPercent": "({percent}% شانس در هر قرعه‌کشی)",
-      "yourOddsNote": "سپرده‌ها مدت قفل شدن شما را افزایش می‌دهند، نه شانس شما را. هر فرد در هر قرعه‌کشی شانس برابری دارد."
+      "yourOddsNote": "سپرده‌ها مدت قفل شدن شما را افزایش می‌دهند، نه شانس شما را. هر فرد در هر قرعه‌کشی شانس برابری دارد.",
+      "verifyOnChainlink": "تأیید در Chainlink"
     },
     "deposit": {
       "title": "سپرده‌گذاری USDT",

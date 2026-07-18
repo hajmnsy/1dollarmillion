@@ -3,7 +3,6 @@
     "title": "Loterie 1DollarMillion — Déposez de l'USDT. Gagnez 1 000 000 $. Ne perdez jamais votre capital.",
     "description": "La première loterie sans perte au monde, propulsée par le rendement Aave V3. Déposez de l'USDT, restez actif pour seulement 1 $/jour, et tentez de remporter des gains qui changeront votre vie. Votre capital est toujours en sécurité."
   },
-
   "dashboard": {
     "title": "Votre Tableau de Bord",
     "subtitle": "Suivez votre position, regardez la cagnotte grandir, et restez prêt pour le prochain tirage.",
@@ -11,7 +10,6 @@
     "walletNotConnectedDesc": "Une fois connecté, vous verrez votre solde déposé, votre statut actif et la progression en direct de la cagnotte en temps réel.",
     "connectButton": "Connecter le Wallet",
     "backHome": "Retour à l'Accueil",
-
     "position": {
       "title": "Ma Position",
       "balance": "Solde",
@@ -37,7 +35,6 @@
       "inactiveNote": "Déposez de l'USDT pour réintégrer la cagnotte.",
       "drawInProgress": "Tirage en cours — actions temporairement suspendues."
     },
-
     "pool": {
       "title": "Cagnotte en Direct",
       "subtitle": "Augmente grâce aux déductions de 1 $/jour de tous les utilisateurs actifs.",
@@ -49,9 +46,9 @@
       "estimatePending": "Requête VRF en attente...",
       "activeUsersLabel": "Utilisateurs Actifs",
       "drawsLabel": "Tirages Totaux",
-      "bonusDrawsLabel": "Tirages Bonus"
+      "bonusDrawsLabel": "Tirages Bonus",
+      "viewOnEtherscan": "Voir sur Polygonscan"
     },
-
     "yield": {
       "title": "Suivi du Bonus de Rendement DeFi",
       "subtitle": "Intérêts Aave V3 générés sur les dépôts inactifs — financent les tirages bonus.",
@@ -61,9 +58,9 @@
       "estimateLabel": "Est. Prochain Tirage Bonus",
       "estimateYears": "dans ~{years} ans",
       "estimateReady": "PRÊT POUR LE TIRAGE",
-      "yieldNote": "Le rendement s'accumule 24h/24 et 7j/7. Lorsqu'il atteint 1 M$, un tirage bonus se déclenche automatiquement."
+      "yieldNote": "Le rendement s'accumule 24h/24 et 7j/7. Lorsqu'il atteint 1 M$, un tirage bonus se déclenche automatiquement.",
+      "viewOnAave": "Voir sur Aave"
     },
-
     "solvency": {
       "title": "Vérification de Solvabilité",
       "healthy": "SOLVABLE",
@@ -75,28 +72,24 @@
       "solvencyGap": "Écart de Solvabilité",
       "viewOnEtherscan": "Vérifier sur Etherscan"
     },
-
     "actions": {
       "syncState": "Synchroniser Mon État",
       "syncStateDesc": "Appliquer manuellement les déductions journalières en attente.",
       "syncing": "Synchronisation..."
     },
-
     "stats": {
       "yourOdds": "Vos Chances",
       "yourOddsValue": "1 sur {count}",
       "yourOddsPercent": "({percent}% de chance par tirage)",
-      "yourOddsNote": "Les dépôts prolongent votre durée de verrouillage, pas vos chances. Tout le monde a une chance égale à chaque tirage."
+      "yourOddsNote": "Les dépôts prolongent votre durée de verrouillage, pas vos chances. Tout le monde a une chance égale à chaque tirage.",
+      "verifyOnChainlink": "Vérifier sur Chainlink"
     },
-
     "deposit": {
       "title": "Déposer de l'USDT",
       "subtitle": "Ajoutez de l'USDT à votre solde. 1 USDT est déduit par jour pour vous maintenir actif.",
-
       "amountLabel": "Montant",
       "amountPlaceholder": "30.00",
       "maxButton": "Max",
-
       "quickSelect": {
         "label": "Sélection rapide",
         "one": "1",
@@ -105,7 +98,6 @@
         "hundred": "100",
         "fiveHundred": "500"
       },
-
       "gasBadge": {
         "poor": "Surcoût Gas Élevé",
         "poorDesc": "Vous payez les frais réseau trop souvent",
@@ -116,7 +108,6 @@
         "optimal": "Efficacité Gas Optimale",
         "optimalDesc": "Couvre 1 mois d'activité"
       },
-
       "explainer": {
         "title": "Pourquoi 30 USDT ?",
         "body": "Chaque dépôt coûte ~3 $ de gas (un frais réseau fixe). Le montant que vous déposez ne change pas le coût du gas.",
@@ -128,7 +119,6 @@
         "row3Value": "3 $ de gas = 3 % de surcoût (couvre 100 jours d'activité)",
         "conclusion": "30 USDT vous offrent ~30 jours de statut actif au plus faible surcoût de gas pratique. Les dépôts plus importants sont encore plus efficaces mais bloquent plus de capital."
       },
-
       "costBreakdown": {
         "title": "Détail des Coûts",
         "depositAmount": "Montant du dépôt",
@@ -139,7 +129,6 @@
         "balanceAfter": "Solde après dépôt",
         "activeUntil": "Actif jusqu'à"
       },
-
       "checklist": {
         "walletConnected": "Wallet connecté",
         "usdtBalance": "Solde USDT",
@@ -149,7 +138,6 @@
         "needsApproval": "approbation requise",
         "ready": "prêt"
       },
-
       "wizard": {
         "step1Title": "Approuver l'USDT",
         "step1Desc": "Autoriser le contrat à dépenser votre USDT",
@@ -158,7 +146,6 @@
         "step1Confirming": "En attente de confirmation...",
         "step1Success": "USDT approuvé",
         "step1Error": "Approbation échouée",
-
         "step2Title": "Confirmer le Dépôt",
         "step2Desc": "Déposer de l'USDT dans la cagnotte",
         "step2Button": "Confirmer le Dépôt",
@@ -166,11 +153,9 @@
         "step2Confirming": "En attente de confirmation...",
         "step2Success": "Dépôt réussi !",
         "step2Error": "Dépôt échoué",
-
         "skipApproval": "Approbation non requise — passage au dépôt",
         "currentStep": "Étape {current} sur {total}"
       },
-
       "success": {
         "title": "Dépôt Réussi !",
         "description": "Votre USDT a été déposé et vous êtes maintenant actif dans la cagnotte.",
@@ -179,7 +164,6 @@
         "viewOnEtherscan": "Voir sur Etherscan",
         "closeButton": "Fermer"
       },
-
       "errors": {
         "insufficientBalance": "Solde USDT insuffisant dans votre wallet",
         "insufficientGas": "ETH insuffisant pour le gas",
@@ -189,12 +173,10 @@
         "drawInProgress": "Un tirage est en cours — veuillez patienter",
         "winnerCannotReenter": "Vous avez déjà gagné et ne pouvez pas réintégrer"
       },
-
       "agreeNote": "En déposant, vous acceptez les Conditions d'Utilisation et la Divulgation des Risques.",
       "closeButton": "Fermer",
       "retryButton": "Réessayer"
     },
-
     "network": {
       "wrongChainTitle": "Mauvais Réseau",
       "wrongChainDesc": "Vous êtes connecté à {connectedChain}. Cette application fonctionne sur le Sepolia Testnet.",
@@ -202,20 +184,16 @@
       "switching": "Changement de réseau...",
       "alreadyConnected": "Connecté à Sepolia"
     },
-
     "withdraw": {
       "title": "Retirer de l'USDT",
       "subtitle": "Retirez n'importe quel montant de votre solde. Aucun verrouillage — vos fonds sont toujours accessibles.",
-
       "amountLabel": "Montant à retirer",
       "amountPlaceholder": "0.00",
       "maxButton": "Max",
-
       "lowBalanceWarning": {
         "title": "Attention : Solde bas après retrait",
         "body": "Votre solde passera sous 1 USDT. Vous serez marqué comme Inactif et exclu des tirages quotidiens d'un Million de Dollars. Déposez à nouveau pour réintégrer la cagnotte."
       },
-
       "costBreakdown": {
         "title": "Résumé du Retrait",
         "withdrawAmount": "Montant à retirer",
@@ -224,13 +202,11 @@
         "estGasCost": "Coût gas est.",
         "activeAfter": "Actif pendant"
       },
-
       "statusAfter": {
         "active": "Actif",
         "inactive": "Inactif",
         "activeForDays": "{days} jours"
       },
-
       "wizard": {
         "title": "Confirmer le Retrait",
         "desc": "Retirer de l'USDT de votre solde vers votre wallet",
@@ -240,7 +216,6 @@
         "success": "Retrait réussi !",
         "error": "Retrait échoué"
       },
-
       "success": {
         "title": "Retrait Réussi !",
         "description": "Votre USDT a été envoyé vers votre wallet.",
@@ -249,7 +224,6 @@
         "viewOnEtherscan": "Voir sur Etherscan",
         "closeButton": "Fermer"
       },
-
       "errors": {
         "insufficientBalance": "Solde insuffisant dans votre position",
         "insufficientGas": "ETH insuffisant pour le gas",
@@ -258,18 +232,15 @@
         "contractPaused": "Le contrat est actuellement en pause",
         "drawInProgress": "Un tirage est en cours — veuillez patienter"
       },
-
       "agreeNote": "En retirant, vous acceptez les Conditions d'Utilisation et la Divulgation des Risques.",
       "closeButton": "Fermer",
       "retryButton": "Réessayer"
     },
-
     "activity": {
       "title": "Activité Récente",
       "subtitle": "Vos derniers dépôts, déductions et retraits",
       "empty": "Aucune activité pour l'instant. Effectuez votre premier dépôt pour voir votre historique ici.",
       "viewAll": "Tout voir",
-
       "types": {
         "deposit": "Dépôt",
         "withdraw": "Retrait",
@@ -278,7 +249,6 @@
         "lockDrip": "Égouttage du verrou",
         "sync": "Synchronisation d'état"
       },
-
       "descriptions": {
         "deposit": "Déposé {amount}",
         "withdraw": "Retiré {amount}",
@@ -287,12 +257,10 @@
         "lockDrip": "Verrou égoutté : {amount}",
         "sync": "État synchronisé"
       },
-
       "drawTypes": {
         "regular": "Million de Dollars",
         "bonus": "Bonus"
       },
-
       "timestamps": {
         "justNow": "À l'instant",
         "minutesAgo": "il y a {minutes} min",
@@ -300,14 +268,12 @@
         "yesterday": "Hier",
         "daysAgo": "il y a {days} j"
       },
-
       "statuses": {
         "confirmed": "Confirmé",
         "pending": "En attente"
       }
     }
   },
-
   "nav": {
     "howItWorks": "Comment ça Marche",
     "transparency": "Transparence",
@@ -317,7 +283,6 @@
     "connect": "Connecter le Wallet",
     "connectShort": "Connecter"
   },
-
   "wallet": {
     "connect": "Connecter le Wallet",
     "connectShort": "Connecter",
@@ -325,7 +290,6 @@
     "wrongNetwork": "Mauvais Réseau",
     "switchNetwork": "Basculer vers Ethereum"
   },
-
   "hero": {
     "badge": "Propulsé par Chainlink VRF + Aave V3",
     "titleLine1": "Déposez de l'USDT.",
@@ -344,7 +308,6 @@
     "trustLine": "Soutenu par Chainlink VRF · Aave V3 · OpenZeppelin",
     "minDepositNote": "Commencez avec seulement 1 $ USDT"
   },
-
   "howItWorks": {
     "title": "Comment ça Marche",
     "subtitle": "Trois étapes simples entre vous et une richesse qui change la vie — sans jamais mettre votre capital en danger.",
@@ -358,7 +321,6 @@
     "bonusDescription": "Vos dépôts inactifs génèrent un rendement sur Aave V3. Lorsque ce seul rendement atteint 1 000 000 $, un tirage bonus supplémentaire se déclenche — même prix, même équité, sans coût supplémentaire pour vous. Vous êtes automatiquement inscrit aux deux tirages.",
     "bonusBadge": "Argent Gratuit"
   },
-
   "transparency": {
     "title": "Transparence Radicale. Solvabilité Vérifiable.",
     "subtitle": "Chaque chiffre sur cette plateforme est lu en direct depuis la blockchain. Vérifiez tout ce que vous voyez ici en moins de 3 clics — sur Etherscan, sur Aave, sur Chainlink.",
@@ -377,7 +339,6 @@
     "viewOnAave": "Voir sur Aave",
     "verifyVRF": "Vérifier sur Chainlink"
   },
-
   "trust": {
     "title": "Construit sur l'Infrastructure la Plus Fiable du Web3",
     "subtitle": "Nous utilisons des primitives de sécurité de niveau industriel pour que vous puissiez dormir tranquille.",
@@ -390,7 +351,6 @@
     "auditTitle": "Prêt pour l'Audit",
     "auditDesc": "Le code source du contrat est vérifié sur Etherscan et prêt pour un audit tiers. Nous sommes transparents car nous n'avons rien à cacher."
   },
-
   "stats": {
     "totalDisbursed": "Total Versé aux Gagnants",
     "totalDisbursedValue": "4 976 750 $",
@@ -401,14 +361,12 @@
     "avgApy": "APY Aave Actuel",
     "avgApyValue": "4.32 %"
   },
-
   "finalCta": {
     "title": "Votre argent vous attend.",
     "subtitle": "Rejoignez les 12 847 utilisateurs déjà dans la cagnotte. Déposez dès 1 $ USDT — ou 30 $ pour une efficacité de gas optimale — et vous pourriez être le prochain gagnant de 995 350 $.",
     "button": "Déposer & Participer Maintenant",
     "guarantee": "Capital protégé à 100 % · Aucun verrouillage · Retrait à tout moment"
   },
-
   "footer": {
     "tagline": "La première ROSCA hybride + Loterie Sans Perte au monde, propulsée par la DeFi.",
     "product": "Produit",
@@ -434,7 +392,6 @@
     "disclaimer": "1DollarMillion est un protocole décentralisé. Les interactions avec les smart contracts comportent des risques inhérents. Ne déposez jamais plus que ce que vous pouvez vous permettre de perdre. Les performances passées ne garantissent pas les résultats futurs.",
     "rights": "Tous droits réservés."
   },
-
   "languageSwitcher": {
     "label": "Langue",
     "en": "English",
@@ -446,7 +403,6 @@
     "ru": "Русский",
     "pt": "Português"
   },
-
   "legalPages": {
     "faq": {
       "title": "Questions Fréquentes",

@@ -46,7 +46,8 @@
       "estimatePending": "بانتظار نتيجة VRF...",
       "activeUsersLabel": "المستخدمون النشطون",
       "drawsLabel": "إجمالي السحوبات",
-      "bonusDrawsLabel": "سحوبات المكافآت"
+      "bonusDrawsLabel": "سحوبات المكافآت",
+      "viewOnEtherscan": "عرض على Polygonscan"
     },
     "yield": {
       "title": "متابع أرباح DeFi",
@@ -57,7 +58,8 @@
       "estimateLabel": "السحب التالي المتوقَّع",
       "estimateYears": "خلال ~{years} سنوات",
       "estimateReady": "جاهز للسحب",
-      "yieldNote": "تتراكم الأرباح على مدار الساعة. عند بلوغها مليون دولار، يُطلَق سحب مكافأة تلقائياً."
+      "yieldNote": "تتراكم الأرباح على مدار الساعة. عند بلوغها مليون دولار، يُطلَق سحب مكافأة تلقائياً.",
+      "viewOnAave": "عرض على Aave"
     },
     "solvency": {
       "title": "فحص الملاءة المالية",
@@ -79,7 +81,8 @@
       "yourOdds": "احتمالات فوزك",
       "yourOddsValue": "1 من {count}",
       "yourOddsPercent": "({percent}% لكل سحب)",
-      "yourOddsNote": "الإيداع يُطيل مدة اشتراكك، لا احتمالات فوزك. كل مستخدم لديه فرصة متساوية في كل سحب."
+      "yourOddsNote": "الإيداع يُطيل مدة اشتراكك، لا احتمالات فوزك. كل مستخدم لديه فرصة متساوية في كل سحب.",
+      "verifyOnChainlink": "تحقق على Chainlink"
     },
     "deposit": {
       "title": "إيداع USDT",
