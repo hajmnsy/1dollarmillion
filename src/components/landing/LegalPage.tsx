@@ -9,7 +9,7 @@ import { PageAnimation } from "@/components/landing/PageAnimation";
 
 type Props = {
   params: Promise<{ locale: string }>;
-  pageKey: "faq" | "terms" | "privacy" | "risk" | "docs" | "audit";
+  pageKey: "faq" | "terms" | "privacy" | "risk" | "docs" | "audit" | "github";
 };
 
 export async function LegalPage({ params, pageKey }: Props) {
@@ -18,8 +18,8 @@ export async function LegalPage({ params, pageKey }: Props) {
   const t = await getTranslations(`legalPages.${pageKey}`);
   const tCommon = await getTranslations("legalPages");
 
-  // Multi-section pages (terms/privacy/risk/docs/audit have 5 sections each)
-  const multiSectionPages = ["terms", "privacy", "risk", "docs", "audit"];
+  // Multi-section pages (terms/privacy/risk/docs/audit/github have 5 sections each)
+  const multiSectionPages = ["terms", "privacy", "risk", "docs", "audit", "github"];
   const sections =
     multiSectionPages.includes(pageKey)
       ? [1, 2, 3, 4, 5].map((n) => ({
