@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "1) النص الكامل للسطر في عمود Messages بجانب 404: (لا يوجد نص في عمود Messages لهذا السطر)\n2) النص الكامل لجميع الأعمدة في نفس السطر (Time, Status, Host, Request, Messages): JUL 19 08:29:34.45 GET 404 www.1dollarmillion... /sitemap.xml\n3) أي رسالة تحذيرية (warning) صفراء مرتبطة بهذا الطلب: ⚠️ JUL 19 08:29:34.45 GET 404 www.1dollarmil... /sitemap.xml\n4) اسم الـ host كاملاً (لا تختصره): www.1dollarmillion...\n5) المسار (path) الكامل للطلب الذي أعاد 404: /sitemap.xml\n6) أي نص أصفر أو برتقالي يظهر على الشاشة - انسبه بالضبط: ⚠️\n7) هل يوجد رقم طلب request ID؟ انسخه: (لا يوجد)",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1784448338,
+  "id": "2026071916053328d73764e9c04fdc",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "2026071916053328d73764e9c04fdc",
+  "usage": {
+    "completion_tokens": 241,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1523,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 1764
+  }
+}
