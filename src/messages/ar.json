@@ -70,7 +70,7 @@
       "totalAssets": "إجمالي الأصول",
       "principal": "إجمالي رأس المال",
       "solvencyGap": "فجوة الملاءة",
-      "viewOnEtherscan": "تحقق على Etherscan"
+      "viewOnEtherscan": "عرض على Polygonscan"
     },
     "actions": {
       "syncState": "تحديث حالتي",
@@ -335,7 +335,7 @@
     "verifiableOn": "قابل للتحقق على",
     "solvencyHealthy": "مَليّ",
     "solvencyHealthyDesc": "جميع الودائع مغطّاة بالكامل بنسبة 1:1",
-    "viewOnEtherscan": "عرض على Etherscan",
+    "viewOnEtherscan": "عرض على Polygonscan",
     "viewOnAave": "عرض على Aave",
     "verifyVRF": "تحقق على Chainlink"
   },
@@ -378,7 +378,7 @@
     },
     "developers": "المطوّرون",
     "developerLinks": {
-      "contract": "العقد على Etherscan",
+      "contract": "العقد على Polygonscan",
       "docs": "التوثيق",
       "audit": "تقرير التدقيق",
       "github": "GitHub"

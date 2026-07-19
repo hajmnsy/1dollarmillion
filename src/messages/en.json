@@ -70,7 +70,7 @@
       "totalAssets": "Total Assets",
       "principal": "Total Principal",
       "solvencyGap": "Solvency Gap",
-      "viewOnEtherscan": "Verify on Etherscan"
+      "viewOnEtherscan": "View on Polygonscan"
     },
     "actions": {
       "syncState": "Sync My State",
@@ -335,7 +335,7 @@
     "verifiableOn": "Verifiable on",
     "solvencyHealthy": "SOLVENT",
     "solvencyHealthyDesc": "All user deposits fully backed 1:1",
-    "viewOnEtherscan": "View on Etherscan",
+    "viewOnEtherscan": "View on Polygonscan",
     "viewOnAave": "View on Aave",
     "verifyVRF": "Verify on Chainlink"
   },
@@ -378,7 +378,7 @@
     },
     "developers": "Developers",
     "developerLinks": {
-      "contract": "Contract on Etherscan",
+      "contract": "Contract on Polygonscan",
       "docs": "Documentation",
       "audit": "Audit Report",
       "github": "GitHub"

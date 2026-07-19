@@ -70,7 +70,7 @@
       "totalAssets": "کل دارایی‌ها",
       "principal": "کل اصل سرمایه",
       "solvencyGap": "شکاف توانایی پرداخت",
-      "viewOnEtherscan": "تأیید در Etherscan"
+      "viewOnEtherscan": "نمایش در Polygonscan"
     },
     "actions": {
       "syncState": "همگام‌سازی وضعیت من",
@@ -353,7 +353,7 @@
     "verifiableOn": "قابل تأیید در",
     "solvencyHealthy": "تسویه‌پذیر",
     "solvencyHealthyDesc": "تمام سپرده‌های کاربران به‌طور کامل ۱:۱ پشتیبانی می‌شود",
-    "viewOnEtherscan": "مشاهده در Etherscan",
+    "viewOnEtherscan": "نمایش در Polygonscan",
     "viewOnAave": "مشاهده در Aave",
     "verifyVRF": "تأیید در Chainlink"
   },
@@ -396,7 +396,7 @@
     },
     "developers": "توسعه‌دهندگان",
     "developerLinks": {
-      "contract": "قرارداد در Etherscan",
+      "contract": "قرارداد در Polygonscan",
       "docs": "مستندات",
       "audit": "گزارش حسابرسی",
       "github": "GitHub"

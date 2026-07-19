@@ -70,7 +70,7 @@
       "totalAssets": "Total de Ativos",
       "principal": "Principal Total",
       "solvencyGap": "Lacuna de Solvência",
-      "viewOnEtherscan": "Verificar no Etherscan"
+      "viewOnEtherscan": "Ver no Polygonscan"
     },
     "actions": {
       "syncState": "Sincronizar Meu Estado",
@@ -335,7 +335,7 @@
     "verifiableOn": "Verificável em",
     "solvencyHealthy": "SOLVENTE",
     "solvencyHealthyDesc": "Todos os depósitos de usuários totalmente lastreados 1:1",
-    "viewOnEtherscan": "Ver no Etherscan",
+    "viewOnEtherscan": "Ver no Polygonscan",
     "viewOnAave": "Ver na Aave",
     "verifyVRF": "Verificar no Chainlink"
   },
@@ -378,7 +378,7 @@
     },
     "developers": "Desenvolvedores",
     "developerLinks": {
-      "contract": "Contrato no Etherscan",
+      "contract": "Contrato no Polygonscan",
       "docs": "Documentação",
       "audit": "Relatório de Auditoria",
       "github": "GitHub"

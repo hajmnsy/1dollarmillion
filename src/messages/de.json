@@ -70,7 +70,7 @@
       "totalAssets": "Gesamtvermögen",
       "principal": "Gesamtkapital",
       "solvencyGap": "Solvenzlücke",
-      "viewOnEtherscan": "Auf Etherscan verifizieren"
+      "viewOnEtherscan": "Auf Polygonscan ansehen"
     },
     "actions": {
       "syncState": "Meinen Status synchronisieren",
@@ -353,7 +353,7 @@
     "verifiableOn": "Verifizierbar auf",
     "solvencyHealthy": "SOLVENT",
     "solvencyHealthyDesc": "Alle Nutzereinzahlungen vollständig 1:1 gedeckt",
-    "viewOnEtherscan": "Auf Etherscan ansehen",
+    "viewOnEtherscan": "Auf Polygonscan ansehen",
     "viewOnAave": "Auf Aave ansehen",
     "verifyVRF": "Auf Chainlink verifizieren"
   },
@@ -396,7 +396,7 @@
     },
     "developers": "Entwickler",
     "developerLinks": {
-      "contract": "Vertrag auf Etherscan",
+      "contract": "Vertrag auf Polygonscan",
       "docs": "Dokumentation",
       "audit": "Audit-Bericht",
       "github": "GitHub"

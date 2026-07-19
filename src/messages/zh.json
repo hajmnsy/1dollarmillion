@@ -70,7 +70,7 @@
       "totalAssets": "总资产",
       "principal": "总本金",
       "solvencyGap": "偿付缺口",
-      "viewOnEtherscan": "在 Etherscan 上验证"
+      "viewOnEtherscan": "在 Polygonscan 上查看"
     },
     "actions": {
       "syncState": "同步我的状态",
@@ -335,7 +335,7 @@
     "verifiableOn": "可在以下验证",
     "solvencyHealthy": "健康",
     "solvencyHealthyDesc": "所有用户存款均按 1:1 完全背书",
-    "viewOnEtherscan": "在 Etherscan 上查看",
+    "viewOnEtherscan": "在 Polygonscan 上查看",
     "viewOnAave": "在 Aave 上查看",
     "verifyVRF": "在 Chainlink 上验证"
   },
@@ -378,7 +378,7 @@
     },
     "developers": "开发者",
     "developerLinks": {
-      "contract": "Etherscan 上的合约",
+      "contract": "Polygonscan 上的合约",
       "docs": "文档",
       "audit": "审计报告",
       "github": "GitHub"

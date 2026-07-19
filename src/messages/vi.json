@@ -64,7 +64,7 @@
     "verifiableOn": "Verifiable on",
     "solvencyHealthy": "SOLVENT",
     "solvencyHealthyDesc": "All user deposits fully backed 1:1",
-    "viewOnEtherscan": "View on Etherscan",
+    "viewOnEtherscan": "Xem trên Polygonscan",
     "viewOnAave": "View on Aave",
     "verifyVRF": "Verify on Chainlink"
   },
@@ -107,7 +107,7 @@
     },
     "developers": "Developers",
     "developerLinks": {
-      "contract": "Contract on Etherscan",
+      "contract": "Contract on Polygonscan",
       "docs": "Documentation",
       "audit": "Audit Report",
       "github": "GitHub"
