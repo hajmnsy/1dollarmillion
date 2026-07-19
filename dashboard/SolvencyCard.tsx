@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/card";
 import { formatUsd } from "@/hooks/useLottery";
 import type { AccountingSummary } from "@/lib/contract/config";
+import { POLYGONSCAN_CONTRACT_URL } from "@/lib/contract/config";
 import { ShieldCheck, AlertTriangle, ExternalLink } from "lucide-react";
 
 interface SolvencyCardProps {
@@ -31,7 +32,6 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
       }`}
     >
       <div className="relative">
-        {/* Header */}
         <div className="mb-4 flex items-center justify-between gap-3">
           <h3 className="text-sm font-bold text-white">{t("title")}</h3>
           <div
@@ -50,12 +50,10 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
           </div>
         </div>
 
-        {/* Description */}
         <p className="mb-4 text-xs text-white/50">
           {warning ? t("warningDesc") : t("healthyDesc")}
         </p>
 
-        {/* Metrics */}
         <div className="space-y-2.5">
           <Row label={t("totalAssets")} value={formatUsd(accounting.totalAssets)} />
           <Row label={t("principal")} value={formatUsd(accounting.principal)} />
@@ -70,7 +68,9 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
 
         {/* Verify link */}
         <a
-          href="#"
+          href={POLYGONSCAN_CONTRACT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-white/40 transition-colors hover:text-white"
         >
           {t("viewOnEtherscan")}
