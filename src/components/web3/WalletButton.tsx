@@ -44,6 +44,7 @@ function WalletButtonClient() {
   const [connecting, setConnecting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showInstallModal, setShowInstallModal] = useState(false);
+  const [showAccountMenu, setShowAccountMenu] = useState(false);
 
   // Detect available connectors
   const injectedConnector = connectors.find(
@@ -73,15 +74,48 @@ function WalletButtonClient() {
     const truncated = `${address.slice(0, 6)}...${address.slice(-4)}`;
     return (
       <div className="relative">
-        <Button className="h-10 gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 text-sm font-medium text-emerald-300 transition-all hover:bg-emerald-500/20">
+        <Button
+          onClick={() => setShowAccountMenu(!showAccountMenu)}
+          className="h-10 gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 text-sm font-medium text-emerald-300 transition-all hover:bg-emerald-500/20"
+        >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
           <span className="font-mono">{truncated}</span>
-          <ChevronDown className="h-3.5 w-3.5 opacity-60" />
+          <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform ${showAccountMenu ? "rotate-180" : ""}`} />
         </Button>
-        <DisconnectButton disconnect={disconnect} chainId={chainId} address={address} />
+
+        {showAccountMenu && (
+          <>
+            <div className="fixed inset-0 z-40" onClick={() => setShowAccountMenu(false)} />
+            <div className="absolute end-0 mt-2 w-64 overflow-hidden rounded-xl border border-white/10 bg-[#111] shadow-2xl z-50 top-full">
+              {/* Account info */}
+              <div className="border-b border-white/5 px-4 py-3">
+                <div className="text-xs font-medium uppercase tracking-wider text-white/40">
+                  Connected
+                </div>
+                <div className="mt-1 font-mono text-xs text-white/80 break-all">{address}</div>
+                <div className="mt-2 flex items-center gap-1.5 text-xs text-emerald-400">
+                  <ShieldCheck className="h-3 w-3" />
+                  Chain ID: {chainId}
+                </div>
+              </div>
+
+              {/* Disconnect button - prominent */}
+              <button
+                onClick={() => {
+                  disconnect();
+                  setShowAccountMenu(false);
+                }}
+                className="flex w-full items-center justify-center gap-2 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-300 transition-colors hover:bg-red-500/20 hover:text-red-200"
+              >
+                <LogOut className="h-4 w-4" />
+                Disconnect Wallet
+              </button>
+            </div>
+          </>
+        )}
       </div>
     );
   }

@@ -4,6 +4,11 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ExternalLink, ShieldCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import {
+  POLYGONSCAN_CONTRACT_URL,
+  AAVE_POOL_URL,
+  CHAINLINK_VRF_URL,
+} from "@/lib/contract/config";
 
 export function TransparencySection() {
   const t = useTranslations("transparency");
@@ -16,6 +21,7 @@ export function TransparencySection() {
       progress: 84.7,
       color: "emerald" as const,
       link: t("viewOnEtherscan"),
+      href: POLYGONSCAN_CONTRACT_URL,
     },
     {
       title: t("yieldCardTitle"),
@@ -24,6 +30,7 @@ export function TransparencySection() {
       progress: 2.3,
       color: "purple" as const,
       link: t("viewOnAave"),
+      href: AAVE_POOL_URL,
     },
     {
       title: t("solvencyCardTitle"),
@@ -32,6 +39,7 @@ export function TransparencySection() {
       progress: 100,
       color: "blue" as const,
       link: t("viewOnEtherscan"),
+      href: POLYGONSCAN_CONTRACT_URL,
       isStatus: true,
     },
     {
@@ -41,6 +49,7 @@ export function TransparencySection() {
       progress: 85,
       color: "amber" as const,
       link: t("verifyVRF"),
+      href: CHAINLINK_VRF_URL,
     },
   ];
 
@@ -139,13 +148,19 @@ export function TransparencySection() {
                     />
                   </div>
 
-                  <div className="mt-4 flex items-center gap-1.5 text-xs text-white/40">
+                  {/* Real clickable link */}
+                  <a
+                    href={card.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-xs text-white/40 transition-colors hover:text-white"
+                  >
                     <span>{t("verifiableOn")}:</span>
                     <span className="inline-flex items-center gap-1 font-medium text-white/60 transition-colors group-hover:text-white">
                       {card.link}
                       <ExternalLink className="h-3 w-3" />
                     </span>
-                  </div>
+                  </a>
                 </div>
               </motion.div>
             );
