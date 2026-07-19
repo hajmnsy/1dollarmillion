@@ -70,7 +70,7 @@
       "totalAssets": "Всего активов",
       "principal": "Общий капитал",
       "solvencyGap": "Разрыв платежеспособности",
-      "viewOnEtherscan": "Проверить в Etherscan"
+      "viewOnEtherscan": "Посмотреть на Polygonscan"
     },
     "actions": {
       "syncState": "Синхронизировать мой статус",
@@ -335,7 +335,7 @@
     "verifiableOn": "Проверяемо на",
     "solvencyHealthy": "ПЛАТЕЖЕСПОСОБЕН",
     "solvencyHealthyDesc": "Все пользовательские депозиты полностью обеспечены 1:1",
-    "viewOnEtherscan": "Посмотреть в Etherscan",
+    "viewOnEtherscan": "Посмотреть на Polygonscan",
     "viewOnAave": "Посмотреть на Aave",
     "verifyVRF": "Проверить в Chainlink"
   },
@@ -378,7 +378,7 @@
     },
     "developers": "Разработчикам",
     "developerLinks": {
-      "contract": "Контракт в Etherscan",
+      "contract": "Контракт в Polygonscan",
       "docs": "Документация",
       "audit": "Отчет об аудите",
       "github": "GitHub"

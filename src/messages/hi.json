@@ -70,7 +70,7 @@
       "totalAssets": "कुल संपत्ति",
       "principal": "कुल मूलधन",
       "solvencyGap": "सॉल्वेंसी गैप",
-      "viewOnEtherscan": "Etherscan पर सत्यापित करें"
+      "viewOnEtherscan": "Polygonscan पर देखें"
     },
     "actions": {
       "syncState": "मेरी स्थिति सिंक करें",
@@ -335,7 +335,7 @@
     "verifiableOn": "पर सत्यापन योग्य",
     "solvencyHealthy": "सॉल्वेंट",
     "solvencyHealthyDesc": "सभी उपयोगकर्ता जमाएं पूरी तरह 1:1 समर्थित",
-    "viewOnEtherscan": "Etherscan पर देखें",
+    "viewOnEtherscan": "Polygonscan पर देखें",
     "viewOnAave": "Aave पर देखें",
     "verifyVRF": "Chainlink पर सत्यापित करें"
   },
@@ -378,7 +378,7 @@
     },
     "developers": "डेवलपर्स",
     "developerLinks": {
-      "contract": "Etherscan पर कॉन्ट्रैक्ट",
+      "contract": "Polygonscan पर कॉन्ट्रैक्ट",
       "docs": "दस्तावेज़ीकरण",
       "audit": "ऑडिट रिपोर्ट",
       "github": "GitHub"
