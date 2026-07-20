@@ -13,9 +13,8 @@ import {
 } from "@/lib/contract/config";
 import { useUserUsdtAllowance } from "@/hooks/useLottery";
 
-// Approximate gas cost in USD (assume $3 average for an ERC20 approve + deposit on L1)
-// Used by the gas efficiency badge calculation in the UI.
-export const EST_GAS_COST_USD = 3;
+// Gas efficiency constant is defined below (after the GasEfficiency type)
+// See EST_GAS_COST_USD in the Gas Efficiency Computation section.
 
 export type DepositStep =
   | "idle"
@@ -167,15 +166,36 @@ export function useDeposit(amount: bigint): UseDepositReturn {
 // ============================================================
 // =============== Gas Efficiency Computation ================
 // ============================================================
+//
+// POLYGON MAINNET GAS COSTS (updated 2026-07-20)
+// ----------------------------------------------
+// Polygon gas costs are ~300x cheaper than Ethereum Mainnet:
+//   - ERC20 approve:  ~$0.005 (was $1.50 on ETH)
+//   - deposit():      ~$0.010 (was $3.00 on ETH)
+//   - Total 2-step:   ~$0.015 (was $4.50 on ETH)
+//
+// This means even $1 deposits are now gas-efficient!
+// ============================================================
 
 export type GasEfficiency = "poor" | "fair" | "good" | "optimal";
 
 /**
+ * Total gas cost for a full deposit flow (approve + deposit) on Polygon.
+ * Conservative estimate; actual cost is often lower.
+ */
+export const EST_GAS_COST_USD = 0.015; // $0.015 = 1.5 cents
+
+/**
  * Compute the gas efficiency tier based on deposit amount.
- * Gas cost is roughly fixed at $3 per tx, regardless of deposit size.
+ *
+ * On Polygon, gas is so cheap that the efficiency tiers are very forgiving:
+ *   - $1+  → optimal (gas is <1.5% of deposit)
+ *   - $0.10+ → good
+ *   - $0.01+ → fair
+ *   - <$0.01 → poor (but still works)
  *
  * @param amountUsd Deposit amount in USD
- * @returns Tier + ratio percentage
+ * @returns Tier + ratio percentage (gas cost as % of deposit)
  */
 export function computeGasEfficiency(amountUsd: number): {
   tier: GasEfficiency;
@@ -184,9 +204,10 @@ export function computeGasEfficiency(amountUsd: number): {
   if (amountUsd <= 0) return { tier: "poor", ratioPercent: 100 };
   const ratio = (EST_GAS_COST_USD / amountUsd) * 100;
   let tier: GasEfficiency;
-  if (amountUsd < 10) tier = "poor";
-  else if (amountUsd < 30) tier = "fair";
-  else if (amountUsd < 100) tier = "good";
-  else tier = "optimal";
+  // Polygon: very cheap gas, so tiers are calibrated to deposit size
+  if (amountUsd >= 1) tier = "optimal";      // $1+ → gas is ≤1.5%
+  else if (amountUsd >= 0.5) tier = "good";   // $0.50+ → gas is ≤3%
+  else if (amountUsd >= 0.1) tier = "fair";   // $0.10+ → gas is ≤15%
+  else tier = "poor";                          // <$0.10 → gas is >15%
   return { tier, ratioPercent: ratio };
 }
