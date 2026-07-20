@@ -99,25 +99,25 @@
         "fiveHundred": "۵۰۰"
       },
       "gasBadge": {
-        "poor": "هزینه گس بالا",
-        "poorDesc": "کارمزد شبکه را بیش از حد پرداخت می‌کنید",
-        "fair": "بهره‌وری گس متوسط",
-        "fairDesc": "سپرده‌گذاری بیشتر را در نظر بگیرید",
-        "good": "بهره‌وری گس خوب",
-        "goodDesc": "حدود ۲ هفته فعالیت را پوشش می‌دهد",
-        "optimal": "بهره‌وری گس بهینه",
-        "optimalDesc": "۱ ماه فعالیت را پوشش می‌دهد"
+        "poor": "Micro Deposit",
+        "poorDesc": "Gas is a higher % of deposit, but still works",
+        "fair": "Good Efficiency",
+        "fairDesc": "Reasonable gas-to-deposit ratio",
+        "good": "Great Efficiency",
+        "goodDesc": "Covers ~2 weeks of activity",
+        "optimal": "Optimal Efficiency",
+        "optimalDesc": "Gas is negligible (<1.5% of deposit)"
       },
       "explainer": {
-        "title": "چرا ۳۰ USDT؟",
-        "body": "هر سپرده حدود $3 گس هزینه دارد (کارمزد ثابت شبکه). مبلغی که سپرده‌گذاری می‌کنید هزینه گس را تغییر نمی‌دهد.",
-        "row1Label": "سپاره ۱ USDT",
-        "row1Value": "$3 گس = ۳۰۰٪ سربار (۳ برابر سپرده خود را به کارمزد از دست می‌دهید)",
-        "row2Label": "سپرده ۳۰ USDT",
-        "row2Value": "$3 گس = ۱۰٪ سربار (۳۰ روز فعالیت را پوشش می‌دهد)",
-        "row3Label": "سپرده ۱۰۰ USDT",
-        "row3Value": "$3 گس = ۳٪ سربار (۱۰۰ روز فعالیت را پوشش می‌دهد)",
-        "conclusion": "۳۰ USDT به شما حدود ۳۰ روز وضعیت فعال با کمترین سربار گس عملی می‌دهد. سپرده‌های بزرگ‌تر حتی کارآمدترند اما سرمایه بیشتری را قفل می‌کنند."
+        "title": "Why any amount works on Polygon",
+        "body": "Polygon gas fees are ~300x cheaper than Ethereum. A full deposit (approve + deposit) costs only ~1.5 cents, so even $1 deposits are efficient!",
+        "row1Label": "Deposit $1 USDT",
+        "row1Value": "~1.5¢ gas = 1.5% overhead (1 day of activity)",
+        "row2Label": "Deposit $10 USDT",
+        "row2Value": "~1.5¢ gas = 0.15% overhead (10 days of activity)",
+        "row3Label": "Deposit $30 USDT",
+        "row3Value": "~1.5¢ gas = 0.05% overhead (30 days of activity)",
+        "conclusion": "On Polygon, every deposit size is gas-efficient. Deposit what you're comfortable with — gas is no longer a concern."
       },
       "costBreakdown": {
         "title": "تفکیک هزینه‌ها",

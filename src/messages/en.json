@@ -99,25 +99,25 @@
         "fiveHundred": "500"
       },
       "gasBadge": {
-        "poor": "High Gas Overhead",
-        "poorDesc": "You pay network fees too often",
-        "fair": "Fair Gas Efficiency",
-        "fairDesc": "Consider depositing more",
-        "good": "Good Gas Efficiency",
+        "poor": "Micro Deposit",
+        "poorDesc": "Gas is a higher % of deposit, but still works",
+        "fair": "Good Efficiency",
+        "fairDesc": "Reasonable gas-to-deposit ratio",
+        "good": "Great Efficiency",
         "goodDesc": "Covers ~2 weeks of activity",
-        "optimal": "Optimal Gas Efficiency",
-        "optimalDesc": "Covers 1 month of activity"
+        "optimal": "Optimal Efficiency",
+        "optimalDesc": "Gas is negligible (<1.5% of deposit)"
       },
       "explainer": {
-        "title": "Why 30 USDT?",
-        "body": "Every deposit costs ~$3 in gas (a fixed network fee). The amount you deposit doesn't change the gas cost.",
-        "row1Label": "Deposit 1 USDT",
-        "row1Value": "$3 gas = 300% overhead (lose 3x your deposit to fees)",
-        "row2Label": "Deposit 30 USDT",
-        "row2Value": "$3 gas = 10% overhead (covers 30 days of activity)",
-        "row3Label": "Deposit 100 USDT",
-        "row3Value": "$3 gas = 3% overhead (covers 100 days of activity)",
-        "conclusion": "30 USDT gives you ~30 days of active status at the lowest practical gas overhead. Larger deposits are even more efficient but lock more capital."
+        "title": "Why any amount works on Polygon",
+        "body": "Polygon gas fees are ~300x cheaper than Ethereum. A full deposit (approve + deposit) costs only ~1.5 cents, so even $1 deposits are efficient!",
+        "row1Label": "Deposit $1 USDT",
+        "row1Value": "~1.5¢ gas = 1.5% overhead (1 day of activity)",
+        "row2Label": "Deposit $10 USDT",
+        "row2Value": "~1.5¢ gas = 0.15% overhead (10 days of activity)",
+        "row3Label": "Deposit $30 USDT",
+        "row3Value": "~1.5¢ gas = 0.05% overhead (30 days of activity)",
+        "conclusion": "On Polygon, every deposit size is gas-efficient. Deposit what you're comfortable with — gas is no longer a concern."
       },
       "costBreakdown": {
         "title": "Cost Breakdown",

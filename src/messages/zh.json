@@ -99,25 +99,25 @@
         "fiveHundred": "500"
       },
       "gasBadge": {
-        "poor": "gas 效率较差",
-        "poorDesc": "您支付网络费用的频率过高",
-        "fair": "gas 效率一般",
-        "fairDesc": "建议存入更多",
-        "good": "gas 效率良好",
-        "goodDesc": "可覆盖约 2 周活跃期",
-        "optimal": "gas 效率最佳",
-        "optimalDesc": "可覆盖 1 个月活跃期"
+        "poor": "Micro Deposit",
+        "poorDesc": "Gas is a higher % of deposit, but still works",
+        "fair": "Good Efficiency",
+        "fairDesc": "Reasonable gas-to-deposit ratio",
+        "good": "Great Efficiency",
+        "goodDesc": "Covers ~2 weeks of activity",
+        "optimal": "Optimal Efficiency",
+        "optimalDesc": "Gas is negligible (<1.5% of deposit)"
       },
       "explainer": {
-        "title": "为什么是 30 USDT？",
-        "body": "每次存款约需支付 $3 的 gas 费（固定的网络费用）。您存入的金额不会改变 gas 成本。",
-        "row1Label": "存入 1 USDT",
-        "row1Value": "$3 gas = 300% 开销（费用是存款的 3 倍）",
-        "row2Label": "存入 30 USDT",
-        "row2Value": "$3 gas = 10% 开销（覆盖 30 天活跃期）",
-        "row3Label": "存入 100 USDT",
-        "row3Value": "$3 gas = 3% 开销（覆盖 100 天活跃期）",
-        "conclusion": "30 USDT 让您以最低的实际 gas 开销获得约 30 天的活跃状态。更大额存款效率更高，但会锁定更多资金。"
+        "title": "Why any amount works on Polygon",
+        "body": "Polygon gas fees are ~300x cheaper than Ethereum. A full deposit (approve + deposit) costs only ~1.5 cents, so even $1 deposits are efficient!",
+        "row1Label": "Deposit $1 USDT",
+        "row1Value": "~1.5¢ gas = 1.5% overhead (1 day of activity)",
+        "row2Label": "Deposit $10 USDT",
+        "row2Value": "~1.5¢ gas = 0.15% overhead (10 days of activity)",
+        "row3Label": "Deposit $30 USDT",
+        "row3Value": "~1.5¢ gas = 0.05% overhead (30 days of activity)",
+        "conclusion": "On Polygon, every deposit size is gas-efficient. Deposit what you're comfortable with — gas is no longer a concern."
       },
       "costBreakdown": {
         "title": "成本明细",
