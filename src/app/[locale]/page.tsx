@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/landing/SiteHeader";
 import { Hero } from "@/components/landing/Hero";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { TransparencySection } from "@/components/landing/TransparencySection";
+import { ReferralSection } from "@/components/landing/ReferralSection";
 import { TrustSection } from "@/components/landing/TrustSection";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { SiteFooter } from "@/components/landing/SiteFooter";
@@ -22,6 +23,7 @@ export default async function LandingPage({ params }: Props) {
         <Hero />
         <HowItWorks />
         <TransparencySection />
+        <ReferralSection />
         <TrustSection />
         <FinalCTA />
       </main>

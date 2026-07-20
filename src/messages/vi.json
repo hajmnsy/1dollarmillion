@@ -175,5 +175,30 @@
       "section5Title": "5. Contributing",
       "section5Body": "Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change."
     }
+  },
+  "referral": {
+    "badge": "Zero-Cost Rewards",
+    "title": "Earn While You Share",
+    "subtitle": "Invite friends to 1DollarMillion and both of you get rewarded. You earn 1% of their prize if they win — at zero cost to the platform.",
+    "benefit1Title": "+5 Free Active Days",
+    "benefit1Desc": "When your friend deposits using your link, they get 5 extra days of active status — completely free.",
+    "benefit1Value": "Free bonus for friend",
+    "benefit2Title": "+5 Free Active Days For You",
+    "benefit2Desc": "You also get 5 extra active days when your referred friend makes their first deposit. Mutual benefit.",
+    "benefit2Value": "Free bonus for you",
+    "benefit3Title": "1% of Their Prize",
+    "benefit3Desc": "If your referred friend wins a $1M draw, you receive $9,953 — automatically, from the winner's payout. Zero cost to platform.",
+    "benefit3Value": "$9,953 per win",
+    "howItWorksTitle": "How Referrals Work",
+    "step1Title": "Share Your Link",
+    "step1Desc": "Get your unique referral link from the dashboard and share it with friends, family, or your community.",
+    "step2Title": "Friend Deposits",
+    "step2Desc": "When they deposit using your link, both of you get +5 free active days automatically.",
+    "step3Title": "Earn When They Win",
+    "step3Desc": "If your friend wins any draw, you instantly receive 1% of their prize ($9,953). No claim needed.",
+    "rewardValue": "$9,953 per winning referral",
+    "rewardDesc": "Paid automatically from the winner's prize — zero cost to the platform, zero cost to the winner's principal.",
+    "ctaButton": "Get Your Referral Link",
+    "ctaNote": "Connect your wallet in the dashboard to generate your unique referral link."
   }
 }
