@@ -12,6 +12,7 @@ import { OddsCard } from "@/components/dashboard/OddsCard";
 import { DepositModal } from "@/components/dashboard/DepositModal";
 import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
 import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+import { ReferralCard } from "@/components/dashboard/ReferralCard";
 import { useDashboardData } from "@/hooks/useLottery";
 import { useAccount } from "wagmi";
 import { motion } from "framer-motion";
@@ -164,6 +165,18 @@ function DashboardContent() {
 
               <ActivityFeed />
             </motion.div>
+
+            {/* Fourth row: Referral card (only when connected) */}
+            {isConnected && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.6 }}
+                className="mt-6"
+              >
+                <ReferralCard />
+              </motion.div>
+            )}
           </div>
         )}
       </main>
