@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ExternalLink, ShieldCheck } from "lucide-react";
-import { Link } from "@/i18n/navigation";
 import {
   POLYGONSCAN_CONTRACT_URL,
   AAVE_POOL_URL,
@@ -82,7 +81,6 @@ export function TransparencySection() {
 
   return (
     <section className="relative py-20 sm:py-28" id="transparency">
-      {/* Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/5 blur-[120px]" />
       </div>
@@ -137,7 +135,6 @@ export function TransparencySection() {
                     </p>
                   )}
 
-                  {/* Progress bar */}
                   <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
                     <motion.div
                       initial={{ width: 0 }}
@@ -148,7 +145,6 @@ export function TransparencySection() {
                     />
                   </div>
 
-                  {/* Real clickable link */}
                   <a
                     href={card.href}
                     target="_blank"
@@ -167,14 +163,17 @@ export function TransparencySection() {
           })}
         </div>
 
-        {/* CTA to full dashboard */}
+        {/* CTA: View on Polygonscan (external link) */}
         <div className="mt-10 text-center">
-          <Link
-            href="/transparency"
+          <a
+            href={POLYGONSCAN_CONTRACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-400 transition-colors hover:text-emerald-300"
           >
-            {t("viewOnEtherscan")} →
-          </Link>
+            {t("viewOnEtherscan")}
+            <ExternalLink className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
