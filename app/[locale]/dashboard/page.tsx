@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { SiteHeader } from "@/components/landing/SiteHeader";
 import { SiteFooter } from "@/components/landing/SiteFooter";
-import { WalletNotConnected } from "@/components/dashboard/WalletNotConnected";
 import { PositionCard } from "@/components/dashboard/PositionCard";
 import { PoolProgressCard } from "@/components/dashboard/PoolProgressCard";
 import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
@@ -13,13 +12,13 @@ import { OddsCard } from "@/components/dashboard/OddsCard";
 import { DepositModal } from "@/components/dashboard/DepositModal";
 import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
 import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+import { ReferralCard } from "@/components/dashboard/ReferralCard";
 import { useDashboardData } from "@/hooks/useLottery";
 import { useAccount } from "wagmi";
 import { motion } from "framer-motion";
-import { Loader2 } from "lucide-react";
+import { Loader2, Wallet } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-// Locale is provided by the parent [locale]/layout.tsx via NextIntlClientProvider.
-// We use the client-side useLocale() hook to access it.
 export default function DashboardPage() {
   return <DashboardContent />;
 }
@@ -29,23 +28,19 @@ function DashboardContent() {
   const { isConnected, isReconnecting } = useAccount();
   const data = useDashboardData();
 
-  // Modal open state
   const [depositModalOpen, setDepositModalOpen] = useState(false);
   const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
 
-  const isLoading = !isConnected || isReconnecting || data.isLoading;
+  const isLoading = isReconnecting || (isConnected && data.isLoading);
 
   return (
     <div className="flex min-h-screen flex-col bg-[#0a0a0a]">
       <SiteHeader />
       <main className="flex-1">
-        {!isConnected ? (
-          <WalletNotConnected />
-        ) : isLoading ? (
+        {isLoading ? (
           <LoadingState label={t("title")} />
         ) : (
           <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-            {/* Page header */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,17 +53,44 @@ function DashboardContent() {
               <p className="mt-1.5 text-sm text-white/60 sm:text-base">
                 {t("subtitle")}
               </p>
+
+              {!isConnected && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="mt-6 rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.05] p-5 sm:p-6"
+                >
+                  <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <h3 className="text-base font-bold text-white">
+                        {t("walletNotConnected")}
+                      </h3>
+                      <p className="mt-1 text-sm text-white/60">
+                        {t("walletNotConnectedDesc")}
+                      </p>
+                    </div>
+                    <Button
+                      onClick={() => {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className="h-11 gap-2 rounded-full bg-emerald-500 px-5 text-sm font-semibold text-black shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400"
+                    >
+                      <Wallet className="h-4 w-4" />
+                      {t("connectButton")}
+                    </Button>
+                  </div>
+                </motion.div>
+              )}
             </motion.div>
 
-            {/* Main grid: 2 columns on lg */}
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-              {/* Left column */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
-                {data.userInfo ? (
+                {isConnected && data.userInfo ? (
                   <PositionCard
                     userInfo={data.userInfo}
                     daysRemaining={data.daysRemaining}
@@ -82,7 +104,6 @@ function DashboardContent() {
                 )}
               </motion.div>
 
-              {/* Right column */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -99,7 +120,6 @@ function DashboardContent() {
               </motion.div>
             </div>
 
-            {/* Second row: yield + side cards */}
             <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -122,7 +142,6 @@ function DashboardContent() {
               </motion.div>
             </div>
 
-            {/* Third row: odds of winning */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -131,19 +150,27 @@ function DashboardContent() {
             >
               <OddsCard
                 activeUserCount={data.activeUserCount}
-                userIsActive={data.userStatus === "active"}
+                userIsActive={isConnected && data.userStatus === "active"}
               />
 
-              {/* Real Activity Feed (Phase 4) */}
               <ActivityFeed />
+            </motion.div>
+
+            {/* Referral Card - always visible */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.6 }}
+              className="mt-6"
+            >
+              <ReferralCard />
             </motion.div>
           </div>
         )}
       </main>
       <SiteFooter />
 
-      {/* === Deposit Modal === */}
-      {data.userInfo && (
+      {isConnected && data.userInfo && (
         <DepositModal
           open={depositModalOpen}
           onOpenChange={setDepositModalOpen}
@@ -151,8 +178,7 @@ function DashboardContent() {
         />
       )}
 
-      {/* === Withdraw Modal === */}
-      {data.userInfo && (
+      {isConnected && data.userInfo && (
         <WithdrawModal
           open={withdrawModalOpen}
           onOpenChange={setWithdrawModalOpen}
