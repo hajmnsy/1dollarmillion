@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { SiteHeader } from "@/components/landing/SiteHeader";
 import { SiteFooter } from "@/components/landing/SiteFooter";
@@ -12,6 +12,7 @@ import { OddsCard } from "@/components/dashboard/OddsCard";
 import { DepositModal } from "@/components/dashboard/DepositModal";
 import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
 import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+import { CompactReferralCard } from "@/components/dashboard/CompactReferralCard";
 import { ReferralCard } from "@/components/dashboard/ReferralCard";
 import { useDashboardData } from "@/hooks/useLottery";
 import { useAccount } from "wagmi";
@@ -31,6 +32,18 @@ function DashboardContent() {
   const [depositModalOpen, setDepositModalOpen] = useState(false);
   const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
 
+  // Scroll to referral card if URL has #referral-card
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#referral-card") {
+      setTimeout(() => {
+        const element = document.getElementById("referral-card");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 800);
+    }
+  }, [isConnected]);
+
   const isLoading = isReconnecting || (isConnected && data.isLoading);
 
   return (
@@ -41,11 +54,12 @@ function DashboardContent() {
           <LoadingState label={t("title")} />
         ) : (
           <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+            {/* Page header */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="mb-8"
+              className="mb-6"
             >
               <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
                 {t("title")}
@@ -53,37 +67,51 @@ function DashboardContent() {
               <p className="mt-1.5 text-sm text-white/60 sm:text-base">
                 {t("subtitle")}
               </p>
-
-              {!isConnected && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="mt-6 rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.05] p-5 sm:p-6"
-                >
-                  <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <h3 className="text-base font-bold text-white">
-                        {t("walletNotConnected")}
-                      </h3>
-                      <p className="mt-1 text-sm text-white/60">
-                        {t("walletNotConnectedDesc")}
-                      </p>
-                    </div>
-                    <Button
-                      onClick={() => {
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      }}
-                      className="h-11 gap-2 rounded-full bg-emerald-500 px-5 text-sm font-semibold text-black shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400"
-                    >
-                      <Wallet className="h-4 w-4" />
-                      {t("connectButton")}
-                    </Button>
-                  </div>
-                </motion.div>
-              )}
             </motion.div>
 
+            {/* Compact Referral Card - at the top */}
+            {isConnected && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.05 }}
+                className="mb-6"
+              >
+                <CompactReferralCard />
+              </motion.div>
+            )}
+
+            {/* Wallet not connected banner */}
+            {!isConnected && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="mb-6 rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.05] p-5 sm:p-6"
+              >
+                <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <h3 className="text-base font-bold text-white">
+                      {t("walletNotConnected")}
+                    </h3>
+                    <p className="mt-1 text-sm text-white/60">
+                      {t("walletNotConnectedDesc")}
+                    </p>
+                  </div>
+                  <Button
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="h-11 gap-2 rounded-full bg-emerald-500 px-5 text-sm font-semibold text-black shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400"
+                  >
+                    <Wallet className="h-4 w-4" />
+                    {t("connectButton")}
+                  </Button>
+                </div>
+              </motion.div>
+            )}
+
+            {/* Main grid: Position + Pool (2 columns) */}
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -120,6 +148,7 @@ function DashboardContent() {
               </motion.div>
             </div>
 
+            {/* Second row: Yield + Solvency (2/3 + 1/3) */}
             <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -142,6 +171,7 @@ function DashboardContent() {
               </motion.div>
             </div>
 
+            {/* Third row: Odds + Activity Feed (2 columns) */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -156,15 +186,18 @@ function DashboardContent() {
               <ActivityFeed />
             </motion.div>
 
-            {/* Referral Card - always visible */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.6 }}
-              className="mt-6"
-            >
-              <ReferralCard />
-            </motion.div>
+            {/* Fourth row: Full Referral Card (with details) */}
+            {isConnected && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.6 }}
+                className="mt-6"
+                id="referral-card"
+              >
+                <ReferralCard />
+              </motion.div>
+            )}
           </div>
         )}
       </main>
