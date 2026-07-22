@@ -110,6 +110,23 @@ export function useCurrentPool() {
 }
 
 /**
+ * Fetch total user balances (sum of all deposits).
+ * This represents the actual money in the pool (not just deducted amounts).
+ */
+export function useTotalUserBalances() {
+  return useReadContract({
+    address: LOTTERY_CONTRACT_ADDRESS,
+    abi: lotteryAbi,
+    functionName: "totalUserBalances",
+    chainId: TARGET_CHAIN_ID,
+    query: {
+      refetchInterval: NORMAL,
+      select: (data) => data as bigint,
+    },
+  });
+}
+
+/**
  * Fetch the live yield balance (Aave interest earned).
  */
 export function useYieldBalance() {
@@ -326,6 +343,7 @@ export function useDrawCounts() {
 export function useDashboardData() {
   const { address, isConnected } = useAccount();
   const pool = useCurrentPool();
+  const totalBalances = useTotalUserBalances();
   const yield_ = useYieldBalance();
   const activeUsers = useActiveUserCount();
   const accounting = useAccountingSummary();
@@ -352,9 +370,13 @@ export function useDashboardData() {
       accounting.isLoading ||
       drawInProgress.isLoading);
 
+  // Total pool = currentPool (deducted amounts) + totalUserBalances (deposits not yet deducted)
+  // This represents the actual total money users have deposited
+  const totalPoolAmount = (totalBalances.data ?? 0n) + (pool.data ?? 0n);
+
   // Derive convenience values
-  const poolProgress = pool.data
-    ? computeProgress(pool.data, POOL_TARGET)
+  const poolProgress = totalPoolAmount
+    ? computeProgress(totalPoolAmount, POOL_TARGET)
     : 0;
   const yieldProgress = yield_.data
     ? computeProgress(yield_.data, BONUS_DRAW_TARGET)
@@ -380,8 +402,8 @@ export function useDashboardData() {
   return {
     isConnected,
     address,
-    // Pool
-    currentPool: pool.data ?? 0n,
+    // Pool — shows total deposited amount (currentPool + totalUserBalances)
+    currentPool: totalPoolAmount,
     poolProgress,
     // Yield
     yieldBalance: yield_.data ?? 0n,
