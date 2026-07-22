@@ -99,7 +99,7 @@ export function ReferralCard() {
   }
 
   return (
-    <Card className="relative overflow-hidden border-emerald-500/20 bg-gradient-to-br from-emerald-500/[0.04] via-white/[0.02] to-transparent p-6 shadow-xl">
+    <Card id="referral-card" className="relative overflow-hidden border-emerald-500/20 bg-gradient-to-br from-emerald-500/[0.04] via-white/[0.02] to-transparent p-6 shadow-xl scroll-mt-20">
       {/* Background glow */}
       <div className="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full bg-emerald-500/5 blur-3xl" />
 
@@ -132,7 +132,7 @@ export function ReferralCard() {
             <Button
               onClick={handleCopy}
               size="sm"
-              className="h-9 shrink-0 gap-1.5 rounded-lg bg-emerald-500 px-3 text-xs font-semibold text-black hover:bg-emerald-400"
+              className="h-10 shrink-0 gap-1.5 rounded-lg bg-emerald-500 px-4 text-xs font-bold text-black shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400"
             >
               {copied ? (
                 <>
@@ -149,13 +149,12 @@ export function ReferralCard() {
           </div>
         </div>
 
-        {/* Share Button */}
+        {/* Share Button - blue with white text for visibility */}
         <Button
           onClick={handleShare}
-          variant="outline"
-          className="mb-4 h-9 w-full gap-2 rounded-lg border-white/15 bg-white/5 text-xs font-medium text-white hover:bg-white/10"
+          className="mb-4 h-10 w-full gap-2 rounded-lg bg-blue-500 text-xs font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-blue-400"
         >
-          <Share2 className="h-3.5 w-3.5" />
+          <Share2 className="h-4 w-4" />
           {t("share")}
         </Button>
 

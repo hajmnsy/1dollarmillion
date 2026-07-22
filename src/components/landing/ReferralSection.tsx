@@ -163,7 +163,7 @@ export function ReferralSection() {
           </motion.div>
         </motion.div>
 
-        {/* CTA */}
+        {/* CTA - links directly to referral card in dashboard */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -172,8 +172,8 @@ export function ReferralSection() {
           className="mt-12 text-center"
         >
           <Link
-            href="/dashboard"
-            className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-8 py-3.5 text-sm font-semibold text-black shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400 hover:shadow-emerald-500/40"
+            href="/dashboard#referral-card"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-8 py-3.5 text-sm font-bold text-black shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400 hover:shadow-emerald-500/40"
           >
             <Share2 className="h-4 w-4" />
             {t("ctaButton")}
