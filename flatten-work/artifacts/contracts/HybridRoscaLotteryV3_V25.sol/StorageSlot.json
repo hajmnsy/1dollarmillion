@@ -1,0 +1,13 @@
+{
+  "_format": "hh3-artifact-1",
+  "contractName": "StorageSlot",
+  "sourceName": "contracts/HybridRoscaLotteryV3_V25.sol",
+  "abi": [],
+  "bytecode": "0x6080806040523460175760399081601c823930815050f35b5f80fdfe5f80fdfea264697066735822122033d23f940ae7472dd8b39ddcb04be46a60bba8828ff51fd973248d5a0f99c27964736f6c63430008140033",
+  "deployedBytecode": "0x5f80fdfea264697066735822122033d23f940ae7472dd8b39ddcb04be46a60bba8828ff51fd973248d5a0f99c27964736f6c63430008140033",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "immutableReferences": {},
+  "inputSourceName": "project/contracts/HybridRoscaLotteryV3_V25.sol",
+  "buildInfoId": "solc-0_8_20-400a91aba1dc3eb4a75ab45684d52cdb109873d6"
+}
