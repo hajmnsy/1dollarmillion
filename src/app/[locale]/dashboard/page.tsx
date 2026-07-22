@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { SiteHeader } from "@/components/landing/SiteHeader";
 import { SiteFooter } from "@/components/landing/SiteFooter";
@@ -30,6 +30,19 @@ function DashboardContent() {
 
   const [depositModalOpen, setDepositModalOpen] = useState(false);
   const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
+
+  // Scroll to referral card if URL has #referral-card
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#referral-card") {
+      // Wait for dashboard to render
+      setTimeout(() => {
+        const element = document.getElementById("referral-card");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 800);
+    }
+  }, [isConnected]);
 
   // Show full dashboard content (cards) regardless of wallet connection
   // Only PositionCard requires wallet — others can be shown to everyone
