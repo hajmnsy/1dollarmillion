@@ -32,7 +32,6 @@ function DashboardContent() {
   const [depositModalOpen, setDepositModalOpen] = useState(false);
   const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
 
-  // Scroll to referral card if URL has #referral-card
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash === "#referral-card") {
       setTimeout(() => {
@@ -54,7 +53,6 @@ function DashboardContent() {
           <LoadingState label={t("title")} />
         ) : (
           <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-            {/* Page header */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -69,7 +67,7 @@ function DashboardContent() {
               </p>
             </motion.div>
 
-            {/* Compact Referral Card - at the top */}
+            {/* Compact Referral Card at top */}
             {isConnected && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -81,7 +79,6 @@ function DashboardContent() {
               </motion.div>
             )}
 
-            {/* Wallet not connected banner */}
             {!isConnected && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -99,9 +96,7 @@ function DashboardContent() {
                     </p>
                   </div>
                   <Button
-                    onClick={() => {
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                     className="h-11 gap-2 rounded-full bg-emerald-500 px-5 text-sm font-semibold text-black shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400"
                   >
                     <Wallet className="h-4 w-4" />
@@ -111,7 +106,6 @@ function DashboardContent() {
               </motion.div>
             )}
 
-            {/* Main grid: Position + Pool (2 columns) */}
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -148,7 +142,6 @@ function DashboardContent() {
               </motion.div>
             </div>
 
-            {/* Second row: Yield + Solvency (2/3 + 1/3) */}
             <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -171,7 +164,6 @@ function DashboardContent() {
               </motion.div>
             </div>
 
-            {/* Third row: Odds + Activity Feed (2 columns) */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -182,11 +174,9 @@ function DashboardContent() {
                 activeUserCount={data.activeUserCount}
                 userIsActive={isConnected && data.userStatus === "active"}
               />
-
               <ActivityFeed />
             </motion.div>
 
-            {/* Fourth row: Full Referral Card (with details) */}
             {isConnected && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
