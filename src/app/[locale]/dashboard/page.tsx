@@ -13,7 +13,6 @@ import { DepositModal } from "@/components/dashboard/DepositModal";
 import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
 import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
 import { CompactReferralCard } from "@/components/dashboard/CompactReferralCard";
-import { ReferralCard } from "@/components/dashboard/ReferralCard";
 import { useDashboardData } from "@/hooks/useLottery";
 import { useAccount } from "wagmi";
 import { motion } from "framer-motion";
@@ -67,13 +66,13 @@ function DashboardContent() {
               </p>
             </motion.div>
 
-            {/* Compact Referral Card at top */}
             {isConnected && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.05 }}
                 className="mb-6"
+                id="referral-card"
               >
                 <CompactReferralCard />
               </motion.div>
@@ -176,18 +175,6 @@ function DashboardContent() {
               />
               <ActivityFeed />
             </motion.div>
-
-            {isConnected && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.6 }}
-                className="mt-6"
-                id="referral-card"
-              >
-                <ReferralCard />
-              </motion.div>
-            )}
           </div>
         )}
       </main>
