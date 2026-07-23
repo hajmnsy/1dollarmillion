@@ -1,8 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useAccount } from "wagmi";
-import { LOTTERY_CONTRACT_ADDRESS, TOKEN_DECIMALS_BI } from "@/lib/contract/config";
+import { useState, useEffect, useRef } from "react";
+import { useAccount, useWatchContractEvent, useReadContract } from "wagmi";
+import {
+  LOTTERY_CONTRACT_ADDRESS,
+  USDT_CONTRACT_ADDRESS,
+  lotteryAbi,
+  usdtAbi,
+  TOKEN_DECIMALS_BI,
+} from "@/lib/contract/config";
+
+// ============================================================
+// ============== Activity Event Types ========================
+// ============================================================
 
 export type ActivityType =
   | "deposit"
@@ -20,84 +30,143 @@ export interface ActivityEvent {
   confirmed: boolean;
 }
 
+// ============================================================
+// ====== Real Activity Feed using contract events ============
+// ============================================================
+
+/**
+ * Fetch real deposit/withdraw activity for the connected user.
+ *
+ * Strategy:
+ * 1. Use wagmi's useWatchContractEvent to listen for Deposited events
+ * 2. Use wagmi's useReadContract to get the user's last deposit info
+ * 3. Fall back to showing the user's current balance as a "deposit" entry
+ *    if no events are captured yet (since events require WebSocket)
+ */
 export function useActivityFeed() {
   const { address } = useAccount();
   const [events, setEvents] = useState<ActivityEvent[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const eventsRef = useRef<ActivityEvent[]>([]);
 
+  // Read user info to get their balance and last deduction time
+  const userInfo = useReadContract({
+    address: LOTTERY_CONTRACT_ADDRESS,
+    abi: lotteryAbi,
+    functionName: "getUserInfo",
+    args: [address!],
+    query: {
+      enabled: !!address,
+      refetchInterval: 10_000,
+    },
+  });
+
+  // Watch for Deposited events on the lottery contract
+  useWatchContractEvent({
+    address: LOTTERY_CONTRACT_ADDRESS,
+    abi: lotteryAbi,
+    eventName: "Deposited",
+    onLogs: (logs) => {
+      if (!address) return;
+      const newEvents: ActivityEvent[] = [];
+
+      for (const log of logs) {
+        // Only show events for the connected user
+        const depositor = (log.args as any)?.user;
+        if (depositor && depositor.toLowerCase() !== address.toLowerCase()) continue;
+
+        const amount = (log.args as any)?.amount ?? 0n;
+        newEvents.push({
+          id: log.transactionHash + String(log.logIndex),
+          type: "deposit",
+          amount: amount as bigint,
+          timestamp: Math.floor(Date.now() / 1000),
+          txHash: log.transactionHash,
+          confirmed: true,
+        });
+      }
+
+      if (newEvents.length > 0) {
+        eventsRef.current = [...newEvents, ...eventsRef.current];
+        setEvents(eventsRef.current.slice(0, 20));
+      }
+    },
+  });
+
+  // Watch for Withdrawn events
+  useWatchContractEvent({
+    address: LOTTERY_CONTRACT_ADDRESS,
+    abi: lotteryAbi,
+    eventName: "Withdrawn",
+    onLogs: (logs) => {
+      if (!address) return;
+      const newEvents: ActivityEvent[] = [];
+
+      for (const log of logs) {
+        const withdrawer = (log.args as any)?.user;
+        if (withdrawer && withdrawer.toLowerCase() !== address.toLowerCase()) continue;
+
+        const amount = (log.args as any)?.amount ?? 0n;
+        newEvents.push({
+          id: log.transactionHash + String(log.logIndex),
+          type: "withdraw",
+          amount: amount as bigint,
+          timestamp: Math.floor(Date.now() / 1000),
+          txHash: log.transactionHash,
+          confirmed: true,
+        });
+      }
+
+      if (newEvents.length > 0) {
+        eventsRef.current = [...newEvents, ...eventsRef.current];
+        setEvents(eventsRef.current.slice(0, 20));
+      }
+    },
+  });
+
+  // Generate a "deposit" entry from user balance if no events yet
+  // This ensures the activity feed shows something for users who deposited
+  // before opening the dashboard
   useEffect(() => {
-    if (!address) {
-      setEvents([]);
+    if (!address || !userInfo.data) {
+      setIsLoading(false);
       return;
     }
 
-    let cancelled = false;
-    const fetchActivity = async () => {
-      setIsLoading(true);
-      setError(null);
+    const balance = userInfo.data[0] as bigint; // balance
+    const lastDeductionTime = userInfo.data[2] as bigint; // lastDeductionTime
 
-      try {
-        const url = `https://api.polygonscan.com/api?module=account&action=tokentx&address=${address}&contractaddress=${LOTTERY_CONTRACT_ADDRESS}&page=1&offset=20&sort=desc`;
-        const res = await fetch(url);
-        const data = await res.json();
+    // If user has a balance and no events yet, create a synthetic deposit entry
+    if (balance > 0n && eventsRef.current.length === 0) {
+      const depositAmount = balance;
+      const timestamp = Number(lastDeductionTime) || Math.floor(Date.now() / 1000);
 
-        if (cancelled) return;
+      const syntheticEvent: ActivityEvent = {
+        id: `balance-${address}-${timestamp}`,
+        type: "deposit",
+        amount: depositAmount,
+        timestamp: timestamp,
+        confirmed: true,
+      };
 
-        const newEvents: ActivityEvent[] = [];
+      eventsRef.current = [syntheticEvent];
+      setEvents([syntheticEvent]);
+    }
 
-        if (data.status === "1" && Array.isArray(data.result)) {
-          for (const tx of data.result) {
-            const isDeposit = tx.from.toLowerCase() === address.toLowerCase();
-            const isWithdraw = tx.to.toLowerCase() === address.toLowerCase();
-
-            if (isDeposit || isWithdraw) {
-              newEvents.push({
-                id: tx.hash + tx.logIndex,
-                type: isDeposit ? "deposit" : "withdraw",
-                amount: BigInt(tx.value),
-                timestamp: parseInt(tx.timeStamp),
-                txHash: tx.hash as `0x${string}`,
-                confirmed: true,
-              });
-            }
-          }
-        }
-
-        newEvents.sort((a, b) => b.timestamp - a.timestamp);
-
-        if (!cancelled) {
-          setEvents(newEvents.slice(0, 20));
-        }
-      } catch (e: any) {
-        if (!cancelled) {
-          console.error("Activity feed error:", e);
-          setError(e?.message || "Failed to load activity");
-          setEvents([]);
-        }
-      } finally {
-        if (!cancelled) {
-          setIsLoading(false);
-        }
-      }
-    };
-
-    fetchActivity();
-    const interval = setInterval(fetchActivity, 30_000);
-
-    return () => {
-      cancelled = true;
-      clearInterval(interval);
-    };
-  }, [address]);
+    setIsLoading(false);
+  }, [address, userInfo.data]);
 
   return {
     events,
     isLoading,
-    error,
+    error: null as string | null,
     isEmpty: !isLoading && events.length === 0,
   };
 }
+
+// ============================================================
+// ============= Helper: Relative Time =======================
+// ============================================================
 
 export function getRelativeTimeKey(timestamp: number): {
   key: string;
