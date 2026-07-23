@@ -4,10 +4,6 @@ import { useState, useEffect } from "react";
 import { useAccount } from "wagmi";
 import { LOTTERY_CONTRACT_ADDRESS, TOKEN_DECIMALS_BI } from "@/lib/contract/config";
 
-// ============================================================
-// ============== Activity Event Types ========================
-// ============================================================
-
 export type ActivityType =
   | "deposit"
   | "withdraw"
@@ -24,17 +20,6 @@ export interface ActivityEvent {
   confirmed: boolean;
 }
 
-// ============================================================
-// ========= Real Activity Feed from Polygonscan =============
-// ============================================================
-
-/**
- * Fetch real deposit/withdraw events for the connected user
- * from Polygonscan API.
- *
- * Uses the Polygonscan API to get ERC20 Transfer events
- * between the user and the lottery contract.
- */
 export function useActivityFeed() {
   const { address } = useAccount();
   const [events, setEvents] = useState<ActivityEvent[]>([]);
@@ -53,17 +38,16 @@ export function useActivityFeed() {
       setError(null);
 
       try {
-        // Fetch deposits (transfers FROM user TO contract)
-        const depositsUrl = `https://api.polygonscan.com/api?module=account&action=tokentx&address=${address}&contractaddress=${LOTTERY_CONTRACT_ADDRESS}&page=1&offset=20&sort=desc&apikey=YourApiKeyToken`;
-        const depositsRes = await fetch(depositsUrl);
-        const depositsData = await depositsRes.json();
+        const url = `https://api.polygonscan.com/api?module=account&action=tokentx&address=${address}&contractaddress=${LOTTERY_CONTRACT_ADDRESS}&page=1&offset=20&sort=desc`;
+        const res = await fetch(url);
+        const data = await res.json();
 
         if (cancelled) return;
 
         const newEvents: ActivityEvent[] = [];
 
-        if (depositsData.status === "1" && Array.isArray(depositsData.result)) {
-          for (const tx of depositsData.result) {
+        if (data.status === "1" && Array.isArray(data.result)) {
+          for (const tx of data.result) {
             const isDeposit = tx.from.toLowerCase() === address.toLowerCase();
             const isWithdraw = tx.to.toLowerCase() === address.toLowerCase();
 
@@ -80,7 +64,6 @@ export function useActivityFeed() {
           }
         }
 
-        // Sort by timestamp descending (most recent first)
         newEvents.sort((a, b) => b.timestamp - a.timestamp);
 
         if (!cancelled) {
@@ -100,8 +83,6 @@ export function useActivityFeed() {
     };
 
     fetchActivity();
-
-    // Refresh every 30 seconds
     const interval = setInterval(fetchActivity, 30_000);
 
     return () => {
@@ -118,10 +99,6 @@ export function useActivityFeed() {
   };
 }
 
-// ============================================================
-// ============= Helper: Relative Time =======================
-// ============================================================
-
 export function getRelativeTimeKey(timestamp: number): {
   key: string;
   params?: Record<string, number>;
@@ -132,6 +109,5 @@ export function getRelativeTimeKey(timestamp: number): {
   if (diff < 60) return { key: "justNow" };
   if (diff < 3600) return { key: "minutesAgo", params: { minutes: Math.floor(diff / 60) } };
   if (diff < 86400) return { key: "hoursAgo", params: { hours: Math.floor(diff / 3600) } };
-  if (diff < 604800) return { key: "daysAgo", params: { days: Math.floor(diff / 86400) } };
   return { key: "daysAgo", params: { days: Math.floor(diff / 86400) } };
 }
