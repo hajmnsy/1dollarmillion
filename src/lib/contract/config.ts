@@ -209,6 +209,28 @@ export const lotteryAbi = [
     stateMutability: "view",
     type: "function",
   },
+  // === Events (for activity feed) ===
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, name: "user", type: "address" },
+      { indexed: false, name: "amount", type: "uint256" },
+      { indexed: false, name: "newBalance", type: "uint256" },
+      { indexed: false, name: "newPool", type: "uint256" },
+    ],
+    name: "Deposited",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, name: "user", type: "address" },
+      { indexed: false, name: "amount", type: "uint256" },
+      { indexed: false, name: "newBalance", type: "uint256" },
+    ],
+    name: "Withdrawn",
+    type: "event",
+  },
 ] as const;
 
 // === USDT ABI (minimal) =============================================
