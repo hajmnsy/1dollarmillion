@@ -19,11 +19,8 @@ const chainNames: Record<number, string> = {
 
 /**
  * NetworkSwitchBanner — shows a red "Wrong Network" banner with a button
- * to switch to Sepolia. Used inside the Deposit and Withdraw modals when
- * the user's wallet is connected to a chain other than Sepolia.
- *
- * When the banner is visible, the parent modal should disable its action
- * buttons (Approve/Deposit/Withdraw) since the tx would fail anyway.
+ * to switch to Polygon Mainnet. Used inside the Deposit and Withdraw modals when
+ * the user's wallet is connected to a chain other than Polygon.
  */
 export function NetworkSwitchBanner() {
   const t = useTranslations("dashboard.network");
