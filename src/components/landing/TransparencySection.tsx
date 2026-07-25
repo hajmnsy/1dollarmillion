@@ -9,16 +9,44 @@ import {
   AAVE_POOL_URL,
   CHAINLINK_VRF_URL,
 } from "@/lib/contract/config";
+import { useDashboardData } from "@/hooks/useLottery";
+import { formatUsd, formatUsdCompact } from "@/hooks/useLottery";
 
 export function TransparencySection() {
   const t = useTranslations("transparency");
+  const data = useDashboardData();
+
+  // Real values from the contract
+  const realPool = data.currentPool;
+  const realYield = data.yieldBalance;
+  const realActiveUsers = data.activeUserCount;
+  const realDrawCount = Number(data.drawCounts.regular);
+
+  // Compute progress percentages
+  const poolProgress = data.poolProgress;
+  const yieldProgress = data.yieldProgress;
+
+  // Estimate days to draw (1 USDT/day per active user)
+  const POOL_TARGET = 1_000_000n * 10n ** 6n;
+  const remaining = POOL_TARGET > realPool ? POOL_TARGET - realPool : 0n;
+  const estDays = realActiveUsers > 0n ? Number(remaining / realActiveUsers) : 0;
+  const daysLabel = estDays > 365
+    ? `~${Math.floor(estDays / 365)}y`
+    : estDays > 0
+      ? `~${estDays}d`
+      : "—";
+
+  // Solvency status
+  const isSolvent = data.accounting
+    ? data.accounting.solvencyGap >= data.accounting.yield_
+    : true;
 
   const cards = [
     {
       title: t("poolCardTitle"),
       desc: t("poolCardDesc"),
-      value: "$847,231",
-      progress: 84.7,
+      value: realPool > 0n ? formatUsd(realPool) : "$0",
+      progress: poolProgress,
       color: "emerald" as const,
       link: t("viewOnEtherscan"),
       href: POLYGONSCAN_CONTRACT_URL,
@@ -26,8 +54,8 @@ export function TransparencySection() {
     {
       title: t("yieldCardTitle"),
       desc: t("yieldCardDesc"),
-      value: "$23,402",
-      progress: 2.3,
+      value: realYield > 0n ? formatUsd(realYield) : "$0",
+      progress: yieldProgress,
       color: "purple" as const,
       link: t("viewOnAave"),
       href: AAVE_POOL_URL,
@@ -35,9 +63,9 @@ export function TransparencySection() {
     {
       title: t("solvencyCardTitle"),
       desc: t("solvencyCardDesc"),
-      value: t("solvencyHealthy"),
+      value: isSolvent ? t("solvencyHealthy") : t("warning"),
       progress: 100,
-      color: "blue" as const,
+      color: isSolvent ? "blue" as const : "amber" as const,
       link: t("viewOnEtherscan"),
       href: POLYGONSCAN_CONTRACT_URL,
       isStatus: true,
@@ -45,8 +73,8 @@ export function TransparencySection() {
     {
       title: t("drawCardTitle"),
       desc: t("drawCardDesc"),
-      value: "~4 days",
-      progress: 85,
+      value: daysLabel,
+      progress: poolProgress,
       color: "amber" as const,
       link: t("verifyVRF"),
       href: CHAINLINK_VRF_URL,
@@ -82,7 +110,6 @@ export function TransparencySection() {
 
   return (
     <section className="relative py-20 sm:py-28" id="transparency">
-      {/* Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/5 blur-[120px]" />
       </div>
@@ -126,9 +153,7 @@ export function TransparencySection() {
                 </div>
 
                 <div className="mt-5">
-                  <div
-                    className={`text-3xl font-bold tracking-tight ${c.text} sm:text-4xl`}
-                  >
+                  <div className={`text-3xl font-bold tracking-tight ${c.text} sm:text-4xl`}>
                     {card.value}
                   </div>
                   {card.isStatus && (
@@ -137,7 +162,6 @@ export function TransparencySection() {
                     </p>
                   )}
 
-                  {/* Progress bar */}
                   <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
                     <motion.div
                       initial={{ width: 0 }}
@@ -148,7 +172,6 @@ export function TransparencySection() {
                     />
                   </div>
 
-                  {/* Real clickable link */}
                   <a
                     href={card.href}
                     target="_blank"
@@ -167,14 +190,17 @@ export function TransparencySection() {
           })}
         </div>
 
-        {/* CTA to full dashboard */}
+        {/* CTA: View on Polygonscan (external link) */}
         <div className="mt-10 text-center">
-          <Link
-            href="/transparency"
+          <a
+            href={POLYGONSCAN_CONTRACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-400 transition-colors hover:text-emerald-300"
           >
-            {t("viewOnEtherscan")} →
-          </Link>
+            {t("viewOnEtherscan")}
+            <ExternalLink className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
