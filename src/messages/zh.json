@@ -178,11 +178,11 @@
       "retryButton": "重试"
     },
     "network": {
-      "wrongChainTitle": "网络错误",
-      "wrongChainDesc": "您当前连接的是 {connectedChain}。本应用运行于 Sepolia 测试网。",
-      "switchButton": "切换至 Sepolia",
+      "wrongChainTitle": "错误的网络",
+      "wrongChainDesc": "您连接到 {connectedChain}。此应用在 Polygon 主网上运行。",
+      "switchButton": "切换到 Polygon",
       "switching": "正在切换网络...",
-      "alreadyConnected": "已连接至 Sepolia"
+      "alreadyConnected": "已连接到 Polygon"
     },
     "withdraw": {
       "title": "提取 USDT",

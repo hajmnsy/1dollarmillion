@@ -179,10 +179,10 @@
     },
     "network": {
       "wrongChainTitle": "Wrong Network",
-      "wrongChainDesc": "You're connected to {connectedChain}. This app runs on Sepolia Testnet.",
-      "switchButton": "Switch to Sepolia",
+      "wrongChainDesc": "You're connected to {connectedChain}. This app runs on Polygon Mainnet.",
+      "switchButton": "Switch to Polygon",
       "switching": "Switching network...",
-      "alreadyConnected": "Connected to Sepolia"
+      "alreadyConnected": "Connected to Polygon"
     },
     "withdraw": {
       "title": "Withdraw USDT",

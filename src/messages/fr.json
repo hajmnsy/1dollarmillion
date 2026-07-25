@@ -178,11 +178,11 @@
       "retryButton": "Réessayer"
     },
     "network": {
-      "wrongChainTitle": "Mauvais Réseau",
-      "wrongChainDesc": "Vous êtes connecté à {connectedChain}. Cette application fonctionne sur le Sepolia Testnet.",
-      "switchButton": "Basculer vers Sepolia",
+      "wrongChainTitle": "Mauvais réseau",
+      "wrongChainDesc": "Vous êtes connecté à {connectedChain}. Cette application fonctionne sur Polygon Mainnet.",
+      "switchButton": "Passer à Polygon",
       "switching": "Changement de réseau...",
-      "alreadyConnected": "Connecté à Sepolia"
+      "alreadyConnected": "Connecté à Polygon"
     },
     "withdraw": {
       "title": "Retirer de l'USDT",

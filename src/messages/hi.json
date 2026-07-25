@@ -179,10 +179,10 @@
     },
     "network": {
       "wrongChainTitle": "गलत नेटवर्क",
-      "wrongChainDesc": "आप {connectedChain} से कनेक्ट हैं। यह ऐप Sepolia टेस्टनेट पर चलता है।",
-      "switchButton": "Sepolia पर स्विच करें",
+      "wrongChainDesc": "आप {connectedChain} से जुड़े हैं। यह ऐप Polygon Mainnet पर चलता है।",
+      "switchButton": "Polygon पर स्विच करें",
       "switching": "नेटवर्क स्विच हो रहा है...",
-      "alreadyConnected": "Sepolia से कनेक्टेड"
+      "alreadyConnected": "Polygon से जुड़ा"
     },
     "withdraw": {
       "title": "USDT निकालें",

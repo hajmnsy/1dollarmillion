@@ -179,10 +179,10 @@
     },
     "network": {
       "wrongChainTitle": "شبكة خاطئة",
-      "wrongChainDesc": "أنت متصل بـ {connectedChain}. هذا التطبيق يعمل على شبكة Sepolia التجريبية.",
-      "switchButton": "التبديل إلى Sepolia",
+      "wrongChainDesc": "أنت متصل بـ {connectedChain}. هذا التطبيق يعمل على شبكة Polygon.",
+      "switchButton": "التبديل إلى Polygon",
       "switching": "جارٍ تبديل الشبكة...",
-      "alreadyConnected": "متصل بـ Sepolia"
+      "alreadyConnected": "متصل بـ Polygon"
     },
     "withdraw": {
       "title": "سحب USDT",
