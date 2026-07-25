@@ -3,21 +3,50 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ExternalLink, ShieldCheck } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import {
   POLYGONSCAN_CONTRACT_URL,
   AAVE_POOL_URL,
   CHAINLINK_VRF_URL,
 } from "@/lib/contract/config";
+import { useDashboardData } from "@/hooks/useLottery";
+import { formatUsd, formatUsdCompact } from "@/hooks/useLottery";
 
 export function TransparencySection() {
   const t = useTranslations("transparency");
+  const data = useDashboardData();
+
+  // Real values from the contract
+  const realPool = data.currentPool;
+  const realYield = data.yieldBalance;
+  const realActiveUsers = data.activeUserCount;
+  const realDrawCount = Number(data.drawCounts.regular);
+
+  // Compute progress percentages
+  const poolProgress = data.poolProgress;
+  const yieldProgress = data.yieldProgress;
+
+  // Estimate days to draw (1 USDT/day per active user)
+  const POOL_TARGET = 1_000_000n * 10n ** 6n;
+  const remaining = POOL_TARGET > realPool ? POOL_TARGET - realPool : 0n;
+  const estDays = realActiveUsers > 0n ? Number(remaining / realActiveUsers) : 0;
+  const daysLabel = estDays > 365
+    ? `~${Math.floor(estDays / 365)}y`
+    : estDays > 0
+      ? `~${estDays}d`
+      : "—";
+
+  // Solvency status
+  const isSolvent = data.accounting
+    ? data.accounting.solvencyGap >= data.accounting.yield_
+    : true;
 
   const cards = [
     {
       title: t("poolCardTitle"),
       desc: t("poolCardDesc"),
-      value: "$847,231",
-      progress: 84.7,
+      value: realPool > 0n ? formatUsd(realPool) : "$0",
+      progress: poolProgress,
       color: "emerald" as const,
       link: t("viewOnEtherscan"),
       href: POLYGONSCAN_CONTRACT_URL,
@@ -25,8 +54,8 @@ export function TransparencySection() {
     {
       title: t("yieldCardTitle"),
       desc: t("yieldCardDesc"),
-      value: "$23,402",
-      progress: 2.3,
+      value: realYield > 0n ? formatUsd(realYield) : "$0",
+      progress: yieldProgress,
       color: "purple" as const,
       link: t("viewOnAave"),
       href: AAVE_POOL_URL,
@@ -34,9 +63,9 @@ export function TransparencySection() {
     {
       title: t("solvencyCardTitle"),
       desc: t("solvencyCardDesc"),
-      value: t("solvencyHealthy"),
+      value: isSolvent ? t("solvencyHealthy") : t("warning"),
       progress: 100,
-      color: "blue" as const,
+      color: isSolvent ? "blue" as const : "amber" as const,
       link: t("viewOnEtherscan"),
       href: POLYGONSCAN_CONTRACT_URL,
       isStatus: true,
@@ -44,8 +73,8 @@ export function TransparencySection() {
     {
       title: t("drawCardTitle"),
       desc: t("drawCardDesc"),
-      value: "~4 days",
-      progress: 85,
+      value: daysLabel,
+      progress: poolProgress,
       color: "amber" as const,
       link: t("verifyVRF"),
       href: CHAINLINK_VRF_URL,
@@ -124,9 +153,7 @@ export function TransparencySection() {
                 </div>
 
                 <div className="mt-5">
-                  <div
-                    className={`text-3xl font-bold tracking-tight ${c.text} sm:text-4xl`}
-                  >
+                  <div className={`text-3xl font-bold tracking-tight ${c.text} sm:text-4xl`}>
                     {card.value}
                   </div>
                   {card.isStatus && (
