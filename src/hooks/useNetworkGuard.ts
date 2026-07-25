@@ -1,21 +1,12 @@
 "use client";
 
 import { useAccount, useSwitchChain } from "wagmi";
-import { sepolia } from "wagmi/chains";
+import { polygon } from "wagmi/chains";
 import { TARGET_CHAIN_ID } from "@/lib/contract/config";
 
 /**
  * useNetworkGuard — detects when the user's wallet is connected to a chain
- * other than our target (Sepolia), and provides a `switchChain` action.
- *
- * Returns:
- *   - isWrongChain: true if the user is connected but on the wrong chain
- *   - isCorrectChain: true if the user is connected AND on Sepolia
- *   - connectedChainId: the chain ID the wallet is currently on (or undefined)
- *   - targetChainId: our target (Sepolia = 11155111)
- *   - targetChainName: "Sepolia"
- *   - switchChain: function that prompts the wallet to switch networks
- *   - isSwitching: true while the switch request is pending
+ * other than our target (Polygon Mainnet), and provides a `switchChain` action.
  */
 export function useNetworkGuard() {
   const { chainId, isConnected } = useAccount();
@@ -37,7 +28,7 @@ export function useNetworkGuard() {
     isCorrectChain,
     connectedChainId: chainId,
     targetChainId: TARGET_CHAIN_ID,
-    targetChainName: "Sepolia",
+    targetChainName: "Polygon",
     switchChain,
     isSwitching: isPending,
   };

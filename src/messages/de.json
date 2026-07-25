@@ -179,10 +179,10 @@
     },
     "network": {
       "wrongChainTitle": "Falsches Netzwerk",
-      "wrongChainDesc": "Du bist mit {connectedChain} verbunden. Diese App läuft auf dem Sepolia Testnet.",
-      "switchButton": "Zu Sepolia wechseln",
+      "wrongChainDesc": "Sie sind mit {connectedChain} verbunden. Diese App läuft auf Polygon Mainnet.",
+      "switchButton": "Zu Polygon wechseln",
       "switching": "Netzwerk wird gewechselt...",
-      "alreadyConnected": "Mit Sepolia verbunden"
+      "alreadyConnected": "Mit Polygon verbunden"
     },
     "withdraw": {
       "title": "USDT abheben",

@@ -179,10 +179,10 @@
     },
     "network": {
       "wrongChainTitle": "شبکه اشتباه",
-      "wrongChainDesc": "شما به {connectedChain} متصل هستید. این برنامه روی Sepolia Testnet اجرا می‌شود.",
-      "switchButton": "تغییر به Sepolia",
+      "wrongChainDesc": "شما به {connectedChain} متصل هستید. این برنامه روی Polygon Mainnet اجرا می‌شود.",
+      "switchButton": "تغییر به Polygon",
       "switching": "در حال تغییر شبکه...",
-      "alreadyConnected": "متصل به Sepolia"
+      "alreadyConnected": "متصل به Polygon"
     },
     "withdraw": {
       "title": "برداشت USDT",

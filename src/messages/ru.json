@@ -179,10 +179,10 @@
     },
     "network": {
       "wrongChainTitle": "Неверная сеть",
-      "wrongChainDesc": "Вы подключены к {connectedChain}. Это приложение работает в Sepolia Testnet.",
-      "switchButton": "Переключиться на Sepolia",
+      "wrongChainDesc": "Вы подключены к {connectedChain}. Это приложение работает в Polygon Mainnet.",
+      "switchButton": "Переключиться на Polygon",
       "switching": "Переключение сети...",
-      "alreadyConnected": "Подключено к Sepolia"
+      "alreadyConnected": "Подключено к Polygon"
     },
     "withdraw": {
       "title": "Вывести USDT",
