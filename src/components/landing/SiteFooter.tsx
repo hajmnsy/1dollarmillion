@@ -37,7 +37,7 @@ export function SiteFooter() {
             links={[
               {
                 label: t("developerLinks.contract"),
-                href: "https://polygonscan.com/address/0xcf8e2713FCD5653B4Bf9d440CF43c5F05524365F",
+                href: "https://polygonscan.com/address/0x6DdFbB61A28504713f81eDb0551261cb3DD8Ae1c",
                 external: true,
               },
               {

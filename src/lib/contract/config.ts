@@ -7,10 +7,12 @@
 
 import { polygon } from "wagmi/chains";
 
-// === Contract Addresses (DEPLOYED ON POLYGON MAINNET - V4) ===
-// Replace with actual V4 address after deployment
+// === Contract Addresses (DEPLOYED ON POLYGON MAINNET - V4 Sharia-Compliant) ===
+// Deployed on 2026-07-28 via Remix IDE
+// V4 = No Aave, No Riba, No Bonus Draws — Sharia Compliant
+// Verify: https://polygonscan.com/address/0x6DdFbB61A28504713f81eDb0551261cb3DD8Ae1c
 export const LOTTERY_CONTRACT_ADDRESS =
-  "0xcf8e2713FCD5653B4Bf9d440CF43c5F05524365F" as `0x${string}`;
+  "0x6DdFbB61A28504713f81eDb0551261cb3DD8Ae1c" as `0x${string}`;
 
 export const USDT_CONTRACT_ADDRESS =
   "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" as `0x${string}`;
