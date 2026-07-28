@@ -9,33 +9,22 @@ import {
   TOKEN_DECIMALS_BI,
   DAILY_DEDUCTION,
   POOL_TARGET,
-  BONUS_DRAW_TARGET,
   TARGET_CHAIN_ID,
   type UserInfo,
   type AccountingSummary,
 } from "@/lib/contract/config";
 
-// === Polling intervals (ms) =========================================
-// Higher-frequency for time-sensitive data; lower for slow-changing data.
-const FAST = 5_000;   // pool, drawInProgress — animates constantly
-const NORMAL = 10_000; // user position, yield
-const SLOW = 30_000;  // counts, totals — change rarely
+// === Polling intervals (ms) ===
+const FAST = 5_000;
+const NORMAL = 10_000;
+const SLOW = 30_000;
 
-// === Helpers ========================================================
+// === Helpers ===
 
-/**
- * Convert raw token units (6 decimals) to a display number.
- * 1_500_000 → 1.5
- */
 export function toDisplay(bigint: bigint, decimals = 2): number {
   return Number(bigint) / Number(TOKEN_DECIMALS_BI);
 }
 
-/**
- * Format raw USDT units to a USD string with thousand separators.
- * 1_500_000 → "$1.50"
- * 1_500_000_000_000 → "$1,000,000.00"
- */
 export function formatUsd(bigint: bigint, decimals = 2): string {
   const num = toDisplay(bigint);
   return num.toLocaleString("en-US", {
@@ -46,11 +35,6 @@ export function formatUsd(bigint: bigint, decimals = 2): string {
   });
 }
 
-/**
- * Compact USD formatter for large numbers.
- * 1_000_000_000_000 → "$1.0M"
- * 23_402_000_000 → "$23.4K"
- */
 export function formatUsdCompact(bigint: bigint): string {
   const num = toDisplay(bigint);
   if (num >= 1_000_000) return `$${(num / 1_000_000).toFixed(2)}M`;
@@ -58,10 +42,6 @@ export function formatUsdCompact(bigint: bigint): string {
   return `$${num.toFixed(0)}`;
 }
 
-/**
- * Compute remaining active days for a user given their balance.
- * Uses the lazy-deduction model: 1 USDT/day, deduction applied on next interaction.
- */
 export function computeDaysRemaining(
   balance: bigint,
   lastDeductionTime: bigint,
@@ -69,7 +49,6 @@ export function computeDaysRemaining(
 ): number {
   if (balance <= 0n) return 0;
 
-  // Compute pending deduction not yet applied
   const elapsedSeconds = BigInt(Math.max(0, now - Number(lastDeductionTime)));
   const elapsedDays = elapsedSeconds / 86400n;
   const pendingDeduction = elapsedDays * DAILY_DEDUCTION;
@@ -81,21 +60,14 @@ export function computeDaysRemaining(
   return Number(effectiveBalance / DAILY_DEDUCTION);
 }
 
-/**
- * Compute progress percentage (0-100) of `current` toward `target`.
- */
-export function computeProgress(current: bigint, target: bigint): number {
-  if (target === 0n) return 0;
-  if (current >= target) return 100;
-  return Number((current * 100n) / target);
+function computeProgress(current: bigint, target: bigint): number {
+  if (target <= 0n) return 0;
+  const pct = (Number(current) / Number(target)) * 100;
+  return Math.min(100, Math.max(0, pct));
 }
 
-// === Pool & Yield Hooks ============================================
+// === Contract Read Hooks ===
 
-/**
- * Fetch the live pool size (grows from daily deductions).
- * Polls every 5s — this number animates constantly.
- */
 export function useCurrentPool() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -111,7 +83,6 @@ export function useCurrentPool() {
 
 /**
  * Fetch total user balances (sum of all deposits).
- * This represents the actual money in the pool (not just deducted amounts).
  */
 export function useTotalUserBalances() {
   return useReadContract({
@@ -126,25 +97,6 @@ export function useTotalUserBalances() {
   });
 }
 
-/**
- * Fetch the live yield balance (Aave interest earned).
- */
-export function useYieldBalance() {
-  return useReadContract({
-    address: LOTTERY_CONTRACT_ADDRESS,
-    abi: lotteryAbi,
-    functionName: "getYieldBalance",
-    chainId: TARGET_CHAIN_ID,
-    query: {
-      refetchInterval: NORMAL,
-      select: (data) => data as bigint,
-    },
-  });
-}
-
-/**
- * Fetch number of active (eligible) users in the pool.
- */
 export function useActiveUserCount() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -158,11 +110,6 @@ export function useActiveUserCount() {
   });
 }
 
-/**
- * Fetch the contract's accounting summary — one call instead of six.
- * Returns principal, yield, raw USDT balance, aUSDT balance, total assets,
- * and solvency gap. Used by the transparency dashboard.
- */
 export function useAccountingSummary() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -170,34 +117,13 @@ export function useAccountingSummary() {
     functionName: "accountingSummary",
     chainId: TARGET_CHAIN_ID,
     query: {
-      refetchInterval: SLOW,
-      select: (data) => {
-        const d = data as readonly [
-          bigint, bigint, bigint, bigint, bigint, bigint
-        ];
-        return {
-          principal: d[0],
-          yield_: d[1],
-          usdtBalance: d[2],
-          aUsdtBalance: d[3],
-          totalAssets: d[4],
-          solvencyGap: d[5],
-        } as AccountingSummary;
-      },
+      refetchInterval: NORMAL,
     },
   });
 }
 
-// === User-Specific Hooks ===========================================
-
-/**
- * Fetch the connected user's full position from the contract.
- * Returns balance, lockedAmount, lastDeductionTime, isActive, hasWon,
- * lockedStartTime.
- */
 export function useUserInfo() {
   const { address } = useAccount();
-
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
@@ -207,29 +133,12 @@ export function useUserInfo() {
     query: {
       enabled: !!address,
       refetchInterval: NORMAL,
-      select: (data) => {
-        const d = data as readonly [
-          bigint, bigint, bigint, boolean, boolean, bigint
-        ];
-        return {
-          balance: d[0],
-          lockedAmount: d[1],
-          lastDeductionTime: d[2],
-          isActive: d[3],
-          hasWon: d[4],
-          lockedStartTime: d[5],
-        } as UserInfo;
-      },
     },
   });
 }
 
-/**
- * Fetch the user's USDT wallet balance (for deposit modal checks).
- */
 export function useUserUsdtBalance() {
   const { address } = useAccount();
-
   return useReadContract({
     address: USDT_CONTRACT_ADDRESS,
     abi: usdtAbi,
@@ -244,13 +153,8 @@ export function useUserUsdtBalance() {
   });
 }
 
-/**
- * Fetch the user's USDT allowance to the lottery contract.
- * Used by the deposit modal to determine if an approve() is needed.
- */
 export function useUserUsdtAllowance() {
   const { address } = useAccount();
-
   return useReadContract({
     address: USDT_CONTRACT_ADDRESS,
     abi: usdtAbi,
@@ -265,12 +169,6 @@ export function useUserUsdtAllowance() {
   });
 }
 
-// === Contract State Hooks ===========================================
-
-/**
- * Is a draw currently in progress (VRF pending)?
- * Disables deposit/withdraw buttons when true.
- */
 export function useDrawInProgress() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -284,9 +182,6 @@ export function useDrawInProgress() {
   });
 }
 
-/**
- * Is the contract paused?
- */
 export function useIsPaused() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -294,15 +189,12 @@ export function useIsPaused() {
     functionName: "paused",
     chainId: TARGET_CHAIN_ID,
     query: {
-      refetchInterval: FAST,
+      refetchInterval: SLOW,
       select: (data) => data as boolean,
     },
   });
 }
 
-/**
- * Fetch historical draw counts.
- */
 export function useDrawCounts() {
   const regular = useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -315,36 +207,21 @@ export function useDrawCounts() {
     },
   });
 
-  const bonus = useReadContract({
-    address: LOTTERY_CONTRACT_ADDRESS,
-    abi: lotteryAbi,
-    functionName: "bonusDrawCount",
-    chainId: TARGET_CHAIN_ID,
-    query: {
-      refetchInterval: SLOW,
-      select: (data) => data as bigint,
-    },
-  });
-
+  // V4: No bonus draws
   return {
     regular: regular.data ?? 0n,
-    bonus: bonus.data ?? 0n,
-    isLoading: regular.isLoading || bonus.isLoading,
+    bonus: 0n, // Always 0 in V4
+    isLoading: regular.isLoading,
+    isError: regular.isError,
   };
 }
 
-// === Composite Hook (Dashboard-friendly) ============================
+// === Aggregated Dashboard Hook ===
 
-/**
- * useDashboardData — single hook that aggregates everything the dashboard
- * needs. Returns all live values + loading/error state in one call.
- * Internally uses TanStack Query's parallel fetching.
- */
 export function useDashboardData() {
   const { address, isConnected } = useAccount();
   const pool = useCurrentPool();
   const totalBalances = useTotalUserBalances();
-  const yield_ = useYieldBalance();
   const activeUsers = useActiveUserCount();
   const accounting = useAccountingSummary();
   const userInfo = useUserInfo();
@@ -352,12 +229,8 @@ export function useDashboardData() {
   const isPaused = useIsPaused();
   const drawCounts = useDrawCounts();
 
-  // Loading is only true if we're actually fetching AND haven't errored.
-  // Once a read errors (e.g. wrong chain), we treat it as "loaded with default"
-  // so the dashboard doesn't stay stuck on the spinner forever.
   const hasError =
     pool.isError ||
-    yield_.isError ||
     activeUsers.isError ||
     accounting.isError ||
     drawInProgress.isError;
@@ -365,24 +238,17 @@ export function useDashboardData() {
   const isLoading =
     !hasError &&
     (pool.isLoading ||
-      yield_.isLoading ||
       activeUsers.isLoading ||
       accounting.isLoading ||
       drawInProgress.isLoading);
 
-  // Total pool = currentPool (deducted amounts) + totalUserBalances (deposits not yet deducted)
-  // This represents the actual total money users have deposited
+  // Total pool = currentPool + totalUserBalances (actual deposits)
   const totalPoolAmount = (totalBalances.data ?? 0n) + (pool.data ?? 0n);
 
-  // Derive convenience values
   const poolProgress = totalPoolAmount
     ? computeProgress(totalPoolAmount, POOL_TARGET)
     : 0;
-  const yieldProgress = yield_.data
-    ? computeProgress(yield_.data, BONUS_DRAW_TARGET)
-    : 0;
 
-  // Compute days remaining for the user (based on lazy deduction)
   const daysRemaining = userInfo.data
     ? computeDaysRemaining(
         userInfo.data.balance,
@@ -390,7 +256,6 @@ export function useDashboardData() {
       )
     : 0;
 
-  // User status
   const userStatus: "active" | "inactive" | "winner" | "paused" = isPaused.data
     ? "paused"
     : userInfo.data?.hasWon
@@ -402,16 +267,13 @@ export function useDashboardData() {
   return {
     isConnected,
     address,
-    // Pool — shows total deposited amount (currentPool + totalUserBalances)
+    // Pool — shows total deposited amount
     currentPool: totalPoolAmount,
     poolProgress,
-    // Yield
-    yieldBalance: yield_.data ?? 0n,
-    yieldProgress,
     // Active users
     activeUserCount: activeUsers.data ?? 0n,
-    // Accounting
-    accounting: accounting.data,
+    // Accounting (V4: no yield)
+    accounting: accounting.data as AccountingSummary | undefined,
     // User position
     userInfo: userInfo.data,
     daysRemaining,
@@ -419,8 +281,10 @@ export function useDashboardData() {
     // Contract state
     drawInProgress: drawInProgress.data ?? false,
     isPaused: isPaused.data ?? false,
+    // Draw counts
     drawCounts,
-    // Aggregate loading
+    // Meta
     isLoading,
+    hasError,
   };
 }

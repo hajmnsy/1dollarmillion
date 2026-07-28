@@ -6,14 +6,12 @@ import { SiteHeader } from "@/components/landing/SiteHeader";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { PositionCard } from "@/components/dashboard/PositionCard";
 import { PoolProgressCard } from "@/components/dashboard/PoolProgressCard";
-import { YieldTrackerCard } from "@/components/dashboard/YieldTrackerCard";
 import { SolvencyCard } from "@/components/dashboard/SolvencyCard";
 import { OddsCard } from "@/components/dashboard/OddsCard";
 import { DepositModal } from "@/components/dashboard/DepositModal";
 import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
 import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
 import { CompactReferralCard } from "@/components/dashboard/CompactReferralCard";
-import { ReferralCard } from "@/components/dashboard/ReferralCard";
 import { useDashboardData } from "@/hooks/useLottery";
 import { useAccount } from "wagmi";
 import { motion } from "framer-motion";
@@ -148,24 +146,12 @@ function DashboardContent() {
               </motion.div>
             </div>
 
-            {/* Second row: Yield + Solvency (2/3 + 1/3) */}
-            <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {/* Second row: Solvency only (V4: no Yield card) */}
+            <div className="mt-6 grid grid-cols-1 gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="lg:col-span-2"
-              >
-                <YieldTrackerCard
-                  yieldBalance={data.yieldBalance}
-                  yieldProgress={data.yieldProgress}
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.4 }}
               >
                 <SolvencyCard accounting={data.accounting} />
               </motion.div>
