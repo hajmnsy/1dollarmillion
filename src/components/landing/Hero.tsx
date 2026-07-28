@@ -5,11 +5,17 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, TrendingUp, Users } from "lucide-react";
+import { useDashboardData, formatUsd, formatUsdCompact } from "@/hooks/useLottery";
 
 export function Hero() {
   const t = useTranslations("hero");
+  const data = useDashboardData();
 
-  // Smooth-scroll to the How It Works section on the same page
+  // Real values from contract
+  const livePoolValue = data.currentPool > 0n ? formatUsd(data.currentPool) : "$0";
+  const activeUsersValue = Number(data.activeUserCount).toLocaleString();
+  const yieldValue = data.yieldBalance > 0n ? formatUsd(data.yieldBalance) : "$0";
+
   const scrollToHowItWorks = () => {
     const el = document.getElementById("how-it-works");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -19,19 +25,18 @@ export function Hero() {
     <section className="relative overflow-hidden">
       {/* Background gradient effects */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-emerald-500/20 blur-[120px]" />
-        <div className="absolute top-20 -right-40 h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-[100px]" />
-        <div className="absolute top-40 -left-40 h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-[100px]" />
+        <div className="absolute -top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-emerald-500/20 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-[100px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-20 sm:px-6 sm:pt-28 lg:px-8 lg:pb-28 lg:pt-32">
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-300"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-300 sm:text-sm"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -44,48 +49,48 @@ export function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            <span className="block">{t("titleLine1")}</span>
-            <span className="block bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-500 bg-clip-text text-transparent">
+            {t("titleLine1")}{" "}
+            <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
               {t("titleLine2")}
-            </span>
-            <span className="block text-white/90">{t("titleLine3")}</span>
+            </span>{" "}
+            {t("titleLine3")}
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg md:text-xl"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mx-auto mt-6 max-w-2xl text-base text-white/60 sm:text-lg md:text-xl"
           >
             {t("subtitle")}
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Button
               asChild
               size="lg"
-              className="group h-12 w-full rounded-full bg-emerald-500 px-8 text-base font-semibold text-black shadow-lg shadow-emerald-500/30 transition-all hover:bg-emerald-400 hover:shadow-emerald-500/50 sm:w-auto"
+              className="h-12 gap-2 rounded-full bg-emerald-500 px-8 text-base font-semibold text-black shadow-lg shadow-emerald-500/30 transition-all hover:bg-emerald-400 hover:shadow-emerald-500/50 sm:h-14 sm:px-10"
             >
-              <Link href="/dashboard" className="inline-flex items-center gap-2">
+              <Link href="/dashboard">
                 {t("ctaPrimary")}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+                <ArrowRight className="h-4 w-4 rtl:rotate-180" />
               </Link>
             </Button>
             <Button
               onClick={scrollToHowItWorks}
               size="lg"
-              variant="outline"
-              className="h-12 w-full rounded-full border-white/20 bg-white/5 px-8 text-base font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:text-white sm:w-auto"
+              variant="ghost"
+              className="h-12 gap-2 rounded-full border border-white/20 px-8 text-base font-medium text-white/80 transition-all hover:bg-white/5 hover:text-white sm:h-14 sm:px-10"
             >
               {t("ctaSecondary")}
             </Button>
@@ -95,14 +100,14 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-4 text-xs text-white/50"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-6 text-xs text-white/40 sm:text-sm"
           >
             {t("minDepositNote")}
           </motion.p>
         </div>
 
-        {/* Live Stats Card */}
+        {/* Live Stats Card - REAL DATA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,19 +118,19 @@ export function Hero() {
             <LiveStat
               icon={<TrendingUp className="h-5 w-5 text-emerald-400" />}
               label={t("livePoolLabel")}
-              value={t("livePoolValue")}
+              value={livePoolValue}
               sub={t("livePoolTarget")}
               accent
             />
             <LiveStat
               icon={<Users className="h-5 w-5 text-blue-400" />}
               label={t("activeUsersLabel")}
-              value={t("activeUsersValue")}
+              value={activeUsersValue}
             />
             <LiveStat
               icon={<ShieldCheck className="h-5 w-5 text-purple-400" />}
               label={t("yieldLabel")}
-              value={t("yieldValue")}
+              value={yieldValue}
             />
           </div>
 
@@ -153,21 +158,33 @@ function LiveStat({
   accent?: boolean;
 }) {
   return (
-    <div className="flex flex-col items-center text-center sm:items-start sm:text-start">
-      <div className="mb-2 flex items-center gap-2">
-        {icon}
-        <span className="text-xs font-medium uppercase tracking-wider text-white/50">
-          {label}
-        </span>
-      </div>
+    <div className="flex items-center gap-4">
       <div
-        className={`text-2xl font-bold tracking-tight sm:text-3xl ${
-          accent ? "text-emerald-400" : "text-white"
+        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${
+          accent
+            ? "bg-emerald-500/15 ring-1 ring-emerald-500/30"
+            : "bg-white/5 ring-1 ring-white/10"
         }`}
       >
-        {value}
+        {icon}
       </div>
-      {sub && <div className="mt-1 text-xs text-white/40">{sub}</div>}
+      <div className="min-w-0">
+        <div className="text-xs font-medium uppercase tracking-wider text-white/40">
+          {label}
+        </div>
+        <div
+          className={`mt-0.5 text-xl font-bold tracking-tight sm:text-2xl ${
+            accent ? "text-emerald-400" : "text-white"
+          }`}
+        >
+          {value}
+        </div>
+        {sub && (
+          <div className="mt-0.5 text-[10px] text-white/30 sm:text-xs">
+            {sub}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
