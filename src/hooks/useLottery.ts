@@ -21,8 +21,12 @@ const SLOW = 30_000;
 
 // === Helpers ===
 
-export function toDisplay(bigint: bigint, decimals = 2): number {
-  return Number(bigint) / Number(TOKEN_DECIMALS_BI);
+export function toDisplay(bigint: bigint | undefined | null, decimals = 2): number {
+  // Defensive: a missing/undefined bigint would otherwise produce NaN displays ("$NaN")
+  if (!bigint) return 0;
+  const num = Number(bigint);
+  if (!Number.isFinite(num)) return 0;
+  return num / Number(TOKEN_DECIMALS_BI);
 }
 
 export function formatUsd(bigint: bigint, decimals = 2): string {
@@ -43,13 +47,22 @@ export function formatUsdCompact(bigint: bigint): string {
 }
 
 export function computeDaysRemaining(
-  balance: bigint,
-  lastDeductionTime: bigint,
+  balance: bigint | undefined | null,
+  lastDeductionTime: bigint | undefined | null,
   now: number = Math.floor(Date.now() / 1000)
 ): number {
-  if (balance <= 0n) return 0;
+  // Defensive: guard against undefined/null balance (avoids TypeError on `<= 0n`)
+  if (!balance || balance <= 0n) return 0;
 
-  const elapsedSeconds = BigInt(Math.max(0, now - Number(lastDeductionTime)));
+  // Defensive: guard against undefined/null/0n lastDeductionTime.
+  // Without this, Number(undefined) === NaN, and BigInt(Math.max(0, NaN)) === BigInt(NaN),
+  // which throws: "RangeError: The number NaN cannot be converted to a BigInt"
+  if (!lastDeductionTime || lastDeductionTime === 0n) return 0;
+
+  const lastTs = Number(lastDeductionTime);
+  if (!Number.isFinite(lastTs)) return 0; // NaN or Infinity safety net
+
+  const elapsedSeconds = BigInt(Math.max(0, now - lastTs));
   const elapsedDays = elapsedSeconds / 86400n;
   const pendingDeduction = elapsedDays * DAILY_DEDUCTION;
 
@@ -118,6 +131,27 @@ export function useAccountingSummary() {
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: NORMAL,
+      // viem returns a readonly tuple for multi-output view functions;
+      // map it to a typed object so consumers can use `accounting.totalBalance`
+      // instead of fragile array indexing (which previously caused the
+      // "RangeError: The number NaN cannot be converted to a BigInt" crash
+      // when undefined was passed to BigInt()).
+      select: (data) => {
+        const tuple = data as readonly [
+          bigint, // totalBalance
+          bigint, // userBalances
+          bigint, // poolAmount
+          bigint, // lockedAmounts
+          bigint, // fees
+        ];
+        return {
+          totalBalance: tuple[0] ?? 0n,
+          userBalances: tuple[1] ?? 0n,
+          poolAmount: tuple[2] ?? 0n,
+          lockedAmounts: tuple[3] ?? 0n,
+          fees: tuple[4] ?? 0n,
+        } as AccountingSummary;
+      },
     },
   });
 }
@@ -133,6 +167,31 @@ export function useUserInfo() {
     query: {
       enabled: !!address,
       refetchInterval: NORMAL,
+      // viem returns a readonly tuple `[balance, lockedAmount, lastDeductionTime,
+      // isActive, hasWon, lockedStartTime]` for multi-output view functions.
+      // Map it to a typed UserInfo object so downstream code can safely use
+      // `userInfo.balance` / `userInfo.lastDeductionTime` (previously these
+      // were `undefined` because tuples have no named properties, which then
+      // caused `BigInt(NaN)` -> "RangeError: The number NaN cannot be
+      // converted to a BigInt" in computeDaysRemaining).
+      select: (data) => {
+        const tuple = data as readonly [
+          bigint, // balance
+          bigint, // lockedAmount
+          bigint, // lastDeductionTime
+          boolean, // isActive
+          boolean, // hasWon
+          bigint, // lockedStartTime
+        ];
+        return {
+          balance: tuple[0] ?? 0n,
+          lockedAmount: tuple[1] ?? 0n,
+          lastDeductionTime: tuple[2] ?? 0n,
+          isActive: tuple[3] ?? false,
+          hasWon: tuple[4] ?? false,
+          lockedStartTime: tuple[5] ?? 0n,
+        } as UserInfo;
+      },
     },
   });
 }
@@ -251,8 +310,8 @@ export function useDashboardData() {
 
   const daysRemaining = userInfo.data
     ? computeDaysRemaining(
-        userInfo.data.balance,
-        userInfo.data.lastDeductionTime
+        userInfo.data.balance ?? 0n,
+        userInfo.data.lastDeductionTime ?? 0n
       )
     : 0;
 
