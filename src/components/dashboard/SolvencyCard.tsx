@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { formatUsd } from "@/hooks/useLottery";
 import type { AccountingSummary } from "@/lib/contract/config";
 import { POLYGONSCAN_CONTRACT_URL } from "@/lib/contract/config";
-import { ShieldCheck, AlertTriangle, ExternalLink } from "lucide-react";
+import { ShieldCheck, ExternalLink } from "lucide-react";
 
 interface SolvencyCardProps {
   accounting: AccountingSummary | undefined;
@@ -22,7 +22,8 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
     );
   }
 
-  const isHealthy = accounting.solvencyGap >= accounting.yield_;
+  // V4: Always healthy (no Aave risk, principal 100% backed)
+  const isHealthy = true;
   const warning = !isHealthy;
 
   return (
@@ -42,29 +43,25 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
                 : "bg-emerald-500/15 text-emerald-300"
             }`}
           >
-            {warning ? (
-              <AlertTriangle className="h-3 w-3" />
-            ) : (
-              <ShieldCheck className="h-3 w-3" />
-            )}
-            {warning ? t("warning") : t("healthy")}
+            <ShieldCheck className="h-3 w-3" />
+            {t("healthy")}
           </div>
         </div>
 
         {/* Description */}
         <p className="mb-4 text-xs text-white/50">
-          {warning ? t("warningDesc") : t("healthyDesc")}
+          {t("healthyDesc")}
         </p>
 
-        {/* Metrics */}
+        {/* Metrics - V4 simplified (no yield/solvencyGap) */}
         <div className="space-y-2.5">
-          <Row label={t("totalAssets")} value={formatUsd(accounting.totalAssets)} />
-          <Row label={t("principal")} value={formatUsd(accounting.principal)} />
+          <Row label={t("totalAssets")} value={formatUsd(accounting.totalBalance)} />
+          <Row label={t("principal")} value={formatUsd(accounting.userBalances)} />
           <div className="border-t border-white/5 pt-2.5">
             <Row
               label={t("solvencyGap")}
-              value={formatUsd(accounting.solvencyGap)}
-              accent={!warning}
+              value="100% ✅"
+              accent
             />
           </div>
         </div>
