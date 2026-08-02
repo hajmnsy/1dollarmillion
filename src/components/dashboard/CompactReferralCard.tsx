@@ -37,18 +37,27 @@ export function CompactReferralCard() {
 
   const handleShare = async () => {
     if (!referralLink) return;
+    const shareText = `🎯 تخيل يانصيب لا تخسر فيه أبداً!\n💰 أودع $1 فقط، ابقَ نشطاً بـ $1/يوم، واربح $1,000,000\n🛡️ رأس مالك محمي 100%\n🎁 استخدم رابطي واحصل على +5 أيام نشطة مجانية:\n${referralLink}`;
+    
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "1DollarMillion — Win $1,000,000",
-          text: "Join the no-loss lottery. Deposit USDT, win $1M. Use my referral link:",
+          title: "1DollarMillion — No-Loss Lottery",
+          text: shareText,
           url: referralLink,
         });
       } catch (e) {
         console.log("Share cancelled");
       }
     } else {
-      handleCopy();
+      // Fallback: copy message + link to clipboard
+      try {
+        await navigator.clipboard.writeText(shareText);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (e) {
+        console.error("Copy failed:", e);
+      }
     }
   };
 
