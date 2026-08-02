@@ -9,18 +9,17 @@ import {
   TOKEN_DECIMALS_BI,
   DAILY_DEDUCTION,
   POOL_TARGET,
-  BONUS_DRAW_TARGET,
   TARGET_CHAIN_ID,
   type UserInfo,
   type AccountingSummary,
 } from "@/lib/contract/config";
 
-// === Polling intervals (ms) =========================================
+// === Polling intervals (ms) ===
 const FAST = 5_000;
 const NORMAL = 10_000;
 const SLOW = 30_000;
 
-// === Helpers ========================================================
+// === Helpers ===
 
 export function toDisplay(bigint: bigint, decimals = 2): number {
   return Number(bigint) / Number(TOKEN_DECIMALS_BI);
@@ -67,7 +66,7 @@ function computeProgress(current: bigint, target: bigint): number {
   return Math.min(100, Math.max(0, pct));
 }
 
-// === Contract Read Hooks ============================================
+// === Contract Read Hooks ===
 
 export function useCurrentPool() {
   return useReadContract({
@@ -84,26 +83,12 @@ export function useCurrentPool() {
 
 /**
  * Fetch total user balances (sum of all deposits).
- * This represents the actual money users have deposited.
  */
 export function useTotalUserBalances() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
     functionName: "totalUserBalances",
-    chainId: TARGET_CHAIN_ID,
-    query: {
-      refetchInterval: NORMAL,
-      select: (data) => data as bigint,
-    },
-  });
-}
-
-export function useYieldBalance() {
-  return useReadContract({
-    address: LOTTERY_CONTRACT_ADDRESS,
-    abi: lotteryAbi,
-    functionName: "getYieldBalance",
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: NORMAL,
@@ -222,32 +207,21 @@ export function useDrawCounts() {
     },
   });
 
-  const bonus = useReadContract({
-    address: LOTTERY_CONTRACT_ADDRESS,
-    abi: lotteryAbi,
-    functionName: "bonusDrawCount",
-    chainId: TARGET_CHAIN_ID,
-    query: {
-      refetchInterval: SLOW,
-      select: (data) => data as bigint,
-    },
-  });
-
+  // V4: No bonus draws
   return {
     regular: regular.data ?? 0n,
-    bonus: bonus.data ?? 0n,
-    isLoading: regular.isLoading || bonus.isLoading,
-    isError: regular.isError || bonus.isError,
+    bonus: 0n, // Always 0 in V4
+    isLoading: regular.isLoading,
+    isError: regular.isError,
   };
 }
 
-// === Aggregated Dashboard Hook ======================================
+// === Aggregated Dashboard Hook ===
 
 export function useDashboardData() {
   const { address, isConnected } = useAccount();
   const pool = useCurrentPool();
   const totalBalances = useTotalUserBalances();
-  const yield_ = useYieldBalance();
   const activeUsers = useActiveUserCount();
   const accounting = useAccountingSummary();
   const userInfo = useUserInfo();
@@ -257,7 +231,6 @@ export function useDashboardData() {
 
   const hasError =
     pool.isError ||
-    yield_.isError ||
     activeUsers.isError ||
     accounting.isError ||
     drawInProgress.isError;
@@ -265,20 +238,15 @@ export function useDashboardData() {
   const isLoading =
     !hasError &&
     (pool.isLoading ||
-      yield_.isLoading ||
       activeUsers.isLoading ||
       accounting.isLoading ||
       drawInProgress.isLoading);
 
-  // Total pool = currentPool (deducted) + totalUserBalances (deposits not yet deducted)
-  // This shows the actual total money users have deposited
+  // Total pool = currentPool + totalUserBalances (actual deposits)
   const totalPoolAmount = (totalBalances.data ?? 0n) + (pool.data ?? 0n);
 
   const poolProgress = totalPoolAmount
     ? computeProgress(totalPoolAmount, POOL_TARGET)
-    : 0;
-  const yieldProgress = yield_.data
-    ? computeProgress(yield_.data, BONUS_DRAW_TARGET)
     : 0;
 
   const daysRemaining = userInfo.data
@@ -302,13 +270,10 @@ export function useDashboardData() {
     // Pool — shows total deposited amount
     currentPool: totalPoolAmount,
     poolProgress,
-    // Yield
-    yieldBalance: yield_.data ?? 0n,
-    yieldProgress,
     // Active users
     activeUserCount: activeUsers.data ?? 0n,
-    // Accounting
-    accounting: accounting.data,
+    // Accounting (V4: no yield)
+    accounting: accounting.data as AccountingSummary | undefined,
     // User position
     userInfo: userInfo.data,
     daysRemaining,
