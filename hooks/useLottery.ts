@@ -14,19 +14,18 @@ import {
   type AccountingSummary,
 } from "@/lib/contract/config";
 
-// === Polling intervals (ms) ===
 const FAST = 5_000;
 const NORMAL = 10_000;
 const SLOW = 30_000;
 
-// === Helpers ===
-
-export function toDisplay(bigint: bigint, decimals = 2): number {
+export function toDisplay(bigint: bigint | undefined, decimals = 2): number {
+  if (!bigint || !Number.isFinite(Number(bigint))) return 0;
   return Number(bigint) / Number(TOKEN_DECIMALS_BI);
 }
 
-export function formatUsd(bigint: bigint, decimals = 2): string {
+export function formatUsd(bigint: bigint | undefined, decimals = 2): string {
   const num = toDisplay(bigint);
+  if (!Number.isFinite(num)) return "$0.00";
   return num.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
@@ -35,19 +34,21 @@ export function formatUsd(bigint: bigint, decimals = 2): string {
   });
 }
 
-export function formatUsdCompact(bigint: bigint): string {
+export function formatUsdCompact(bigint: bigint | undefined): string {
   const num = toDisplay(bigint);
+  if (!Number.isFinite(num)) return "$0";
   if (num >= 1_000_000) return `$${(num / 1_000_000).toFixed(2)}M`;
   if (num >= 1_000) return `$${(num / 1_000).toFixed(1)}K`;
   return `$${num.toFixed(0)}`;
 }
 
 export function computeDaysRemaining(
-  balance: bigint,
-  lastDeductionTime: bigint,
+  balance: bigint | undefined,
+  lastDeductionTime: bigint | undefined,
   now: number = Math.floor(Date.now() / 1000)
 ): number {
-  if (balance <= 0n) return 0;
+  if (!balance || balance <= 0n) return 0;
+  if (!lastDeductionTime || lastDeductionTime === 0n) return Number(balance / DAILY_DEDUCTION);
 
   const elapsedSeconds = BigInt(Math.max(0, now - Number(lastDeductionTime)));
   const elapsedDays = elapsedSeconds / 86400n;
@@ -66,8 +67,6 @@ function computeProgress(current: bigint, target: bigint): number {
   return Math.min(100, Math.max(0, pct));
 }
 
-// === Contract Read Hooks ===
-
 export function useCurrentPool() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -81,9 +80,6 @@ export function useCurrentPool() {
   });
 }
 
-/**
- * Fetch total user balances (sum of all deposits).
- */
 export function useTotalUserBalances() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -118,6 +114,16 @@ export function useAccountingSummary() {
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: NORMAL,
+      select: (data) => {
+        const tuple = data as readonly [bigint, bigint, bigint, bigint, bigint];
+        return {
+          totalBalance: tuple[0] ?? 0n,
+          userBalances: tuple[1] ?? 0n,
+          poolAmount: tuple[2] ?? 0n,
+          lockedAmounts: tuple[3] ?? 0n,
+          fees: tuple[4] ?? 0n,
+        } as AccountingSummary;
+      },
     },
   });
 }
@@ -133,6 +139,17 @@ export function useUserInfo() {
     query: {
       enabled: !!address,
       refetchInterval: NORMAL,
+      select: (data) => {
+        const tuple = data as readonly [bigint, bigint, bigint, boolean, boolean, bigint];
+        return {
+          balance: tuple[0] ?? 0n,
+          lockedAmount: tuple[1] ?? 0n,
+          lastDeductionTime: tuple[2] ?? 0n,
+          isActive: tuple[3] ?? false,
+          hasWon: tuple[4] ?? false,
+          lockedStartTime: tuple[5] ?? 0n,
+        } as UserInfo;
+      },
     },
   });
 }
@@ -207,16 +224,13 @@ export function useDrawCounts() {
     },
   });
 
-  // V4: No bonus draws
   return {
     regular: regular.data ?? 0n,
-    bonus: 0n, // Always 0 in V4
+    bonus: 0n,
     isLoading: regular.isLoading,
     isError: regular.isError,
   };
 }
-
-// === Aggregated Dashboard Hook ===
 
 export function useDashboardData() {
   const { address, isConnected } = useAccount();
@@ -242,7 +256,6 @@ export function useDashboardData() {
       accounting.isLoading ||
       drawInProgress.isLoading);
 
-  // Total pool = currentPool + totalUserBalances (actual deposits)
   const totalPoolAmount = (totalBalances.data ?? 0n) + (pool.data ?? 0n);
 
   const poolProgress = totalPoolAmount
@@ -267,23 +280,16 @@ export function useDashboardData() {
   return {
     isConnected,
     address,
-    // Pool — shows total deposited amount
     currentPool: totalPoolAmount,
     poolProgress,
-    // Active users
     activeUserCount: activeUsers.data ?? 0n,
-    // Accounting (V4: no yield)
-    accounting: accounting.data as AccountingSummary | undefined,
-    // User position
+    accounting: accounting.data,
     userInfo: userInfo.data,
     daysRemaining,
     userStatus,
-    // Contract state
     drawInProgress: drawInProgress.data ?? false,
     isPaused: isPaused.data ?? false,
-    // Draw counts
     drawCounts,
-    // Meta
     isLoading,
     hasError,
   };
