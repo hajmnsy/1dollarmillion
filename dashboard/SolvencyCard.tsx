@@ -33,6 +33,7 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
       }`}
     >
       <div className="relative">
+        {/* Header */}
         <div className="mb-4 flex items-center justify-between gap-3">
           <h3 className="text-sm font-bold text-white">{t("title")}</h3>
           <div
@@ -47,16 +48,25 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
           </div>
         </div>
 
-        <p className="mb-4 text-xs text-white/50">{t("healthyDesc")}</p>
+        {/* Description */}
+        <p className="mb-4 text-xs text-white/50">
+          {t("healthyDesc")}
+        </p>
 
+        {/* Metrics - V4 simplified (no yield/solvencyGap) */}
         <div className="space-y-2.5">
           <Row label={t("totalAssets")} value={formatUsd(accounting.totalBalance)} />
           <Row label={t("principal")} value={formatUsd(accounting.userBalances)} />
           <div className="border-t border-white/5 pt-2.5">
-            <Row label={t("solvencyGap")} value="100% ✅" accent />
+            <Row
+              label={t("solvencyGap")}
+              value="100% ✅"
+              accent
+            />
           </div>
         </div>
 
+        {/* Verify link */}
         <a
           href={POLYGONSCAN_CONTRACT_URL}
           target="_blank"

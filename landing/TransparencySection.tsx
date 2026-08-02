@@ -4,76 +4,76 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ExternalLink, ShieldCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import {
+  POLYGONSCAN_CONTRACT_URL,
+  CHAINLINK_VRF_URL,
+} from "@/lib/contract/config";
+import { useDashboardData } from "@/hooks/useLottery";
+import { formatUsd } from "@/hooks/useLottery";
 
 export function TransparencySection() {
   const t = useTranslations("transparency");
+  const data = useDashboardData();
+
+  // Real values from the contract
+  const realPool = data.currentPool;
+  const realActiveUsers = data.activeUserCount;
+
+  // Compute progress
+  const poolProgress = data.poolProgress;
+
+  // Estimate days to draw
+  const POOL_TARGET = 1_000_000n * 10n ** 6n;
+  const remaining = POOL_TARGET > realPool ? POOL_TARGET - realPool : 0n;
+  const estDays = realActiveUsers > 0n ? Number(remaining / realActiveUsers) : 0;
+  const daysLabel = estDays > 365
+    ? `~${Math.floor(estDays / 365)}y`
+    : estDays > 0
+      ? `~${estDays}d`
+      : "—";
+
+  // V4: Always solvent (no Aave risk)
+  const isSolvent = true;
 
   const cards = [
     {
       title: t("poolCardTitle"),
       desc: t("poolCardDesc"),
-      value: "$847,231",
-      progress: 84.7,
+      value: realPool > 0n ? formatUsd(realPool) : "$0",
+      progress: poolProgress,
       color: "emerald" as const,
       link: t("viewOnEtherscan"),
-    },
-    {
-      title: t("yieldCardTitle"),
-      desc: t("yieldCardDesc"),
-      value: "$23,402",
-      progress: 2.3,
-      color: "purple" as const,
-      link: t("viewOnAave"),
+      href: POLYGONSCAN_CONTRACT_URL,
     },
     {
       title: t("solvencyCardTitle"),
       desc: t("solvencyCardDesc"),
-      value: t("solvencyHealthy"),
+      value: isSolvent ? t("solvencyHealthy") : t("warning"),
       progress: 100,
-      color: "blue" as const,
+      color: isSolvent ? "blue" as const : "amber" as const,
       link: t("viewOnEtherscan"),
+      href: POLYGONSCAN_CONTRACT_URL,
       isStatus: true,
     },
     {
       title: t("drawCardTitle"),
       desc: t("drawCardDesc"),
-      value: "~4 days",
-      progress: 85,
+      value: daysLabel,
+      progress: poolProgress,
       color: "amber" as const,
       link: t("verifyVRF"),
+      href: CHAINLINK_VRF_URL,
     },
   ];
 
   const colorClasses = {
-    emerald: {
-      text: "text-emerald-400",
-      bar: "bg-emerald-500",
-      glow: "shadow-emerald-500/20",
-      ring: "ring-emerald-500/20",
-    },
-    purple: {
-      text: "text-purple-400",
-      bar: "bg-purple-500",
-      glow: "shadow-purple-500/20",
-      ring: "ring-purple-500/20",
-    },
-    blue: {
-      text: "text-blue-400",
-      bar: "bg-blue-500",
-      glow: "shadow-blue-500/20",
-      ring: "ring-blue-500/20",
-    },
-    amber: {
-      text: "text-amber-400",
-      bar: "bg-amber-500",
-      glow: "shadow-amber-500/20",
-      ring: "ring-amber-500/20",
-    },
+    emerald: { text: "text-emerald-400", bar: "bg-emerald-500", glow: "shadow-emerald-500/20", ring: "ring-emerald-500/20" },
+    blue: { text: "text-blue-400", bar: "bg-blue-500", glow: "shadow-blue-500/20", ring: "ring-blue-500/20" },
+    amber: { text: "text-amber-400", bar: "bg-amber-500", glow: "shadow-amber-500/20", ring: "ring-amber-500/20" },
   };
 
   return (
     <section className="relative py-20 sm:py-28" id="transparency">
-      {/* Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/5 blur-[120px]" />
       </div>
@@ -117,9 +117,7 @@ export function TransparencySection() {
                 </div>
 
                 <div className="mt-5">
-                  <div
-                    className={`text-3xl font-bold tracking-tight ${c.text} sm:text-4xl`}
-                  >
+                  <div className={`text-3xl font-bold tracking-tight ${c.text} sm:text-4xl`}>
                     {card.value}
                   </div>
                   {card.isStatus && (
@@ -128,7 +126,6 @@ export function TransparencySection() {
                     </p>
                   )}
 
-                  {/* Progress bar */}
                   <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
                     <motion.div
                       initial={{ width: 0 }}
@@ -139,27 +136,35 @@ export function TransparencySection() {
                     />
                   </div>
 
-                  <div className="mt-4 flex items-center gap-1.5 text-xs text-white/40">
+                  <a
+                    href={card.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-xs text-white/40 transition-colors hover:text-white"
+                  >
                     <span>{t("verifiableOn")}:</span>
                     <span className="inline-flex items-center gap-1 font-medium text-white/60 transition-colors group-hover:text-white">
                       {card.link}
                       <ExternalLink className="h-3 w-3" />
                     </span>
-                  </div>
+                  </a>
                 </div>
               </motion.div>
             );
           })}
         </div>
 
-        {/* CTA to full dashboard */}
+        {/* CTA: View on Polygonscan */}
         <div className="mt-10 text-center">
-          <Link
-            href="/transparency"
+          <a
+            href={POLYGONSCAN_CONTRACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-400 transition-colors hover:text-emerald-300"
           >
-            {t("viewOnEtherscan")} →
-          </Link>
+            {t("viewOnEtherscan")}
+            <ExternalLink className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>

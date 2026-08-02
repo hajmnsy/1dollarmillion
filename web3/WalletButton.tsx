@@ -13,6 +13,16 @@ import {
 } from "@/components/ui/dialog";
 import { Wallet, LogOut, ChevronDown, ShieldCheck, ExternalLink } from "lucide-react";
 
+// ============================================================
+// ====== WALLET BUTTON (smart auto-detect + fallback) ========
+// ============================================================
+// Strategy:
+// 1. If a browser-injected wallet (MetaMask, Trust, Coinbase, Phantom)
+//    is detected, connect directly to it (no QR code needed).
+// 2. If no injected wallet is detected, open the official
+//    WalletConnect modal which shows 300+ wallets with their
+//    REAL brand logos.
+
 export function WalletButton() {
   const [mounted, setMounted] = useState(false);
 
@@ -34,7 +44,9 @@ function WalletButtonClient() {
   const [connecting, setConnecting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showInstallModal, setShowInstallModal] = useState(false);
+  const [showAccountMenu, setShowAccountMenu] = useState(false);
 
+  // Detect available connectors
   const injectedConnector = connectors.find(
     (c) => c.id === "injected" || c.id.includes("injected")
   );
@@ -46,52 +58,94 @@ function WalletButtonClient() {
     (c) => c.id.includes("walletConnect") || c.id.includes("walletconnect")
   );
 
+  // Check if any browser wallet is installed
   const hasInjected =
     typeof window !== "undefined" && !!(window as any).ethereum;
 
+  // Preferred: use MetaMask connector if available, then injected, then WalletConnect
   const preferredConnector =
     metaMaskConnector ||
     injectedConnector ||
     coinbaseConnector ||
     walletConnectConnector;
 
+  // === Connected state ===
   if (address) {
     const truncated = `${address.slice(0, 6)}...${address.slice(-4)}`;
     return (
       <div className="relative">
-        <Button className="h-10 gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 text-sm font-medium text-emerald-300 transition-all hover:bg-emerald-500/20">
+        <Button
+          onClick={() => setShowAccountMenu(!showAccountMenu)}
+          className="h-10 gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 text-sm font-medium text-emerald-300 transition-all hover:bg-emerald-500/20"
+        >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
           <span className="font-mono">{truncated}</span>
-          <ChevronDown className="h-3.5 w-3.5 opacity-60" />
+          <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform ${showAccountMenu ? "rotate-180" : ""}`} />
         </Button>
-        <DisconnectButton disconnect={disconnect} chainId={chainId} address={address} />
+
+        {showAccountMenu && (
+          <>
+            <div className="fixed inset-0 z-40" onClick={() => setShowAccountMenu(false)} />
+            <div className="absolute end-0 mt-2 w-64 overflow-hidden rounded-xl border border-white/10 bg-[#111] shadow-2xl z-50 top-full">
+              {/* Account info */}
+              <div className="border-b border-white/5 px-4 py-3">
+                <div className="text-xs font-medium uppercase tracking-wider text-white/40">
+                  Connected
+                </div>
+                <div className="mt-1 font-mono text-xs text-white/80 break-all">{address}</div>
+                <div className="mt-2 flex items-center gap-1.5 text-xs text-emerald-400">
+                  <ShieldCheck className="h-3 w-3" />
+                  Chain ID: {chainId}
+                </div>
+              </div>
+
+              {/* Disconnect button - prominent */}
+              <button
+                onClick={() => {
+                  disconnect();
+                  setShowAccountMenu(false);
+                }}
+                className="flex w-full items-center justify-center gap-2 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-300 transition-colors hover:bg-red-500/20 hover:text-red-200"
+              >
+                <LogOut className="h-4 w-4" />
+                Disconnect Wallet
+              </button>
+            </div>
+          </>
+        )}
       </div>
     );
   }
 
+  // === Disconnected state ===
   const handleConnect = async () => {
     setError(null);
 
     if (!preferredConnector) {
+      // No connectors available — show install options
       setShowInstallModal(true);
       return;
     }
 
     setConnecting(true);
     try {
+      // If browser wallet is installed, connect directly (fast, no QR)
       if (hasInjected && (metaMaskConnector || injectedConnector)) {
         const conn = metaMaskConnector || injectedConnector;
         await connectAsync({ connector: conn });
       } else if (walletConnectConnector) {
+        // No injected wallet — open WalletConnect modal (300+ wallets with real logos)
         await connectAsync({ connector: walletConnectConnector });
       } else {
+        // Fallback to whatever is available
         await connectAsync({ connector: preferredConnector });
       }
     } catch (e: any) {
       console.error("Connect failed:", e);
+      // User closed the modal — not a real error
       if (
         e?.code === 4001 ||
         e?.name === "UserRejectedRequestError" ||
@@ -126,6 +180,7 @@ function WalletButtonClient() {
         </div>
       )}
 
+      {/* Install wallet modal — shown when no wallet detected */}
       <Dialog open={showInstallModal} onOpenChange={setShowInstallModal}>
         <DialogContent className="border-white/10 bg-[#111] p-6 sm:max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto">
           <DialogHeader>

@@ -5,16 +5,23 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, TrendingUp, Users } from "lucide-react";
+import { useDashboardData, formatUsd, formatUsdCompact } from "@/hooks/useLottery";
 
 export function Hero() {
   const t = useTranslations("hero");
+  const data = useDashboardData();
+
+  // Real values from contract
+  const livePoolValue = data.currentPool > 0n ? formatUsd(data.currentPool) : "$0";
+  const activeUsersValue = Number(data.activeUserCount).toLocaleString();
+  const yieldValue = "$0";
 
   // Smooth-scroll to the How It Works section on the same page
   const scrollToHowItWorks = () => {
     const el = document.getElementById("how-it-works");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  const yieldValue = "$0";
+
   return (
     <section className="relative overflow-hidden">
       {/* Background gradient effects */}
@@ -113,19 +120,19 @@ export function Hero() {
             <LiveStat
               icon={<TrendingUp className="h-5 w-5 text-emerald-400" />}
               label={t("livePoolLabel")}
-              value={t("livePoolValue")}
+              value={livePoolValue}
               sub={t("livePoolTarget")}
               accent
             />
             <LiveStat
               icon={<Users className="h-5 w-5 text-blue-400" />}
               label={t("activeUsersLabel")}
-              value={t("activeUsersValue")}
+              value={activeUsersValue}
             />
             <LiveStat
               icon={<ShieldCheck className="h-5 w-5 text-purple-400" />}
               label={t("yieldLabel")}
-              value={t("yieldValue")}
+              value={yieldValue}
             />
           </div>
 

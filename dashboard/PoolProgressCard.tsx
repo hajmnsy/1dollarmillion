@@ -27,8 +27,10 @@ export function PoolProgressCard({
 }: PoolProgressCardProps) {
   const t = useTranslations("dashboard.pool");
 
+  // Rough estimate of days to draw — assumes 1 USDT/day per active user
+  // (this is the gross pool growth rate, ignoring Aave yield)
   const remaining = POOL_TARGET > currentPool ? POOL_TARGET - currentPool : 0n;
-  const dailyGrowth = activeUserCount;
+  const dailyGrowth = activeUserCount; // 1 USDT/day per user
   const estDays = dailyGrowth > 0n ? Number(remaining / dailyGrowth) : 0;
 
   const estimateLabel = drawInProgress
@@ -39,14 +41,17 @@ export function PoolProgressCard({
 
   return (
     <Card className="relative overflow-hidden border-white/10 bg-white/[0.02] p-6 shadow-xl">
+      {/* Background glow */}
       <div className="pointer-events-none absolute -top-20 left-1/2 h-40 w-80 -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl" />
 
       <div className="relative">
+        {/* Header */}
         <div className="mb-5">
           <h3 className="text-lg font-bold text-white">{t("title")}</h3>
           <p className="mt-1 text-xs text-white/50">{t("subtitle")}</p>
         </div>
 
+        {/* Current vs target */}
         <div className="mb-4 flex items-baseline justify-between gap-4">
           <div>
             <div className="text-xs font-medium uppercase tracking-wider text-white/40">
@@ -72,6 +77,7 @@ export function PoolProgressCard({
           </div>
         </div>
 
+        {/* Progress bar */}
         <ProgressBar
           value={poolProgress}
           color="emerald"
@@ -79,6 +85,7 @@ export function PoolProgressCard({
           pulseNearComplete
         />
 
+        {/* Percentage + estimate */}
         <div className="mt-3 flex items-center justify-between text-xs">
           <span className="font-semibold text-emerald-400">
             {poolProgress.toFixed(1)}%
@@ -95,6 +102,7 @@ export function PoolProgressCard({
           </span>
         </div>
 
+        {/* Stats row */}
         <div className="mt-6 grid grid-cols-3 gap-3 border-t border-white/5 pt-5">
           <Stat
             icon={<Users className="h-4 w-4 text-blue-400" />}
