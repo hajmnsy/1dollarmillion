@@ -8,9 +8,6 @@
 import { polygon } from "wagmi/chains";
 
 // === Contract Addresses (DEPLOYED ON POLYGON MAINNET - V4 Sharia-Compliant) ===
-// Deployed on 2026-07-28 via Remix IDE
-// V4 = No Aave, No Riba, No Bonus Draws — Sharia Compliant
-// Verify: https://polygonscan.com/address/0x6DdFbB61A28504713f81eDb0551261cb3DD8Ae1c
 export const LOTTERY_CONTRACT_ADDRESS =
   "0x6DdFbB61A28504713f81eDb0551261cb3DD8Ae1c" as `0x${string}`;
 
@@ -43,7 +40,6 @@ export const WINNER_PAYOUT = 995_350n * TOKEN_DECIMALS_BI;
 export const lotteryAbi = [
   { inputs: [], name: "currentPool", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "getActiveUserCount", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
-  { inputs: [], name: "getTotalPrincipal", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "totalLockedAmounts", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "accumulatedFees", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "totalUserBalances", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
@@ -90,7 +86,6 @@ export const lotteryAbi = [
     stateMutability: "view",
     type: "function",
   },
-  // === Write functions (V4 with referral support) ===
   {
     inputs: [
       { name: "amount", type: "uint256" },
@@ -115,7 +110,6 @@ export const lotteryAbi = [
     stateMutability: "view",
     type: "function",
   },
-  // === Events (for activity feed) ===
   {
     anonymous: false,
     inputs: [
@@ -156,7 +150,6 @@ export type UserInfo = {
   lockedStartTime: bigint;
 };
 
-// V4 accounting summary (no yield/solvencyGap)
 export type AccountingSummary = {
   totalBalance: bigint;
   userBalances: bigint;

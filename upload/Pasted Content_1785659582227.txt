@@ -1,0 +1,561 @@
+10:30:31.343 Running build in Washington, D.C., USA (East) – iad1
+10:30:31.344 Build machine configuration: 2 cores, 8 GB
+10:30:31.526 Cloning github.com/hajmnsy/1dollarmillion (Branch: main, Commit: 2d043f6)
+10:30:32.117 Cloning completed: 590.000ms
+10:30:33.205 Restored build cache from previous deployment (42evLdkgFYQGtR8b4p2kzeE69dph)
+10:30:33.454 Running "vercel build"
+10:30:33.471 Vercel CLI 58.1.0
+10:30:33.699 Installing dependencies...
+10:30:33.740 bun install v1.3.12 (700fc117)
+10:30:34.140 
+10:30:34.140 Checked 1275 installs across 1246 packages (no changes) [417.00ms]
+10:30:34.148 Detected Next.js version: 16.1.3
+10:30:34.149 Running "next build"
+10:30:35.285 ▲ Next.js 16.1.3 (Turbopack)
+10:30:35.286 
+10:30:35.295 ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+10:30:35.326   Creating an optimized production build ...
+10:31:18.497 
+10:31:18.497 > Build error occurred
+10:31:18.505 Error: Turbopack build failed with 20 errors:
+10:31:18.505 ./src/lib/contract/config.ts:197:14
+10:31:18.505 Ecmascript file had an error
+10:31:18.505   195 | export const POLYGONSCAN_CONTRACT_URL = `https://polygonscan.com/address/${LOTTERY_CONTRACT_ADDRESS}`;
+10:31:18.506   196 | export const POLYGONSCAN_USDT_URL = `https://polygonscan.com/address/${USDT_CONTRACT_ADDRESS}`;
+10:31:18.506 > 197 | export const CHAINLINK_VRF_URL = "https://vrf.chain.link/polygon";
+10:31:18.506       |              ^^^^^^^^^^^^^^^^^
+10:31:18.507   198 |
+10:31:18.507   199 | export const VRF_SUBSCRIPTION_ID = "5138795994368458865858465733297478458437338427540524283346653360622563975716";
+10:31:18.507   200 |
+10:31:18.507 
+10:31:18.507 the name `CHAINLINK_VRF_URL` is defined multiple times
+10:31:18.508 
+10:31:18.508 Import traces:
+10:31:18.508   Client Component Browser:
+10:31:18.508     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.508     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.508     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.508     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.508 
+10:31:18.509   Client Component SSR:
+10:31:18.509     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.509     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.509     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.509     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.509 
+10:31:18.509 
+10:31:18.509 ./src/lib/contract/config.ts:210:14
+10:31:18.509 Ecmascript file had an error
+10:31:18.509   208 | export const MIN_DEPOSIT = 1n * TOKEN_DECIMALS_BI;
+10:31:18.509   209 | export const RECOMMENDED_DEPOSIT = 30n * TOKEN_DECIMALS_BI;
+10:31:18.509 > 210 | export const DAILY_DEDUCTION = 1n * TOKEN_DECIMALS_BI;
+10:31:18.509       |              ^^^^^^^^^^^^^^^
+10:31:18.510   211 | export const POOL_TARGET = 1_000_000n * TOKEN_DECIMALS_BI;
+10:31:18.510   212 | export const OPERATIONAL_FEE = 1_000n * TOKEN_DECIMALS_BI;
+10:31:18.512   213 | export const WINNER_LOCK_AMOUNT = 3_650n * TOKEN_DECIMALS_BI;
+10:31:18.512 
+10:31:18.512 the name `DAILY_DEDUCTION` is defined multiple times
+10:31:18.515 
+10:31:18.515 Import traces:
+10:31:18.515   Client Component Browser:
+10:31:18.516     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.516     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.516     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.516     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.516 
+10:31:18.517   Client Component SSR:
+10:31:18.517     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.517     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.517     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.517     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.517 
+10:31:18.517 
+10:31:18.517 ./src/lib/contract/config.ts:188:14
+10:31:18.517 Ecmascript file had an error
+10:31:18.517   186 | // V4 = No Aave, No Riba, No Bonus Draws — Sharia Compliant
+10:31:18.517   187 | // Verify: https://polygonscan.com/address/0x6DdFbB61A28504713f81eDb0551261cb3DD8Ae1c
+10:31:18.517 > 188 | export const LOTTERY_CONTRACT_ADDRESS =
+10:31:18.517       |              ^^^^^^^^^^^^^^^^^^^^^^^^
+10:31:18.517   189 |   "0x6DdFbB61A28504713f81eDb0551261cb3DD8Ae1c" as `0x${string}`;
+10:31:18.517   190 |
+10:31:18.517   191 | export const USDT_CONTRACT_ADDRESS =
+10:31:18.518 
+10:31:18.518 the name `LOTTERY_CONTRACT_ADDRESS` is defined multiple times
+10:31:18.518 
+10:31:18.518 Import traces:
+10:31:18.518   Client Component Browser:
+10:31:18.518     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.518     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.518     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.518     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.518 
+10:31:18.518   Client Component SSR:
+10:31:18.518     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.518     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.518     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.518     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.518 
+10:31:18.518 
+10:31:18.518 ./src/lib/contract/config.ts:208:14
+10:31:18.518 Ecmascript file had an error
+10:31:18.518   206 | export const TOKEN_DECIMALS = 6;
+10:31:18.518   207 | export const TOKEN_DECIMALS_BI = 10n ** 6n;
+10:31:18.518 > 208 | export const MIN_DEPOSIT = 1n * TOKEN_DECIMALS_BI;
+10:31:18.519       |              ^^^^^^^^^^^
+10:31:18.519   209 | export const RECOMMENDED_DEPOSIT = 30n * TOKEN_DECIMALS_BI;
+10:31:18.519   210 | export const DAILY_DEDUCTION = 1n * TOKEN_DECIMALS_BI;
+10:31:18.519   211 | export const POOL_TARGET = 1_000_000n * TOKEN_DECIMALS_BI;
+10:31:18.519 
+10:31:18.519 the name `MIN_DEPOSIT` is defined multiple times
+10:31:18.519 
+10:31:18.519 Import traces:
+10:31:18.519   Client Component Browser:
+10:31:18.519     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.519     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.519     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.519     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.519 
+10:31:18.519   Client Component SSR:
+10:31:18.519     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.519     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.519     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.519     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.519 
+10:31:18.519 
+10:31:18.523 ./src/lib/contract/config.ts:212:14
+10:31:18.523 Ecmascript file had an error
+10:31:18.523   210 | export const DAILY_DEDUCTION = 1n * TOKEN_DECIMALS_BI;
+10:31:18.523   211 | export const POOL_TARGET = 1_000_000n * TOKEN_DECIMALS_BI;
+10:31:18.523 > 212 | export const OPERATIONAL_FEE = 1_000n * TOKEN_DECIMALS_BI;
+10:31:18.523       |              ^^^^^^^^^^^^^^^
+10:31:18.523   213 | export const WINNER_LOCK_AMOUNT = 3_650n * TOKEN_DECIMALS_BI;
+10:31:18.523   214 | export const WINNER_PAYOUT = 995_350n * TOKEN_DECIMALS_BI;
+10:31:18.523   215 |
+10:31:18.524 
+10:31:18.524 the name `OPERATIONAL_FEE` is defined multiple times
+10:31:18.524 
+10:31:18.524 Import traces:
+10:31:18.524   Client Component Browser:
+10:31:18.524     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.524     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.524     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.524     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.524 
+10:31:18.524   Client Component SSR:
+10:31:18.524     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.524     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.524     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.524     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.524 
+10:31:18.524 
+10:31:18.524 ./src/lib/contract/config.ts:195:14
+10:31:18.524 Ecmascript file had an error
+10:31:18.524   193 |
+10:31:18.524   194 | // External verification URLs
+10:31:18.524 > 195 | export const POLYGONSCAN_CONTRACT_URL = `https://polygonscan.com/address/${LOTTERY_CONTRACT_ADDRESS}`;
+10:31:18.524       |              ^^^^^^^^^^^^^^^^^^^^^^^^
+10:31:18.526   196 | export const POLYGONSCAN_USDT_URL = `https://polygonscan.com/address/${USDT_CONTRACT_ADDRESS}`;
+10:31:18.526   197 | export const CHAINLINK_VRF_URL = "https://vrf.chain.link/polygon";
+10:31:18.526   198 |
+10:31:18.526 
+10:31:18.527 the name `POLYGONSCAN_CONTRACT_URL` is defined multiple times
+10:31:18.527 
+10:31:18.527 Import traces:
+10:31:18.527   Client Component Browser:
+10:31:18.527     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.528     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.528     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.528     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.528 
+10:31:18.528   Client Component SSR:
+10:31:18.529     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.529     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.529     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.529     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.529 
+10:31:18.529 
+10:31:18.529 ./src/lib/contract/config.ts:196:14
+10:31:18.529 Ecmascript file had an error
+10:31:18.529   194 | // External verification URLs
+10:31:18.529   195 | export const POLYGONSCAN_CONTRACT_URL = `https://polygonscan.com/address/${LOTTERY_CONTRACT_ADDRESS}`;
+10:31:18.529 > 196 | export const POLYGONSCAN_USDT_URL = `https://polygonscan.com/address/${USDT_CONTRACT_ADDRESS}`;
+10:31:18.529       |              ^^^^^^^^^^^^^^^^^^^^
+10:31:18.529   197 | export const CHAINLINK_VRF_URL = "https://vrf.chain.link/polygon";
+10:31:18.529   198 |
+10:31:18.529   199 | export const VRF_SUBSCRIPTION_ID = "5138795994368458865858465733297478458437338427540524283346653360622563975716";
+10:31:18.529 
+10:31:18.529 the name `POLYGONSCAN_USDT_URL` is defined multiple times
+10:31:18.529 
+10:31:18.529 Import traces:
+10:31:18.530   Client Component Browser:
+10:31:18.530     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.530     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.530     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.530     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.530 
+10:31:18.530   Client Component SSR:
+10:31:18.530     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.530     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.530     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.530     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.530 
+10:31:18.530 
+10:31:18.530 ./src/lib/contract/config.ts:211:14
+10:31:18.530 Ecmascript file had an error
+10:31:18.530   209 | export const RECOMMENDED_DEPOSIT = 30n * TOKEN_DECIMALS_BI;
+10:31:18.530   210 | export const DAILY_DEDUCTION = 1n * TOKEN_DECIMALS_BI;
+10:31:18.530 > 211 | export const POOL_TARGET = 1_000_000n * TOKEN_DECIMALS_BI;
+10:31:18.530       |              ^^^^^^^^^^^
+10:31:18.530   212 | export const OPERATIONAL_FEE = 1_000n * TOKEN_DECIMALS_BI;
+10:31:18.530   213 | export const WINNER_LOCK_AMOUNT = 3_650n * TOKEN_DECIMALS_BI;
+10:31:18.530   214 | export const WINNER_PAYOUT = 995_350n * TOKEN_DECIMALS_BI;
+10:31:18.530 
+10:31:18.530 the name `POOL_TARGET` is defined multiple times
+10:31:18.530 
+10:31:18.530 Import traces:
+10:31:18.530   Client Component Browser:
+10:31:18.530     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.531     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.531     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.531     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.531 
+10:31:18.531   Client Component SSR:
+10:31:18.531     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.531     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.531     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.531     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.531 
+10:31:18.531 
+10:31:18.531 ./src/lib/contract/config.ts:209:14
+10:31:18.531 Ecmascript file had an error
+10:31:18.531   207 | export const TOKEN_DECIMALS_BI = 10n ** 6n;
+10:31:18.531   208 | export const MIN_DEPOSIT = 1n * TOKEN_DECIMALS_BI;
+10:31:18.531 > 209 | export const RECOMMENDED_DEPOSIT = 30n * TOKEN_DECIMALS_BI;
+10:31:18.531       |              ^^^^^^^^^^^^^^^^^^^
+10:31:18.531   210 | export const DAILY_DEDUCTION = 1n * TOKEN_DECIMALS_BI;
+10:31:18.531   211 | export const POOL_TARGET = 1_000_000n * TOKEN_DECIMALS_BI;
+10:31:18.531   212 | export const OPERATIONAL_FEE = 1_000n * TOKEN_DECIMALS_BI;
+10:31:18.531 
+10:31:18.531 the name `RECOMMENDED_DEPOSIT` is defined multiple times
+10:31:18.531 
+10:31:18.531 Import traces:
+10:31:18.531   Client Component Browser:
+10:31:18.531     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.531     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.531     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.531     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.531 
+10:31:18.532   Client Component SSR:
+10:31:18.532     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.532     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.532     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.532     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.532 
+10:31:18.532 
+10:31:18.532 ./src/lib/contract/config.ts:203:14
+10:31:18.532 Ecmascript file had an error
+10:31:18.532   201 | // === Network Config ===
+10:31:18.532   202 | export const TARGET_CHAIN = polygon;
+10:31:18.532 > 203 | export const TARGET_CHAIN_ID = polygon.id; // 137
+10:31:18.535       |              ^^^^^^^^^^^^^^^
+10:31:18.536   204 |
+10:31:18.536   205 | // === Token Constants ===
+10:31:18.536   206 | export const TOKEN_DECIMALS = 6;
+10:31:18.536 
+10:31:18.537 the name `TARGET_CHAIN_ID` is defined multiple times
+10:31:18.537 
+10:31:18.537 Import traces:
+10:31:18.537   Client Component Browser:
+10:31:18.537     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.537     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.538     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.538     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.538 
+10:31:18.538   Client Component SSR:
+10:31:18.539     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.539     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.539     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.539     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.539 
+10:31:18.539 
+10:31:18.539 ./src/lib/contract/config.ts:202:14
+10:31:18.539 Ecmascript file had an error
+10:31:18.539   200 |
+10:31:18.539   201 | // === Network Config ===
+10:31:18.539 > 202 | export const TARGET_CHAIN = polygon;
+10:31:18.539       |              ^^^^^^^^^^^^
+10:31:18.539   203 | export const TARGET_CHAIN_ID = polygon.id; // 137
+10:31:18.539   204 |
+10:31:18.539   205 | // === Token Constants ===
+10:31:18.540 
+10:31:18.540 the name `TARGET_CHAIN` is defined multiple times
+10:31:18.540 
+10:31:18.540 Import traces:
+10:31:18.540   Client Component Browser:
+10:31:18.540     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.540     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.540     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.540     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.540 
+10:31:18.540   Client Component SSR:
+10:31:18.540     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.540     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.540     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.540     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.540 
+10:31:18.540 
+10:31:18.540 ./src/lib/contract/config.ts:207:14
+10:31:18.540 Ecmascript file had an error
+10:31:18.540   205 | // === Token Constants ===
+10:31:18.540   206 | export const TOKEN_DECIMALS = 6;
+10:31:18.541 > 207 | export const TOKEN_DECIMALS_BI = 10n ** 6n;
+10:31:18.542       |              ^^^^^^^^^^^^^^^^^
+10:31:18.542   208 | export const MIN_DEPOSIT = 1n * TOKEN_DECIMALS_BI;
+10:31:18.542   209 | export const RECOMMENDED_DEPOSIT = 30n * TOKEN_DECIMALS_BI;
+10:31:18.542   210 | export const DAILY_DEDUCTION = 1n * TOKEN_DECIMALS_BI;
+10:31:18.543 
+10:31:18.543 the name `TOKEN_DECIMALS_BI` is defined multiple times
+10:31:18.543 
+10:31:18.543 Import traces:
+10:31:18.543   Client Component Browser:
+10:31:18.543     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.543     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.543     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.543     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.543 
+10:31:18.543   Client Component SSR:
+10:31:18.543     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.543     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.543     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.543     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.543 
+10:31:18.543 
+10:31:18.543 ./src/lib/contract/config.ts:206:14
+10:31:18.543 Ecmascript file had an error
+10:31:18.543   204 |
+10:31:18.543   205 | // === Token Constants ===
+10:31:18.543 > 206 | export const TOKEN_DECIMALS = 6;
+10:31:18.543       |              ^^^^^^^^^^^^^^
+10:31:18.544   207 | export const TOKEN_DECIMALS_BI = 10n ** 6n;
+10:31:18.544   208 | export const MIN_DEPOSIT = 1n * TOKEN_DECIMALS_BI;
+10:31:18.544   209 | export const RECOMMENDED_DEPOSIT = 30n * TOKEN_DECIMALS_BI;
+10:31:18.544 
+10:31:18.544 the name `TOKEN_DECIMALS` is defined multiple times
+10:31:18.544 
+10:31:18.544 Import traces:
+10:31:18.544   Client Component Browser:
+10:31:18.544     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.544     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.544     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.544     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.544 
+10:31:18.544   Client Component SSR:
+10:31:18.544     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.544     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.544     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.544     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.544 
+10:31:18.544 
+10:31:18.544 ./src/lib/contract/config.ts:191:14
+10:31:18.544 Ecmascript file had an error
+10:31:18.544   189 |   "0x6DdFbB61A28504713f81eDb0551261cb3DD8Ae1c" as `0x${string}`;
+10:31:18.544   190 |
+10:31:18.544 > 191 | export const USDT_CONTRACT_ADDRESS =
+10:31:18.545       |              ^^^^^^^^^^^^^^^^^^^^^
+10:31:18.546   192 |   "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" as `0x${string}`;
+10:31:18.546   193 |
+10:31:18.546   194 | // External verification URLs
+10:31:18.546 
+10:31:18.546 the name `USDT_CONTRACT_ADDRESS` is defined multiple times
+10:31:18.546 
+10:31:18.547 Import traces:
+10:31:18.547   Client Component Browser:
+10:31:18.547     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.547     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.547     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.547     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.547 
+10:31:18.547   Client Component SSR:
+10:31:18.547     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.547     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.547     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.547     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.547 
+10:31:18.547 
+10:31:18.547 ./src/lib/contract/config.ts:199:14
+10:31:18.547 Ecmascript file had an error
+10:31:18.547   197 | export const CHAINLINK_VRF_URL = "https://vrf.chain.link/polygon";
+10:31:18.547   198 |
+10:31:18.547 > 199 | export const VRF_SUBSCRIPTION_ID = "5138795994368458865858465733297478458437338427540524283346653360622563975716";
+10:31:18.547       |              ^^^^^^^^^^^^^^^^^^^
+10:31:18.547   200 |
+10:31:18.547   201 | // === Network Config ===
+10:31:18.547   202 | export const TARGET_CHAIN = polygon;
+10:31:18.547 
+10:31:18.547 the name `VRF_SUBSCRIPTION_ID` is defined multiple times
+10:31:18.548 
+10:31:18.548 Import traces:
+10:31:18.548   Client Component Browser:
+10:31:18.548     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.548     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.548     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.548     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.548 
+10:31:18.548   Client Component SSR:
+10:31:18.548     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.550     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.550     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.551     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.551 
+10:31:18.551 
+10:31:18.551 ./src/lib/contract/config.ts:213:14
+10:31:18.551 Ecmascript file had an error
+10:31:18.552   211 | export const POOL_TARGET = 1_000_000n * TOKEN_DECIMALS_BI;
+10:31:18.552   212 | export const OPERATIONAL_FEE = 1_000n * TOKEN_DECIMALS_BI;
+10:31:18.552 > 213 | export const WINNER_LOCK_AMOUNT = 3_650n * TOKEN_DECIMALS_BI;
+10:31:18.552       |              ^^^^^^^^^^^^^^^^^^
+10:31:18.552   214 | export const WINNER_PAYOUT = 995_350n * TOKEN_DECIMALS_BI;
+10:31:18.552   215 |
+10:31:18.553   216 | // === Contract ABI (V4 - No Aave, No Bonus Draws) ===
+10:31:18.553 
+10:31:18.553 the name `WINNER_LOCK_AMOUNT` is defined multiple times
+10:31:18.553 
+10:31:18.553 Import traces:
+10:31:18.553   Client Component Browser:
+10:31:18.554     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.554     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.554     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.554     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.554 
+10:31:18.554   Client Component SSR:
+10:31:18.555     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.555     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.555     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.555     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.555 
+10:31:18.555 
+10:31:18.556 ./src/lib/contract/config.ts:214:14
+10:31:18.556 Ecmascript file had an error
+10:31:18.556   212 | export const OPERATIONAL_FEE = 1_000n * TOKEN_DECIMALS_BI;
+10:31:18.556   213 | export const WINNER_LOCK_AMOUNT = 3_650n * TOKEN_DECIMALS_BI;
+10:31:18.556 > 214 | export const WINNER_PAYOUT = 995_350n * TOKEN_DECIMALS_BI;
+10:31:18.556       |              ^^^^^^^^^^^^^
+10:31:18.556   215 |
+10:31:18.556   216 | // === Contract ABI (V4 - No Aave, No Bonus Draws) ===
+10:31:18.556   217 | export const lotteryAbi = [
+10:31:18.556 
+10:31:18.556 the name `WINNER_PAYOUT` is defined multiple times
+10:31:18.556 
+10:31:18.556 Import traces:
+10:31:18.556   Client Component Browser:
+10:31:18.556     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.556     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.556     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.556     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.556 
+10:31:18.556   Client Component SSR:
+10:31:18.556     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.556     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.556     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.556     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.556 
+10:31:18.556 
+10:31:18.557 ./src/lib/contract/config.ts:217:14
+10:31:18.557 Ecmascript file had an error
+10:31:18.558   215 |
+10:31:18.558   216 | // === Contract ABI (V4 - No Aave, No Bonus Draws) ===
+10:31:18.558 > 217 | export const lotteryAbi = [
+10:31:18.558       |              ^^^^^^^^^^
+10:31:18.558   218 |   { inputs: [], name: "currentPool", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
+10:31:18.558   219 |   { inputs: [], name: "getActiveUserCount", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
+10:31:18.558   220 |   { inputs: [], name: "getTotalPrincipal", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
+10:31:18.558 
+10:31:18.558 the name `lotteryAbi` is defined multiple times
+10:31:18.558 
+10:31:18.558 Import traces:
+10:31:18.558   Client Component Browser:
+10:31:18.558     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.558     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.558     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.558     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.558 
+10:31:18.558   Client Component SSR:
+10:31:18.558     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.558     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.558     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.558     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.558 
+10:31:18.558 
+10:31:18.558 ./src/lib/contract/config.ts:182:10
+10:31:18.558 Ecmascript file had an error
+10:31:18.558   180 |
+10:31:18.558   181 |
+10:31:18.558 > 182 | import { polygon } from "wagmi/chains";
+10:31:18.558       |          ^^^^^^^
+10:31:18.559   183 |
+10:31:18.560   184 | // === Contract Addresses (DEPLOYED ON POLYGON MAINNET - V4 Sharia-Compliant) ===
+10:31:18.561   185 | // Deployed on 2026-07-28 via Remix IDE
+10:31:18.561 
+10:31:18.561 the name `polygon` is defined multiple times
+10:31:18.561 
+10:31:18.561 Import traces:
+10:31:18.562   Client Component Browser:
+10:31:18.562     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.562     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.562     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.562     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.562 
+10:31:18.562   Client Component SSR:
+10:31:18.562     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.562     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.562     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.562     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.562 
+10:31:18.562 
+10:31:18.562 ./src/lib/contract/config.ts:317:14
+10:31:18.562 Ecmascript file had an error
+10:31:18.562   315 |
+10:31:18.562   316 | // === USDT ABI (minimal) ===
+10:31:18.562 > 317 | export const usdtAbi = [
+10:31:18.562       |              ^^^^^^^
+10:31:18.562   318 |   { inputs: [{ type: "address" }], name: "balanceOf", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
+10:31:18.562   319 |   { inputs: [{ type: "address" }, { type: "address" }], name: "allowance", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
+10:31:18.562   320 |   { inputs: [{ type: "address" }, { type: "uint256" }], name: "approve", outputs: [{ type: "bool" }], stateMutability: "nonpayable", type: "function" },
+10:31:18.562 
+10:31:18.562 the name `usdtAbi` is defined multiple times
+10:31:18.562 
+10:31:18.562 Import traces:
+10:31:18.562   Client Component Browser:
+10:31:18.562     ./src/lib/contract/config.ts [Client Component Browser]
+10:31:18.562     ./src/components/dashboard/DepositModal.tsx [Client Component Browser]
+10:31:18.562     ./app/[locale]/deposit-preview/page.tsx [Client Component Browser]
+10:31:18.562     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.563 
+10:31:18.563   Client Component SSR:
+10:31:18.563     ./src/lib/contract/config.ts [Client Component SSR]
+10:31:18.563     ./src/components/dashboard/DepositModal.tsx [Client Component SSR]
+10:31:18.563     ./app/[locale]/deposit-preview/page.tsx [Client Component SSR]
+10:31:18.563     ./app/[locale]/deposit-preview/page.tsx [Server Component]
+10:31:18.563 
+10:31:18.563 
+10:31:18.563     at <unknown> (./src/lib/contract/config.ts:197:14)
+10:31:18.563     at <unknown> (./src/lib/contract/config.ts:210:14)
+10:31:18.563     at <unknown> (./src/lib/contract/config.ts:188:14)
+10:31:18.563     at <unknown> (./src/lib/contract/config.ts:208:14)
+10:31:18.563     at <unknown> (./src/lib/contract/config.ts:212:14)
+10:31:18.563     at <unknown> (./src/lib/contract/config.ts:195:14)
+10:31:18.563     at <unknown> (./src/lib/contract/config.ts:196:14)
+10:31:18.563     at <unknown> (./src/lib/contract/config.ts:211:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:209:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:203:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:202:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:207:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:206:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:191:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:199:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:213:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:214:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:217:14)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:182:10)
+10:31:18.564     at <unknown> (./src/lib/contract/config.ts:317:14)
+10:31:18.678 Error: Command "next build" exited with 1
