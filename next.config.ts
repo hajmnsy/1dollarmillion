@@ -19,3 +19,4 @@ const nextConfig: NextConfig = {
 };
 
 export default withNextIntl(nextConfig);
+// Force rebuild V4
