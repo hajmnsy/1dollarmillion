@@ -6,11 +6,10 @@ import { ExternalLink, ShieldCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import {
   POLYGONSCAN_CONTRACT_URL,
-  AAVE_POOL_URL,
   CHAINLINK_VRF_URL,
 } from "@/lib/contract/config";
 import { useDashboardData } from "@/hooks/useLottery";
-import { formatUsd, formatUsdCompact } from "@/hooks/useLottery";
+import { formatUsd } from "@/hooks/useLottery";
 
 export function TransparencySection() {
   const t = useTranslations("transparency");
@@ -18,15 +17,12 @@ export function TransparencySection() {
 
   // Real values from the contract
   const realPool = data.currentPool;
-  const realYield = data.yieldBalance;
   const realActiveUsers = data.activeUserCount;
-  const realDrawCount = Number(data.drawCounts.regular);
 
-  // Compute progress percentages
+  // Compute progress
   const poolProgress = data.poolProgress;
-  const yieldProgress = data.yieldProgress;
 
-  // Estimate days to draw (1 USDT/day per active user)
+  // Estimate days to draw
   const POOL_TARGET = 1_000_000n * 10n ** 6n;
   const remaining = POOL_TARGET > realPool ? POOL_TARGET - realPool : 0n;
   const estDays = realActiveUsers > 0n ? Number(remaining / realActiveUsers) : 0;
@@ -36,10 +32,8 @@ export function TransparencySection() {
       ? `~${estDays}d`
       : "—";
 
-  // Solvency status
-  const isSolvent = data.accounting
-    ? data.accounting.solvencyGap >= data.accounting.yield_
-    : true;
+  // V4: Always solvent (no Aave risk)
+  const isSolvent = true;
 
   const cards = [
     {
@@ -50,15 +44,6 @@ export function TransparencySection() {
       color: "emerald" as const,
       link: t("viewOnEtherscan"),
       href: POLYGONSCAN_CONTRACT_URL,
-    },
-    {
-      title: t("yieldCardTitle"),
-      desc: t("yieldCardDesc"),
-      value: realYield > 0n ? formatUsd(realYield) : "$0",
-      progress: yieldProgress,
-      color: "purple" as const,
-      link: t("viewOnAave"),
-      href: AAVE_POOL_URL,
     },
     {
       title: t("solvencyCardTitle"),
@@ -82,30 +67,9 @@ export function TransparencySection() {
   ];
 
   const colorClasses = {
-    emerald: {
-      text: "text-emerald-400",
-      bar: "bg-emerald-500",
-      glow: "shadow-emerald-500/20",
-      ring: "ring-emerald-500/20",
-    },
-    purple: {
-      text: "text-purple-400",
-      bar: "bg-purple-500",
-      glow: "shadow-purple-500/20",
-      ring: "ring-purple-500/20",
-    },
-    blue: {
-      text: "text-blue-400",
-      bar: "bg-blue-500",
-      glow: "shadow-blue-500/20",
-      ring: "ring-blue-500/20",
-    },
-    amber: {
-      text: "text-amber-400",
-      bar: "bg-amber-500",
-      glow: "shadow-amber-500/20",
-      ring: "ring-amber-500/20",
-    },
+    emerald: { text: "text-emerald-400", bar: "bg-emerald-500", glow: "shadow-emerald-500/20", ring: "ring-emerald-500/20" },
+    blue: { text: "text-blue-400", bar: "bg-blue-500", glow: "shadow-blue-500/20", ring: "ring-blue-500/20" },
+    amber: { text: "text-amber-400", bar: "bg-amber-500", glow: "shadow-amber-500/20", ring: "ring-amber-500/20" },
   };
 
   return (
@@ -190,7 +154,7 @@ export function TransparencySection() {
           })}
         </div>
 
-        {/* CTA: View on Polygonscan (external link) */}
+        {/* CTA: View on Polygonscan */}
         <div className="mt-10 text-center">
           <a
             href={POLYGONSCAN_CONTRACT_URL}
