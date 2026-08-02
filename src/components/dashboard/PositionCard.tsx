@@ -42,7 +42,7 @@ export function PositionCard({
       return t("lastDeductionNever");
     }
     const now = Math.floor(Date.now() / 1000);
-    const elapsed = now - Number(userInfo.lastDeductionTime);
+    const lastTime = userInfo.lastDeductionTime ? Number(userInfo.lastDeductionTime) : now; const elapsed = lastTime > 0 ? now - lastTime : 0;
     if (elapsed < 60) return t("justNow");
     if (elapsed < 3600) return t("minutesAgo", { minutes: Math.floor(elapsed / 60) });
     if (elapsed < 86400) return t("hoursAgo", { hours: Math.floor(elapsed / 3600) });

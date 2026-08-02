@@ -14,7 +14,7 @@ export function Hero() {
   // Real values from contract
   const livePoolValue = data.currentPool > 0n ? formatUsd(data.currentPool) : "$0";
   const activeUsersValue = Number(data.activeUserCount).toLocaleString();
-  const yieldValue = data.yieldBalance > 0n ? formatUsd(data.yieldBalance) : "$0";
+  const yieldValue = "$0";
 
   // Smooth-scroll to the How It Works section on the same page
   const scrollToHowItWorks = () => {
