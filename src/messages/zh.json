@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "1DollarMillion 彩票 — 存入 USDT，赢取 $1,000,000，本金永不受损。",
-    "description": "全球首个由 Aave V3 收益驱动的无损彩票。存入 USDT，仅需 $1/天保持活跃，即可赢取改变人生的大奖。您的本金始终安全。"
+    "description": "全球首个由 Principal Protection 收益驱动的无损彩票。存入 USDT，仅需 $1/天保持活跃，即可赢取改变人生的大奖。您的本金始终安全。"
   },
   "dashboard": {
     "title": "我的仪表盘",
@@ -51,7 +51,7 @@
     },
     "yield": {
       "title": "DeFi 收益奖励追踪器",
-      "subtitle": "由 Aave V3 在闲置存款上产生的利息 — 用于资助额外抽奖。",
+      "subtitle": "由 Principal Protection 在闲置存款上产生的利息 — 用于资助额外抽奖。",
       "currentLabel": "已产生收益",
       "targetLabel": "额外抽奖目标",
       "apyLabel": "当前 APY",
@@ -59,7 +59,7 @@
       "estimateYears": "约 {years} 年后",
       "estimateReady": "已可开奖",
       "yieldNote": "收益 7×24 小时持续累积。当达到 $1M 时，将自动触发额外抽奖。",
-      "viewOnAave": "在 Aave 上查看"
+      "viewOnAave": "在 Smart Contract 上查看"
     },
     "solvency": {
       "title": "偿付能力检查",
@@ -309,11 +309,11 @@
     "switchNetwork": "切换至 Ethereum"
   },
   "hero": {
-    "badge": "由 Chainlink VRF + Aave V3 驱动",
+    "badge": "由 Chainlink VRF + Principal Protection 驱动",
     "titleLine1": "存入 USDT。",
     "titleLine2": "赢取 $1,000,000。",
     "titleLine3": "本金永不受损。",
-    "subtitle": "全球首个无损彩票，您的存款在 Aave V3 上赚取 DeFi 收益。每日仅需 $1 保持活跃，当奖金池累积到 $1 million 时，一位可验证公平的中奖者将捧走 $995,350 — 绝对保证。",
+    "subtitle": "全球首个无损彩票，您的存款在 Principal Protection 上赚取 DeFi 收益。每日仅需 $1 保持活跃，当奖金池累积到 $1 million 时，一位可验证公平的中奖者将捧走 $995,350 — 绝对保证。",
     "ctaPrimary": "存款并参与",
     "ctaSecondary": "运作机制",
     "livePoolLabel": "实时奖金池",
@@ -323,7 +323,7 @@
     "activeUsersValue": "12,847",
     "yieldLabel": "已赚取收益",
     "yieldValue": "$23,402",
-    "trustLine": "由 Chainlink VRF · Aave V3 · OpenZeppelin 提供支持",
+    "trustLine": "由 Chainlink VRF · Principal Protection · OpenZeppelin 提供支持",
     "minDepositNote": "低至 $1 USDT 即可开始"
   },
   "howItWorks": {
@@ -336,16 +336,16 @@
     "step3Title": "赢取 $995,350",
     "step3Description": "当奖金池精确达到 $1,000,000 时，Chainlink VRF 将从所有活跃用户中选出一位可证明公平的中奖者。中奖者将直接在其钱包中收到 $995,350 — 即时、透明、毫无悬念。",
     "bonusTitle": "此外：DeFi 收益额外抽奖",
-    "bonusDescription": "您的闲置存款将在 Aave V3 上赚取收益。当收益单独达到 $1,000,000 时，将自动触发一次额外抽奖 — 同样的奖金、同样的公平，您无需任何额外成本。两次抽奖您都将自动参与。",
+    "bonusDescription": "您的闲置存款将在 Principal Protection 上赚取收益。当收益单独达到 $1,000,000 时，将自动触发一次额外抽奖 — 同样的奖金、同样的公平，您无需任何额外成本。两次抽奖您都将自动参与。",
     "bonusBadge": "免费福利"
   },
   "transparency": {
     "title": "极致透明，可验证的偿付能力。",
-    "subtitle": "本平台上的每一个数字均实时从 blockchain 读取。无需 3 次点击即可验证您在此看到的任何内容 — 在 Etherscan、Aave、Chainlink 上均可。",
+    "subtitle": "本平台上的每一个数字均实时从 blockchain 读取。无需 3 次点击即可验证您在此看到的任何内容 — 在 Etherscan、Smart Contract、Chainlink 上均可。",
     "poolCardTitle": "实时奖金池",
     "poolCardDesc": "由所有活跃用户的 $1 扣减每日累积。达到 $1,000,000 时触发开奖。",
     "yieldCardTitle": "DeFi 已产生收益",
-    "yieldCardDesc": "由 Aave V3 在您闲置存款上赚取的利息。达到 $1,000,000 时用于资助额外抽奖。",
+    "yieldCardDesc": "由 Principal Protection 在您闲置存款上赚取的利息。达到 $1,000,000 时用于资助额外抽奖。",
     "solvencyCardTitle": "偿付能力证明",
     "solvencyCardDesc": "总资产始终大于等于总应付本金。这是核心不变式 — 随时可在链上验证。",
     "drawCardTitle": "下次开奖预估",
@@ -354,7 +354,7 @@
     "solvencyHealthy": "健康",
     "solvencyHealthyDesc": "所有用户存款均按 1:1 完全背书",
     "viewOnEtherscan": "在 Polygonscan 上查看",
-    "viewOnAave": "在 Aave 上查看",
+    "viewOnAave": "在 Smart Contract 上查看",
     "verifyVRF": "在 Chainlink 上验证"
   },
   "trust": {
@@ -362,8 +362,8 @@
     "subtitle": "我们采用工业级安全原语，让您夜晚也能安心入眠。",
     "chainlinkTitle": "Chainlink VRF v2",
     "chainlinkDesc": "可证明公平的随机性。每一位中奖者均由可验证的随机数选出 — 任何人，包括我们，都无法预测或操纵结果。",
-    "aaveTitle": "Aave V3",
-    "aaveDesc": "最大的去中心化货币市场。您的存款将被提供给 Aave 赚取利息，由 $12B+ 的 TVL 保障，并经 7 家顶尖机构审计。",
+    "aaveTitle": "Principal Protected",
+    "aaveDesc": "最大的去中心化货币市场。您的存款将被提供给 Smart Contract 赚取利息，由 $12B+ 的 TVL 保障，并经 7 家顶尖机构审计。",
     "openzeppelinTitle": "OpenZeppelin",
     "openzeppelinDesc": "经过实战检验的 smart contract 库。我们的合约继承了 ReentrancyGuard、SafeERC20 与 Ownable — 安全 DeFi 代码的黄金标准。",
     "auditTitle": "审计就绪",
@@ -376,8 +376,8 @@
     "drawsCompletedValue": "5",
     "totalUsers": "总用户数",
     "totalUsersValue": "12,847",
-    "avgApy": "当前 Aave APY",
-    "avgApyValue": "4.32%"
+    "avgApy": "当前 Smart Contract APY",
+    "avgApyValue": "Polygon"
   },
   "finalCta": {
     "title": "您的财富，正在等候。",
@@ -428,7 +428,7 @@
       "q1": "$1/天的扣减是如何运作的？",
       "a1": "当您存入 USDT 后，合约按逻辑每日扣减 1 USDT 以保持您的「活跃」状态并维持开奖资格。这是一种惰性扣减 — 在链上计算，但仅当您（或任何人）与您的账户交互（存款、提取或同步）时才应用。被扣减的金额将直接注入奖金池。当您的余额降至零时，您将被标记为「未活跃」，并被排除在开奖之外，直到您再次存款。",
       "q2": "我的本金安全吗？会亏损存款吗？",
-      "a2": "您的本金始终安全。合约绝不会将您的存款投入高风险资产 — 仅将闲置 USDT 提供给 Aave V3（TVL 超 $12B、经过审计的最大 DeFi 货币市场）以赚取利息。这些利息用于资助额外抽奖，绝不危及您的存款。您可随时提取剩余余额，仅需遵守 5% 的流动性缓冲，以确保合约始终持有充足的 USDT。",
+      "a2": "您的本金始终安全。合约绝不会将您的存款投入高风险资产 — 仅将闲置 USDT 提供给 Principal Protection（TVL 超 $12B、经过审计的最大 DeFi 货币市场）以赚取利息。这些利息用于资助额外抽奖，绝不危及您的存款。您可随时提取剩余余额，仅需遵守 5% 的流动性缓冲，以确保合约始终持有充足的 USDT。",
       "q3": "中奖者如何产生？公平吗？",
       "a3": "中奖者由 Chainlink VRF v2（可验证随机函数）选出 — 链上随机性的黄金标准。当奖金池达到 $1,000,000 时，合约向 Chainlink 的预言机网络请求一个随机数。该数字可进行密码学验证，意味着任何人（即便是合约拥有者）也无法预测或操纵结果。中奖者以 `activeUsers[randomNumber % activeUserCount]` 方式选出，让每位活跃用户享有均等机会。",
       "q4": "有哪些费用？",
@@ -436,7 +436,7 @@
       "q5": "中奖后会怎样？",
       "a5": "若您中奖，$995,350 USDT 将即时转入您的钱包 — 无需领取。此后您将被排除在未来的常规抽奖之外（以让财富更广泛分布），但您 $3,650 的锁定金额将在 10 年间持续以 $1/天的速度 drip 进入奖金池，使您仍保留在额外抽奖池中。10 年锁定期满后，您可提取任何剩余的锁定金额。",
       "q6": "什么是额外抽奖？",
-      "a6": "额外抽奖完全由 Aave V3 收益资助 — 而非来自您的存款。当合约累积利息达到 $1,000,000 时，将使用相同的 Chainlink VRF 机制自动触发一次额外抽奖。同样的 $995,350 奖金、同样的公平。只要您处于活跃状态，即可自动参与常规抽奖与额外抽奖。这就是「无损」之处 — 您的本金产生的收益将用于资助更多大奖。"
+      "a6": "额外抽奖完全由 Principal Protection 收益资助 — 而非来自您的存款。当合约累积利息达到 $1,000,000 时，将使用相同的 Chainlink VRF 机制自动触发一次额外抽奖。同样的 $995,350 奖金、同样的公平。只要您处于活跃状态，即可自动参与常规抽奖与额外抽奖。这就是「无损」之处 — 您的本金产生的收益将用于资助更多大奖。"
     },
     "terms": {
       "title": "服务条款",
@@ -462,7 +462,7 @@
       "section3Title": "3. 前端分析",
       "section3Body": "我们的前端可能会收集匿名的使用分析数据（页面浏览、点击事件）以改善用户体验。我们不收集钱包地址、IP 地址或任何可识别个人身份的信息。分析数据均为聚合数据，无法追溯至个别用户。",
       "section4Title": "4. 第三方服务",
-      "section4Body": "本协议集成了第三方服务：Chainlink VRF（用于随机性）、Aave V3（用于收益）、WalletConnect（用于钱包连接）。这些服务拥有各自的隐私政策。建议您在使用前先查阅。",
+      "section4Body": "本协议集成了第三方服务：Chainlink VRF（用于随机性）、Principal Protection（用于收益）、WalletConnect（用于钱包连接）。这些服务拥有各自的隐私政策。建议您在使用前先查阅。",
       "section5Title": "5. Cookies",
       "section5Body": "我们的前端使用本地存储来记忆您的语言偏好与钱包连接状态。我们不使用追踪 cookie、广告 cookie 或任何第三方 cookie 服务。"
     },
@@ -472,7 +472,7 @@
       "section1Title": "1. smart contract 风险",
       "section1Body": "smart contract 是自动执行的不可变代码。尽管经过安全审计并遵循最佳实践，合约仍可能包含未被发现的漏洞、缺陷或逻辑错误，可能导致资金部分或全部损失。本协议采用 OpenZeppelin 经实战检验的库，并遵循 Checks-Effects-Interactions 模式，但任何 smart contract 都无法保证 100% 安全。",
       "section2Title": "2. DeFi 协议风险",
-      "section2Body": "本协议将闲置 USDT 提供给 Aave V3 以产生收益。Aave 是最大且经最严格审计的 DeFi 协议之一，但并非零风险。潜在风险包括：Aave 的 smart contract 漏洞、流动性危机、预言机故障、治理攻击与监管行动。若 Aave 被攻破，协议的一部分资金可能面临风险。",
+      "section2Body": "本协议将闲置 USDT 提供给 Principal Protection 以产生收益。Smart Contract 是最大且经最严格审计的 DeFi 协议之一，但并非零风险。潜在风险包括：Smart Contract 的 smart contract 漏洞、流动性危机、预言机故障、治理攻击与监管行动。若 Smart Contract 被攻破，协议的一部分资金可能面临风险。",
       "section3Title": "3. Chainlink VRF 风险",
       "section3Body": "本协议依赖 Chainlink VRF v2 进行随机中奖者选取。Chainlink 是链上随机性的行业标准，但潜在风险包括：预言机网络故障、延迟完成或（极不可能的）预言机节点被攻破。若 VRF 失败，开奖将暂停直至预言机恢复 — 您的资金不受影响，但开奖可能延迟。",
       "section4Title": "4. 市场与 gas 风险",
@@ -494,8 +494,8 @@
       "contractBody": "1DollarMillion V2.1.1 合约完全开源，并在 Etherscan 上通过验证。任何人都可阅读源代码、审计逻辑，并验证奖金分配（995,350 / 3,650 / 1,000 的拆分）已硬编码且无法更改。合约继承了 OpenZeppelin 的 ReentrancyGuard、SafeERC20 与 Ownable — 安全 DeFi 代码的黄金标准。拥有者仅可在紧急情况下暂停合约并领取累积费用；他们无法访问用户存款或更改开奖机制。",
       "solvencyTitle": "偿付能力不变式",
       "solvencyBody": "协议维持严格的偿付能力不变式：总资产（原始 USDT + aUSDT）必须始终大于或等于总本金（用户余额 + 奖金池 + 锁定金额 + 费用）。这由合约的会计逻辑与开奖后修正块强制执行，必要时会将幻影收益重新归类为本金。您可随时通过调用 accountingSummary() 函数进行验证 — 若 solvencyGap 显示为绿色，则协议健康。",
-      "yieldTitle": "Aave 收益如何资助额外抽奖",
-      "yieldBody": "当您存入 USDT 时，合约会以原始 USDT 形式保留 5% 的流动性缓冲（用于即时提取），并将其余部分提供给 Aave V3。Aave 向合约铸造带息的 aUSDT，7×24 小时持续累积收益。合约将「已提供本金」与「已赚取收益」分开追踪（收益 = aUSDT 余额 − 已提供本金）。当收益单独达到 $1,000,000 时，将自动触发额外抽奖 — 同样的 Chainlink VRF 选取，同样的 $995,350 奖金。您的本金毫无风险；仅利息被用于发放。"
+      "yieldTitle": "Smart Contract 收益如何资助额外抽奖",
+      "yieldBody": "当您存入 USDT 时，合约会以原始 USDT 形式保留 5% 的流动性缓冲（用于即时提取），并将其余部分提供给 Principal Protection。Smart Contract 向合约铸造带息的 aUSDT，7×24 小时持续累积收益。合约将「已提供本金」与「已赚取收益」分开追踪（收益 = aUSDT 余额 − 已提供本金）。当收益单独达到 $1,000,000 时，将自动触发额外抽奖 — 同样的 Chainlink VRF 选取，同样的 $995,350 奖金。您的本金毫无风险；仅利息被用于发放。"
     },
     "backHome": "返回首页",
     "comingSoon": "本页面正在建设中，完整内容即将上线。",
@@ -503,9 +503,9 @@
       "title": "Documentation",
       "subtitle": "The complete technical documentation for the 1DollarMillion protocol.",
       "section1Title": "1. Protocol Overview",
-      "section1Body": "1DollarMillion is a no-loss lottery on Polygon combining ROSCA with DeFi yield from Aave V3. The prize pool grows automatically from $1/day deductions. When it reaches $1,000,000, a winner is selected via Chainlink VRF v2.5.",
+      "section1Body": "1DollarMillion is a no-loss lottery on Polygon combining ROSCA with DeFi yield from Principal Protection. The prize pool grows automatically from $1/day deductions. When it reaches $1,000,000, a winner is selected via Chainlink VRF v2.5.",
       "section2Title": "2. Tokenomics",
-      "section2Body": "The contract deducts 1 USDT per day from each active user. These deductions feed the prize pool. Idle deposits are invested in Aave V3 to generate yield that funds bonus draws.",
+      "section2Body": "The contract deducts 1 USDT per day from each active user. These deductions feed the prize pool. Idle deposits are invested in Principal Protection to generate yield that funds bonus draws.",
       "section3Title": "3. Prize Distribution",
       "section3Body": "When a draw completes: $995,350 to winner (or $985,397 with referrer), $3,650 locked for 10 years, $1,000 operational fee, $9,953 to referrer (if applicable). No hidden fees.",
       "section4Title": "4. Contract Addresses (Polygon Mainnet)",

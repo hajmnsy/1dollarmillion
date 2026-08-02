@@ -6,12 +6,12 @@ import { Web3ModalProvider } from "@/providers/Web3ModalProvider";
 export const metadata: Metadata = {
   title: "1DollarMillion — No-Loss Lottery Powered by DeFi",
   description:
-    "Deposit USDT. Win $1,000,000. Never lose your principal. The world's first hybrid ROSCA + No-Loss Lottery powered by Aave V3 yield and Chainlink VRF.",
+    "Deposit USDT. Win $1,000,000. Never lose your principal. The world's first hybrid ROSCA + No-Loss Lottery with principal protection and Chainlink VRF.",
   keywords: [
     "DeFi",
     "Lottery",
     "ROSCA",
-    "Aave",
+    
     "Chainlink",
     "USDT",
     "No-Loss Lottery",

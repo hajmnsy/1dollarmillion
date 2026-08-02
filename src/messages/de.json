@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "1DollarMillion — USDT einzahlen. $1,000,000 gewinnen. Verliere dein Kapital nie.",
-    "description": "Die weltweit erste verlustfreie Lotterie, angetrieben durch Aave V3 Erträge. Zahle USDT ein, bleibe für nur $1/Tag aktiv und gewinne lebensverändernde Preise. Dein Kapital ist immer sicher."
+    "description": "Die weltweit erste verlustfreie Lotterie, angetrieben durch Principal Protection Erträge. Zahle USDT ein, bleibe für nur $1/Tag aktiv und gewinne lebensverändernde Preise. Dein Kapital ist immer sicher."
   },
   "dashboard": {
     "title": "Dein Dashboard",
@@ -51,7 +51,7 @@
     },
     "yield": {
       "title": "DeFi-Yield-Bonus-Tracker",
-      "subtitle": "Aave V3 Zinsen aus ruhenden Einzahlungen — finanziert Bonus-Ziehungen.",
+      "subtitle": "Principal Protection Zinsen aus ruhenden Einzahlungen — finanziert Bonus-Ziehungen.",
       "currentLabel": "Erwirtschafteter Yield",
       "targetLabel": "Bonus-Ziehungsziel",
       "apyLabel": "Aktueller APY",
@@ -59,7 +59,7 @@
       "estimateYears": "in ~{years} Jahren",
       "estimateReady": "BEREIT FÜR ZIEHUNG",
       "yieldNote": "Yield wird rund um die Uhr angesammelt. Wenn er $1M erreicht, wird automatisch eine Bonus-Ziehung ausgelöst.",
-      "viewOnAave": "Auf Aave ansehen"
+      "viewOnAave": "Auf Smart Contract ansehen"
     },
     "solvency": {
       "title": "Solvenz-Prüfung",
@@ -309,11 +309,11 @@
     "switchNetwork": "Zu Ethereum wechseln"
   },
   "hero": {
-    "badge": "Angetrieben durch Chainlink VRF + Aave V3",
+    "badge": "Angetrieben durch Chainlink VRF + Principal Protection",
     "titleLine1": "USDT einzahlen.",
     "titleLine2": "$1,000,000 gewinnen.",
     "titleLine3": "Verliere dein Kapital nie.",
-    "subtitle": "Die weltweit erste verlustfreie Lotterie, bei der deine Einzahlungen DeFi-Yield auf Aave V3 erwirtschaften. Bleibe für nur $1 pro Tag aktiv, und wenn der Pool $1 Million erreicht, nimmt ein nachweislich fairer Gewinner $995,350 mit nach Hause — garantiert.",
+    "subtitle": "Die weltweit erste verlustfreie Lotterie, bei der deine Einzahlungen DeFi-Yield auf Principal Protection erwirtschaften. Bleibe für nur $1 pro Tag aktiv, und wenn der Pool $1 Million erreicht, nimmt ein nachweislich fairer Gewinner $995,350 mit nach Hause — garantiert.",
     "ctaPrimary": "Einzahlen & teilnehmen",
     "ctaSecondary": "So funktioniert's",
     "livePoolLabel": "Live-Pool",
@@ -323,7 +323,7 @@
     "activeUsersValue": "12,847",
     "yieldLabel": "Erwirtschafteter Yield",
     "yieldValue": "$23,402",
-    "trustLine": "Gesichert durch Chainlink VRF · Aave V3 · OpenZeppelin",
+    "trustLine": "Gesichert durch Chainlink VRF · Principal Protection · OpenZeppelin",
     "minDepositNote": "Starte mit nur $1 USDT"
   },
   "howItWorks": {
@@ -336,16 +336,16 @@
     "step3Title": "$995,350 gewinnen",
     "step3Description": "Wenn der Pool exakt $1,000,000 erreicht, wählt Chainlink VRF einen nachweislich zufälligen Gewinner aus allen aktiven Nutzern. Der Gewinner erhält $995,350 direkt auf seine Wallet — sofort, transparent, ohne Wenn und Aber.",
     "bonusTitle": "Plus: DeFi-Yield-Bonus-Ziehungen",
-    "bonusDescription": "Deine ruhenden Einzahlungen erwirtschaften Yield auf Aave V3. Wenn dieser Yield allein $1,000,000 erreicht, wird eine zusätzliche Bonus-Ziehung ausgelöst — gleicher Preis, gleiche Fairness, keine zusätzlichen Kosten für dich. Du nimmst automatisch an beiden Ziehungen teil.",
+    "bonusDescription": "Deine ruhenden Einzahlungen erwirtschaften Yield auf Principal Protection. Wenn dieser Yield allein $1,000,000 erreicht, wird eine zusätzliche Bonus-Ziehung ausgelöst — gleicher Preis, gleiche Fairness, keine zusätzlichen Kosten für dich. Du nimmst automatisch an beiden Ziehungen teil.",
     "bonusBadge": "Gratis-Geld"
   },
   "transparency": {
     "title": "Radikale Transparenz. Verifizierbare Solvenz.",
-    "subtitle": "Jede Zahl auf dieser Plattform wird live aus der Blockchain gelesen. Verifiziere alles, was du hier siehst, in unter 3 Klicks — auf Etherscan, auf Aave, auf Chainlink.",
+    "subtitle": "Jede Zahl auf dieser Plattform wird live aus der Blockchain gelesen. Verifiziere alles, was du hier siehst, in unter 3 Klicks — auf Etherscan, auf Smart Contract, auf Chainlink.",
     "poolCardTitle": "Live-Preispool",
     "poolCardDesc": "Wächst täglich durch $1-Abzüge aller aktiven Nutzer. Löst bei $1,000,000 eine Ziehung aus.",
     "yieldCardTitle": "Generierter DeFi-Yield",
-    "yieldCardDesc": "Zinsen aus Aave V3 auf deine ruhenden Einzahlungen. Finanziert Bonus-Ziehungen, wenn er $1,000,000 erreicht.",
+    "yieldCardDesc": "Zinsen aus Principal Protection auf deine ruhenden Einzahlungen. Finanziert Bonus-Ziehungen, wenn er $1,000,000 erreicht.",
     "solvencyCardTitle": "Solvenz-Nachweis",
     "solvencyCardDesc": "Gesamtvermögen übersteigt immer das gesamte geschuldete Kapital. Dies ist die Kerninvariante — jederzeit on-chain verifizierbar.",
     "drawCardTitle": "Nächste Ziehungsschätzung",
@@ -354,7 +354,7 @@
     "solvencyHealthy": "SOLVENT",
     "solvencyHealthyDesc": "Alle Nutzereinzahlungen vollständig 1:1 gedeckt",
     "viewOnEtherscan": "Auf Polygonscan ansehen",
-    "viewOnAave": "Auf Aave ansehen",
+    "viewOnAave": "Auf Smart Contract ansehen",
     "verifyVRF": "Auf Chainlink verifizieren"
   },
   "trust": {
@@ -362,8 +362,8 @@
     "subtitle": "Wir verwenden industrietaugliche Sicherheitsprimitive, damit du nachts ruhig schlafen kannst.",
     "chainlinkTitle": "Chainlink VRF v2",
     "chainlinkDesc": "Nachweisbar faire Zufälligkeit. Jeder Gewinner wird durch eine verifizierbare Zufallszahl ausgewählt — niemand, nicht einmal wir, kann das Ergebnis vorhersagen oder manipulieren.",
-    "aaveTitle": "Aave V3",
-    "aaveDesc": "Der größte dezentrale Geldmarkt. Deine Einzahlungen werden Aave zur Zinserwirtschaftung zur Verfügung gestellt, gesichert durch über $12B TVL und von 7 führenden Firmen geprüft.",
+    "aaveTitle": "Principal Protected",
+    "aaveDesc": "Der größte dezentrale Geldmarkt. Deine Einzahlungen werden Smart Contract zur Zinserwirtschaftung zur Verfügung gestellt, gesichert durch über $12B TVL und von 7 führenden Firmen geprüft.",
     "openzeppelinTitle": "OpenZeppelin",
     "openzeppelinDesc": "Erprobte Smart-Contract-Bibliotheken. Unser Vertrag erbt ReentrancyGuard, SafeERC20 und Ownable — der Goldstandard für sicheren DeFi-Code.",
     "auditTitle": "Audit-bereit",
@@ -376,8 +376,8 @@
     "drawsCompletedValue": "5",
     "totalUsers": "Nutzer gesamt",
     "totalUsersValue": "12,847",
-    "avgApy": "Aktueller Aave APY",
-    "avgApyValue": "4.32%"
+    "avgApy": "Aktueller Smart Contract APY",
+    "avgApyValue": "Polygon"
   },
   "finalCta": {
     "title": "Dein Geld wartet.",
@@ -431,7 +431,7 @@
       "q1": "Wie funktioniert der $1/Tag-Abzug?",
       "a1": "Wenn du USDT einzahlst, zieht der Vertrag logisch 1 USDT pro Tag ab, um dich 'Aktiv' und für die Ziehung teilnahmeberechtigt zu halten. Dies ist ein verzögerter Abzug — er wird on-chain berechnet, aber erst angewendet, wenn du (oder jemand anderes) mit deinem Konto interagierst (Einzahlung, Abhebung oder Synchronisierung). Der abgezogene Betrag fließt direkt in den Preispool. Wenn dein Saldo null erreicht, wirst du als Inaktiv markiert und von Ziehungen ausgeschlossen, bis du erneut einzahlst.",
       "q2": "Ist mein Kapital sicher? Kann ich meine Einzahlung verlieren?",
-      "a2": "Dein Kapital ist immer sicher. Der Vertrag investiert deine Einzahlung nie in riskante Assets — er stellt nur ruhende USDT bei Aave V3 zur Verfügung (dem größten geprüften DeFi-Geldmarkt mit über $12B TVL), um Zinsen zu erwirtschaften. Diese Zinsen finanzieren Bonus-Ziehungen; sie gefährden nicht deine Einzahlung. Du kannst deinen verbleibenden Saldo jederzeit abheben, vorbehaltlich eines 5% Liquiditätspuffers, der sicherstellt, dass der Vertrag immer ausreichend USDT vorhält.",
+      "a2": "Dein Kapital ist immer sicher. Der Vertrag investiert deine Einzahlung nie in riskante Assets — er stellt nur ruhende USDT bei Principal Protection zur Verfügung (dem größten geprüften DeFi-Geldmarkt mit über $12B TVL), um Zinsen zu erwirtschaften. Diese Zinsen finanzieren Bonus-Ziehungen; sie gefährden nicht deine Einzahlung. Du kannst deinen verbleibenden Saldo jederzeit abheben, vorbehaltlich eines 5% Liquiditätspuffers, der sicherstellt, dass der Vertrag immer ausreichend USDT vorhält.",
       "q3": "Wie wird der Gewinner ausgewählt? Ist es fair?",
       "a3": "Der Gewinner wird mit Chainlink VRF v2 (Verifiable Random Function) ausgewählt — dem Goldstandard für on-chain Zufälligkeit. Wenn der Pool $1,000,000 erreicht, fordert der Vertrag eine Zufallszahl aus Chainlinks Oracle-Netzwerk an. Diese Zahl ist kryptografisch verifizierbar, was bedeutet, dass niemand (auch nicht der Vertragseigentümer) das Ergebnis vorhersagen oder manipulieren kann. Der Gewinner wird als `activeUsers[randomNumber % activeUserCount]` ausgewählt, was jedem aktiven Nutzer eine gleiche Chance gibt.",
       "q4": "Welche Gebühren fallen an?",
@@ -439,7 +439,7 @@
       "q5": "Was passiert, wenn ich gewinne?",
       "a5": "Wenn du gewinnst, werden $995,350 USDT sofort direkt an deine Wallet überwiesen — kein Claim erforderlich. Du wirst dann von zukünftigen regulären Ziehungen ausgeschlossen (um den Reichtum zu streuen), aber deine $3,650-Sperre fließt weiterhin $1/Tag für 10 Jahre in den Pool und hält dich im Bonus-Ziehungspool. Du kannst jeden verbleibenden gesperrten Betrag nach Ablauf der 10-Jahres-Sperre abheben.",
       "q6": "Was sind Bonus-Ziehungen?",
-      "a6": "Bonus-Ziehungen werden vollständig durch Aave V3 Yield finanziert — nicht aus deinen Einzahlungen. Wenn die angesammelten Zinsen des Vertrags $1,000,000 erreichen, wird automatisch eine Bonus-Ziehung mit demselben Chainlink-VRF-Mechanismus ausgelöst. Gleicher $995,350-Preis, gleiche Fairness. Du nimmst automatisch an sowohl regulären als auch Bonus-Ziehungen teil, solange du Aktiv bist. Das ist der 'verlustfreie' Teil — dein Kapital erwirtschaftet Yield, der zusätzliche Preise finanziert."
+      "a6": "Bonus-Ziehungen werden vollständig durch Principal Protection Yield finanziert — nicht aus deinen Einzahlungen. Wenn die angesammelten Zinsen des Vertrags $1,000,000 erreichen, wird automatisch eine Bonus-Ziehung mit demselben Chainlink-VRF-Mechanismus ausgelöst. Gleicher $995,350-Preis, gleiche Fairness. Du nimmst automatisch an sowohl regulären als auch Bonus-Ziehungen teil, solange du Aktiv bist. Das ist der 'verlustfreie' Teil — dein Kapital erwirtschaftet Yield, der zusätzliche Preise finanziert."
     },
     "terms": {
       "title": "Nutzungsbedingungen",
@@ -465,7 +465,7 @@
       "section3Title": "3. Frontend-Analytik",
       "section3Body": "Unser Frontend kann anonyme Nutzungsanalytik (Seitenaufrufe, Klick-Ereignisse) sammeln, um die Nutzererfahrung zu verbessern. Wir sammeln keine Wallet-Adressen, IP-Adressen oder personenbezogene Daten. Analytik wird aggregiert und kann nicht auf einzelne Nutzer zurückverfolgt werden.",
       "section4Title": "4. Drittanbieter-Dienste",
-      "section4Body": "Das Protokoll integriert Drittanbieter-Dienste: Chainlink VRF (für Zufälligkeit), Aave V3 (für Yield) und WalletConnect (für Wallet-Verbindungen). Diese Dienste haben ihre eigenen Datenschutzrichtlinien. Wir empfehlen, diese vor der Nutzung zu prüfen.",
+      "section4Body": "Das Protokoll integriert Drittanbieter-Dienste: Chainlink VRF (für Zufälligkeit), Principal Protection (für Yield) und WalletConnect (für Wallet-Verbindungen). Diese Dienste haben ihre eigenen Datenschutzrichtlinien. Wir empfehlen, diese vor der Nutzung zu prüfen.",
       "section5Title": "5. Cookies",
       "section5Body": "Unser Frontend verwendet lokalen Speicher, um deine Spracheinstellung und deinen Wallet-Verbindungsstatus zu speichern. Wir verwenden keine Tracking-Cookies, Werbe-Cookies oder Drittanbieter-Cookie-Dienste."
     },
@@ -475,7 +475,7 @@
       "section1Title": "1. Smart-Contract-Risiko",
       "section1Body": "Smart Contracts sind unveränderlicher Code, der automatisch ausgeführt wird. Trotz Sicherheits-Audits und Best Practices können Verträge unentdeckte Fehler, Schwachstellen oder Logikfehler enthalten, die zu teilweisem oder vollständigem Verlust von Mitteln führen können. Das Protokoll verwendet die erprobten OpenZeppelin-Bibliotheken und folgt dem Checks-Effects-Interactions-Muster, aber kein Smart Contract kann zu 100% als sicher garantiert werden.",
       "section2Title": "2. DeFi-Protokoll-Risiko",
-      "section2Body": "Das Protokoll stellt ruhende USDT bei Aave V3 zur Verfügung, um Yield zu erwirtschaften. Aave ist eines der größten und am besten geprüften DeFi-Protokolle, aber nicht risikofrei. Potenzielle Risiken umfassen: Smart-Contract-Schwachstellen in Aave, Liquiditätskrisen, Oracle-Ausfälle, Governance-Angriffe und regulatorische Maßnahmen. Wenn Aave kompromittiert wird, könnten Teile der Protokollmittel gefährdet sein.",
+      "section2Body": "Das Protokoll stellt ruhende USDT bei Principal Protection zur Verfügung, um Yield zu erwirtschaften. Smart Contract ist eines der größten und am besten geprüften DeFi-Protokolle, aber nicht risikofrei. Potenzielle Risiken umfassen: Smart-Contract-Schwachstellen in Smart Contract, Liquiditätskrisen, Oracle-Ausfälle, Governance-Angriffe und regulatorische Maßnahmen. Wenn Smart Contract kompromittiert wird, könnten Teile der Protokollmittel gefährdet sein.",
       "section3Title": "3. Chainlink-VRF-Risiko",
       "section3Body": "Das Protokoll verlässt sich auf Chainlink VRF v2 für die zufällige Gewinnerauswahl. Chainlink ist der Branchenstandard für on-chain Zufälligkeit, aber potenzielle Risiken umfassen: Oracle-Netzwerkausfälle, verzögerte Auslieferungen oder (äußerst unwahrscheinlich) kompromittierte Oracle-Knoten. Wenn VRF ausfällt, wird die Ziehung pausiert, bis sich das Oracle erholt — deine Mittel sind nicht gefährdet, aber die Ziehung kann verzögert werden.",
       "section4Title": "4. Markt- und Gas-Risiken",
@@ -497,8 +497,8 @@
       "contractBody": "Der 1DollarMillion V2.1.1-Vertrag ist vollständig Open-Source und auf Etherscan verifiziert. Jeder kann den Quellcode lesen, die Logik prüfen und verifizieren, dass die Preisverteilung (995,350 / 3,650 / 1,000-Aufteilung) fest codiert ist und nicht geändert werden kann. Der Vertrag erbt OpenZeppelins ReentrancyGuard, SafeERC20 und Ownable — der Goldstandard für sicheren DeFi-Code. Der Eigentümer kann den Vertrag nur in Notfällen pausieren und angesammelte Gebühren beanspruchen; er kann nicht auf Nutzereinzahlungen zugreifen oder den Ziehungsmechanismus ändern.",
       "solvencyTitle": "Die Solvenz-Invariante",
       "solvencyBody": "Das Protokoll hält eine strenge Solvenz-Invariante ein: Gesamtvermögen (rohe USDT + aUSDT) muss immer größer oder gleich dem Gesamtkapital sein (Nutzersalden + Pool + gesperrte Beträge + Gebühren). Dies wird durch die Buchhaltungslogik des Vertrags und einen Post-Draw-Fix-up-Block erzwungen, der Phantom-Yield bei Bedarf als Kapital umklassifiziert. Du kannst dies jederzeit verifizieren, indem du die Funktion accountingSummary() aufrufst — wenn die solvencyGap grün ist, ist das Protokoll gesund.",
-      "yieldTitle": "Wie Aave-Yield Bonus-Ziehungen finanziert",
-      "yieldBody": "Wenn du USDT einzahlst, behält der Vertrag einen 5% Liquiditätspuffer in rohen USDT (für sofortige Abhebungen) und stellt den Rest Aave V3 zur Verfügung. Aave mintet zinstragende aUSDT an den Vertrag, die rund um die Uhr Yield ansammeln. Der Vertrag verfolgt 'zugeführtes Kapital' getrennt von 'erwirtschaftetem Yield' (Yield = aUSDT-Saldo − zugeführtes Kapital). Wenn der Yield allein $1,000,000 erreicht, wird automatisch eine Bonus-Ziehung ausgelöst — gleiche Chainlink-VRF-Auswahl, gleicher $995,350-Preis. Dein Kapital ist nie gefährdet; nur die Zinsen werden ausgezahlt."
+      "yieldTitle": "Wie Smart Contract-Yield Bonus-Ziehungen finanziert",
+      "yieldBody": "Wenn du USDT einzahlst, behält der Vertrag einen 5% Liquiditätspuffer in rohen USDT (für sofortige Abhebungen) und stellt den Rest Principal Protection zur Verfügung. Smart Contract mintet zinstragende aUSDT an den Vertrag, die rund um die Uhr Yield ansammeln. Der Vertrag verfolgt 'zugeführtes Kapital' getrennt von 'erwirtschaftetem Yield' (Yield = aUSDT-Saldo − zugeführtes Kapital). Wenn der Yield allein $1,000,000 erreicht, wird automatisch eine Bonus-Ziehung ausgelöst — gleiche Chainlink-VRF-Auswahl, gleicher $995,350-Preis. Dein Kapital ist nie gefährdet; nur die Zinsen werden ausgezahlt."
     },
     "backHome": "Zurück zur Startseite",
     "comingSoon": "Diese Seite befindet sich im Aufbau. Vollständige Inhalte werden in Kürze hinzugefügt.",
@@ -506,9 +506,9 @@
       "title": "Dokumentation",
       "subtitle": "Die vollständige technische Dokumentation für das 1DollarMillion-Protokoll.",
       "section1Title": "1. Protokollübersicht",
-      "section1Body": "Das 1DollarMillion-Protokoll ist eine verlustfreie Lotterie, die auf dem Ethereum-Netzwerk läuft. Das Protokoll kombiniert eine Rotating Savings and Credit Association (ROSCA) mit DeFi-Yield von Aave V3, um einen Preispool zu schaffen, der automatisch wächst. Wenn der Pool $1,000,000 erreicht, wird ein Gewinner zufällig über Chainlink VRF ausgewählt.",
+      "section1Body": "Das 1DollarMillion-Protokoll ist eine verlustfreie Lotterie, die auf dem Ethereum-Netzwerk läuft. Das Protokoll kombiniert eine Rotating Savings and Credit Association (ROSCA) mit DeFi-Yield von Principal Protection, um einen Preispool zu schaffen, der automatisch wächst. Wenn der Pool $1,000,000 erreicht, wird ein Gewinner zufällig über Chainlink VRF ausgewählt.",
       "section2Title": "2. Tokenomics",
-      "section2Body": "Der Vertrag zieht 1 USDT pro Tag von jedem aktiven Nutzer ab, um ihn für die Ziehung teilnahmeberechtigt zu halten. Diese Abzüge speisen den Preispool. Gleichzeitig werden ruhende Einzahlungen bei Aave V3 investiert, um Yield zu erwirtschaften, der zusätzliche Bonus-Ziehungen finanziert.",
+      "section2Body": "Der Vertrag zieht 1 USDT pro Tag von jedem aktiven Nutzer ab, um ihn für die Ziehung teilnahmeberechtigt zu halten. Diese Abzüge speisen den Preispool. Gleichzeitig werden ruhende Einzahlungen bei Principal Protection investiert, um Yield zu erwirtschaften, der zusätzliche Bonus-Ziehungen finanziert.",
       "section3Title": "3. Preisverteilung",
       "section3Body": "Wenn eine Ziehung abgeschlossen wird, werden die $1,000,000 wie folgt verteilt: $995,350 an den Gewinner, $3,650 für 10 Jahre gesperrt, $1,000 Betriebsgebühr. Keine versteckten Gebühren.",
       "section4Title": "4. Vertragsadressen",

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "1DollarMillion — Deposit USDT. Win $1,000,000. Never Lose Your Principal.",
-    "description": "The world's first no-loss lottery powered by Aave V3 yield. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your principal is always safe."
+    "description": "The world's first no-loss lottery with principal protection. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your principal is always safe."
   },
   "dashboard": {
     "title": "Your Dashboard",
@@ -51,7 +51,7 @@
     },
     "yield": {
       "title": "DeFi Yield Bonus Tracker",
-      "subtitle": "Aave V3 interest earned on idle deposits — funds bonus draws.",
+      "subtitle": "Funds bonus draws when it reaches $1,000,000.",
       "currentLabel": "Yield Generated",
       "targetLabel": "Bonus Draw Target",
       "apyLabel": "Current APY",
@@ -59,7 +59,7 @@
       "estimateYears": "in ~{years} years",
       "estimateReady": "READY TO DRAW",
       "yieldNote": "Yield accrues 24/7. When it reaches $1M, a bonus draw fires automatically.",
-      "viewOnAave": "View on Aave"
+      "viewOnAave": "View on Polygonscan"
     },
     "solvency": {
       "title": "Solvency Check",
@@ -309,11 +309,11 @@
     "switchNetwork": "Switch to Ethereum"
   },
   "hero": {
-    "badge": "Powered by Chainlink VRF + Aave V3",
+    "badge": "Powered by Chainlink VRF",
     "titleLine1": "Deposit USDT.",
     "titleLine2": "Win $1,000,000.",
     "titleLine3": "Never lose your principal.",
-    "subtitle": "The world's first no-loss lottery where your deposits earn DeFi yield on Aave V3. Stay active for just $1 a day, and when the pool hits $1 million, a provably-fair winner takes home $995,350 — guaranteed.",
+    "subtitle": "The world's first no-loss lottery with principal protection. Stay active for just $1 a day, and when the pool hits $1 million, a provably-fair winner takes home $995,350 — guaranteed.",
     "ctaPrimary": "Deposit & Enter",
     "ctaSecondary": "How It Works",
     "livePoolLabel": "Live Pool",
@@ -323,7 +323,7 @@
     "activeUsersValue": "12,847",
     "yieldLabel": "Yield Earned",
     "yieldValue": "$23,402",
-    "trustLine": "Backed by Chainlink VRF · Aave V3 · OpenZeppelin",
+    "trustLine": "Backed by Chainlink VRF · OpenZeppelin",
     "minDepositNote": "Start with as little as $1 USDT"
   },
   "howItWorks": {
@@ -336,16 +336,16 @@
     "step3Title": "Win $995,350",
     "step3Description": "When the pool reaches exactly $1,000,000, Chainlink VRF selects one provably-random winner from all active users. The winner receives $995,350 directly to their wallet — instantly, transparently, no questions asked.",
     "bonusTitle": "Plus: DeFi Yield Bonus Draws",
-    "bonusDescription": "Your idle deposits earn yield on Aave V3. When that yield alone reaches $1,000,000, an additional bonus draw fires — same prize, same fairness, no extra cost to you. You're automatically entered into both draws.",
+    "bonusDescription": "Your $1/day deductions fund bonus draws. When the pool reaches $1,000,000, an additional bonus draw fires — same prize, same fairness, no extra cost to you. You're automatically entered into both draws.",
     "bonusBadge": "Free Money"
   },
   "transparency": {
     "title": "Radical Transparency. Verifiable Solvency.",
-    "subtitle": "Every number on this platform is read live from the blockchain. Verify anything you see here in under 3 clicks — on Etherscan, on Aave, on Chainlink.",
+    "subtitle": "Every number on this platform is read live from the blockchain. Verify anything you see here in under 3 clicks — on Polygonscan, on Chainlink.",
     "poolCardTitle": "Live Prize Pool",
     "poolCardDesc": "Grows daily from $1 deductions across all active users. Triggers a draw at $1,000,000.",
     "yieldCardTitle": "DeFi Yield Generated",
-    "yieldCardDesc": "Interest earned from Aave V3 on your idle deposits. Funds bonus draws when it reaches $1,000,000.",
+    "yieldCardDesc": "Funds bonus draws when it reaches $1,000,000.",
     "solvencyCardTitle": "Solvency Proof",
     "solvencyCardDesc": "Total assets always exceed total principal owed. This is the core invariant — verifiable on-chain at any time.",
     "drawCardTitle": "Next Draw Estimate",
@@ -354,7 +354,7 @@
     "solvencyHealthy": "SOLVENT",
     "solvencyHealthyDesc": "All user deposits fully backed 1:1",
     "viewOnEtherscan": "View on Polygonscan",
-    "viewOnAave": "View on Aave",
+    "viewOnAave": "View on Polygonscan",
     "verifyVRF": "Verify on Chainlink"
   },
   "trust": {
@@ -362,8 +362,8 @@
     "subtitle": "We use industry-grade security primitives so you can sleep at night.",
     "chainlinkTitle": "Chainlink VRF v2",
     "chainlinkDesc": "Provably fair randomness. Every winner is selected by a verifiable random number — no one, not even us, can predict or manipulate the result.",
-    "aaveTitle": "Aave V3",
-    "aaveDesc": "The largest decentralized money market. Your deposits are supplied to Aave to earn interest, secured by $12B+ in TVL and audited by 7 leading firms.",
+    "aaveTitle": "Principal Protected",
+    "aaveDesc": "Your deposits are held securely in the smart contract. No risky investments, no lending. Your principal is 100% protected and always verifiable on-chain.",
     "openzeppelinTitle": "OpenZeppelin",
     "openzeppelinDesc": "Battle-tested smart contract libraries. Our contract inherits ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code.",
     "auditTitle": "Audit Ready",
@@ -376,8 +376,8 @@
     "drawsCompletedValue": "5",
     "totalUsers": "Total Users",
     "totalUsersValue": "12,847",
-    "avgApy": "Current Aave APY",
-    "avgApyValue": "4.32%"
+    "avgApy": "Network",
+    "avgApyValue": "Polygon"
   },
   "finalCta": {
     "title": "Your money is waiting.",
@@ -428,7 +428,7 @@
       "q1": "How does the $1/day deduction work?",
       "a1": "When you deposit USDT, the contract logically deducts 1 USDT per day to keep you 'Active' and eligible for the draw. This is a lazy deduction — it's calculated on-chain but only applied when you (or anyone) interacts with your account (deposit, withdraw, or sync). The deducted amount feeds directly into the prize pool. If your balance reaches zero, you're marked Inactive and excluded from draws until you deposit again.",
       "q2": "Is my principal safe? Can I lose my deposit?",
-      "a2": "Your principal is always safe. The contract never invests your deposit in risky assets — it only supplies idle USDT to Aave V3 (the largest audited DeFi money market with $12B+ TVL) to earn interest. That interest funds bonus draws; it does not risk your deposit. You can withdraw your remaining balance at any time, subject to a 5% liquidity buffer that ensures the contract always has enough USDT on hand.",
+      "a2": "Your principal is always safe. The contract never invests your deposit in risky assets — it only holds USDT securely in the contract (the largest audited DeFi money market with $12B+ TVL) to earn interest. That interest funds bonus draws; it does not risk your deposit. You can withdraw your remaining balance at any time, subject to a 5% liquidity buffer that ensures the contract always has enough USDT on hand.",
       "q3": "How is the winner chosen? Is it fair?",
       "a3": "The winner is selected using Chainlink VRF v2 (Verifiable Random Function) — the gold standard for on-chain randomness. When the pool reaches $1,000,000, the contract requests a random number from Chainlink's oracle network. That number is cryptographically verifiable, meaning no one (not even the contract owner) can predict or manipulate the result. The winner is selected as `activeUsers[randomNumber % activeUserCount]`, giving every active user an equal chance.",
       "q4": "What are the fees?",
@@ -436,7 +436,7 @@
       "q5": "What happens if I win?",
       "a5": "If you win, $995,350 USDT is transferred directly to your wallet instantly — no claim required. You're then excluded from future regular draws (to spread the wealth), but your $3,650 lock continues to drip $1/day into the pool for 10 years, keeping you in the bonus draw pool. You can withdraw any remaining locked amount after the 10-year lock period matures.",
       "q6": "What are Bonus Draws?",
-      "a6": "Bonus Draws are funded entirely by Aave V3 yield — not from your deposits. When the contract's accrued interest reaches $1,000,000, a bonus draw fires automatically using the same Chainlink VRF mechanism. Same $995,350 prize, same fairness. You're automatically entered into both regular and bonus draws as long as you're Active. This is the 'no-loss' part — your principal generates yield that funds additional prizes."
+      "a6": "Bonus Draws are funded entirely by Principal Protection yield — not from your deposits. When the contract's accrued interest reaches $1,000,000, a bonus draw fires automatically using the same Chainlink VRF mechanism. Same $995,350 prize, same fairness. You're automatically entered into both regular and bonus draws as long as you're Active. This is the 'no-loss' part — your principal generates yield that funds additional prizes."
     },
     "terms": {
       "title": "Terms of Service",
@@ -462,7 +462,7 @@
       "section3Title": "3. Frontend Analytics",
       "section3Body": "Our frontend may collect anonymous usage analytics (page views, click events) to improve the user experience. We do not collect wallet addresses, IP addresses, or any personally identifiable information. Analytics are aggregated and cannot be traced back to individual users.",
       "section4Title": "4. Third-Party Services",
-      "section4Body": "The protocol integrates with third-party services: Chainlink VRF (for randomness), Aave V3 (for yield), and WalletConnect (for wallet connections). These services have their own privacy policies. We recommend reviewing them before use.",
+      "section4Body": "The protocol integrates with third-party services: Chainlink VRF (for randomness), smart contract security, and WalletConnect (for wallet connections). These services have their own privacy policies. We recommend reviewing them before use.",
       "section5Title": "5. Cookies",
       "section5Body": "Our frontend uses local storage to remember your language preference and wallet connection state. We do not use tracking cookies, advertising cookies, or third-party cookie services."
     },
@@ -472,7 +472,7 @@
       "section1Title": "1. Smart Contract Risk",
       "section1Body": "Smart contracts are immutable code that executes automatically. Despite security audits and best practices, contracts may contain undiscovered bugs, vulnerabilities, or logic errors that could result in partial or total loss of funds. The protocol uses OpenZeppelin's battle-tested libraries and follows the Checks-Effects-Interactions pattern, but no smart contract can be guaranteed 100% secure.",
       "section2Title": "2. DeFi Protocol Risk",
-      "section2Body": "The protocol supplies idle USDT to Aave V3 to generate yield. Aave is one of the largest and most audited DeFi protocols, but it is not risk-free. Potential risks include: smart contract vulnerabilities in Aave, liquidity crises, oracle failures, governance attacks, and regulatory actions. If Aave is compromised, a portion of the protocol's funds could be at risk.",
+      "section2Body": "The protocol holds USDT securely in the contract to generate yield. The smart contract holds deposits securely. Potential risks include: smart contract vulnerabilities, and regulatory actions. However, your principal is never invested in risky assets.",
       "section3Title": "3. Chainlink VRF Risk",
       "section3Body": "The protocol relies on Chainlink VRF v2 for random winner selection. While Chainlink is the industry standard for on-chain randomness, potential risks include: oracle network failures, delayed fulfillments, or (extremely unlikely) compromised oracle nodes. If VRF fails, the draw is paused until the oracle recovers — your funds are not at risk, but the draw may be delayed.",
       "section4Title": "4. Market and Gas Risks",
@@ -494,8 +494,8 @@
       "contractBody": "The 1DollarMillion V2.1.1 contract is fully open-source and verified on Etherscan. Anyone can read the source code, audit the logic, and verify that the prize distribution (995,350 / 3,650 / 1,000 split) is hardcoded and cannot be changed. The contract inherits OpenZeppelin's ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code. The owner can only pause the contract in emergencies and claim accumulated fees; they cannot access user deposits or alter the draw mechanism.",
       "solvencyTitle": "The Solvency Invariant",
       "solvencyBody": "The protocol maintains a strict solvency invariant: total assets (raw USDT + aUSDT) must always be greater than or equal to total principal (user balances + pool + locked amounts + fees). This is enforced by the contract's accounting logic and a post-draw fix-up block that reclassifies phantom yield as principal if needed. You can verify this at any time by calling the accountingSummary() function — if the solvencyGap is green, the protocol is healthy.",
-      "yieldTitle": "How Aave Yield Funds Bonus Draws",
-      "yieldBody": "When you deposit USDT, the contract keeps a 5% liquidity buffer in raw USDT (for instant withdrawals) and supplies the rest to Aave V3. Aave mints interest-bearing aUSDT to the contract, which accrues yield 24/7. The contract tracks 'principal supplied' separately from 'yield earned' (yield = aUSDT balance − principal supplied). When yield alone reaches $1,000,000, a bonus draw fires automatically — same Chainlink VRF selection, same $995,350 prize. Your principal is never at risk; only the interest is paid out."
+      "yieldTitle": "How Bonus Draws Work",
+      "yieldBody": "Your $1/day deductions fund the prize pool. When the pool reaches $1,000,000, a bonus draw fires automatically — same Chainlink VRF selection, same $995,350 prize. Your principal is never at risk."
     },
     "backHome": "Back to Home",
     "comingSoon": "This page is under construction. Full content will be added soon.",
@@ -503,9 +503,9 @@
       "title": "Documentation",
       "subtitle": "The complete technical documentation for the 1DollarMillion protocol.",
       "section1Title": "1. Protocol Overview",
-      "section1Body": "The 1DollarMillion protocol is a no-loss lottery running on the Ethereum network. The protocol combines a Rotating Savings and Credit Association (ROSCA) with DeFi yield from Aave V3 to create a prize pool that grows automatically. When the pool reaches $1,000,000, a winner is selected randomly via Chainlink VRF.",
+      "section1Body": "The 1DollarMillion protocol is a no-loss lottery running on the Ethereum network. The protocol combines a Rotating Savings and Credit Association (ROSCA) to create a prize pool that grows automatically. When the pool reaches $1,000,000, a winner is selected randomly via Chainlink VRF.",
       "section2Title": "2. Tokenomics",
-      "section2Body": "The contract deducts 1 USDT per day from each active user to keep them eligible for the draw. These deductions feed the prize pool. At the same time, idle deposits are invested in Aave V3 to generate yield that funds additional bonus draws.",
+      "section2Body": "The contract deducts 1 USDT per day from each active user to keep them eligible for the draw. These deductions feed the prize pool. At the same time, idle deposits are invested in Principal Protection to generate yield that funds additional bonus draws.",
       "section3Title": "3. Prize Distribution",
       "section3Body": "When a draw completes, the $1,000,000 is distributed as follows: $995,350 to the winner, $3,650 locked for 10 years, $1,000 operational fee. No hidden fees.",
       "section4Title": "4. Contract Addresses",

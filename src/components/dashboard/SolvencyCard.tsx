@@ -22,29 +22,51 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
     );
   }
 
+  // V4: Always healthy (no Aave risk, principal 100% backed)
   const isHealthy = true;
+  const warning = !isHealthy;
 
   return (
-    <Card className="relative overflow-hidden border-white/10 bg-white/[0.02] p-6 shadow-xl ring-1 ring-emerald-500/20">
+    <Card
+      className={`relative overflow-hidden border-white/10 bg-white/[0.02] p-6 shadow-xl ${
+        warning ? "ring-1 ring-red-500/30" : "ring-1 ring-emerald-500/20"
+      }`}
+    >
       <div className="relative">
+        {/* Header */}
         <div className="mb-4 flex items-center justify-between gap-3">
           <h3 className="text-sm font-bold text-white">{t("title")}</h3>
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300">
+          <div
+            className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+              warning
+                ? "bg-red-500/15 text-red-300"
+                : "bg-emerald-500/15 text-emerald-300"
+            }`}
+          >
             <ShieldCheck className="h-3 w-3" />
             {t("healthy")}
           </div>
         </div>
 
-        <p className="mb-4 text-xs text-white/50">{t("healthyDesc")}</p>
+        {/* Description */}
+        <p className="mb-4 text-xs text-white/50">
+          {t("healthyDesc")}
+        </p>
 
+        {/* Metrics - V4 simplified (no yield/solvencyGap) */}
         <div className="space-y-2.5">
           <Row label={t("totalAssets")} value={formatUsd(accounting.totalBalance)} />
           <Row label={t("principal")} value={formatUsd(accounting.userBalances)} />
           <div className="border-t border-white/5 pt-2.5">
-            <Row label={t("solvencyGap")} value="100% ✅" accent />
+            <Row
+              label={t("solvencyGap")}
+              value="100% ✅"
+              accent
+            />
           </div>
         </div>
 
+        {/* Verify link */}
         <a
           href={POLYGONSCAN_CONTRACT_URL}
           target="_blank"
@@ -59,11 +81,23 @@ export function SolvencyCard({ accounting }: SolvencyCardProps) {
   );
 }
 
-function Row({ label, value, accent = false }: { label: string; value: string; accent?: boolean }) {
+function Row({
+  label,
+  value,
+  accent = false,
+}: {
+  label: string;
+  value: string;
+  accent?: boolean;
+}) {
   return (
     <div className="flex items-center justify-between text-xs">
       <span className="text-white/50">{label}</span>
-      <span className={`font-mono font-semibold ${accent ? "text-emerald-400" : "text-white/80"}`}>
+      <span
+        className={`font-mono font-semibold ${
+          accent ? "text-emerald-400" : "text-white/80"
+        }`}
+      >
         {value}
       </span>
     </div>

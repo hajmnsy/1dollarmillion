@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "1DollarMillion — Deposite USDT. Ganhe $1,000,000. Nunca Perca Seu Principal.",
-    "description": "A primeira loteria sem perdas do mundo, movida pelo rendimento da Aave V3. Deposite USDT, mantenha-se ativo por apenas $1/dia e ganhe prêmios que mudam vidas. Seu principal está sempre seguro."
+    "description": "A primeira loteria sem perdas do mundo, movida pelo rendimento da Principal Protection. Deposite USDT, mantenha-se ativo por apenas $1/dia e ganhe prêmios que mudam vidas. Seu principal está sempre seguro."
   },
   "dashboard": {
     "title": "Seu Painel",
@@ -51,7 +51,7 @@
     },
     "yield": {
       "title": "Rastreador de Bônus de Rendimento DeFi",
-      "subtitle": "Juros da Aave V3 ganhos em depósitos ociosos — financia sorteios bônus.",
+      "subtitle": "Juros da Principal Protection ganhos em depósitos ociosos — financia sorteios bônus.",
       "currentLabel": "Rendimento Gerado",
       "targetLabel": "Meta de Sorteio Bônus",
       "apyLabel": "APY Atual",
@@ -59,7 +59,7 @@
       "estimateYears": "em ~{years} anos",
       "estimateReady": "PRONTO PARA SORTEAR",
       "yieldNote": "O rendimento acumula 24/7. Quando atinge $1M, um sorteio bônus é disparado automaticamente.",
-      "viewOnAave": "Ver no Aave"
+      "viewOnAave": "Ver no Smart Contract"
     },
     "solvency": {
       "title": "Verificação de Solvência",
@@ -309,11 +309,11 @@
     "switchNetwork": "Mudar para Ethereum"
   },
   "hero": {
-    "badge": "Movido por Chainlink VRF + Aave V3",
+    "badge": "Movido por Chainlink VRF + Principal Protection",
     "titleLine1": "Deposite USDT.",
     "titleLine2": "Ganhe $1,000,000.",
     "titleLine3": "Nunca perca seu principal.",
-    "subtitle": "A primeira loteria sem perdas do mundo, onde seus depósitos rendem em DeFi na Aave V3. Mantenha-se ativo por apenas $1 por dia e, quando o pool atingir $1 milhão, um vencedor comprovadamente justo leva para casa $995,350 — garantido.",
+    "subtitle": "A primeira loteria sem perdas do mundo, onde seus depósitos rendem em DeFi na Principal Protection. Mantenha-se ativo por apenas $1 por dia e, quando o pool atingir $1 milhão, um vencedor comprovadamente justo leva para casa $995,350 — garantido.",
     "ctaPrimary": "Depositar e Entrar",
     "ctaSecondary": "Como Funciona",
     "livePoolLabel": "Pool ao Vivo",
@@ -323,7 +323,7 @@
     "activeUsersValue": "12,847",
     "yieldLabel": "Rendimento Ganho",
     "yieldValue": "$23,402",
-    "trustLine": "Lastreado por Chainlink VRF · Aave V3 · OpenZeppelin",
+    "trustLine": "Lastreado por Chainlink VRF · Principal Protection · OpenZeppelin",
     "minDepositNote": "Comece com apenas $1 USDT"
   },
   "howItWorks": {
@@ -336,16 +336,16 @@
     "step3Title": "Ganhe $995,350",
     "step3Description": "Quando o pool atinge exatamente $1,000,000, o Chainlink VRF seleciona um vencedor comprovadamente aleatório entre todos os usuários ativos. O vencedor recebe $995,350 diretamente em sua carteira — instantaneamente, de forma transparente, sem perguntas.",
     "bonusTitle": "E mais: Sorteios Bônus de Rendimento DeFi",
-    "bonusDescription": "Seus depósitos ociosos rendem na Aave V3. Quando esse rendimento sozinho atinge $1,000,000, um sorteio bônus adicional é disparado — mesmo prêmio, mesma justiça, sem custo extra para você. Você é inscrito automaticamente em ambos os sorteios.",
+    "bonusDescription": "Seus depósitos ociosos rendem na Principal Protection. Quando esse rendimento sozinho atinge $1,000,000, um sorteio bônus adicional é disparado — mesmo prêmio, mesma justiça, sem custo extra para você. Você é inscrito automaticamente em ambos os sorteios.",
     "bonusBadge": "Dinheiro Grátis"
   },
   "transparency": {
     "title": "Transparência Radical. Solvência Verificável.",
-    "subtitle": "Cada número nesta plataforma é lido ao vivo da blockchain. Verifique qualquer coisa que você veja aqui em menos de 3 cliques — no Etherscan, na Aave, no Chainlink.",
+    "subtitle": "Cada número nesta plataforma é lido ao vivo da blockchain. Verifique qualquer coisa que você veja aqui em menos de 3 cliques — no Etherscan, na Smart Contract, no Chainlink.",
     "poolCardTitle": "Pool de Prêmios ao Vivo",
     "poolCardDesc": "Cresce diariamente com deduções de $1 de todos os usuários ativos. Dispara um sorteio em $1,000,000.",
     "yieldCardTitle": "Rendimento DeFi Gerado",
-    "yieldCardDesc": "Juros ganhos da Aave V3 sobre seus depósitos ociosos. Financia sorteios bônus quando atinge $1,000,000.",
+    "yieldCardDesc": "Juros ganhos da Principal Protection sobre seus depósitos ociosos. Financia sorteios bônus quando atinge $1,000,000.",
     "solvencyCardTitle": "Comprovação de Solvência",
     "solvencyCardDesc": "O total de ativos sempre excede o principal total devido. Esta é a invariante central — verificável on-chain a qualquer momento.",
     "drawCardTitle": "Estimativa do Próximo Sorteio",
@@ -354,7 +354,7 @@
     "solvencyHealthy": "SOLVENTE",
     "solvencyHealthyDesc": "Todos os depósitos de usuários totalmente lastreados 1:1",
     "viewOnEtherscan": "Ver no Polygonscan",
-    "viewOnAave": "Ver na Aave",
+    "viewOnAave": "Ver na Smart Contract",
     "verifyVRF": "Verificar no Chainlink"
   },
   "trust": {
@@ -362,8 +362,8 @@
     "subtitle": "Usamos primitivas de segurança de nível industrial para que você possa dormir tranquilo.",
     "chainlinkTitle": "Chainlink VRF v2",
     "chainlinkDesc": "Aleatoriedade comprovadamente justa. Cada vencedor é selecionado por um número aleatório verificável — ninguém, nem mesmo nós, pode prever ou manipular o resultado.",
-    "aaveTitle": "Aave V3",
-    "aaveDesc": "O maior mercado de dinheiro descentralizado. Seus depósitos são fornecidos à Aave para render juros, garantidos por mais de $12B em TVL e auditados por 7 empresas líderes.",
+    "aaveTitle": "Principal Protected",
+    "aaveDesc": "O maior mercado de dinheiro descentralizado. Seus depósitos são fornecidos à Smart Contract para render juros, garantidos por mais de $12B em TVL e auditados por 7 empresas líderes.",
     "openzeppelinTitle": "OpenZeppelin",
     "openzeppelinDesc": "Bibliotecas de smart contract testadas em batalha. Nosso contrato herda ReentrancyGuard, SafeERC20 e Ownable — o padrão ouro para código DeFi seguro.",
     "auditTitle": "Pronto para Auditoria",
@@ -376,8 +376,8 @@
     "drawsCompletedValue": "5",
     "totalUsers": "Total de Usuários",
     "totalUsersValue": "12,847",
-    "avgApy": "APY Atual da Aave",
-    "avgApyValue": "4.32%"
+    "avgApy": "APY Atual da Smart Contract",
+    "avgApyValue": "Polygon"
   },
   "finalCta": {
     "title": "Seu dinheiro está esperando.",
@@ -428,7 +428,7 @@
       "q1": "Como funciona a dedução de $1/dia?",
       "a1": "Quando você deposita USDT, o contrato deduz logicamente 1 USDT por dia para mantê-lo 'Ativo' e elegível para o sorteio. Esta é uma dedução preguiçosa — é calculada on-chain, mas só aplicada quando você (ou qualquer pessoa) interage com sua conta (depósito, saque ou sincronização). O valor deduzido alimenta diretamente o pool de prêmios. Se seu saldo chegar a zero, você é marcado como Inativo e excluído dos sorteios até depositar novamente.",
       "q2": "Meu principal está seguro? Posso perder meu depósito?",
-      "a2": "Seu principal está sempre seguro. O contrato nunca investe seu depósito em ativos arriscados — ele apenas fornece USDT ocioso à Aave V3 (o maior mercado de dinheiro DeFi auditado, com mais de $12B em TVL) para render juros. Esses juros financiam sorteios bônus; não colocam seu depósito em risco. Você pode sacar seu saldo restante a qualquer momento, sujeito a um buffer de liquidez de 5% que garante que o contrato sempre tenha USDT suficiente disponível.",
+      "a2": "Seu principal está sempre seguro. O contrato nunca investe seu depósito em ativos arriscados — ele apenas fornece USDT ocioso à Principal Protection (o maior mercado de dinheiro DeFi auditado, com mais de $12B em TVL) para render juros. Esses juros financiam sorteios bônus; não colocam seu depósito em risco. Você pode sacar seu saldo restante a qualquer momento, sujeito a um buffer de liquidez de 5% que garante que o contrato sempre tenha USDT suficiente disponível.",
       "q3": "Como o vencedor é escolhido? É justo?",
       "a3": "O vencedor é selecionado usando Chainlink VRF v2 (Verifiable Random Function) — o padrão ouro para aleatoriedade on-chain. Quando o pool atinge $1,000,000, o contrato solicita um número aleatório à rede de oráculos da Chainlink. Esse número é criptograficamente verificável, o que significa que ninguém (nem mesmo o dono do contrato) pode prever ou manipular o resultado. O vencedor é selecionado como `activeUsers[randomNumber % activeUserCount]`, dando a cada usuário ativo uma chance igual.",
       "q4": "Quais são as taxas?",
@@ -436,7 +436,7 @@
       "q5": "O que acontece se eu ganhar?",
       "a5": "Se você ganhar, $995,350 USDT são transferidos diretamente para sua carteira instantaneamente — sem necessidade de reivindicação. Você é então excluído dos sorteios regulares futuros (para distribuir a riqueza), mas seu bloqueio de $3,650 continua a gotejar $1/dia no pool por 10 anos, mantendo você no pool de sorteios bônus. Você pode sacar qualquer valor bloqueado restante após o período de bloqueio de 10 anos amadurecer.",
       "q6": "O que são Sorteios Bônus?",
-      "a6": "Os Sorteios Bônus são financiados inteiramente pelo rendimento da Aave V3 — não pelos seus depósitos. Quando os juros acumulados do contrato atingem $1,000,000, um sorteio bônus é disparado automaticamente usando o mesmo mecanismo Chainlink VRF. Mesmo prêmio de $995,350, mesma justiça. Você é inscrito automaticamente em ambos os sorteios, regular e bônus, desde que esteja Ativo. Esta é a parte 'sem perdas' — seu principal gera rendimento que financia prêmios adicionais."
+      "a6": "Os Sorteios Bônus são financiados inteiramente pelo rendimento da Principal Protection — não pelos seus depósitos. Quando os juros acumulados do contrato atingem $1,000,000, um sorteio bônus é disparado automaticamente usando o mesmo mecanismo Chainlink VRF. Mesmo prêmio de $995,350, mesma justiça. Você é inscrito automaticamente em ambos os sorteios, regular e bônus, desde que esteja Ativo. Esta é a parte 'sem perdas' — seu principal gera rendimento que financia prêmios adicionais."
     },
     "terms": {
       "title": "Termos de Serviço",
@@ -462,7 +462,7 @@
       "section3Title": "3. Analytics do Frontend",
       "section3Body": "Nosso frontend pode coletar análises de uso anônimas (visualizações de página, eventos de clique) para melhorar a experiência do usuário. Não coletamos endereços de carteira, endereços IP ou qualquer informação pessoal identificável. As análises são agregadas e não podem ser rastreadas até usuários individuais.",
       "section4Title": "4. Serviços de Terceiros",
-      "section4Body": "O protocolo integra-se a serviços de terceiros: Chainlink VRF (para aleatoriedade), Aave V3 (para rendimento) e WalletConnect (para conexões de carteira). Esses serviços têm suas próprias políticas de privacidade. Recomendamos revisá-las antes do uso.",
+      "section4Body": "O protocolo integra-se a serviços de terceiros: Chainlink VRF (para aleatoriedade), Principal Protection (para rendimento) e WalletConnect (para conexões de carteira). Esses serviços têm suas próprias políticas de privacidade. Recomendamos revisá-las antes do uso.",
       "section5Title": "5. Cookies",
       "section5Body": "Nosso frontend usa armazenamento local para lembrar sua preferência de idioma e estado de conexão da carteira. Não usamos cookies de rastreamento, cookies de publicidade ou serviços de cookies de terceiros."
     },
@@ -472,7 +472,7 @@
       "section1Title": "1. Risco de Smart Contract",
       "section1Body": "Smart contracts são código imutável que executa automaticamente. Apesar de auditorias de segurança e melhores práticas, os contratos podem conter bugs, vulnerabilidades ou erros de lógica não descobertos que podem resultar em perda parcial ou total de fundos. O protocolo usa as bibliotecas testadas em batalha da OpenZeppelin e segue o padrão Checks-Effects-Interactions, mas nenhum smart contract pode ser garantido como 100% seguro.",
       "section2Title": "2. Risco de Protocolo DeFi",
-      "section2Body": "O protocolo fornece USDT ocioso à Aave V3 para gerar rendimento. A Aave é um dos maiores e mais auditados protocolos DeFi, mas não está livre de riscos. Riscos potenciais incluem: vulnerabilidades de smart contract na Aave, crises de liquidez, falhas de oráculo, ataques de governança e ações regulatórias. Se a Aave for comprometida, uma parte dos fundos do protocolo pode estar em risco.",
+      "section2Body": "O protocolo fornece USDT ocioso à Principal Protection para gerar rendimento. A Smart Contract é um dos maiores e mais auditados protocolos DeFi, mas não está livre de riscos. Riscos potenciais incluem: vulnerabilidades de smart contract na Smart Contract, crises de liquidez, falhas de oráculo, ataques de governança e ações regulatórias. Se a Smart Contract for comprometida, uma parte dos fundos do protocolo pode estar em risco.",
       "section3Title": "3. Risco do Chainlink VRF",
       "section3Body": "O protocolo depende do Chainlink VRF v2 para a seleção aleatória do vencedor. Embora a Chainlink seja o padrão da indústria para aleatoriedade on-chain, os riscos potenciais incluem: falhas na rede de oráculos, atendimentos atrasados ou (extremamente improvável) nós de oráculo comprometidos. Se o VRF falhar, o sorteio é pausado até que o oráculo se recupere — seus fundos não estão em risco, mas o sorteio pode ser atrasado.",
       "section4Title": "4. Riscos de Mercado e de Gas",
@@ -494,8 +494,8 @@
       "contractBody": "O contrato 1DollarMillion V2.1.1 é totalmente de código aberto e verificado no Etherscan. Qualquer pessoa pode ler o código-fonte, auditar a lógica e verificar que a distribuição de prêmios (divisão 995,350 / 3,650 / 1,000) está embutida no código e não pode ser alterada. O contrato herda ReentrancyGuard, SafeERC20 e Ownable da OpenZeppelin — o padrão ouro para código DeFi seguro. O dono só pode pausar o contrato em emergências e reivindicar taxas acumuladas; ele não pode acessar depósitos de usuários ou alterar o mecanismo de sorteio.",
       "solvencyTitle": "A Invariante de Solvência",
       "solvencyBody": "O protocolo mantém uma invariante de solvência estrita: o total de ativos (USDT bruto + aUSDT) deve ser sempre maior ou igual ao principal total (saldos de usuários + pool + valores bloqueados + taxas). Isso é imposto pela lógica de contabilidade do contrato e por um bloco de correção pós-sorteio que reclassifica rendimento fantasma como principal, se necessário. Você pode verificar isso a qualquer momento chamando a função accountingSummary() — se o solvencyGap estiver verde, o protocolo está saudável.",
-      "yieldTitle": "Como o Rendimento da Aave Financia Sorteios Bônus",
-      "yieldBody": "Quando você deposita USDT, o contrato mantém um buffer de liquidez de 5% em USDT bruto (para saques instantâneos) e fornece o resto à Aave V3. A Aave emite aUSDT que rende juros para o contrato, que acumula rendimento 24/7. O contrato rastreia 'principal fornecido' separadamente do 'rendimento ganho' (rendimento = saldo de aUSDT − principal fornecido). Quando o rendimento sozinho atinge $1,000,000, um sorteio bônus é disparado automaticamente — mesma seleção do Chainlink VRF, mesmo prêmio de $995,350. Seu principal nunca está em risco; apenas os juros são pagos."
+      "yieldTitle": "Como o Rendimento da Smart Contract Financia Sorteios Bônus",
+      "yieldBody": "Quando você deposita USDT, o contrato mantém um buffer de liquidez de 5% em USDT bruto (para saques instantâneos) e fornece o resto à Principal Protection. A Smart Contract emite aUSDT que rende juros para o contrato, que acumula rendimento 24/7. O contrato rastreia 'principal fornecido' separadamente do 'rendimento ganho' (rendimento = saldo de aUSDT − principal fornecido). Quando o rendimento sozinho atinge $1,000,000, um sorteio bônus é disparado automaticamente — mesma seleção do Chainlink VRF, mesmo prêmio de $995,350. Seu principal nunca está em risco; apenas os juros são pagos."
     },
     "backHome": "Voltar ao Início",
     "comingSoon": "Esta página está em construção. O conteúdo completo será adicionado em breve.",
@@ -503,9 +503,9 @@
       "title": "Documentation",
       "subtitle": "The complete technical documentation for the 1DollarMillion protocol.",
       "section1Title": "1. Protocol Overview",
-      "section1Body": "1DollarMillion is a no-loss lottery on Polygon combining ROSCA with DeFi yield from Aave V3. The prize pool grows automatically from $1/day deductions. When it reaches $1,000,000, a winner is selected via Chainlink VRF v2.5.",
+      "section1Body": "1DollarMillion is a no-loss lottery on Polygon combining ROSCA with DeFi yield from Principal Protection. The prize pool grows automatically from $1/day deductions. When it reaches $1,000,000, a winner is selected via Chainlink VRF v2.5.",
       "section2Title": "2. Tokenomics",
-      "section2Body": "The contract deducts 1 USDT per day from each active user. These deductions feed the prize pool. Idle deposits are invested in Aave V3 to generate yield that funds bonus draws.",
+      "section2Body": "The contract deducts 1 USDT per day from each active user. These deductions feed the prize pool. Idle deposits are invested in Principal Protection to generate yield that funds bonus draws.",
       "section3Title": "3. Prize Distribution",
       "section3Body": "When a draw completes: $995,350 to winner (or $985,397 with referrer), $3,650 locked for 10 years, $1,000 operational fee, $9,953 to referrer (if applicable). No hidden fees.",
       "section4Title": "4. Contract Addresses (Polygon Mainnet)",

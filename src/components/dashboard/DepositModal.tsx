@@ -308,19 +308,11 @@ export function DepositModal({
                   />
                   <BreakdownRow
                     label={t("costBreakdown.estGasCost")}
-                    value={
-                      EST_GAS_COST_USD < 0.10
-                        ? `~${(EST_GAS_COST_USD * 100).toFixed(1)}¢`  // show in cents if < $0.10
-                        : `~$${EST_GAS_COST_USD.toFixed(2)}`
-                    }
+                    value={`~$${EST_GAS_COST_USD.toFixed(2)}`}
                   />
                   <BreakdownRow
                     label={t("costBreakdown.gasToDepositRatio")}
-                    value={
-                      gasEff.ratioPercent < 0.1
-                        ? `${gasEff.ratioPercent.toFixed(3)}%`
-                        : `${gasEff.ratioPercent.toFixed(2)}%`
-                    }
+                    value={`${gasEff.ratioPercent.toFixed(1)}%`}
                     accent={gasEff.tier === "optimal" || gasEff.tier === "good"}
                   />
                   <BreakdownRow
@@ -331,9 +323,7 @@ export function DepositModal({
                     label={t("costBreakdown.costPerDay")}
                     value={
                       daysOfActivity > 0
-                        ? EST_GAS_COST_USD / daysOfActivity < 0.10
-                          ? `${((EST_GAS_COST_USD / daysOfActivity) * 100).toFixed(2)}¢`
-                          : `$${(EST_GAS_COST_USD / daysOfActivity).toFixed(2)}`
+                        ? `$${(EST_GAS_COST_USD / daysOfActivity).toFixed(2)}`
                         : "—"
                     }
                   />
