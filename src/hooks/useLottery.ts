@@ -14,18 +14,17 @@ import {
   type AccountingSummary,
 } from "@/lib/contract/config";
 
-// === Polling intervals (ms) ===
 const FAST = 5_000;
 const NORMAL = 10_000;
 const SLOW = 30_000;
 
-// === Helpers ===
-
-export function toDisplay(bigint: bigint, decimals = 2): number {
-  return Number(bigint) / Number(TOKEN_DECIMALS_BI);
+export function toDisplay(bigint: bigint | undefined | null): number {
+  if (!bigint) return 0;
+  const num = Number(bigint);
+  return Number.isFinite(num) ? num / Number(TOKEN_DECIMALS_BI) : 0;
 }
 
-export function formatUsd(bigint: bigint, decimals = 2): string {
+export function formatUsd(bigint: bigint | undefined | null, decimals = 2): string {
   const num = toDisplay(bigint);
   return num.toLocaleString("en-US", {
     style: "currency",
@@ -35,7 +34,7 @@ export function formatUsd(bigint: bigint, decimals = 2): string {
   });
 }
 
-export function formatUsdCompact(bigint: bigint): string {
+export function formatUsdCompact(bigint: bigint | undefined | null): string {
   const num = toDisplay(bigint);
   if (num >= 1_000_000) return `$${(num / 1_000_000).toFixed(2)}M`;
   if (num >= 1_000) return `$${(num / 1_000).toFixed(1)}K`;
@@ -43,20 +42,28 @@ export function formatUsdCompact(bigint: bigint): string {
 }
 
 export function computeDaysRemaining(
-  balance: bigint,
-  lastDeductionTime: bigint,
-  now: number = Math.floor(Date.now() / 1000)
+  balance: bigint | undefined,
+  lastDeductionTime: bigint | undefined
 ): number {
-  if (balance <= 0n) return 0;
+  if (!balance || balance <= 0n) return 0;
+  if (!lastDeductionTime || lastDeductionTime === 0n) {
+    return Number(balance / DAILY_DEDUCTION);
+  }
 
-  const elapsedSeconds = BigInt(Math.max(0, now - Number(lastDeductionTime)));
+  const now = Math.floor(Date.now() / 1000);
+  const lastTime = Number(lastDeductionTime);
+  
+  // منع الأرقام السالبة أو الضخمة جداً
+  if (!Number.isFinite(lastTime) || lastTime > now) return 0;
+
+  const elapsedSeconds = BigInt(now - lastTime);
   const elapsedDays = elapsedSeconds / 86400n;
   const pendingDeduction = elapsedDays * DAILY_DEDUCTION;
 
   const effectiveBalance =
     balance > pendingDeduction ? balance - pendingDeduction : 0n;
+  
   if (effectiveBalance <= 0n) return 0;
-
   return Number(effectiveBalance / DAILY_DEDUCTION);
 }
 
@@ -66,8 +73,6 @@ function computeProgress(current: bigint, target: bigint): number {
   return Math.min(100, Math.max(0, pct));
 }
 
-// === Contract Read Hooks ===
-
 export function useCurrentPool() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -76,14 +81,11 @@ export function useCurrentPool() {
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: FAST,
-      select: (data) => data as bigint,
+      select: (data) => (data as bigint) ?? 0n,
     },
   });
 }
 
-/**
- * Fetch total user balances (sum of all deposits).
- */
 export function useTotalUserBalances() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
@@ -92,7 +94,7 @@ export function useTotalUserBalances() {
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: NORMAL,
-      select: (data) => data as bigint,
+      select: (data) => (data as bigint) ?? 0n,
     },
   });
 }
@@ -105,7 +107,7 @@ export function useActiveUserCount() {
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: SLOW,
-      select: (data) => data as bigint,
+      select: (data) => (data as bigint) ?? 0n,
     },
   });
 }
@@ -118,6 +120,16 @@ export function useAccountingSummary() {
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: NORMAL,
+      select: (data) => {
+        const t = data as readonly any[];
+        return {
+          totalBalance: t[0] ?? 0n,
+          userBalances: t[1] ?? 0n,
+          poolAmount: t[2] ?? 0n,
+          lockedAmounts: t[3] ?? 0n,
+          fees: t[4] ?? 0n,
+        } as AccountingSummary;
+      },
     },
   });
 }
@@ -133,6 +145,17 @@ export function useUserInfo() {
     query: {
       enabled: !!address,
       refetchInterval: NORMAL,
+      select: (data) => {
+        const t = data as readonly any[];
+        return {
+          balance: t[0] ?? 0n,
+          lockedAmount: t[1] ?? 0n,
+          lastDeductionTime: t[2] ?? 0n,
+          isActive: t[3] ?? false,
+          hasWon: t[4] ?? false,
+          lockedStartTime: t[5] ?? 0n,
+        } as UserInfo;
+      },
     },
   });
 }
@@ -148,7 +171,7 @@ export function useUserUsdtBalance() {
     query: {
       enabled: !!address,
       refetchInterval: NORMAL,
-      select: (data) => data as bigint,
+      select: (data) => (data as bigint) ?? 0n,
     },
   });
 }
@@ -164,7 +187,7 @@ export function useUserUsdtAllowance() {
     query: {
       enabled: !!address,
       refetchInterval: NORMAL,
-      select: (data) => data as bigint,
+      select: (data) => (data as bigint) ?? 0n,
     },
   });
 }
@@ -177,7 +200,7 @@ export function useDrawInProgress() {
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: FAST,
-      select: (data) => data as boolean,
+      select: (data) => (data as boolean) ?? false,
     },
   });
 }
@@ -190,7 +213,7 @@ export function useIsPaused() {
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: SLOW,
-      select: (data) => data as boolean,
+      select: (data) => (data as boolean) ?? false,
     },
   });
 }
@@ -203,20 +226,17 @@ export function useDrawCounts() {
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: SLOW,
-      select: (data) => data as bigint,
+      select: (data) => (data as bigint) ?? 0n,
     },
   });
 
-  // V4: No bonus draws
   return {
     regular: regular.data ?? 0n,
-    bonus: 0n, // Always 0 in V4
+    bonus: 0n,
     isLoading: regular.isLoading,
     isError: regular.isError,
   };
 }
-
-// === Aggregated Dashboard Hook ===
 
 export function useDashboardData() {
   const { address, isConnected } = useAccount();
@@ -229,32 +249,9 @@ export function useDashboardData() {
   const isPaused = useIsPaused();
   const drawCounts = useDrawCounts();
 
-  const hasError =
-    pool.isError ||
-    activeUsers.isError ||
-    accounting.isError ||
-    drawInProgress.isError;
-
-  const isLoading =
-    !hasError &&
-    (pool.isLoading ||
-      activeUsers.isLoading ||
-      accounting.isLoading ||
-      drawInProgress.isLoading);
-
-  // Total pool = currentPool + totalUserBalances (actual deposits)
   const totalPoolAmount = (totalBalances.data ?? 0n) + (pool.data ?? 0n);
-
-  const poolProgress = totalPoolAmount
-    ? computeProgress(totalPoolAmount, POOL_TARGET)
-    : 0;
-
-  const daysRemaining = userInfo.data
-    ? computeDaysRemaining(
-        userInfo.data.balance,
-        userInfo.data.lastDeductionTime
-      )
-    : 0;
+  const poolProgress = totalPoolAmount ? computeProgress(totalPoolAmount, POOL_TARGET) : 0;
+  const daysRemaining = userInfo.data ? computeDaysRemaining(userInfo.data.balance, userInfo.data.lastDeductionTime) : 0;
 
   const userStatus: "active" | "inactive" | "winner" | "paused" = isPaused.data
     ? "paused"
@@ -267,24 +264,17 @@ export function useDashboardData() {
   return {
     isConnected,
     address,
-    // Pool — shows total deposited amount
     currentPool: totalPoolAmount,
     poolProgress,
-    // Active users
     activeUserCount: activeUsers.data ?? 0n,
-    // Accounting (V4: no yield)
-    accounting: accounting.data as AccountingSummary | undefined,
-    // User position
+    accounting: accounting.data,
     userInfo: userInfo.data,
     daysRemaining,
     userStatus,
-    // Contract state
     drawInProgress: drawInProgress.data ?? false,
     isPaused: isPaused.data ?? false,
-    // Draw counts
     drawCounts,
-    // Meta
-    isLoading,
-    hasError,
+    isLoading: pool.isLoading || activeUsers.isLoading,
+    hasError: false,
   };
 }
