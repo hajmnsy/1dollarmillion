@@ -14,7 +14,7 @@ export function Hero() {
     const el = document.getElementById("how-it-works");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-
+  const yieldValue = "$0";
   return (
     <section className="relative overflow-hidden">
       {/* Background gradient effects */}
