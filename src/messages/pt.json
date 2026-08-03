@@ -59,7 +59,7 @@
       "estimateYears": "em ~{years} anos",
       "estimateReady": "PRONTO PARA SORTEAR",
       "yieldNote": "O rendimento acumula 24/7. Quando atinge $1M, um sorteio bônus é disparado automaticamente.",
-      "viewOnAave": "Ver no Smart Contract"
+      "viewOnPolygonscan": "Ver no Smart Contract"
     },
     "solvency": {
       "title": "Verificação de Solvência",
@@ -321,10 +321,11 @@
     "livePoolTarget": "de $1,000,000",
     "activeUsersLabel": "Usuários Ativos",
     "activeUsersValue": "12,847",
-    "yieldLabel": "Rendimento Ganho",
-    "yieldValue": "$23,402",
+    "poolProgressLabel": "Rendimento Ganho",
+    "poolProgressValue": "$23,402",
     "trustLine": "Lastreado por Chainlink VRF · Principal Protection · OpenZeppelin",
-    "minDepositNote": "Comece com apenas $1 USDT"
+    "minDepositNote": "Comece com apenas $1 USDT",
+    "poolLabel": "إجمالي الصندوق"
   },
   "howItWorks": {
     "title": "Como Funciona",
@@ -354,8 +355,10 @@
     "solvencyHealthy": "SOLVENTE",
     "solvencyHealthyDesc": "Todos os depósitos de usuários totalmente lastreados 1:1",
     "viewOnEtherscan": "Ver no Polygonscan",
-    "viewOnAave": "Ver na Smart Contract",
-    "verifyVRF": "Verificar no Chainlink"
+    "viewOnPolygonscan": "Ver na Smart Contract",
+    "verifyVRF": "Verificar no Chainlink",
+    "poolTitle": "How the Pool Works",
+    "poolBody": "The pool grows from $1/day deductions."
   },
   "trust": {
     "title": "Construído sobre a Infraestrutura Mais Confiável do Web3",
@@ -495,7 +498,9 @@
       "solvencyTitle": "A Invariante de Solvência",
       "solvencyBody": "O protocolo mantém uma invariante de solvência estrita: o total de ativos (USDT bruto + aUSDT) deve ser sempre maior ou igual ao principal total (saldos de usuários + pool + valores bloqueados + taxas). Isso é imposto pela lógica de contabilidade do contrato e por um bloco de correção pós-sorteio que reclassifica rendimento fantasma como principal, se necessário. Você pode verificar isso a qualquer momento chamando a função accountingSummary() — se o solvencyGap estiver verde, o protocolo está saudável.",
       "yieldTitle": "Como o Rendimento da Smart Contract Financia Sorteios Bônus",
-      "yieldBody": "Quando você deposita USDT, o contrato mantém um buffer de liquidez de 5% em USDT bruto (para saques instantâneos) e fornece o resto à Principal Protection. A Smart Contract emite aUSDT que rende juros para o contrato, que acumula rendimento 24/7. O contrato rastreia 'principal fornecido' separadamente do 'rendimento ganho' (rendimento = saldo de aUSDT − principal fornecido). Quando o rendimento sozinho atinge $1,000,000, um sorteio bônus é disparado automaticamente — mesma seleção do Chainlink VRF, mesmo prêmio de $995,350. Seu principal nunca está em risco; apenas os juros são pagos."
+      "yieldBody": "Quando você deposita USDT, o contrato mantém um buffer de liquidez de 5% em USDT bruto (para saques instantâneos) e fornece o resto à Principal Protection. A Smart Contract emite aUSDT que rende juros para o contrato, que acumula rendimento 24/7. O contrato rastreia 'principal fornecido' separadamente do 'rendimento ganho' (rendimento = saldo de aUSDT − principal fornecido). Quando o rendimento sozinho atinge $1,000,000, um sorteio bônus é disparado automaticamente — mesma seleção do Chainlink VRF, mesmo prêmio de $995,350. Seu principal nunca está em risco; apenas os juros são pagos.",
+      "poolTitle": "Como o Rendimento da Smart Contract Financia Sorteios Bônus",
+      "poolBody": "Quando você deposita USDT, o contrato mantém um buffer de liquidez de 5% em USDT bruto (para saques instantâneos) e fornece o resto à Principal Protection. A Smart Contract emite aUSDT que rende juros para o contrato, que acumula rendimento 24/7. O contrato rastreia 'principal fornecido' separadamente do 'rendimento ganho' (rendimento = saldo de aUSDT − principal fornecido). Quando o rendimento sozinho atinge $1,000,000, um sorteio bônus é disparado automaticamente — mesma seleção do Chainlink VRF, mesmo prêmio de $995,350. Seu principal nunca está em risco; apenas os juros são pagos."
     },
     "backHome": "Voltar ao Início",
     "comingSoon": "Esta página está em construção. O conteúdo completo será adicionado em breve.",

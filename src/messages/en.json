@@ -50,16 +50,16 @@
       "viewOnEtherscan": "View on Polygonscan"
     },
     "yield": {
-      "title": "DeFi Yield Bonus Tracker",
-      "subtitle": "Funds bonus draws when it reaches $1,000,000.",
-      "currentLabel": "Yield Generated",
-      "targetLabel": "Bonus Draw Target",
-      "apyLabel": "Current APY",
+      "title": "Prize Pool Tracker",
+      "subtitle": "Funds the prize draw when it reaches $1,000,000.",
+      "currentLabel": "Pool Progress",
+      "targetLabel": "$1,000,000 Target",
+      "apyLabel": "Network",
       "estimateLabel": "Est. Next Bonus Draw",
       "estimateYears": "in ~{years} years",
       "estimateReady": "READY TO DRAW",
       "yieldNote": "Yield accrues 24/7. When it reaches $1M, a bonus draw fires automatically.",
-      "viewOnAave": "View on Polygonscan"
+      "viewOnPolygonscan": "View on Polygonscan"
     },
     "solvency": {
       "title": "Solvency Check",
@@ -321,10 +321,11 @@
     "livePoolTarget": "of $1,000,000",
     "activeUsersLabel": "Active Users",
     "activeUsersValue": "12,847",
-    "yieldLabel": "Yield Earned",
-    "yieldValue": "$23,402",
+    "poolProgressLabel": "Yield Earned",
+    "poolProgressValue": "$23,402",
     "trustLine": "Backed by Chainlink VRF · OpenZeppelin",
-    "minDepositNote": "Start with as little as $1 USDT"
+    "minDepositNote": "Start with as little as $1 USDT",
+    "poolLabel": "Total Pool"
   },
   "howItWorks": {
     "title": "How It Works",
@@ -344,8 +345,8 @@
     "subtitle": "Every number on this platform is read live from the blockchain. Verify anything you see here in under 3 clicks — on Polygonscan, on Chainlink.",
     "poolCardTitle": "Live Prize Pool",
     "poolCardDesc": "Grows daily from $1 deductions across all active users. Triggers a draw at $1,000,000.",
-    "yieldCardTitle": "DeFi Yield Generated",
-    "yieldCardDesc": "Funds bonus draws when it reaches $1,000,000.",
+    "yieldCardTitle": "Prize Pool Progress",
+    "yieldCardDesc": "Funds the prize draw when it reaches $1,000,000.",
     "solvencyCardTitle": "Solvency Proof",
     "solvencyCardDesc": "Total assets always exceed total principal owed. This is the core invariant — verifiable on-chain at any time.",
     "drawCardTitle": "Next Draw Estimate",
@@ -354,8 +355,10 @@
     "solvencyHealthy": "SOLVENT",
     "solvencyHealthyDesc": "All user deposits fully backed 1:1",
     "viewOnEtherscan": "View on Polygonscan",
-    "viewOnAave": "View on Polygonscan",
-    "verifyVRF": "Verify on Chainlink"
+    "viewOnPolygonscan": "View on Polygonscan",
+    "verifyVRF": "Verify on Chainlink",
+    "poolTitle": "How the Pool Works",
+    "poolBody": "The pool grows from $1/day deductions."
   },
   "trust": {
     "title": "Built on the Most Trusted Infrastructure in Web3",
@@ -494,8 +497,10 @@
       "contractBody": "The 1DollarMillion V2.1.1 contract is fully open-source and verified on Etherscan. Anyone can read the source code, audit the logic, and verify that the prize distribution (995,350 / 3,650 / 1,000 split) is hardcoded and cannot be changed. The contract inherits OpenZeppelin's ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code. The owner can only pause the contract in emergencies and claim accumulated fees; they cannot access user deposits or alter the draw mechanism.",
       "solvencyTitle": "The Solvency Invariant",
       "solvencyBody": "The protocol maintains a strict solvency invariant: total assets (raw USDT + aUSDT) must always be greater than or equal to total principal (user balances + pool + locked amounts + fees). This is enforced by the contract's accounting logic and a post-draw fix-up block that reclassifies phantom yield as principal if needed. You can verify this at any time by calling the accountingSummary() function — if the solvencyGap is green, the protocol is healthy.",
-      "yieldTitle": "How Bonus Draws Work",
-      "yieldBody": "Your $1/day deductions fund the prize pool. When the pool reaches $1,000,000, a bonus draw fires automatically — same Chainlink VRF selection, same $995,350 prize. Your principal is never at risk."
+      "yieldTitle": "How Draws Work",
+      "yieldBody": "Your $1/day deductions fund the prize pool. When the pool reaches $1,000,000, a draw fires automatically — fair Chainlink VRF selection, $995,350 prize. Your principal is never at risk.",
+      "poolTitle": "How Draws Work",
+      "poolBody": "Your $1/day deductions fund the prize pool. When the pool reaches $1,000,000, a draw fires automatically — fair Chainlink VRF selection, $995,350 prize. Your principal is never at risk."
     },
     "backHome": "Back to Home",
     "comingSoon": "This page is under construction. Full content will be added soon.",

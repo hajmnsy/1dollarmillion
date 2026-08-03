@@ -59,7 +59,7 @@
       "estimateYears": "约 {years} 年后",
       "estimateReady": "已可开奖",
       "yieldNote": "收益 7×24 小时持续累积。当达到 $1M 时，将自动触发额外抽奖。",
-      "viewOnAave": "在 Smart Contract 上查看"
+      "viewOnPolygonscan": "在 Smart Contract 上查看"
     },
     "solvency": {
       "title": "偿付能力检查",
@@ -321,10 +321,11 @@
     "livePoolTarget": "/ $1,000,000",
     "activeUsersLabel": "活跃用户",
     "activeUsersValue": "12,847",
-    "yieldLabel": "已赚取收益",
-    "yieldValue": "$23,402",
+    "poolProgressLabel": "已赚取收益",
+    "poolProgressValue": "$23,402",
     "trustLine": "由 Chainlink VRF · Principal Protection · OpenZeppelin 提供支持",
-    "minDepositNote": "低至 $1 USDT 即可开始"
+    "minDepositNote": "低至 $1 USDT 即可开始",
+    "poolLabel": "إجمالي الصندوق"
   },
   "howItWorks": {
     "title": "运作机制",
@@ -354,8 +355,10 @@
     "solvencyHealthy": "健康",
     "solvencyHealthyDesc": "所有用户存款均按 1:1 完全背书",
     "viewOnEtherscan": "在 Polygonscan 上查看",
-    "viewOnAave": "在 Smart Contract 上查看",
-    "verifyVRF": "在 Chainlink 上验证"
+    "viewOnPolygonscan": "在 Smart Contract 上查看",
+    "verifyVRF": "在 Chainlink 上验证",
+    "poolTitle": "How the Pool Works",
+    "poolBody": "The pool grows from $1/day deductions."
   },
   "trust": {
     "title": "构建于 Web3 最受信赖的基础设施之上",
@@ -495,7 +498,9 @@
       "solvencyTitle": "偿付能力不变式",
       "solvencyBody": "协议维持严格的偿付能力不变式：总资产（原始 USDT + aUSDT）必须始终大于或等于总本金（用户余额 + 奖金池 + 锁定金额 + 费用）。这由合约的会计逻辑与开奖后修正块强制执行，必要时会将幻影收益重新归类为本金。您可随时通过调用 accountingSummary() 函数进行验证 — 若 solvencyGap 显示为绿色，则协议健康。",
       "yieldTitle": "Smart Contract 收益如何资助额外抽奖",
-      "yieldBody": "当您存入 USDT 时，合约会以原始 USDT 形式保留 5% 的流动性缓冲（用于即时提取），并将其余部分提供给 Principal Protection。Smart Contract 向合约铸造带息的 aUSDT，7×24 小时持续累积收益。合约将「已提供本金」与「已赚取收益」分开追踪（收益 = aUSDT 余额 − 已提供本金）。当收益单独达到 $1,000,000 时，将自动触发额外抽奖 — 同样的 Chainlink VRF 选取，同样的 $995,350 奖金。您的本金毫无风险；仅利息被用于发放。"
+      "yieldBody": "当您存入 USDT 时，合约会以原始 USDT 形式保留 5% 的流动性缓冲（用于即时提取），并将其余部分提供给 Principal Protection。Smart Contract 向合约铸造带息的 aUSDT，7×24 小时持续累积收益。合约将「已提供本金」与「已赚取收益」分开追踪（收益 = aUSDT 余额 − 已提供本金）。当收益单独达到 $1,000,000 时，将自动触发额外抽奖 — 同样的 Chainlink VRF 选取，同样的 $995,350 奖金。您的本金毫无风险；仅利息被用于发放。",
+      "poolTitle": "Smart Contract 收益如何资助额外抽奖",
+      "poolBody": "当您存入 USDT 时，合约会以原始 USDT 形式保留 5% 的流动性缓冲（用于即时提取），并将其余部分提供给 Principal Protection。Smart Contract 向合约铸造带息的 aUSDT，7×24 小时持续累积收益。合约将「已提供本金」与「已赚取收益」分开追踪（收益 = aUSDT 余额 − 已提供本金）。当收益单独达到 $1,000,000 时，将自动触发额外抽奖 — 同样的 Chainlink VRF 选取，同样的 $995,350 奖金。您的本金毫无风险；仅利息被用于发放。"
     },
     "backHome": "返回首页",
     "comingSoon": "本页面正在建设中，完整内容即将上线。",

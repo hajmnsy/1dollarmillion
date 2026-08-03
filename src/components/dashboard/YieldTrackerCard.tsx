@@ -8,27 +8,27 @@ import { BONUS_DRAW_TARGET, AAVE_POOL_URL } from "@/lib/contract/config";
 import { Sparkles, TrendingUp, Calendar, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
-interface YieldTrackerCardProps {
-  yieldBalance: bigint;
-  yieldProgress: number;
+interface PoolProgressTrackerProps {
+  poolBalance: bigint;
+  poolProgress: number;
 }
 
-export function YieldTrackerCard({
-  yieldBalance,
-  yieldProgress,
-}: YieldTrackerCardProps) {
+export function PoolProgressTracker({
+  poolBalance,
+  poolProgress,
+}: PoolProgressTrackerProps) {
   const t = useTranslations("dashboard.yield");
 
   // Estimate years to bonus draw — assume ~4% APY on principal
   // yield growth rate ≈ principal × 0.04 / 365 per day
   // For demo we use a rough estimate based on current yield rate
-  const remaining = BONUS_DRAW_TARGET > yieldBalance
-    ? BONUS_DRAW_TARGET - yieldBalance
+  const remaining = BONUS_DRAW_TARGET > poolBalance
+    ? BONUS_DRAW_TARGET - poolBalance
     : 0n;
   // Assume current yield rate is ~0.001% per day of total principal (~$2M)
   // → ~$20/day yield. So years = remaining / (20 * 365)
   const estYears =
-    yieldBalance > 0n && remaining > 0n
+    poolBalance > 0n && remaining > 0n
       ? Math.max(0.5, Number(remaining) / Number(20n * 365n * 10n ** 6n))
       : 0;
 
@@ -57,13 +57,13 @@ export function YieldTrackerCard({
               {t("currentLabel")}
             </div>
             <motion.div
-              key={yieldBalance.toString()}
+              key={poolBalance.toString()}
               initial={{ opacity: 0.7, y: -2 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
               className="text-3xl font-bold tracking-tight text-purple-400 sm:text-4xl"
             >
-              {formatUsd(yieldBalance)}
+              {formatUsd(poolBalance)}
             </motion.div>
           </div>
           <div className="text-end">
@@ -78,7 +78,7 @@ export function YieldTrackerCard({
 
         {/* Progress bar */}
         <ProgressBar
-          value={yieldProgress}
+          value={poolProgress}
           color="purple"
           height={10}
           pulseNearComplete={false}
@@ -87,15 +87,15 @@ export function YieldTrackerCard({
         {/* Percentage + estimate */}
         <div className="mt-3 flex items-center justify-between text-xs">
           <span className="font-semibold text-purple-400">
-            {yieldProgress.toFixed(2)}%
+            {poolProgress.toFixed(2)}%
           </span>
           <span
             className={`font-medium ${
-              yieldProgress >= 100 ? "text-emerald-300" : "text-white/50"
+              poolProgress >= 100 ? "text-emerald-300" : "text-white/50"
             }`}
           >
             <Calendar className="me-1 inline h-3 w-3" />
-            {yieldProgress >= 100
+            {poolProgress >= 100
               ? t("estimateReady")
               : t("estimateYears", { years: estYears.toFixed(1) })}
           </span>
@@ -115,7 +115,7 @@ export function YieldTrackerCard({
               {t("estimateLabel")}
             </div>
             <div className="text-base font-bold text-white">
-              {yieldProgress >= 100
+              {poolProgress >= 100
                 ? t("estimateReady")
                 : `~${estYears.toFixed(1)}y`}
             </div>
@@ -123,7 +123,7 @@ export function YieldTrackerCard({
         </div>
 
         <p className="mt-4 rounded-lg bg-white/[0.02] p-3 text-xs leading-relaxed text-white/50">
-          {t("yieldNote")}
+          {t("poolNote")}
         </p>
 
         {/* View on Aave */}

@@ -59,7 +59,7 @@
       "estimateYears": "dans ~{years} ans",
       "estimateReady": "PRÊT POUR LE TIRAGE",
       "yieldNote": "Le rendement s'accumule 24h/24 et 7j/7. Lorsqu'il atteint 1 M$, un tirage bonus se déclenche automatiquement.",
-      "viewOnAave": "Voir sur Smart Contract"
+      "viewOnPolygonscan": "Voir sur Smart Contract"
     },
     "solvency": {
       "title": "Vérification de Solvabilité",
@@ -321,10 +321,11 @@
     "livePoolTarget": "sur 1 000 000 $",
     "activeUsersLabel": "Utilisateurs Actifs",
     "activeUsersValue": "12 847",
-    "yieldLabel": "Rendement Gagné",
-    "yieldValue": "23 402 $",
+    "poolProgressLabel": "Rendement Gagné",
+    "poolProgressValue": "23 402 $",
     "trustLine": "Soutenu par Chainlink VRF · Principal Protection · OpenZeppelin",
-    "minDepositNote": "Commencez avec seulement 1 $ USDT"
+    "minDepositNote": "Commencez avec seulement 1 $ USDT",
+    "poolLabel": "إجمالي الصندوق"
   },
   "howItWorks": {
     "title": "Comment ça Marche",
@@ -354,8 +355,10 @@
     "solvencyHealthy": "SOLVABLE",
     "solvencyHealthyDesc": "Tous les dépôts utilisateur intégralement couverts 1:1",
     "viewOnEtherscan": "Voir sur Polygonscan",
-    "viewOnAave": "Voir sur Smart Contract",
-    "verifyVRF": "Vérifier sur Chainlink"
+    "viewOnPolygonscan": "Voir sur Smart Contract",
+    "verifyVRF": "Vérifier sur Chainlink",
+    "poolTitle": "How the Pool Works",
+    "poolBody": "The pool grows from $1/day deductions."
   },
   "trust": {
     "title": "Construit sur l'Infrastructure la Plus Fiable du Web3",
@@ -495,7 +498,9 @@
       "solvencyTitle": "L'Invariant de Solvabilité",
       "solvencyBody": "Le protocole maintient un invariant de solvabilité strict : le total des actifs (USDT brut + aUSDT) doit toujours être supérieur ou égal au capital total (soldes utilisateurs + cagnotte + montants verrouillés + frais). Ceci est appliqué par la logique comptable du contrat et un bloc de correction post-tirage qui reclassifie le rendement fantôme en capital si nécessaire. Vous pouvez vérifier cela à tout moment en appelant la fonction accountingSummary() — si le solvencyGap est vert, le protocole est sain.",
       "yieldTitle": "Comment le Rendement Smart Contract Finance les Tirages Bonus",
-      "yieldBody": "Lorsque vous déposez de l'USDT, le contrat conserve un tampon de liquidité de 5 % en USDT brut (pour les retraits instantanés) et fournit le reste à Principal Protection. Smart Contract mint des aUSDT porteurs d'intérêts au contrat, qui accumule du rendement 24h/24 et 7j/7. Le contrat suit le « capital fourni » séparément du « rendement généré » (rendement = solde aUSDT − capital fourni). Lorsque le rendement seul atteint 1 000 000 $, un tirage bonus se déclenche automatiquement — même sélection Chainlink VRF, même prix de 995 350 $. Votre capital n'est jamais à risque ; seuls les intérêts sont versés."
+      "yieldBody": "Lorsque vous déposez de l'USDT, le contrat conserve un tampon de liquidité de 5 % en USDT brut (pour les retraits instantanés) et fournit le reste à Principal Protection. Smart Contract mint des aUSDT porteurs d'intérêts au contrat, qui accumule du rendement 24h/24 et 7j/7. Le contrat suit le « capital fourni » séparément du « rendement généré » (rendement = solde aUSDT − capital fourni). Lorsque le rendement seul atteint 1 000 000 $, un tirage bonus se déclenche automatiquement — même sélection Chainlink VRF, même prix de 995 350 $. Votre capital n'est jamais à risque ; seuls les intérêts sont versés.",
+      "poolTitle": "Comment le Rendement Smart Contract Finance les Tirages Bonus",
+      "poolBody": "Lorsque vous déposez de l'USDT, le contrat conserve un tampon de liquidité de 5 % en USDT brut (pour les retraits instantanés) et fournit le reste à Principal Protection. Smart Contract mint des aUSDT porteurs d'intérêts au contrat, qui accumule du rendement 24h/24 et 7j/7. Le contrat suit le « capital fourni » séparément du « rendement généré » (rendement = solde aUSDT − capital fourni). Lorsque le rendement seul atteint 1 000 000 $, un tirage bonus se déclenche automatiquement — même sélection Chainlink VRF, même prix de 995 350 $. Votre capital n'est jamais à risque ; seuls les intérêts sont versés."
     },
     "backHome": "Retour à l'Accueil",
     "comingSoon": "Cette page est en construction. Le contenu complet sera ajouté prochainement.",

@@ -30,8 +30,8 @@ export default async function TransparencyPage({ params }: Props) {
     },
     {
       icon: <TrendingUp className="h-6 w-6" />,
-      title: t("yieldTitle"),
-      body: t("yieldBody"),
+      title: t("poolTitle"),
+      body: t("poolBody"),
     },
   ];
 

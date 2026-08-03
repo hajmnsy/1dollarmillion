@@ -14,7 +14,7 @@ export function Hero() {
   // Real values from contract
   const livePoolValue = data.currentPool > 0n ? formatUsd(data.currentPool) : "$0";
   const activeUsersValue = Number(data.activeUserCount).toLocaleString();
-  const yieldValue = "$0";
+  const poolValue = "$0";
 
   // Smooth-scroll to the How It Works section on the same page
   const scrollToHowItWorks = () => {
@@ -131,8 +131,8 @@ export function Hero() {
             />
             <LiveStat
               icon={<ShieldCheck className="h-5 w-5 text-purple-400" />}
-              label={t("yieldLabel")}
-              value={yieldValue}
+              label={t("poolLabel")}
+              value={poolValue}
             />
           </div>
 

@@ -59,7 +59,7 @@
       "estimateYears": "in ~{years} Jahren",
       "estimateReady": "BEREIT FÜR ZIEHUNG",
       "yieldNote": "Yield wird rund um die Uhr angesammelt. Wenn er $1M erreicht, wird automatisch eine Bonus-Ziehung ausgelöst.",
-      "viewOnAave": "Auf Smart Contract ansehen"
+      "viewOnPolygonscan": "Auf Smart Contract ansehen"
     },
     "solvency": {
       "title": "Solvenz-Prüfung",
@@ -321,10 +321,11 @@
     "livePoolTarget": "von $1,000,000",
     "activeUsersLabel": "Aktive Nutzer",
     "activeUsersValue": "12,847",
-    "yieldLabel": "Erwirtschafteter Yield",
-    "yieldValue": "$23,402",
+    "poolProgressLabel": "Erwirtschafteter Yield",
+    "poolProgressValue": "$23,402",
     "trustLine": "Gesichert durch Chainlink VRF · Principal Protection · OpenZeppelin",
-    "minDepositNote": "Starte mit nur $1 USDT"
+    "minDepositNote": "Starte mit nur $1 USDT",
+    "poolLabel": "إجمالي الصندوق"
   },
   "howItWorks": {
     "title": "So funktioniert's",
@@ -354,8 +355,10 @@
     "solvencyHealthy": "SOLVENT",
     "solvencyHealthyDesc": "Alle Nutzereinzahlungen vollständig 1:1 gedeckt",
     "viewOnEtherscan": "Auf Polygonscan ansehen",
-    "viewOnAave": "Auf Smart Contract ansehen",
-    "verifyVRF": "Auf Chainlink verifizieren"
+    "viewOnPolygonscan": "Auf Smart Contract ansehen",
+    "verifyVRF": "Auf Chainlink verifizieren",
+    "poolTitle": "How the Pool Works",
+    "poolBody": "The pool grows from $1/day deductions."
   },
   "trust": {
     "title": "Auf der vertrauenswürdigsten Infrastruktur in Web3 aufgebaut",
@@ -498,7 +501,9 @@
       "solvencyTitle": "Die Solvenz-Invariante",
       "solvencyBody": "Das Protokoll hält eine strenge Solvenz-Invariante ein: Gesamtvermögen (rohe USDT + aUSDT) muss immer größer oder gleich dem Gesamtkapital sein (Nutzersalden + Pool + gesperrte Beträge + Gebühren). Dies wird durch die Buchhaltungslogik des Vertrags und einen Post-Draw-Fix-up-Block erzwungen, der Phantom-Yield bei Bedarf als Kapital umklassifiziert. Du kannst dies jederzeit verifizieren, indem du die Funktion accountingSummary() aufrufst — wenn die solvencyGap grün ist, ist das Protokoll gesund.",
       "yieldTitle": "Wie Smart Contract-Yield Bonus-Ziehungen finanziert",
-      "yieldBody": "Wenn du USDT einzahlst, behält der Vertrag einen 5% Liquiditätspuffer in rohen USDT (für sofortige Abhebungen) und stellt den Rest Principal Protection zur Verfügung. Smart Contract mintet zinstragende aUSDT an den Vertrag, die rund um die Uhr Yield ansammeln. Der Vertrag verfolgt 'zugeführtes Kapital' getrennt von 'erwirtschaftetem Yield' (Yield = aUSDT-Saldo − zugeführtes Kapital). Wenn der Yield allein $1,000,000 erreicht, wird automatisch eine Bonus-Ziehung ausgelöst — gleiche Chainlink-VRF-Auswahl, gleicher $995,350-Preis. Dein Kapital ist nie gefährdet; nur die Zinsen werden ausgezahlt."
+      "yieldBody": "Wenn du USDT einzahlst, behält der Vertrag einen 5% Liquiditätspuffer in rohen USDT (für sofortige Abhebungen) und stellt den Rest Principal Protection zur Verfügung. Smart Contract mintet zinstragende aUSDT an den Vertrag, die rund um die Uhr Yield ansammeln. Der Vertrag verfolgt 'zugeführtes Kapital' getrennt von 'erwirtschaftetem Yield' (Yield = aUSDT-Saldo − zugeführtes Kapital). Wenn der Yield allein $1,000,000 erreicht, wird automatisch eine Bonus-Ziehung ausgelöst — gleiche Chainlink-VRF-Auswahl, gleicher $995,350-Preis. Dein Kapital ist nie gefährdet; nur die Zinsen werden ausgezahlt.",
+      "poolTitle": "Wie Smart Contract-Yield Bonus-Ziehungen finanziert",
+      "poolBody": "Wenn du USDT einzahlst, behält der Vertrag einen 5% Liquiditätspuffer in rohen USDT (für sofortige Abhebungen) und stellt den Rest Principal Protection zur Verfügung. Smart Contract mintet zinstragende aUSDT an den Vertrag, die rund um die Uhr Yield ansammeln. Der Vertrag verfolgt 'zugeführtes Kapital' getrennt von 'erwirtschaftetem Yield' (Yield = aUSDT-Saldo − zugeführtes Kapital). Wenn der Yield allein $1,000,000 erreicht, wird automatisch eine Bonus-Ziehung ausgelöst — gleiche Chainlink-VRF-Auswahl, gleicher $995,350-Preis. Dein Kapital ist nie gefährdet; nur die Zinsen werden ausgezahlt."
     },
     "backHome": "Zurück zur Startseite",
     "comingSoon": "Diese Seite befindet sich im Aufbau. Vollständige Inhalte werden in Kürze hinzugefügt.",

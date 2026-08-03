@@ -32,10 +32,11 @@
     "livePoolTarget": "of $1,000,000",
     "activeUsersLabel": "Active Users",
     "activeUsersValue": "12,847",
-    "yieldLabel": "Yield Earned",
-    "yieldValue": "$23,402",
+    "poolProgressLabel": "Yield Earned",
+    "poolProgressValue": "$23,402",
     "trustLine": "Backed by Chainlink VRF · OpenZeppelin",
-    "minDepositNote": "Start with as little as $1 USDT"
+    "minDepositNote": "Start with as little as $1 USDT",
+    "poolLabel": "إجمالي الصندوق"
   },
   "howItWorks": {
     "title": "How It Works",
@@ -55,8 +56,8 @@
     "subtitle": "Every number on this platform is read live from the blockchain. Verify anything you see here in under 3 clicks — on Polygonscan, on Chainlink.",
     "poolCardTitle": "Live Prize Pool",
     "poolCardDesc": "Grows daily from $1 deductions across all active users. Triggers a draw at $1,000,000.",
-    "yieldCardTitle": "DeFi Yield Generated",
-    "yieldCardDesc": "Funds bonus draws when it reaches $1,000,000.",
+    "yieldCardTitle": "Prize Pool Progress",
+    "yieldCardDesc": "Funds the prize draw when it reaches $1,000,000.",
     "solvencyCardTitle": "Solvency Proof",
     "solvencyCardDesc": "Total assets always exceed total principal owed. This is the core invariant — verifiable on-chain at any time.",
     "drawCardTitle": "Next Draw Estimate",
@@ -65,8 +66,10 @@
     "solvencyHealthy": "SOLVENT",
     "solvencyHealthyDesc": "All user deposits fully backed 1:1",
     "viewOnEtherscan": "Xem trên Polygonscan",
-    "viewOnAave": "View on Polygonscan",
-    "verifyVRF": "Verify on Chainlink"
+    "viewOnPolygonscan": "View on Polygonscan",
+    "verifyVRF": "Verify on Chainlink",
+    "poolTitle": "How the Pool Works",
+    "poolBody": "The pool grows from $1/day deductions."
   },
   "trust": {
     "title": "Built on the Most Trusted Infrastructure in Web3",

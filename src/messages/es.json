@@ -59,7 +59,7 @@
       "estimateYears": "en ~{years} años",
       "estimateReady": "LISTO PARA SORTEAR",
       "yieldNote": "El rendimiento se acumula 24/7. Cuando llega a $1M, se dispara automáticamente un sorteo bonus.",
-      "viewOnAave": "Ver en Smart Contract"
+      "viewOnPolygonscan": "Ver en Smart Contract"
     },
     "solvency": {
       "title": "Verificación de Solvencia",
@@ -321,10 +321,11 @@
     "livePoolTarget": "de $1,000,000",
     "activeUsersLabel": "Usuarios Activos",
     "activeUsersValue": "12,847",
-    "yieldLabel": "Rendimiento Ganado",
-    "yieldValue": "$23,402",
+    "poolProgressLabel": "Rendimiento Ganado",
+    "poolProgressValue": "$23,402",
     "trustLine": "Respaldado por Chainlink VRF · Principal Protection · OpenZeppelin",
-    "minDepositNote": "Empieza con tan solo $1 USDT"
+    "minDepositNote": "Empieza con tan solo $1 USDT",
+    "poolLabel": "إجمالي الصندوق"
   },
   "howItWorks": {
     "title": "Cómo Funciona",
@@ -354,8 +355,10 @@
     "solvencyHealthy": "SOLVENTE",
     "solvencyHealthyDesc": "Todos los depósitos de los usuarios completamente respaldados 1:1",
     "viewOnEtherscan": "Ver en Polygonscan",
-    "viewOnAave": "Ver en Smart Contract",
-    "verifyVRF": "Verificar en Chainlink"
+    "viewOnPolygonscan": "Ver en Smart Contract",
+    "verifyVRF": "Verificar en Chainlink",
+    "poolTitle": "How the Pool Works",
+    "poolBody": "The pool grows from $1/day deductions."
   },
   "trust": {
     "title": "Construido sobre la Infraestructura Más Confiable de Web3",
@@ -495,7 +498,9 @@
       "solvencyTitle": "El Invariante de Solvencia",
       "solvencyBody": "El protocolo mantiene un invariante estricto de solvencia: los activos totales (USDT en bruto + aUSDT) deben ser siempre mayores o iguales que el capital total (saldos de usuarios + pozo + montos bloqueados + comisiones). Esto se aplica mediante la lógica de contabilidad del contrato y un bloque de ajuste post-sorteo que reclasifica el rendimiento fantasma como capital si es necesario. Puedes verificar esto en cualquier momento llamando a la función accountingSummary() — si la solvencyGap está en verde, el protocolo está saludable.",
       "yieldTitle": "Cómo el Rendimiento de Smart Contract Financia los Sorteos Bonus",
-      "yieldBody": "Cuando depositas USDT, el contrato mantiene un buffer de liquidez del 5% en USDT en bruto (para retiros instantáneos) y suministra el resto a Principal Protection. Smart Contract emite aUSDT (con intereses) al contrato, el cual acumula rendimiento 24/7. El contrato rastrea el 'capital suministrado' por separado del 'rendimiento ganado' (rendimiento = saldo de aUSDT − capital suministrado). Cuando el rendimiento por sí solo llega a $1,000,000, se dispara automáticamente un sorteo bonus — misma selección de Chainlink VRF, mismo premio de $995,350. Tu capital nunca está en riesgo; solo se paga el interés."
+      "yieldBody": "Cuando depositas USDT, el contrato mantiene un buffer de liquidez del 5% en USDT en bruto (para retiros instantáneos) y suministra el resto a Principal Protection. Smart Contract emite aUSDT (con intereses) al contrato, el cual acumula rendimiento 24/7. El contrato rastrea el 'capital suministrado' por separado del 'rendimiento ganado' (rendimiento = saldo de aUSDT − capital suministrado). Cuando el rendimiento por sí solo llega a $1,000,000, se dispara automáticamente un sorteo bonus — misma selección de Chainlink VRF, mismo premio de $995,350. Tu capital nunca está en riesgo; solo se paga el interés.",
+      "poolTitle": "Cómo el Rendimiento de Smart Contract Financia los Sorteos Bonus",
+      "poolBody": "Cuando depositas USDT, el contrato mantiene un buffer de liquidez del 5% en USDT en bruto (para retiros instantáneos) y suministra el resto a Principal Protection. Smart Contract emite aUSDT (con intereses) al contrato, el cual acumula rendimiento 24/7. El contrato rastrea el 'capital suministrado' por separado del 'rendimiento ganado' (rendimiento = saldo de aUSDT − capital suministrado). Cuando el rendimiento por sí solo llega a $1,000,000, se dispara automáticamente un sorteo bonus — misma selección de Chainlink VRF, mismo premio de $995,350. Tu capital nunca está en riesgo; solo se paga el interés."
     },
     "backHome": "Volver al Inicio",
     "comingSoon": "Esta página está en construcción. El contenido completo se añadirá pronto.",
