@@ -39,6 +39,16 @@ export function CompactReferralCard() {
     if (!referralLink) return;
     const shareText = `🎯 تخيل يانصيب لا تخسر فيه أبداً!\n💰 أودع $1 فقط، ابقَ نشطاً بـ $1/يوم، واربح $1,000,000\n🛡️ رأس مالك محمي 100%\n🎁 استخدم رابطي واحصل على +5 أيام نشطة مجانية:\n${referralLink}`;
     
+    // Always copy the full message to clipboard first
+    try {
+      await navigator.clipboard.writeText(shareText);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
+    } catch (e) {
+      console.error("Copy failed:", e);
+    }
+    
+    // Then try to open native share dialog
     if (navigator.share) {
       try {
         await navigator.share({
@@ -48,15 +58,6 @@ export function CompactReferralCard() {
         });
       } catch (e) {
         console.log("Share cancelled");
-      }
-    } else {
-      // Fallback: copy message + link to clipboard
-      try {
-        await navigator.clipboard.writeText(shareText);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      } catch (e) {
-        console.error("Copy failed:", e);
       }
     }
   };
