@@ -301,11 +301,12 @@ export function useDashboardData() {
       accounting.isLoading ||
       drawInProgress.isLoading);
 
-  // Total pool = currentPool + totalUserBalances (actual deposits)
-  const totalPoolAmount = (totalBalances.data ?? 0n) + (pool.data ?? 0n);
+  // Prize Pool = only the accumulated deductions ($1/day)
+  // User balances are NOT part of the prize (they can be withdrawn anytime)
+  const prizePool = pool.data ?? 0n;
 
-  const poolProgress = totalPoolAmount
-    ? computeProgress(totalPoolAmount, POOL_TARGET)
+  const poolProgress = prizePool
+    ? computeProgress(prizePool, POOL_TARGET)
     : 0;
 
   const daysRemaining = userInfo.data
@@ -326,8 +327,8 @@ export function useDashboardData() {
   return {
     isConnected,
     address,
-    // Pool — shows total deposited amount
-    currentPool: totalPoolAmount,
+    // Prize Pool — only accumulated deductions (not user deposits)
+    currentPool: prizePool,
     poolProgress,
     // Active users
     activeUserCount: activeUsers.data ?? 0n,
