@@ -1,0 +1,24 @@
+name: Auto Sync Users
+
+on:
+  schedule:
+    # تشغيل كل ساعة
+    - cron: "0 * * * *"
+  workflow_dispatch: # تشغيل يدوي
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      
+      - run: npm install -g bun
+      
+      - name: Run Auto Sync Bot
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        run: bun run auto-sync-bot.ts

@@ -12,11 +12,10 @@ import {
 } from "@/lib/contract/config";
 
 /**
- * SyncButton — applies pending $1/day deductions on-chain.
- *
- * The contract uses "lazy deduction" — deductions are calculated but
- * not applied until someone calls syncUserState(). This button lets
- * users sync their own state to update the prize pool and their balance.
+ * SyncButton — lets users manually sync their state.
+ * 
+ * The auto-sync bot runs every hour to sync ALL users automatically.
+ * This button is for users who want to sync immediately without waiting.
  */
 export function SyncButton() {
   const { address } = useAccount();
@@ -24,7 +23,6 @@ export function SyncButton() {
   const [status, setStatus] = useState<"idle" | "syncing" | "done" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  // Read user info to check if sync is needed
   const { data: userInfo } = useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
@@ -44,7 +42,6 @@ export function SyncButton() {
     },
   });
 
-  // Calculate pending days
   const now = Math.floor(Date.now() / 1000);
   const lastTime = userInfo?.lastDeductionTime ? Number(userInfo.lastDeductionTime) : 0;
   const elapsedSeconds = lastTime > 0 ? now - lastTime : 0;
@@ -77,42 +74,44 @@ export function SyncButton() {
     }
   };
 
+  // Show "synced" status when no pending deductions
   if (!needsSync && status === "idle") {
     return (
       <div className="flex items-center gap-2 text-xs text-white/40">
         <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-        <span>State is synced</span>
+        <span>حالتك محدّثة</span>
       </div>
     );
   }
 
+  // Show sync button when there are pending deductions
   return (
     <div className="flex flex-col items-end gap-1">
       <Button
         onClick={handleSync}
         disabled={isPending || status === "syncing"}
         size="sm"
-        className="h-8 gap-1.5 rounded-lg bg-amber-500 px-3 text-xs font-bold text-black hover:bg-amber-400 disabled:opacity-60"
+        className="h-8 gap-1.5 rounded-lg bg-amber-500/80 px-3 text-xs font-bold text-black hover:bg-amber-400 disabled:opacity-60"
       >
         {status === "syncing" || isPending ? (
           <>
             <RefreshCw className="h-3.5 w-3.5 animate-spin" />
-            Syncing...
+            جارٍ المزامنة...
           </>
         ) : status === "done" ? (
           <>
             <CheckCircle2 className="h-3.5 w-3.5" />
-            Synced!
+            تمت المزامنة!
           </>
         ) : status === "error" ? (
           <>
             <AlertCircle className="h-3.5 w-3.5" />
-            Failed
+            فشل
           </>
         ) : (
           <>
             <RefreshCw className="h-3.5 w-3.5" />
-            Sync State (${pendingDeduction.toFixed(0)} pending)
+            مزامنة (${pendingDeduction.toFixed(0)} معلّق)
           </>
         )}
       </Button>
