@@ -12,7 +12,7 @@ import { DepositModal } from "@/components/dashboard/DepositModal";
 import { WithdrawModal } from "@/components/dashboard/WithdrawModal";
 import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
 import { CompactReferralCard } from "@/components/dashboard/CompactReferralCard";
-import { ReferralCard } from "@/components/dashboard/ReferralCard";
+import { SyncButton } from "@/components/dashboard/SyncButton";
 import { useDashboardData } from "@/hooks/useLottery";
 import { useAccount } from "wagmi";
 import { motion } from "framer-motion";
@@ -77,6 +77,18 @@ function DashboardContent() {
                 className="mb-6"
               >
                 <CompactReferralCard />
+              </motion.div>
+            )}
+
+            {/* Sync Button - applies pending $1/day deductions */}
+            {isConnected && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.08 }}
+                className="mb-6 flex justify-end"
+              >
+                <SyncButton />
               </motion.div>
             )}
 
