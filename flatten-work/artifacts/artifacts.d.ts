@@ -8,6 +8,7 @@ import "hardhat/types/artifacts";
 declare module "hardhat/types/artifacts" {
   interface ArtifactMap {
     ["HybridRoscaLotteryV3"]: never
-    ["IPool"]: never;
+    ["IPool"]: never
+    ["IVRFCoordinatorV2_5"]: never;
   }
 }
