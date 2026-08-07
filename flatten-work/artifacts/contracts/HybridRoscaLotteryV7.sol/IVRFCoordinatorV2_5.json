@@ -1,7 +1,7 @@
 {
   "_format": "hh3-artifact-1",
   "contractName": "IVRFCoordinatorV2_5",
-  "sourceName": "contracts/HybridRoscaLotteryV5.sol",
+  "sourceName": "contracts/HybridRoscaLotteryV7.sol",
   "abi": [
     {
       "inputs": [
@@ -48,6 +48,6 @@
   "linkReferences": {},
   "deployedLinkReferences": {},
   "immutableReferences": {},
-  "inputSourceName": "project/contracts/HybridRoscaLotteryV5.sol",
-  "buildInfoId": "solc-0_8_20-5de6f77a583da2374ecc3f99f687bfb2d6fb29ae"
+  "inputSourceName": "project/contracts/HybridRoscaLotteryV7.sol",
+  "buildInfoId": "solc-0_8_20-0b158648e6fa1b5673baa8dc408f06f269408d1b"
 }
