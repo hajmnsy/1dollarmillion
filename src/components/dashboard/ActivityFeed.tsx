@@ -181,7 +181,7 @@ function ActivityRow({
 
   // Format relative time
   const timeKey = getRelativeTimeKey(event.timestamp);
-  const timeLabel = t(`timestamps.${timeKey.key}`, timeKey.vars);
+  const timeLabel = t(`timestamps.${timeKey.key}`, timeKey.params);
 
   // Type label
   const typeLabel = t(`types.${event.type}`);

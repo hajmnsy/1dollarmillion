@@ -298,7 +298,7 @@ export function WalletButtonInner() {
 
           <div className="mt-4 grid grid-cols-1 gap-2">
             {WALLET_OPTIONS.map((option) => {
-              const connector = option.findConnector(connectors || []);
+              const connector = option.findConnector([...(connectors || [])]);
               const isAvailable = !!connector;
               const isWalletConnect = option.key === "walletconnect";
 

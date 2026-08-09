@@ -19,7 +19,8 @@ export type ActivityType =
   | "withdraw"
   | "deduction"
   | "win"
-  | "sync";
+  | "sync"
+  | "lockDrip";
 
 export interface ActivityEvent {
   id: string;
@@ -28,6 +29,7 @@ export interface ActivityEvent {
   timestamp: number;
   txHash?: `0x${string}`;
   confirmed: boolean;
+  drawType?: string;
 }
 
 // ============================================================

@@ -9,7 +9,7 @@ import { polygon } from "wagmi/chains";
 
 // === Contract Addresses (DEPLOYED ON POLYGON MAINNET - V4 Sharia-Compliant) ===
 export const LOTTERY_CONTRACT_ADDRESS =
-  "0x6DdFbB61A28504713f81eDb0551261cb3DD8Ae1c" as `0x${string}`;
+  "0x96B5a67e048B630e851C688D44BaFdD10031cB9d" as `0x${string}`;
 
 export const USDT_CONTRACT_ADDRESS =
   "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" as `0x${string}`;
@@ -35,6 +35,8 @@ export const POOL_TARGET = 1_000_000n * TOKEN_DECIMALS_BI;
 export const OPERATIONAL_FEE = 1_000n * TOKEN_DECIMALS_BI;
 export const WINNER_LOCK_AMOUNT = 3_650n * TOKEN_DECIMALS_BI;
 export const WINNER_PAYOUT = 995_350n * TOKEN_DECIMALS_BI;
+export const BONUS_DRAW_TARGET = POOL_TARGET;
+export const AAVE_POOL_URL = "https://app.aave.com/";
 
 // === Contract ABI (V4 - No Aave, No Bonus Draws) ===
 export const lotteryAbi = [
@@ -98,6 +100,10 @@ export const lotteryAbi = [
   },
   { inputs: [{ name: "amount", type: "uint256" }], name: "withdraw", outputs: [], stateMutability: "nonpayable", type: "function" },
   { inputs: [{ name: "userAddr", type: "address" }], name: "syncUserState", outputs: [], stateMutability: "nonpayable", type: "function" },
+  { inputs: [], name: "syncAllAndTriggerDraw", outputs: [], stateMutability: "nonpayable", type: "function" },
+  { inputs: [], name: "getEstimatedPool", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
+  { inputs: [{ name: "userAddr", type: "address" }], name: "getEstimatedBalance", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
+  { inputs: [], name: "isDrawReady", outputs: [{ type: "bool" }], stateMutability: "view", type: "function" },
   {
     inputs: [{ name: "userAddr", type: "address" }],
     name: "getReferralInfo",

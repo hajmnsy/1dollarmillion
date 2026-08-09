@@ -135,12 +135,10 @@ function WalletButtonClient() {
       // If browser wallet is installed, connect directly (fast, no QR)
       if (hasInjected && (metaMaskConnector || injectedConnector)) {
         const conn = metaMaskConnector || injectedConnector;
-        await connectAsync({ connector: conn });
+        if (conn) await connectAsync({ connector: conn });
       } else if (walletConnectConnector) {
-        // No injected wallet — open WalletConnect modal (300+ wallets with real logos)
         await connectAsync({ connector: walletConnectConnector });
-      } else {
-        // Fallback to whatever is available
+      } else if (preferredConnector) {
         await connectAsync({ connector: preferredConnector });
       }
     } catch (e: any) {
