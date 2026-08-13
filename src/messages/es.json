@@ -427,7 +427,7 @@
       "q5": "¿Qué pasa si gano?",
       "a5": "Si ganas, $995,350 USDT se transfieren directamente a tu wallet al instante — no necesitas reclamar. Luego quedas excluido de los sorteos regulares futuros (para distribuir la riqueza), pero tu bloqueo de $3,650 sigue goteando $1/día hacia el pozo durante 10 años, manteniéndote en el pozo de sorteos bonus. Puedes retirar cualquier monto bloqueado restante después de que madure el período de bloqueo de 10 años.",
       "q6": "¿Qué son los Sorteos Bonus?",
-      "a6": "يُموَّل صندوق الجوائز بالكامل من خصم 1$/يوم من المستخدمين النشطين. عند بلوغ الصندوق 1,000,000$، يُطلَق سحب تلقائياً باستخدام Chainlink VRF. نفس جائزة 995,350$، نفس العدالة."
+      "a6": "يُموَّل صندوق الجوائز بالكامل من خصم 1$/يوم من المستخدمين النشطين. عند بلوغ الصندوق 1,000,000$، يُطلَق سحب تلقائياً باستخدام Chainlink VRF. نفس جائزة 995,350$، نفس العدالة. هذا هو الجزء 'بلا خسارة' — أموالك تُولّد الصندوق من خلال الخصومات اليومية، وليس من خلال استثمارات خطرة."
     },
     "terms": {
       "title": "Términos de Servicio",
@@ -453,7 +453,7 @@
       "section3Title": "3. Analítica del Frontend",
       "section3Body": "Nuestro frontend puede recopilar analíticas de uso anónimas (vistas de página, eventos de clic) para mejorar la experiencia del usuario. No recopilamos direcciones de wallet, direcciones IP ni ninguna información de identificación personal. Las analíticas se agregan y no pueden rastrearse a usuarios individuales.",
       "section4Title": "4. Servicios de Terceros",
-      "section4Body": "يتكامل البروتوكول مع خدمات الطرف الثالث: Chainlink VRF (للعشوائية) و WalletConnect (لربط المحفظة).",
+      "section4Body": "يتكامل البروتوكول مع خدمات الطرف الثالث: Chainlink VRF (للعشوائية) و WalletConnect (لربط المحفظة). هذه الخدمات لديها سياسات خصوصية خاصة بها.",
       "section5Title": "5. Cookies",
       "section5Body": "Nuestro frontend usa el almacenamiento local para recordar tu preferencia de idioma y el estado de conexión de tu wallet. No usamos cookies de rastreo, cookies publicitarias ni servicios de cookies de terceros."
     },
@@ -463,11 +463,11 @@
       "section1Title": "1. Riesgo de Smart Contract",
       "section1Body": "Los smart contracts son código inmutable que se ejecuta automáticamente. A pesar de las auditorías de seguridad y las mejores prácticas, los contratos pueden contener bugs, vulnerabilidades o errores lógicos no descubiertos que podrían resultar en pérdida parcial o total de fondos. El protocolo usa las librerías probadas en batalla de OpenZeppelin y sigue el patrón Checks-Effects-Interactions, pero ningún smart contract puede garantizarse 100% seguro.",
       "section2Title": "2. Riesgo de Protocolo DeFi",
-      "section2Body": "يحتفظ العقد الذكي بالودائع بأمان على Polygon. تشمل المخاطر المحتملة ثغرات العقود الذكية والإجراءات التنظيمية. ومع ذلك، لا تُستثمر أموالك أبداً في أصول خطرة.",
+      "section2Body": "يحتفظ العقد الذكي بالودائع بأمان على Polygon. تشمل المخاطر المحتملة ثغرات العقود الذكية والإجراءات التنظيمية. ومع ذلك، لا تُستثمر أموالك أبداً في أصول خطرة — تُحفظ في العقد كـ USDT.",
       "section3Title": "3. Riesgo de Chainlink VRF",
-      "section3Body": "El protocolo depende de Chainlink VRF v2 para la selección aleatoria del ganador. Aunque Chainlink es el estándar de la industria para la aleatoriedad on-chain, los riesgos potenciales incluyen: fallos de la red de oráculos, cumplimientos retrasados o (muy improbable) nodos de oráculo comprometidos. Si VRF falla, el sorteo se pausa hasta que el oráculo se recupere — tus fondos no están en riesgo, pero el sorteo puede retrasarse.",
+      "section3Body": "أكثر من 40 اختبار Foundry تغطي: التدفق العادي، الحالات الحدية، والثوابت. جميع الاختبارات تنجح.",
       "section4Title": "4. Riesgos de Mercado y de Gas",
-      "section4Body": "Las comisiones de gas de Ethereum pueden ser volátiles y pueden hacer que los depósitos pequeños sean económicamente imprácticos. El protocolo recomienda depositar al menos 30 USDT para minimizar la sobrecarga de gas. USDT es una stablecoin vinculada al USD, pero históricamente han ocurrido eventos de desvinculación de stablecoins que podrían afectar el valor de tus depósitos.",
+      "section4Body": "كود المصدر للعقد مُتحقق منه على Polygonscan. يمكن لأي شخص مراجعة المنطق والتحقق من أن توزيع الجائزة مُشفّر ولا يمكن تغييره.",
       "section5Title": "5. Sin Garantía de Retornos",
       "section5Body": "El protocolo no garantiza que vayas a ganar ningún sorteo. Tus probabilidades de ganar dependen del número de usuarios activos. Los depósitos extienden tu duración de elegibilidad, no tus probabilidades por sorteo. Nunca deposites más de lo que puedas permitirte perder. El desempeño pasado no garantiza resultados futuros."
     },
@@ -484,11 +484,11 @@
       "contractTitle": "Smart Contract de Código Abierto",
       "contractBody": "El contrato 1DollarMillion V2.1.1 es totalmente de código abierto y está verificado en Etherscan. Cualquiera puede leer el código fuente, auditar la lógica y verificar que la distribución de premios (división 995,350 / 3,650 / 1,000) está codificada de forma fija y no puede cambiarse. El contrato hereda ReentrancyGuard, SafeERC20 y Ownable de OpenZeppelin — el estándar de oro para código DeFi seguro. El propietario solo puede pausar el contrato en emergencias y reclamar las comisiones acumuladas; no puede acceder a los depósitos de los usuarios ni alterar el mecanismo de sorteo.",
       "solvencyTitle": "El Invariante de Solvencia",
-      "solvencyBody": "El protocolo mantiene un invariante estricto de solvencia: los activos totales (USDT en bruto + aUSDT) deben ser siempre mayores o iguales que el capital total (saldos de usuarios + pozo + montos bloqueados + comisiones). Esto se aplica mediante la lógica de contabilidad del contrato y un bloque de ajuste post-sorteo que reclasifica el rendimiento fantasma como capital si es necesario. Puedes verificar esto en cualquier momento llamando a la función accountingSummary() — si la solvencyGap está en verde, el protocolo está saludable.",
+      "solvencyBody": "يحافظ البروتوكول على محاسبة صارمة: إجمالي USDT في العقد يجب أن يساوي دائماً أرصدة المستخدمين + صندوق الجوائز + المبالغ المحجوزة + الرسوم. يمكنك التحقق من ذلك في أي وقت باستدعاء accountingSummary() على Polygonscan.",
       "yieldTitle": "Cómo el Rendimiento de Smart Contract Financia los Sorteos Bonus",
-      "yieldBody": "Cuando depositas USDT, el contrato mantiene un buffer de liquidez del 5% en USDT en bruto (para retiros instantáneos) y suministra el resto a Principal Protection. Smart Contract emite aUSDT (con intereses) al contrato, el cual acumula rendimiento 24/7. El contrato rastrea el 'capital suministrado' por separado del 'rendimiento ganado' (rendimiento = saldo de aUSDT − capital suministrado). Cuando el rendimiento por sí solo llega a $1,000,000, se dispara automáticamente un sorteo bonus — misma selección de Chainlink VRF, mismo premio de $995,350. Tu capital nunca está en riesgo; solo se paga el interés.",
+      "yieldBody": "خصوماتك اليومية بـ $1 تُموّل صندوق الجوائز. عند بلوغه 1,000,000$، يُطلَق سحب تلقائياً — اختيار عادل عبر Chainlink VRF، جائزة 995,350$. أموالك ليست في خطر أبداً.",
       "poolTitle": "Cómo el Rendimiento de Smart Contract Financia los Sorteos Bonus",
-      "poolBody": "Cuando depositas USDT, el contrato mantiene un buffer de liquidez del 5% en USDT en bruto (para retiros instantáneos) y suministra el resto a Principal Protection. Smart Contract emite aUSDT (con intereses) al contrato, el cual acumula rendimiento 24/7. El contrato rastrea el 'capital suministrado' por separado del 'rendimiento ganado' (rendimiento = saldo de aUSDT − capital suministrado). Cuando el rendimiento por sí solo llega a $1,000,000, se dispara automáticamente un sorteo bonus — misma selección de Chainlink VRF, mismo premio de $995,350. Tu capital nunca está en riesgo; solo se paga el interés."
+      "poolBody": "يخصم العقد 1 USDT يومياً من كل مستخدم نشط. هذه الخصومات تغذي صندوق الجوائز. يُعرض الصندوق مباشرةً باستخدام تقدير زمني فوري."
     },
     "backHome": "Volver al Inicio",
     "comingSoon": "Esta página está en construcción. El contenido completo se añadirá pronto.",
@@ -496,15 +496,15 @@
       "title": "Documentation",
       "subtitle": "The complete technical documentation for the 1DollarMillion protocol.",
       "section1Title": "1. Protocol Overview",
-      "section1Body": "1DollarMillion is a no-loss lottery on Polygon combining ROSCA with DeFi yield from Principal Protection. The prize pool grows automatically from $1/day deductions. When it reaches $1,000,000, a winner is selected via Chainlink VRF v2.5.",
+      "section1Body": "بروتوكول 1DollarMillion هو يانصيب بلا خسارة يعمل على شبكة Polygon. يجمع البروتوكول بين جمعية الادخار الدوارة (ROSCA) وخصم 1$/يوم لإنشاء صندوق جوائز ينمو تلقائياً. عندما يصل الصندوق إلى 1,000,000 دولار، يتم اختيار فائز عشوائياً عبر Chainlink VRF.",
       "section2Title": "2. Tokenomics",
-      "section2Body": "يخصم العقد 1 USDT يومياً من كل مستخدم نشط. هذه الخصومات تغذي صندوق الجوائز. عند بلوغ الصندوق 1,000,000$، يُطلَق سحب.",
+      "section2Body": "يخصم العقد 1 USDT يومياً من كل مستخدم نشط لإبقائه مؤهلاً للسحب. هذه الخصومات تغذي صندوق الجوائز. عند بلوغ الصندوق 1,000,000$، يُطلَق سحب تلقائياً.",
       "section3Title": "3. Prize Distribution",
       "section3Body": "When a draw completes: $995,350 to winner (or $985,397 with referrer), $3,650 locked for 10 years, $1,000 operational fee, $9,953 to referrer (if applicable). No hidden fees.",
       "section4Title": "4. Contract Addresses (Polygon Mainnet)",
-      "section4Body": "Lottery V3: 0xcf8e2713FCD5653B4Bf9d440CF43c5F05524365F. USDT: 0xc2132D05D31c914a87C6611C10748AEb04B58e8F. Verify full source code on Polygonscan.",
+      "section4Body": "العقد الرئيسي: 0x96B5a67e048B630e851C688D44BaFdD10031cB9d (Polygon). USDT: 0xc2132D05D31c914a87C6611C10748AEb04B58e8F. تحقق من الكود الكامل على Polygonscan.",
       "section5Title": "5. Frontend Integration",
-      "section5Body": "Frontend built with Next.js 16 + wagmi v2 + viem. Uses pruned ABI from lib/contract/config.ts. All read calls target Polygon Mainnet (Chain ID: 137)."
+      "section5Body": "الواجهة مبنية بـ Next.js 16 + wagmi v2 + viem. تستخدم ABI مُقلّم من lib/contract/config.ts. كل استدعاءات القراءة تستهدف Polygon Mainnet (Chain ID: 137)."
     },
     "audit": {
       "title": "Audit Report",
@@ -512,9 +512,9 @@
       "section1Title": "1. Audit Status",
       "section1Body": "The smart contract is ready for third-party audit. Uses OpenZeppelin battle-tested libraries and follows Checks-Effects-Interactions pattern. Formal audit by external firm will be conducted before mass launch.",
       "section2Title": "2. Security Features",
-      "section2Body": "Contract includes: ReentrancyGuard (anti-reentrancy), SafeERC20 (safe transfers), Ownable (admin control). Solvency fix-up runs after each draw to maintain solvencyGap >= yield invariant.",
+      "section2Body": "يحتوي العقد على: ReentrancyGuard لمنع هجمات إعادة الدخول، SafeERC20 للتحويلات الآمنة، Ownable للتحكم الإداري. منطق الخصم الصارم يضمن دقة الأرصدة دائماً.",
       "section3Title": "3. Foundry Tests",
-      "section3Body": "40+ Foundry tests covering: normal flow, yield flow, edge cases (zero-buffer withdrawal, dual-draw race), and invariants (solvency). All tests pass.",
+      "section3Body": "يستخدم العقد تقديراً زمنياً فورياً O(1) لعرض الصندوق، وخصماً صارماً على السلسلة للسحوبات، ونظام إحالة محمي من هجمات Sybid يتطلب إيداعاً أدنى $30.",
       "section4Title": "4. Polygonscan Verification",
       "section4Body": "Contract source code is verified on Polygonscan. Anyone can review the logic and verify that prize distribution is hardcoded and cannot be changed.",
       "section5Title": "5. Bug Bounty",

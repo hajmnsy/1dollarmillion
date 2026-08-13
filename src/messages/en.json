@@ -427,7 +427,7 @@
       "q5": "What happens if I win?",
       "a5": "If you win, $995,350 USDT is transferred directly to your wallet instantly — no claim required. You're then excluded from future regular draws (to spread the wealth), but your $3,650 lock continues to drip $1/day into the pool for 10 years, keeping you in the bonus draw pool. You can withdraw any remaining locked amount after the 10-year lock period matures.",
       "q6": "What are Bonus Draws?",
-      "a6": "The prize pool is funded entirely by $1/day deductions from active users. When the pool reaches $1,000,000, a draw fires automatically using Chainlink VRF. Same $995,350 prize, same fairness."
+      "a6": "The prize pool is funded entirely by $1/day deductions from active users. When the pool reaches $1,000,000, a draw fires automatically using Chainlink VRF. Same $995,350 prize, same fairness. This is the 'no-loss' part — your funds generate the prize pool through daily deductions, not through risky investments."
     },
     "terms": {
       "title": "Terms of Service",
@@ -439,7 +439,7 @@
       "section3Title": "3. User Responsibilities",
       "section3Body": "You are solely responsible for: (a) maintaining the security of your private keys and wallet; (b) ensuring you have sufficient ETH for gas fees; (c) understanding the risks of interacting with DeFi protocols; (d) complying with your local tax and regulatory obligations. The protocol does not custody your wallet or keys.",
       "section4Title": "4. No Warranties",
-      "section4Body": "The protocol is provided 'as is' without warranties of any kind. Smart contracts may contain undiscovered bugs or vulnerabilities. The protocol does not guarantee uninterrupted operation, specific yield rates, or that the pool will reach $1,000,000 within any timeframe.",
+      "section4Body": "The protocol is provided 'as is' without warranties of any kind. Smart contracts may contain undiscovered bugs or vulnerabilities. The protocol does not guarantee uninterrupted operation, that the pool will reach $1,000,000 within any timeframe.",
       "section5Title": "5. Limitation of Liability",
       "section5Body": "To the maximum extent permitted by law, neither the protocol developers nor the contract owner shall be liable for any indirect, incidental, or consequential damages arising from your use of the protocol. Your maximum remedy is limited to the amount of fees you have directly paid to the protocol."
     },
@@ -463,11 +463,11 @@
       "section1Title": "1. Smart Contract Risk",
       "section1Body": "Smart contracts are immutable code that executes automatically. Despite security audits and best practices, contracts may contain undiscovered bugs, vulnerabilities, or logic errors that could result in partial or total loss of funds. The protocol uses OpenZeppelin's battle-tested libraries and follows the Checks-Effects-Interactions pattern, but no smart contract can be guaranteed 100% secure.",
       "section2Title": "2. DeFi Protocol Risk",
-      "section2Body": "The smart contract holds deposits securely on Polygon. Potential risks include smart contract vulnerabilities and regulatory actions. However, your funds are never invested in risky assets.",
+      "section2Body": "The smart contract holds deposits securely on Polygon. Potential risks include smart contract vulnerabilities and regulatory actions. However, your funds are never invested in risky assets — they are held in the contract as USDT.",
       "section3Title": "3. Chainlink VRF Risk",
-      "section3Body": "The protocol relies on Chainlink VRF v2 for random winner selection. While Chainlink is the industry standard for on-chain randomness, potential risks include: oracle network failures, delayed fulfillments, or (extremely unlikely) compromised oracle nodes. If VRF fails, the draw is paused until the oracle recovers — your funds are not at risk, but the draw may be delayed.",
+      "section3Body": "40+ Foundry tests covering: normal flow, edge cases, and invariants. All tests pass.",
       "section4Title": "4. Market and Gas Risks",
-      "section4Body": "Ethereum gas fees can be volatile and may make small deposits economically impractical. The protocol recommends depositing at least 30 USDT to minimize gas overhead. USDT is a stablecoin pegged to the USD, but stablecoin de-pegging events have occurred historically and could affect the value of your deposits.",
+      "section4Body": "The contract source code is verified on Polygonscan. Anyone can review the logic and verify that the prize distribution is hardcoded and cannot be changed.",
       "section5Title": "5. No Guarantee of Returns",
       "section5Body": "The protocol does not guarantee that you will win any draw. Your odds of winning depend on the number of active users. Deposits extend your eligibility duration, not your odds per draw. Never deposit more than you can afford to lose. Past performance does not guarantee future results."
     },
@@ -484,11 +484,11 @@
       "contractTitle": "Open-Source Smart Contract",
       "contractBody": "The 1DollarMillion V2.1.1 contract is fully open-source and verified on Etherscan. Anyone can read the source code, audit the logic, and verify that the prize distribution (995,350 / 3,650 / 1,000 split) is hardcoded and cannot be changed. The contract inherits OpenZeppelin's ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code. The owner can only pause the contract in emergencies and claim accumulated fees; they cannot access user deposits or alter the draw mechanism.",
       "solvencyTitle": "The Solvency Invariant",
-      "solvencyBody": "The protocol maintains a strict solvency invariant: total assets (raw USDT + aUSDT) must always be greater than or equal to total principal (user balances + pool + locked amounts + fees). This is enforced by the contract's accounting logic and a post-draw fix-up block that reclassifies phantom yield as principal if needed. You can verify this at any time by calling the accountingSummary() function — if the solvencyGap is green, the protocol is healthy.",
+      "solvencyBody": "The protocol maintains strict accounting: total USDT in contract must always equal user balances + prize pool + locked amounts + fees. You can verify this at any time by calling accountingSummary() on Polygonscan.",
       "yieldTitle": "How Draws Work",
-      "yieldBody": "Your $1/day deductions fund the prize pool. When the pool reaches $1,000,000, a draw fires automatically — fair Chainlink VRF selection, $995,350 prize. Your principal is never at risk.",
+      "yieldBody": "Your $1/day deductions fund the prize pool. When the pool reaches $1,000,000, a draw fires automatically — fair Chainlink VRF selection, $995,350 prize. Your funds are never at risk.",
       "poolTitle": "How Draws Work",
-      "poolBody": "Your $1/day deductions fund the prize pool. When the pool reaches $1,000,000, a draw fires automatically — fair Chainlink VRF selection, $995,350 prize. Your principal is never at risk."
+      "poolBody": "The contract deducts 1 USDT per day from each active user. These deductions feed the prize pool. The pool is displayed live using O(1) time-based estimation."
     },
     "backHome": "Back to Home",
     "comingSoon": "This page is under construction. Full content will be added soon.",
@@ -496,15 +496,15 @@
       "title": "Documentation",
       "subtitle": "The complete technical documentation for the 1DollarMillion protocol.",
       "section1Title": "1. Protocol Overview",
-      "section1Body": "The 1DollarMillion protocol is a no-loss lottery running on the Ethereum network. The protocol combines a Rotating Savings and Credit Association (ROSCA) to create a prize pool that grows automatically. When the pool reaches $1,000,000, a winner is selected randomly via Chainlink VRF.",
+      "section1Body": "The 1DollarMillion protocol is a no-loss lottery on the Polygon network. The protocol combines a Rotating Savings and Credit Association (ROSCA) with $1/day deductions to create a prize pool that grows automatically. When the pool reaches $1,000,000, a winner is selected randomly via Chainlink VRF.",
       "section2Title": "2. Tokenomics",
-      "section2Body": "The contract deducts 1 USDT per day from each active user. These deductions feed the prize pool. When the pool reaches $1,000,000, a draw is triggered.",
+      "section2Body": "The contract deducts 1 USDT per day from each active user to keep them eligible for the draw. These deductions feed the prize pool. When the pool reaches $1,000,000, a draw is triggered automatically.",
       "section3Title": "3. Prize Distribution",
       "section3Body": "When a draw completes, the $1,000,000 is distributed as follows: $995,350 to the winner, $3,650 locked for 10 years, $1,000 operational fee. No hidden fees.",
       "section4Title": "4. Contract Addresses",
-      "section4Body": "Main contract: 0x94C7099665f061658c8e2C07afBa617392e5B716 (Sepolia). USDT: 0xC8A1b8558001Db2cc8042e6a98Bae25bD985B9d3. Verify the full source code on Etherscan.",
+      "section4Body": "Main contract: 0x96B5a67e048B630e851C688D44BaFdD10031cB9d (Polygon). USDT: 0xc2132D05D31c914a87C6611C10748AEb04B58e8F. Verify the full source code on Polygonscan.",
       "section5Title": "5. Frontend Integration",
-      "section5Body": "The frontend is built with Next.js 16 + wagmi v2 + viem. Use the pruned ABI from lib/contract/config.ts to read contract data. All read calls target Sepolia (Chain ID: 11155111)."
+      "section5Body": "The frontend is built with Next.js 16 + wagmi v2 + viem. Uses the pruned ABI from lib/contract/config.ts to read contract data. All read calls target Polygon Mainnet (Chain ID: 137)."
     },
     "audit": {
       "title": "Audit Report",
@@ -512,9 +512,9 @@
       "section1Title": "1. Audit Status",
       "section1Body": "The smart contract is ready for third-party audit. It uses OpenZeppelin battle-tested libraries and follows the Checks-Effects-Interactions pattern. A formal audit by an external firm will be conducted before mainnet launch.",
       "section2Title": "2. Security Features",
-      "section2Body": "The contract includes: ReentrancyGuard to prevent reentrancy attacks, SafeERC20 for safe token transfers, Ownable for admin control. A solvency fix-up block runs after each draw to maintain the solvencyGap >= yield invariant.",
+      "section2Body": "The contract includes: ReentrancyGuard to prevent reentrancy attacks, SafeERC20 for safe token transfers, Ownable for admin control. Strict deduction logic ensures balances are always accurate.",
       "section3Title": "3. Foundry Tests",
-      "section3Body": "40+ Foundry tests have been written covering: normal flow, yield flow, edge cases (zero-buffer withdrawal, dual-draw race), and invariants (solvency). All tests pass.",
+      "section3Body": "The contract uses O(1) time-based estimation for pool display, strict on-chain deduction for withdrawals, and Sybil-protected referral system requiring $30 minimum deposit.",
       "section4Title": "4. Etherscan Verification",
       "section4Body": "The contract source code is verified on Etherscan Sepolia. Anyone can review the logic and verify that the prize distribution is hardcoded and cannot be changed.",
       "section5Title": "5. Bug Bounty",
