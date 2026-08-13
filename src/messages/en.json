@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "1DollarMillion — Deposit USDT. Win $1,000,000. Never Lose Your Principal.",
-    "description": "The world's first no-loss lottery with principal protection. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your principal is always safe."
+    "description": "The world's first no-loss lottery. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your funds are always safe."
   },
   "dashboard": {
     "title": "Your Dashboard",
@@ -49,24 +49,12 @@
       "bonusDrawsLabel": "Bonus Draws",
       "viewOnEtherscan": "View on Polygonscan"
     },
-    "yield": {
-      "title": "Prize Pool Tracker",
-      "subtitle": "Funds the prize draw when it reaches $1,000,000.",
-      "currentLabel": "Pool Progress",
-      "targetLabel": "$1,000,000 Target",
-      "apyLabel": "Network",
-      "estimateLabel": "Est. Next Bonus Draw",
-      "estimateYears": "in ~{years} years",
-      "estimateReady": "READY TO DRAW",
-      "yieldNote": "Yield accrues 24/7. When it reaches $1M, a bonus draw fires automatically.",
-      "viewOnPolygonscan": "View on Polygonscan"
-    },
     "solvency": {
       "title": "Solvency Check",
       "healthy": "SOLVENT",
       "healthyDesc": "All deposits fully backed 1:1",
       "warning": "WARNING",
-      "warningDesc": "Solvency gap below yield — investigate.",
+      "warningDesc": "Pool balance lower than expected.",
       "totalAssets": "Total Assets",
       "principal": "Total Principal",
       "solvencyGap": "Solvency Gap",
@@ -276,7 +264,7 @@
     "referral": {
       "badge": "Referral Program",
       "title": "Your Referral Link",
-      "subtitle": "Share this link. Earn 1% when your referrals win.",
+      "subtitle": "Share this link. Earn 1% when your referrals win (requires $30 deposit).",
       "connectPrompt": "Connect your wallet to get your referral link",
       "yourLink": "Your unique link",
       "copy": "Copy",
@@ -313,7 +301,7 @@
     "titleLine1": "Deposit USDT.",
     "titleLine2": "Win $1,000,000.",
     "titleLine3": "Never lose your principal.",
-    "subtitle": "The world's first no-loss lottery with principal protection. Stay active for just $1 a day, and when the pool hits $1 million, a provably-fair winner takes home $995,350 — guaranteed.",
+    "subtitle": "The world's first no-loss lottery. Stay active for just $1 a day, and when the pool hits $1 million, a provably-fair winner takes home $995,350 — guaranteed.",
     "ctaPrimary": "Deposit & Enter",
     "ctaSecondary": "How It Works",
     "livePoolLabel": "Live Pool",
@@ -336,8 +324,8 @@
     "step2Description": "The contract logically deducts exactly 1 USDT per day to keep you eligible for the draw. This deduction feeds the prize pool. With $30 deposited, you're entered for 30 days. With $1,000, you're entered for nearly three years.",
     "step3Title": "Win $995,350",
     "step3Description": "When the pool reaches exactly $1,000,000, Chainlink VRF selects one provably-random winner from all active users. The winner receives $995,350 directly to their wallet — instantly, transparently, no questions asked.",
-    "bonusTitle": "Plus: DeFi Yield Bonus Draws",
-    "bonusDescription": "Your $1/day deductions fund bonus draws. When the pool reaches $1,000,000, an additional bonus draw fires — same prize, same fairness, no extra cost to you. You're automatically entered into both draws.",
+    "bonusTitle": "Plus: Automatic Draws",
+    "bonusDescription": "Your $1/day deductions fund the prize pool. When the pool reaches $1,000,000, a draw fires automatically — same prize, same fairness.",
     "bonusBadge": "Free Money"
   },
   "transparency": {
@@ -346,7 +334,7 @@
     "poolCardTitle": "Live Prize Pool",
     "poolCardDesc": "Grows daily from $1 deductions across all active users. Triggers a draw at $1,000,000.",
     "yieldCardTitle": "Prize Pool Progress",
-    "yieldCardDesc": "Funds the prize draw when it reaches $1,000,000.",
+    "yieldCardDesc": "Funded by $1/day deductions. Grows daily until $1,000,000.",
     "solvencyCardTitle": "Solvency Proof",
     "solvencyCardDesc": "Total assets always exceed total principal owed. This is the core invariant — verifiable on-chain at any time.",
     "drawCardTitle": "Next Draw Estimate",
@@ -365,8 +353,8 @@
     "subtitle": "We use industry-grade security primitives so you can sleep at night.",
     "chainlinkTitle": "Chainlink VRF v2",
     "chainlinkDesc": "Provably fair randomness. Every winner is selected by a verifiable random number — no one, not even us, can predict or manipulate the result.",
-    "aaveTitle": "Principal Protected",
-    "aaveDesc": "Your deposits are held securely in the smart contract. No risky investments, no lending. Your principal is 100% protected and always verifiable on-chain.",
+    "aaveTitle": "Smart Contract Secured",
+    "aaveDesc": "Your deposits are held securely in the smart contract on Polygon. No investments, no lending. Your funds are always under your control.",
     "openzeppelinTitle": "OpenZeppelin",
     "openzeppelinDesc": "Battle-tested smart contract libraries. Our contract inherits ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code.",
     "auditTitle": "Audit Ready",
@@ -431,7 +419,7 @@
       "q1": "How does the $1/day deduction work?",
       "a1": "When you deposit USDT, the contract logically deducts 1 USDT per day to keep you 'Active' and eligible for the draw. This is a lazy deduction — it's calculated on-chain but only applied when you (or anyone) interacts with your account (deposit, withdraw, or sync). The deducted amount feeds directly into the prize pool. If your balance reaches zero, you're marked Inactive and excluded from draws until you deposit again.",
       "q2": "Is my principal safe? Can I lose my deposit?",
-      "a2": "Your principal is always safe. The contract never invests your deposit in risky assets — it only holds USDT securely in the contract (the largest audited DeFi money market with $12B+ TVL) to earn interest. That interest funds bonus draws; it does not risk your deposit. You can withdraw your remaining balance at any time, subject to a 5% liquidity buffer that ensures the contract always has enough USDT on hand.",
+      "a2": "Your funds are always safe. The contract holds your USDT securely on the Polygon blockchain. No risky investments, no lending. You can withdraw your remaining balance at any time.",
       "q3": "How is the winner chosen? Is it fair?",
       "a3": "The winner is selected using Chainlink VRF v2 (Verifiable Random Function) — the gold standard for on-chain randomness. When the pool reaches $1,000,000, the contract requests a random number from Chainlink's oracle network. That number is cryptographically verifiable, meaning no one (not even the contract owner) can predict or manipulate the result. The winner is selected as `activeUsers[randomNumber % activeUserCount]`, giving every active user an equal chance.",
       "q4": "What are the fees?",
@@ -439,7 +427,7 @@
       "q5": "What happens if I win?",
       "a5": "If you win, $995,350 USDT is transferred directly to your wallet instantly — no claim required. You're then excluded from future regular draws (to spread the wealth), but your $3,650 lock continues to drip $1/day into the pool for 10 years, keeping you in the bonus draw pool. You can withdraw any remaining locked amount after the 10-year lock period matures.",
       "q6": "What are Bonus Draws?",
-      "a6": "Bonus Draws are funded entirely by Principal Protection yield — not from your deposits. When the contract's accrued interest reaches $1,000,000, a bonus draw fires automatically using the same Chainlink VRF mechanism. Same $995,350 prize, same fairness. You're automatically entered into both regular and bonus draws as long as you're Active. This is the 'no-loss' part — your principal generates yield that funds additional prizes."
+      "a6": "The prize pool is funded entirely by $1/day deductions from active users. When the pool reaches $1,000,000, a draw fires automatically using Chainlink VRF. Same $995,350 prize, same fairness."
     },
     "terms": {
       "title": "Terms of Service",
@@ -465,7 +453,7 @@
       "section3Title": "3. Frontend Analytics",
       "section3Body": "Our frontend may collect anonymous usage analytics (page views, click events) to improve the user experience. We do not collect wallet addresses, IP addresses, or any personally identifiable information. Analytics are aggregated and cannot be traced back to individual users.",
       "section4Title": "4. Third-Party Services",
-      "section4Body": "The protocol integrates with third-party services: Chainlink VRF (for randomness), smart contract security, and WalletConnect (for wallet connections). These services have their own privacy policies. We recommend reviewing them before use.",
+      "section4Body": "The protocol integrates with third-party services: Chainlink VRF (for randomness) and WalletConnect (for wallet connections). These services have their own privacy policies.",
       "section5Title": "5. Cookies",
       "section5Body": "Our frontend uses local storage to remember your language preference and wallet connection state. We do not use tracking cookies, advertising cookies, or third-party cookie services."
     },
@@ -475,7 +463,7 @@
       "section1Title": "1. Smart Contract Risk",
       "section1Body": "Smart contracts are immutable code that executes automatically. Despite security audits and best practices, contracts may contain undiscovered bugs, vulnerabilities, or logic errors that could result in partial or total loss of funds. The protocol uses OpenZeppelin's battle-tested libraries and follows the Checks-Effects-Interactions pattern, but no smart contract can be guaranteed 100% secure.",
       "section2Title": "2. DeFi Protocol Risk",
-      "section2Body": "The protocol holds USDT securely in the contract to generate yield. The smart contract holds deposits securely. Potential risks include: smart contract vulnerabilities, and regulatory actions. However, your principal is never invested in risky assets.",
+      "section2Body": "The smart contract holds deposits securely on Polygon. Potential risks include smart contract vulnerabilities and regulatory actions. However, your funds are never invested in risky assets.",
       "section3Title": "3. Chainlink VRF Risk",
       "section3Body": "The protocol relies on Chainlink VRF v2 for random winner selection. While Chainlink is the industry standard for on-chain randomness, potential risks include: oracle network failures, delayed fulfillments, or (extremely unlikely) compromised oracle nodes. If VRF fails, the draw is paused until the oracle recovers — your funds are not at risk, but the draw may be delayed.",
       "section4Title": "4. Market and Gas Risks",
@@ -510,7 +498,7 @@
       "section1Title": "1. Protocol Overview",
       "section1Body": "The 1DollarMillion protocol is a no-loss lottery running on the Ethereum network. The protocol combines a Rotating Savings and Credit Association (ROSCA) to create a prize pool that grows automatically. When the pool reaches $1,000,000, a winner is selected randomly via Chainlink VRF.",
       "section2Title": "2. Tokenomics",
-      "section2Body": "The contract deducts 1 USDT per day from each active user to keep them eligible for the draw. These deductions feed the prize pool. At the same time, idle deposits are invested in Principal Protection to generate yield that funds additional bonus draws.",
+      "section2Body": "The contract deducts 1 USDT per day from each active user. These deductions feed the prize pool. When the pool reaches $1,000,000, a draw is triggered.",
       "section3Title": "3. Prize Distribution",
       "section3Body": "When a draw completes, the $1,000,000 is distributed as follows: $995,350 to the winner, $3,650 locked for 10 years, $1,000 operational fee. No hidden fees.",
       "section4Title": "4. Contract Addresses",
@@ -552,10 +540,10 @@
     "title": "Earn While You Share",
     "subtitle": "Invite friends to 1DollarMillion and both of you get rewarded. You earn 1% of their prize if they win — at zero cost to the platform.",
     "benefit1Title": "+5 Free Active Days",
-    "benefit1Desc": "When your friend deposits using your link, they get 5 extra days of active status — completely free.",
+    "benefit1Desc": "When your friend deposits $30+ using your link, they get 5 extra days of active status — completely free.",
     "benefit1Value": "Free bonus for friend",
     "benefit2Title": "+5 Free Active Days For You",
-    "benefit2Desc": "You also get 5 extra active days when your referred friend makes their first deposit. Mutual benefit.",
+    "benefit2Desc": "You also get 5 extra active days when your referred friend makes their first $30+ deposit.",
     "benefit2Value": "Free bonus for you",
     "benefit3Title": "1% of Their Prize",
     "benefit3Desc": "If your referred friend wins a $1M draw, you receive $9,953 — automatically, from the winner's payout. Zero cost to platform.",

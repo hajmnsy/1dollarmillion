@@ -85,7 +85,7 @@ export function useCurrentPool() {
   return useReadContract({
     address: LOTTERY_CONTRACT_ADDRESS,
     abi: lotteryAbi,
-    functionName: "currentPool",
+    functionName: "getEstimatedPool", // V9: Live estimated pool for display
     chainId: TARGET_CHAIN_ID,
     query: {
       refetchInterval: FAST,

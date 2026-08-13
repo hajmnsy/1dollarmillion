@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "1DollarMillion — USDT einzahlen. $1,000,000 gewinnen. Verliere dein Kapital nie.",
-    "description": "Die weltweit erste verlustfreie Lotterie, angetrieben durch Principal Protection Erträge. Zahle USDT ein, bleibe für nur $1/Tag aktiv und gewinne lebensverändernde Preise. Dein Kapital ist immer sicher."
+    "description": "أول يانصيب بدون خسارة في العالم. أودع USDT، ابقَ نشطاً بـ $1/يوم، واربح جوائز تغير حياتك. أموالك آمنة دائماً."
   },
   "dashboard": {
     "title": "Dein Dashboard",
@@ -49,24 +49,12 @@
       "bonusDrawsLabel": "Bonus-Ziehungen",
       "viewOnEtherscan": "Auf Polygonscan ansehen"
     },
-    "yield": {
-      "title": "DeFi-Yield-Bonus-Tracker",
-      "subtitle": "Principal Protection Zinsen aus ruhenden Einzahlungen — finanziert Bonus-Ziehungen.",
-      "currentLabel": "Erwirtschafteter Yield",
-      "targetLabel": "Bonus-Ziehungsziel",
-      "apyLabel": "Aktueller APY",
-      "estimateLabel": "Geschätzte nächste Bonus-Ziehung",
-      "estimateYears": "in ~{years} Jahren",
-      "estimateReady": "BEREIT FÜR ZIEHUNG",
-      "yieldNote": "Yield wird rund um die Uhr angesammelt. Wenn er $1M erreicht, wird automatisch eine Bonus-Ziehung ausgelöst.",
-      "viewOnPolygonscan": "Auf Smart Contract ansehen"
-    },
     "solvency": {
       "title": "Solvenz-Prüfung",
       "healthy": "SOLVENT",
       "healthyDesc": "Alle Einzahlungen vollständig 1:1 gedeckt",
       "warning": "WARNUNG",
-      "warningDesc": "Solvenzlücke unter Yield — untersuchen.",
+      "warningDesc": "رصيد الصندوق أقل من المتوقع.",
       "totalAssets": "Gesamtvermögen",
       "principal": "Gesamtkapital",
       "solvencyGap": "Solvenzlücke",
@@ -276,7 +264,7 @@
     "referral": {
       "badge": "Einladen & Verdienen",
       "title": "Empfehlungsprogramm",
-      "subtitle": "Lade Freunde ein und verdiene Belohnungen",
+      "subtitle": "شارك هذا الرابط. اكسب 1% عندما يفوز من تحيلهم (يتطلب إيداع $30).",
       "yourLink": "Dein Empfehlungslink",
       "copy": "Kopieren",
       "copied": "Kopiert!",
@@ -309,11 +297,11 @@
     "switchNetwork": "Zu Ethereum wechseln"
   },
   "hero": {
-    "badge": "Angetrieben durch Chainlink VRF + Principal Protection",
+    "badge": "مدعوم بـ Chainlink VRF",
     "titleLine1": "USDT einzahlen.",
     "titleLine2": "$1,000,000 gewinnen.",
     "titleLine3": "Verliere dein Kapital nie.",
-    "subtitle": "Die weltweit erste verlustfreie Lotterie, bei der deine Einzahlungen DeFi-Yield auf Principal Protection erwirtschaften. Bleibe für nur $1 pro Tag aktiv, und wenn der Pool $1 Million erreicht, nimmt ein nachweislich fairer Gewinner $995,350 mit nach Hause — garantiert.",
+    "subtitle": "أول يانصيب بدون خسارة في العالم. ابقَ نشطاً بـ $1/يوم فقط، وعندما يصل الصندوق إلى مليون دولار، يأخذ الفائز 995,350$ — مضمون.",
     "ctaPrimary": "Einzahlen & teilnehmen",
     "ctaSecondary": "So funktioniert's",
     "livePoolLabel": "Live-Pool",
@@ -323,7 +311,7 @@
     "activeUsersValue": "12,847",
     "poolProgressLabel": "Erwirtschafteter Yield",
     "poolProgressValue": "$23,402",
-    "trustLine": "Gesichert durch Chainlink VRF · Principal Protection · OpenZeppelin",
+    "trustLine": "مدعوم بـ Chainlink VRF · OpenZeppelin",
     "minDepositNote": "Starte mit nur $1 USDT",
     "poolLabel": "إجمالي الصندوق"
   },
@@ -336,17 +324,17 @@
     "step2Description": "Der Vertrag zieht logisch exakt 1 USDT pro Tag ab, um dich für die Ziehung teilnahmeberechtigt zu halten. Dieser Abzug speist den Preispool. Mit $30 Einzahlung bist du 30 Tage eingetragen. Mit $1,000 bist du fast drei Jahre lang eingetragen.",
     "step3Title": "$995,350 gewinnen",
     "step3Description": "Wenn der Pool exakt $1,000,000 erreicht, wählt Chainlink VRF einen nachweislich zufälligen Gewinner aus allen aktiven Nutzern. Der Gewinner erhält $995,350 direkt auf seine Wallet — sofort, transparent, ohne Wenn und Aber.",
-    "bonusTitle": "Plus: DeFi-Yield-Bonus-Ziehungen",
-    "bonusDescription": "Deine ruhenden Einzahlungen erwirtschaften Yield auf Principal Protection. Wenn dieser Yield allein $1,000,000 erreicht, wird eine zusätzliche Bonus-Ziehung ausgelöst — gleicher Preis, gleiche Fairness, keine zusätzlichen Kosten für dich. Du nimmst automatisch an beiden Ziehungen teil.",
+    "bonusTitle": "بالإضافة: سحوبات تلقائية",
+    "bonusDescription": "اشتراكاتك اليومية بـ $1 تُموّل صندوق الجوائز. عند بلوغه 1,000,000$، يُطلَق سحب تلقائياً — نفس الجائزة، نفس العدالة.",
     "bonusBadge": "Gratis-Geld"
   },
   "transparency": {
     "title": "Radikale Transparenz. Verifizierbare Solvenz.",
-    "subtitle": "Jede Zahl auf dieser Plattform wird live aus der Blockchain gelesen. Verifiziere alles, was du hier siehst, in unter 3 Klicks — auf Etherscan, auf Smart Contract, auf Chainlink.",
+    "subtitle": "كل رقم على هذه المنصة يُقرأ مباشرة من البلوكتشين. تحقق من أي رقم تراه هنا في أقل من 3 نقرات — على Polygonscan، على Chainlink.",
     "poolCardTitle": "Live-Preispool",
     "poolCardDesc": "Wächst täglich durch $1-Abzüge aller aktiven Nutzer. Löst bei $1,000,000 eine Ziehung aus.",
-    "yieldCardTitle": "Generierter DeFi-Yield",
-    "yieldCardDesc": "Zinsen aus Principal Protection auf deine ruhenden Einzahlungen. Finanziert Bonus-Ziehungen, wenn er $1,000,000 erreicht.",
+    "yieldCardTitle": "تقدم صندوق الجوائز",
+    "yieldCardDesc": "يُموَّل من خصم 1$/يوم. ينمو يومياً حتى 1,000,000$.",
     "solvencyCardTitle": "Solvenz-Nachweis",
     "solvencyCardDesc": "Gesamtvermögen übersteigt immer das gesamte geschuldete Kapital. Dies ist die Kerninvariante — jederzeit on-chain verifizierbar.",
     "drawCardTitle": "Nächste Ziehungsschätzung",
@@ -365,8 +353,8 @@
     "subtitle": "Wir verwenden industrietaugliche Sicherheitsprimitive, damit du nachts ruhig schlafen kannst.",
     "chainlinkTitle": "Chainlink VRF v2",
     "chainlinkDesc": "Nachweisbar faire Zufälligkeit. Jeder Gewinner wird durch eine verifizierbare Zufallszahl ausgewählt — niemand, nicht einmal wir, kann das Ergebnis vorhersagen oder manipulieren.",
-    "aaveTitle": "Principal Protected",
-    "aaveDesc": "Der größte dezentrale Geldmarkt. Deine Einzahlungen werden Smart Contract zur Zinserwirtschaftung zur Verfügung gestellt, gesichert durch über $12B TVL und von 7 führenden Firmen geprüft.",
+    "aaveTitle": "عقد ذكي آمن",
+    "aaveDesc": "ودائعك محفوظة بأمان في العقد الذكي على شبكة Polygon. لا استثمارات، لا إقراض. أموالك تحت سيطرتك الكاملة.",
     "openzeppelinTitle": "OpenZeppelin",
     "openzeppelinDesc": "Erprobte Smart-Contract-Bibliotheken. Unser Vertrag erbt ReentrancyGuard, SafeERC20 und Ownable — der Goldstandard für sicheren DeFi-Code.",
     "auditTitle": "Audit-bereit",
@@ -379,7 +367,7 @@
     "drawsCompletedValue": "5",
     "totalUsers": "Nutzer gesamt",
     "totalUsersValue": "12,847",
-    "avgApy": "Aktueller Smart Contract APY",
+    "avgApy": "الشبكة",
     "avgApyValue": "Polygon"
   },
   "finalCta": {
@@ -434,7 +422,7 @@
       "q1": "Wie funktioniert der $1/Tag-Abzug?",
       "a1": "Wenn du USDT einzahlst, zieht der Vertrag logisch 1 USDT pro Tag ab, um dich 'Aktiv' und für die Ziehung teilnahmeberechtigt zu halten. Dies ist ein verzögerter Abzug — er wird on-chain berechnet, aber erst angewendet, wenn du (oder jemand anderes) mit deinem Konto interagierst (Einzahlung, Abhebung oder Synchronisierung). Der abgezogene Betrag fließt direkt in den Preispool. Wenn dein Saldo null erreicht, wirst du als Inaktiv markiert und von Ziehungen ausgeschlossen, bis du erneut einzahlst.",
       "q2": "Ist mein Kapital sicher? Kann ich meine Einzahlung verlieren?",
-      "a2": "Dein Kapital ist immer sicher. Der Vertrag investiert deine Einzahlung nie in riskante Assets — er stellt nur ruhende USDT bei Principal Protection zur Verfügung (dem größten geprüften DeFi-Geldmarkt mit über $12B TVL), um Zinsen zu erwirtschaften. Diese Zinsen finanzieren Bonus-Ziehungen; sie gefährden nicht deine Einzahlung. Du kannst deinen verbleibenden Saldo jederzeit abheben, vorbehaltlich eines 5% Liquiditätspuffers, der sicherstellt, dass der Vertrag immer ausreichend USDT vorhält.",
+      "a2": "أموالك آمنة دائماً. يحتفظ العقد بـ USDT الخاص بك بأمان على شبكة Polygon. لا استثمارات خطرة، لا إقراض. يمكنك سحب رصيدك المتبقي في أي وقت.",
       "q3": "Wie wird der Gewinner ausgewählt? Ist es fair?",
       "a3": "Der Gewinner wird mit Chainlink VRF v2 (Verifiable Random Function) ausgewählt — dem Goldstandard für on-chain Zufälligkeit. Wenn der Pool $1,000,000 erreicht, fordert der Vertrag eine Zufallszahl aus Chainlinks Oracle-Netzwerk an. Diese Zahl ist kryptografisch verifizierbar, was bedeutet, dass niemand (auch nicht der Vertragseigentümer) das Ergebnis vorhersagen oder manipulieren kann. Der Gewinner wird als `activeUsers[randomNumber % activeUserCount]` ausgewählt, was jedem aktiven Nutzer eine gleiche Chance gibt.",
       "q4": "Welche Gebühren fallen an?",
@@ -442,7 +430,7 @@
       "q5": "Was passiert, wenn ich gewinne?",
       "a5": "Wenn du gewinnst, werden $995,350 USDT sofort direkt an deine Wallet überwiesen — kein Claim erforderlich. Du wirst dann von zukünftigen regulären Ziehungen ausgeschlossen (um den Reichtum zu streuen), aber deine $3,650-Sperre fließt weiterhin $1/Tag für 10 Jahre in den Pool und hält dich im Bonus-Ziehungspool. Du kannst jeden verbleibenden gesperrten Betrag nach Ablauf der 10-Jahres-Sperre abheben.",
       "q6": "Was sind Bonus-Ziehungen?",
-      "a6": "Bonus-Ziehungen werden vollständig durch Principal Protection Yield finanziert — nicht aus deinen Einzahlungen. Wenn die angesammelten Zinsen des Vertrags $1,000,000 erreichen, wird automatisch eine Bonus-Ziehung mit demselben Chainlink-VRF-Mechanismus ausgelöst. Gleicher $995,350-Preis, gleiche Fairness. Du nimmst automatisch an sowohl regulären als auch Bonus-Ziehungen teil, solange du Aktiv bist. Das ist der 'verlustfreie' Teil — dein Kapital erwirtschaftet Yield, der zusätzliche Preise finanziert."
+      "a6": "يُموَّل صندوق الجوائز بالكامل من خصم 1$/يوم من المستخدمين النشطين. عند بلوغ الصندوق 1,000,000$، يُطلَق سحب تلقائياً باستخدام Chainlink VRF. نفس جائزة 995,350$، نفس العدالة."
     },
     "terms": {
       "title": "Nutzungsbedingungen",
@@ -468,7 +456,7 @@
       "section3Title": "3. Frontend-Analytik",
       "section3Body": "Unser Frontend kann anonyme Nutzungsanalytik (Seitenaufrufe, Klick-Ereignisse) sammeln, um die Nutzererfahrung zu verbessern. Wir sammeln keine Wallet-Adressen, IP-Adressen oder personenbezogene Daten. Analytik wird aggregiert und kann nicht auf einzelne Nutzer zurückverfolgt werden.",
       "section4Title": "4. Drittanbieter-Dienste",
-      "section4Body": "Das Protokoll integriert Drittanbieter-Dienste: Chainlink VRF (für Zufälligkeit), Principal Protection (für Yield) und WalletConnect (für Wallet-Verbindungen). Diese Dienste haben ihre eigenen Datenschutzrichtlinien. Wir empfehlen, diese vor der Nutzung zu prüfen.",
+      "section4Body": "يتكامل البروتوكول مع خدمات الطرف الثالث: Chainlink VRF (للعشوائية) و WalletConnect (لربط المحفظة).",
       "section5Title": "5. Cookies",
       "section5Body": "Unser Frontend verwendet lokalen Speicher, um deine Spracheinstellung und deinen Wallet-Verbindungsstatus zu speichern. Wir verwenden keine Tracking-Cookies, Werbe-Cookies oder Drittanbieter-Cookie-Dienste."
     },
@@ -478,7 +466,7 @@
       "section1Title": "1. Smart-Contract-Risiko",
       "section1Body": "Smart Contracts sind unveränderlicher Code, der automatisch ausgeführt wird. Trotz Sicherheits-Audits und Best Practices können Verträge unentdeckte Fehler, Schwachstellen oder Logikfehler enthalten, die zu teilweisem oder vollständigem Verlust von Mitteln führen können. Das Protokoll verwendet die erprobten OpenZeppelin-Bibliotheken und folgt dem Checks-Effects-Interactions-Muster, aber kein Smart Contract kann zu 100% als sicher garantiert werden.",
       "section2Title": "2. DeFi-Protokoll-Risiko",
-      "section2Body": "Das Protokoll stellt ruhende USDT bei Principal Protection zur Verfügung, um Yield zu erwirtschaften. Smart Contract ist eines der größten und am besten geprüften DeFi-Protokolle, aber nicht risikofrei. Potenzielle Risiken umfassen: Smart-Contract-Schwachstellen in Smart Contract, Liquiditätskrisen, Oracle-Ausfälle, Governance-Angriffe und regulatorische Maßnahmen. Wenn Smart Contract kompromittiert wird, könnten Teile der Protokollmittel gefährdet sein.",
+      "section2Body": "يحتفظ العقد الذكي بالودائع بأمان على Polygon. تشمل المخاطر المحتملة ثغرات العقود الذكية والإجراءات التنظيمية. ومع ذلك، لا تُستثمر أموالك أبداً في أصول خطرة.",
       "section3Title": "3. Chainlink-VRF-Risiko",
       "section3Body": "Das Protokoll verlässt sich auf Chainlink VRF v2 für die zufällige Gewinnerauswahl. Chainlink ist der Branchenstandard für on-chain Zufälligkeit, aber potenzielle Risiken umfassen: Oracle-Netzwerkausfälle, verzögerte Auslieferungen oder (äußerst unwahrscheinlich) kompromittierte Oracle-Knoten. Wenn VRF ausfällt, wird die Ziehung pausiert, bis sich das Oracle erholt — deine Mittel sind nicht gefährdet, aber die Ziehung kann verzögert werden.",
       "section4Title": "4. Markt- und Gas-Risiken",
@@ -513,7 +501,7 @@
       "section1Title": "1. Protokollübersicht",
       "section1Body": "Das 1DollarMillion-Protokoll ist eine verlustfreie Lotterie, die auf dem Ethereum-Netzwerk läuft. Das Protokoll kombiniert eine Rotating Savings and Credit Association (ROSCA) mit DeFi-Yield von Principal Protection, um einen Preispool zu schaffen, der automatisch wächst. Wenn der Pool $1,000,000 erreicht, wird ein Gewinner zufällig über Chainlink VRF ausgewählt.",
       "section2Title": "2. Tokenomics",
-      "section2Body": "Der Vertrag zieht 1 USDT pro Tag von jedem aktiven Nutzer ab, um ihn für die Ziehung teilnahmeberechtigt zu halten. Diese Abzüge speisen den Preispool. Gleichzeitig werden ruhende Einzahlungen bei Principal Protection investiert, um Yield zu erwirtschaften, der zusätzliche Bonus-Ziehungen finanziert.",
+      "section2Body": "يخصم العقد 1 USDT يومياً من كل مستخدم نشط. هذه الخصومات تغذي صندوق الجوائز. عند بلوغ الصندوق 1,000,000$، يُطلَق سحب.",
       "section3Title": "3. Preisverteilung",
       "section3Body": "Wenn eine Ziehung abgeschlossen wird, werden die $1,000,000 wie folgt verteilt: $995,350 an den Gewinner, $3,650 für 10 Jahre gesperrt, $1,000 Betriebsgebühr. Keine versteckten Gebühren.",
       "section4Title": "4. Vertragsadressen",
@@ -555,10 +543,10 @@
     "title": "Earn While You Share",
     "subtitle": "Invite friends to 1DollarMillion and both of you get rewarded. You earn 1% of their prize if they win — at zero cost to the platform.",
     "benefit1Title": "+5 Free Active Days",
-    "benefit1Desc": "When your friend deposits using your link, they get 5 extra days of active status — completely free.",
+    "benefit1Desc": "عندما يودع صديقك $30+ باستخدام رابطك، يحصل على 5 أيام إضافية من الحالة النشطة — مجاناً تماماً.",
     "benefit1Value": "Free bonus for friend",
     "benefit2Title": "+5 Free Active Days For You",
-    "benefit2Desc": "You also get 5 extra active days when your referred friend makes their first deposit. Mutual benefit.",
+    "benefit2Desc": "أنت أيضاً تحصل على 5 أيام نشطة إضافية عندما يودع صديقك المُحال $30+ لأول مرة.",
     "benefit2Value": "Free bonus for you",
     "benefit3Title": "1% of Their Prize",
     "benefit3Desc": "If your referred friend wins a $1M draw, you receive $9,953 — automatically, from the winner's payout. Zero cost to platform.",

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "HybridRoSCA Lottery — Deposit USDT. Win $1,000,000. Never Lose Your Principal.",
-    "description": "The world's first no-loss lottery with principal protection. Deposit USDT, stay active for just $1/day, and win life-changing prizes. Your principal is always safe."
+    "description": "أول يانصيب بدون خسارة في العالم. أودع USDT، ابقَ نشطاً بـ $1/يوم، واربح جوائز تغير حياتك. أموالك آمنة دائماً."
   },
   "nav": {
     "howItWorks": "How It Works",
@@ -20,11 +20,11 @@
     "switchNetwork": "Switch to Ethereum"
   },
   "hero": {
-    "badge": "Powered by Chainlink VRF",
+    "badge": "مدعوم بـ Chainlink VRF",
     "titleLine1": "Deposit USDT.",
     "titleLine2": "Win $1,000,000.",
     "titleLine3": "Never lose your principal.",
-    "subtitle": "The world's first no-loss lottery with principal protection. Stay active for just $1 a day, and when the pool hits $1 million, a provably-fair winner takes home $995,350 — guaranteed.",
+    "subtitle": "أول يانصيب بدون خسارة في العالم. ابقَ نشطاً بـ $1/يوم فقط، وعندما يصل الصندوق إلى مليون دولار، يأخذ الفائز 995,350$ — مضمون.",
     "ctaPrimary": "Deposit & Enter",
     "ctaSecondary": "How It Works",
     "livePoolLabel": "Live Pool",
@@ -34,7 +34,7 @@
     "activeUsersValue": "12,847",
     "poolProgressLabel": "Yield Earned",
     "poolProgressValue": "$23,402",
-    "trustLine": "Backed by Chainlink VRF · OpenZeppelin",
+    "trustLine": "مدعوم بـ Chainlink VRF · OpenZeppelin",
     "minDepositNote": "Start with as little as $1 USDT",
     "poolLabel": "إجمالي الصندوق"
   },
@@ -47,17 +47,17 @@
     "step2Description": "The contract logically deducts exactly 1 USDT per day to keep you eligible for the draw. This deduction feeds the prize pool. With $30 deposited, you're entered for 30 days. With $1,000, you're entered for nearly three years.",
     "step3Title": "Win $995,350",
     "step3Description": "When the pool reaches exactly $1,000,000, Chainlink VRF selects one provably-random winner from all active users. The winner receives $995,350 directly to their wallet — instantly, transparently, no questions asked.",
-    "bonusTitle": "Plus: DeFi Yield Bonus Draws",
-    "bonusDescription": "Your $1/day deductions fund bonus draws. When the pool reaches $1,000,000, an additional bonus draw fires — same prize, same fairness, no extra cost to you. You're automatically entered into both draws.",
+    "bonusTitle": "بالإضافة: سحوبات تلقائية",
+    "bonusDescription": "اشتراكاتك اليومية بـ $1 تُموّل صندوق الجوائز. عند بلوغه 1,000,000$، يُطلَق سحب تلقائياً — نفس الجائزة، نفس العدالة.",
     "bonusBadge": "Free Money"
   },
   "transparency": {
     "title": "Radical Transparency. Verifiable Solvency.",
-    "subtitle": "Every number on this platform is read live from the blockchain. Verify anything you see here in under 3 clicks — on Polygonscan, on Chainlink.",
+    "subtitle": "كل رقم على هذه المنصة يُقرأ مباشرة من البلوكتشين. تحقق من أي رقم تراه هنا في أقل من 3 نقرات — على Polygonscan، على Chainlink.",
     "poolCardTitle": "Live Prize Pool",
     "poolCardDesc": "Grows daily from $1 deductions across all active users. Triggers a draw at $1,000,000.",
-    "yieldCardTitle": "Prize Pool Progress",
-    "yieldCardDesc": "Funds the prize draw when it reaches $1,000,000.",
+    "yieldCardTitle": "تقدم صندوق الجوائز",
+    "yieldCardDesc": "يُموَّل من خصم 1$/يوم. ينمو يومياً حتى 1,000,000$.",
     "solvencyCardTitle": "Solvency Proof",
     "solvencyCardDesc": "Total assets always exceed total principal owed. This is the core invariant — verifiable on-chain at any time.",
     "drawCardTitle": "Next Draw Estimate",
@@ -76,8 +76,8 @@
     "subtitle": "We use industry-grade security primitives so you can sleep at night.",
     "chainlinkTitle": "Chainlink VRF v2",
     "chainlinkDesc": "Provably fair randomness. Every winner is selected by a verifiable random number — no one, not even us, can predict or manipulate the result.",
-    "aaveTitle": "Principal Protected",
-    "aaveDesc": "Your deposits are held securely in the smart contract. No risky investments, no lending. Your principal is 100% protected and always verifiable on-chain.",
+    "aaveTitle": "عقد ذكي آمن",
+    "aaveDesc": "ودائعك محفوظة بأمان في العقد الذكي على شبكة Polygon. لا استثمارات، لا إقراض. أموالك تحت سيطرتك الكاملة.",
     "openzeppelinTitle": "OpenZeppelin",
     "openzeppelinDesc": "Battle-tested smart contract libraries. Our contract inherits ReentrancyGuard, SafeERC20, and Ownable — the gold standard for secure DeFi code.",
     "auditTitle": "Audit Ready",
@@ -90,7 +90,7 @@
     "drawsCompletedValue": "5",
     "totalUsers": "Total Users",
     "totalUsersValue": "12,847",
-    "avgApy": "Network",
+    "avgApy": "الشبكة",
     "avgApyValue": "Polygon"
   },
   "finalCta": {
@@ -142,7 +142,7 @@
       "section1Title": "1. Protocol Overview",
       "section1Body": "1DollarMillion is a no-loss lottery on Polygon combining ROSCA with DeFi yield from Principal Protection. The prize pool grows automatically from $1/day deductions. When it reaches $1,000,000, a winner is selected via Chainlink VRF v2.5.",
       "section2Title": "2. Tokenomics",
-      "section2Body": "The contract deducts 1 USDT per day from each active user. These deductions feed the prize pool. Idle deposits are invested in Principal Protection to generate yield that funds bonus draws.",
+      "section2Body": "يخصم العقد 1 USDT يومياً من كل مستخدم نشط. هذه الخصومات تغذي صندوق الجوائز. عند بلوغ الصندوق 1,000,000$، يُطلَق سحب.",
       "section3Title": "3. Prize Distribution",
       "section3Body": "When a draw completes: $995,350 to winner (or $985,397 with referrer), $3,650 locked for 10 years, $1,000 operational fee, $9,953 to referrer (if applicable). No hidden fees.",
       "section4Title": "4. Contract Addresses (Polygon Mainnet)",
@@ -184,10 +184,10 @@
     "title": "Earn While You Share",
     "subtitle": "Invite friends to 1DollarMillion and both of you get rewarded. You earn 1% of their prize if they win — at zero cost to the platform.",
     "benefit1Title": "+5 Free Active Days",
-    "benefit1Desc": "When your friend deposits using your link, they get 5 extra days of active status — completely free.",
+    "benefit1Desc": "عندما يودع صديقك $30+ باستخدام رابطك، يحصل على 5 أيام إضافية من الحالة النشطة — مجاناً تماماً.",
     "benefit1Value": "Free bonus for friend",
     "benefit2Title": "+5 Free Active Days For You",
-    "benefit2Desc": "You also get 5 extra active days when your referred friend makes their first deposit. Mutual benefit.",
+    "benefit2Desc": "أنت أيضاً تحصل على 5 أيام نشطة إضافية عندما يودع صديقك المُحال $30+ لأول مرة.",
     "benefit2Value": "Free bonus for you",
     "benefit3Title": "1% of Their Prize",
     "benefit3Desc": "If your referred friend wins a $1M draw, you receive $9,953 — automatically, from the winner's payout. Zero cost to platform.",

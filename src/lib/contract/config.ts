@@ -35,12 +35,12 @@ export const POOL_TARGET = 1_000_000n * TOKEN_DECIMALS_BI;
 export const OPERATIONAL_FEE = 1_000n * TOKEN_DECIMALS_BI;
 export const WINNER_LOCK_AMOUNT = 3_650n * TOKEN_DECIMALS_BI;
 export const WINNER_PAYOUT = 995_350n * TOKEN_DECIMALS_BI;
-export const BONUS_DRAW_TARGET = POOL_TARGET;
-export const AAVE_POOL_URL = "https://app.aave.com/";
 
 // === Contract ABI (V4 - No Aave, No Bonus Draws) ===
 export const lotteryAbi = [
   { inputs: [], name: "currentPool", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
+  { inputs: [], name: "getEstimatedPool", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
+  { inputs: [{ type: "address" }], name: "getEstimatedBalance", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "getActiveUserCount", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "totalLockedAmounts", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "accumulatedFees", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
@@ -100,10 +100,6 @@ export const lotteryAbi = [
   },
   { inputs: [{ name: "amount", type: "uint256" }], name: "withdraw", outputs: [], stateMutability: "nonpayable", type: "function" },
   { inputs: [{ name: "userAddr", type: "address" }], name: "syncUserState", outputs: [], stateMutability: "nonpayable", type: "function" },
-  { inputs: [], name: "syncAllAndTriggerDraw", outputs: [], stateMutability: "nonpayable", type: "function" },
-  { inputs: [], name: "getEstimatedPool", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
-  { inputs: [{ name: "userAddr", type: "address" }], name: "getEstimatedBalance", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
-  { inputs: [], name: "isDrawReady", outputs: [{ type: "bool" }], stateMutability: "view", type: "function" },
   {
     inputs: [{ name: "userAddr", type: "address" }],
     name: "getReferralInfo",
