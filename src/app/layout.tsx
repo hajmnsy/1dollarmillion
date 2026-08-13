@@ -4,17 +4,16 @@ import { Toaster } from "@/components/ui/toaster";
 import { Web3ModalProvider } from "@/providers/Web3ModalProvider";
 
 export const metadata: Metadata = {
-  title: "1DollarMillion — No-Loss Lottery Powered by DeFi",
+  title: "1DollarMillion — Win $1,000,000. Never Lose Your Funds.",
   description:
-    "Deposit USDT. Win $1,000,000. Never lose your principal. The world's first hybrid ROSCA + No-Loss Lottery with principal protection and Chainlink VRF.",
+    "Deposit USDT. Stay active for $1/day. Win $1,000,000. Your funds are always safe and verifiable on-chain.",
   keywords: [
-    "DeFi",
     "Lottery",
-    "ROSCA",
-    
+    "No-Loss",
+    "Polygon",
     "Chainlink",
     "USDT",
-    "No-Loss Lottery",
+    "Smart Contract",
     "Web3",
   ],
   icons: {
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "1DollarMillion",
     description:
-      "Deposit USDT. Win $1,000,000. Never lose your principal.",
+      "Deposit USDT. Stay active for $1/day. Win $1,000,000.",
     type: "website",
   },
 };
