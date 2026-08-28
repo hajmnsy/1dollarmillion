@@ -36,6 +36,7 @@ import { useUserUsdtBalance, formatUsd } from "@/hooks/useLottery";
 import { useDeposit, computeGasEfficiency, EST_GAS_COST_USD } from "@/hooks/useDeposit";
 import { useNetworkGuard } from "@/hooks/useNetworkGuard";
 import { NetworkSwitchBanner } from "@/components/dashboard/NetworkSwitchBanner";
+import { DepositCelebration } from "@/components/ui/DepositCelebration";
 
 interface DepositModalProps {
   open: boolean;
@@ -160,6 +161,9 @@ export function DepositModal({
         </div>
 
         <div className="p-6">
+          {/* Confetti / Particle celebration on deposit success */}
+          <DepositCelebration show={isSuccess} />
+
           {/* === Success view === */}
           {isSuccess ? (
             <SuccessView

@@ -8,6 +8,9 @@ import { POOL_TARGET, POLYGONSCAN_CONTRACT_URL } from "@/lib/contract/config";
 import { Users, Trophy, Calendar, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { Card3DTilt } from "@/components/ui/Card3DTilt";
+import { LiquidVault3D } from "./LiquidVault3D";
+
 interface PoolProgressCardProps {
   currentPool: bigint;
   poolProgress: number;
@@ -38,94 +41,69 @@ export function PoolProgressCard({
       : t("estimateDays", { days: estDays });
 
   return (
-    <Card className="relative overflow-hidden border-white/10 bg-white/[0.02] p-6 shadow-xl">
-      {/* Background glow */}
-      <div className="pointer-events-none absolute -top-20 left-1/2 h-40 w-80 -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl" />
+    <Card3DTilt glowColor="rgba(16, 185, 129, 0.25)">
+      <Card className="relative overflow-hidden border-emerald-500/20 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 shadow-2xl backdrop-blur-xl">
+        {/* Background glow */}
+        <div className="pointer-events-none absolute -top-20 left-1/2 h-40 w-80 -translate-x-1/2 rounded-full bg-emerald-500/15 blur-3xl" />
 
-      <div className="relative">
-        {/* Header */}
-        <div className="mb-5">
-          <h3 className="text-lg font-bold text-white">{t("title")}</h3>
-          <p className="mt-1 text-xs text-white/50">{t("subtitle")}</p>
-        </div>
+        <div className="relative">
+          {/* Header */}
+          <div className="mb-5">
+            <h3 className="text-lg font-bold text-white">{t("title")}</h3>
+            <p className="mt-1 text-xs text-white/50">{t("subtitle")}</p>
+          </div>
 
-        {/* Current vs target */}
-        <div className="mb-4 flex items-baseline justify-between gap-4">
-          <div>
-            <div className="text-xs font-medium uppercase tracking-wider text-white/40">
-              {t("currentLabel")}
-            </div>
-            <motion.div
-              key={currentPool.toString()}
-              initial={{ opacity: 0.7, y: -2 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="text-3xl font-bold tracking-tight text-emerald-400 sm:text-4xl"
+          {/* 3D Liquid Vault Component */}
+          <LiquidVault3D
+            progress={poolProgress}
+            currentAmountFormatted={formatUsd(currentPool)}
+            targetAmountFormatted={formatUsd(POOL_TARGET, 0)}
+          />
+
+          {/* Progress bar secondary details */}
+          <div className="mt-3 flex items-center justify-between text-xs">
+            <span className="font-semibold text-emerald-400">
+              {poolProgress.toFixed(1)}%
+            </span>
+            <span
+              className={`font-medium ${
+                drawInProgress || poolProgress >= 95
+                  ? "text-amber-300"
+                  : "text-white/50"
+              }`}
             >
-              {formatUsd(currentPool)}
-            </motion.div>
+              <Calendar className="me-1 inline h-3 w-3" />
+              {estimateLabel}
+            </span>
           </div>
-          <div className="text-end">
-            <div className="text-xs font-medium uppercase tracking-wider text-white/40">
-              {t("targetLabel")}
-            </div>
-            <div className="text-2xl font-bold text-white/70">
-              {formatUsd(POOL_TARGET, 0)}
-            </div>
+
+          {/* Stats row */}
+          <div className="mt-6 grid grid-cols-2 gap-3 border-t border-white/5 pt-5">
+            <Stat
+              icon={<Users className="h-4 w-4 text-blue-400" />}
+              label={t("activeUsersLabel")}
+              value={Number(activeUserCount).toLocaleString()}
+            />
+            <Stat
+              icon={<Trophy className="h-4 w-4 text-emerald-400" />}
+              label={t("drawsLabel")}
+              value={Number(regularDrawCount).toString()}
+            />
           </div>
-        </div>
 
-        {/* Progress bar */}
-        <ProgressBar
-          value={poolProgress}
-          color="emerald"
-          height={12}
-          pulseNearComplete
-        />
-
-        {/* Percentage + estimate */}
-        <div className="mt-3 flex items-center justify-between text-xs">
-          <span className="font-semibold text-emerald-400">
-            {poolProgress.toFixed(1)}%
-          </span>
-          <span
-            className={`font-medium ${
-              drawInProgress || poolProgress >= 95
-                ? "text-amber-300"
-                : "text-white/50"
-            }`}
+          {/* Verify on Polygonscan */}
+          <a
+            href={POLYGONSCAN_CONTRACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-white/40 transition-colors hover:text-white"
           >
-            <Calendar className="me-1 inline h-3 w-3" />
-            {estimateLabel}
-          </span>
+            {t("viewOnEtherscan")}
+            <ExternalLink className="h-3 w-3" />
+          </a>
         </div>
-
-        {/* Stats row */}
-        <div className="mt-6 grid grid-cols-2 gap-3 border-t border-white/5 pt-5">
-          <Stat
-            icon={<Users className="h-4 w-4 text-blue-400" />}
-            label={t("activeUsersLabel")}
-            value={Number(activeUserCount).toLocaleString()}
-          />
-          <Stat
-            icon={<Trophy className="h-4 w-4 text-emerald-400" />}
-            label={t("drawsLabel")}
-            value={Number(regularDrawCount).toString()}
-          />
-        </div>
-
-        {/* Verify on Polygonscan */}
-        <a
-          href={POLYGONSCAN_CONTRACT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-white/40 transition-colors hover:text-white"
-        >
-          {t("viewOnEtherscan")}
-          <ExternalLink className="h-3 w-3" />
-        </a>
-      </div>
-    </Card>
+      </Card>
+    </Card3DTilt>
   );
 }
 

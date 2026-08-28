@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, TrendingUp, Users } from "lucide-react";
 import { useDashboardData, formatUsd, formatUsdCompact } from "@/hooks/useLottery";
+import { Card3DTilt } from "@/components/ui/Card3DTilt";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -116,25 +117,27 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mx-auto mt-16 max-w-4xl"
         >
-          <div className="grid grid-cols-1 gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl sm:grid-cols-3 sm:p-8">
-            <LiveStat
-              icon={<TrendingUp className="h-5 w-5 text-emerald-400" />}
-              label={t("livePoolLabel")}
-              value={livePoolValue}
-              sub={t("livePoolTarget")}
-              accent
-            />
-            <LiveStat
-              icon={<Users className="h-5 w-5 text-blue-400" />}
-              label={t("activeUsersLabel")}
-              value={activeUsersValue}
-            />
-            <LiveStat
-              icon={<ShieldCheck className="h-5 w-5 text-purple-400" />}
-              label={t("poolLabel")}
-              value={poolValue}
-            />
-          </div>
+          <Card3DTilt glowColor="rgba(16, 185, 129, 0.2)">
+            <div className="grid grid-cols-1 gap-4 rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 shadow-2xl backdrop-blur-2xl sm:grid-cols-3 sm:p-8">
+              <LiveStat
+                icon={<TrendingUp className="h-5 w-5 text-emerald-400" />}
+                label={t("livePoolLabel")}
+                value={livePoolValue}
+                sub={t("livePoolTarget")}
+                accent
+              />
+              <LiveStat
+                icon={<Users className="h-5 w-5 text-blue-400" />}
+                label={t("activeUsersLabel")}
+                value={activeUsersValue}
+              />
+              <LiveStat
+                icon={<ShieldCheck className="h-5 w-5 text-purple-400" />}
+                label={t("poolLabel")}
+                value={poolValue}
+              />
+            </div>
+          </Card3DTilt>
 
           {/* Trust line */}
           <p className="mt-6 text-center text-xs text-white/40">

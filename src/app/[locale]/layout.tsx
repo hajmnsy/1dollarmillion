@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { getBodyClassName, fontVariables } from "@/lib/fonts";
+import { Interactive3DCanvas } from "@/components/ui/Interactive3DCanvas";
 
 type Props = {
   children: React.ReactNode;
@@ -37,9 +38,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
-      <body className={`${bodyClassName} bg-[#0a0a0a] text-white min-h-screen`}>
+      <body className={`${bodyClassName} bg-[#0a0a0a] text-white min-h-screen relative`}>
+        <Interactive3DCanvas />
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <div className="relative z-10">{children}</div>
         </NextIntlClientProvider>
       </body>
     </html>
