@@ -4,11 +4,28 @@ import { Link } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ShieldCheck, Unlock, Wallet } from "lucide-react";
+import { ArrowRight, ShieldCheck, CheckCircle2, Wallet } from "lucide-react";
+import { useActiveUserCount } from "@/hooks/useLottery";
 
 export function FinalCTA() {
   const t = useTranslations("finalCta");
   const locale = useLocale();
+  const activeUserCount = useActiveUserCount();
+  const count = Number(activeUserCount);
+
+  // Dynamic subtitle displaying real active user count from smart contract
+  const getSubtitle = () => {
+    if (locale === "ar") {
+      if (count > 0) {
+        return `انضم إلى ${count.toLocaleString()} مستخدماً نشطاً في الصندوق الآن. أودِع دولاراً واحداً فقط — أو 30 دولاراً لكفاءة غاز مثالية — ويمكن أن تكون الفائز القادم بـ 995,350$.`;
+      }
+      return `كن من أوائل المنضمين إلى الصندوق. أودِع دولاراً واحداً فقط — أو 30 دولاراً لكفاءة غاز مثالية — ويمكن أن تكون الفائز القادم بـ 995,350$.`;
+    }
+    if (count > 0) {
+      return `Join ${count.toLocaleString()} active participants in the pool now. Deposit as little as $1 USDT — or $30 for optimal gas efficiency — and you could be the next $995,350 winner.`;
+    }
+    return `Be among the first to join the pool. Deposit as little as $1 USDT — or $30 for optimal gas efficiency — and you could be the next $995,350 winner.`;
+  };
 
   return (
     <section className="relative py-20 sm:py-28">
@@ -30,7 +47,7 @@ export function FinalCTA() {
               {t("title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
-              {t("subtitle")}
+              {getSubtitle()}
             </p>
 
             <div className="mt-8 flex justify-center">
@@ -52,18 +69,20 @@ export function FinalCTA() {
                 <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
                 <span>
                   {locale === "ar"
-                    ? "رأس المال محمي 100%"
-                    : "100% principal protected"}
+                    ? "عقد ذكي موثَّق على السلسلة"
+                    : "Verified on Polygonscan"}
                 </span>
-              </div>
-              <div className="inline-flex items-center gap-1.5">
-                <Unlock className="h-3.5 w-3.5 text-emerald-400" />
-                <span>{locale === "ar" ? "بلا قيد" : "No lock-up"}</span>
               </div>
               <div className="inline-flex items-center gap-1.5">
                 <Wallet className="h-3.5 w-3.5 text-emerald-400" />
                 <span>
-                  {locale === "ar" ? "سحب في أي وقت" : "Withdraw anytime"}
+                  {locale === "ar" ? "سحب الرصيد في أي وقت" : "Withdraw balance anytime"}
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+                <span>
+                  {locale === "ar" ? "عشوائية عادلة عبر Chainlink" : "Fair Chainlink VRF"}
                 </span>
               </div>
             </div>
