@@ -1,8 +1,8 @@
 /**
- * Smart Contract Configuration — V4 (Sharia-Compliant, No Aave)
+ * Smart Contract Configuration — V9 Production
  *
  * POLYGON MAINNET DEPLOYMENT
- * V4 = No Aave, No Riba, No Bonus Draws
+ * V9 = Single-Source Accounting, Sybil-Protected Referral, Chainlink VRF
  */
 
 import { polygon } from "wagmi/chains";
@@ -36,7 +36,7 @@ export const OPERATIONAL_FEE = 1_000n * TOKEN_DECIMALS_BI;
 export const WINNER_LOCK_AMOUNT = 3_650n * TOKEN_DECIMALS_BI;
 export const WINNER_PAYOUT = 995_350n * TOKEN_DECIMALS_BI;
 
-// === Contract ABI (V4 - No Aave, No Bonus Draws) ===
+// === Contract ABI (V9) ===
 export const lotteryAbi = [
   { inputs: [], name: "currentPool", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "getEstimatedPool", outputs: [{ type: "uint256" }], stateMutability: "view", type: "function" },

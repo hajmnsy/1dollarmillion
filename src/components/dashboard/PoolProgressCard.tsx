@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { ProgressBar } from "./ProgressBar";
 import { formatUsd, formatUsdCompact } from "@/hooks/useLottery";
 import { POOL_TARGET, POLYGONSCAN_CONTRACT_URL } from "@/lib/contract/config";
-import { Users, Trophy, Gift, Calendar, ExternalLink } from "lucide-react";
+import { Users, Trophy, Calendar, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface PoolProgressCardProps {
@@ -13,7 +13,6 @@ interface PoolProgressCardProps {
   poolProgress: number;
   activeUserCount: bigint;
   regularDrawCount: bigint;
-  bonusDrawCount: bigint;
   drawInProgress: boolean;
 }
 
@@ -22,7 +21,6 @@ export function PoolProgressCard({
   poolProgress,
   activeUserCount,
   regularDrawCount,
-  bonusDrawCount,
   drawInProgress,
 }: PoolProgressCardProps) {
   const t = useTranslations("dashboard.pool");
@@ -103,7 +101,7 @@ export function PoolProgressCard({
         </div>
 
         {/* Stats row */}
-        <div className="mt-6 grid grid-cols-3 gap-3 border-t border-white/5 pt-5">
+        <div className="mt-6 grid grid-cols-2 gap-3 border-t border-white/5 pt-5">
           <Stat
             icon={<Users className="h-4 w-4 text-blue-400" />}
             label={t("activeUsersLabel")}
@@ -113,11 +111,6 @@ export function PoolProgressCard({
             icon={<Trophy className="h-4 w-4 text-emerald-400" />}
             label={t("drawsLabel")}
             value={Number(regularDrawCount).toString()}
-          />
-          <Stat
-            icon={<Gift className="h-4 w-4 text-purple-400" />}
-            label={t("bonusDrawsLabel")}
-            value={Number(bonusDrawCount).toString()}
           />
         </div>
 

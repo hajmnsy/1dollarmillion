@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Wallet, Calendar, Trophy, Gift } from "lucide-react";
+import { Wallet, Calendar, Trophy } from "lucide-react";
 
 export function HowItWorks() {
   const t = useTranslations("howItWorks");
@@ -71,32 +71,6 @@ export function HowItWorks() {
             </motion.div>
           ))}
         </div>
-
-        {/* Bonus draw callout */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-8 overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-transparent p-6 sm:p-8"
-        >
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple-500/20 text-purple-300 ring-1 ring-purple-500/30">
-              <Gift className="h-6 w-6" />
-            </div>
-            <div>
-              <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-purple-500/20 px-3 py-0.5 text-xs font-semibold uppercase tracking-wider text-purple-300">
-                {t("bonusBadge")}
-              </div>
-              <h3 className="mb-2 text-xl font-bold text-white sm:text-2xl">
-                {t("bonusTitle")}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/60 sm:text-base">
-                {t("bonusDescription")}
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

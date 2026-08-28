@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Deposit USDT. Stay active for $1/day. Win $1,000,000. Your funds are always safe and verifiable on-chain.",
   keywords: [
     "Lottery",
-    "No-Loss",
+    "ROSCA",
     "Polygon",
     "Chainlink",
     "USDT",

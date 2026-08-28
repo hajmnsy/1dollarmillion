@@ -154,7 +154,6 @@ function DashboardContent() {
                   poolProgress={data.poolProgress}
                   activeUserCount={data.activeUserCount}
                   regularDrawCount={data.drawCounts.regular}
-                  bonusDrawCount={data.drawCounts.bonus}
                   drawInProgress={data.drawInProgress}
                 />
               </motion.div>

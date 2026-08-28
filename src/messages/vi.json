@@ -46,10 +46,7 @@
     "step2Title": "Stay Active for $1/Day",
     "step2Description": "The contract logically deducts exactly 1 USDT per day to keep you eligible for the draw. This deduction feeds the prize pool. With $30 deposited, you're entered for 30 days. With $1,000, you're entered for nearly three years.",
     "step3Title": "Win $995,350",
-    "step3Description": "When the pool reaches exactly $1,000,000, Chainlink VRF selects one provably-random winner from all active users. The winner receives $995,350 directly to their wallet — instantly, transparently, no questions asked.",
-    "bonusTitle": "بالإضافة: سحوبات تلقائية",
-    "bonusDescription": "اشتراكاتك اليومية بـ $1 تُموّل صندوق الجوائز. عند بلوغه 1,000,000$، يُطلَق سحب تلقائياً — نفس الجائزة، نفس العدالة.",
-    "bonusBadge": "Auto Draw"
+    "step3Description": "When the pool reaches exactly $1,000,000, Chainlink VRF selects one provably-random winner from all active users. The winner receives $995,350 directly to their wallet — instantly, transparently, no questions asked."
   },
   "transparency": {
     "title": "Radical Transparency. Verifiable Solvency.",

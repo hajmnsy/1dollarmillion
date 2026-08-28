@@ -46,7 +46,6 @@
       "estimatePending": "VRF-Anfrage ausstehend...",
       "activeUsersLabel": "Aktive Nutzer",
       "drawsLabel": "Ziehungen gesamt",
-      "bonusDrawsLabel": "Bonus-Ziehungen",
       "viewOnEtherscan": "Auf Polygonscan ansehen"
     },
     "solvency": {
@@ -323,10 +322,7 @@
     "step2Title": "Bleibe für $1/Tag aktiv",
     "step2Description": "Der Vertrag zieht logisch exakt 1 USDT pro Tag ab, um dich für die Ziehung teilnahmeberechtigt zu halten. Dieser Abzug speist den Preispool. Mit $30 Einzahlung bist du 30 Tage eingetragen. Mit $1,000 bist du fast drei Jahre lang eingetragen.",
     "step3Title": "$995,350 gewinnen",
-    "step3Description": "Wenn der Pool exakt $1,000,000 erreicht, wählt Chainlink VRF einen nachweislich zufälligen Gewinner aus allen aktiven Nutzern. Der Gewinner erhält $995,350 direkt auf seine Wallet — sofort, transparent, ohne Wenn und Aber.",
-    "bonusTitle": "بالإضافة: سحوبات تلقائية",
-    "bonusDescription": "اشتراكاتك اليومية بـ $1 تُموّل صندوق الجوائز. عند بلوغه 1,000,000$، يُطلَق سحب تلقائياً — نفس الجائزة، نفس العدالة.",
-    "bonusBadge": "Auto Draw"
+    "step3Description": "Wenn der Pool exakt $1,000,000 erreicht, wählt Chainlink VRF einen nachweislich zufälligen Gewinner aus allen aktiven Nutzern. Der Gewinner erhält $995,350 direkt auf seine Wallet — sofort, transparent, ohne Wenn und Aber."
   },
   "transparency": {
     "title": "Radikale Transparenz. Verifizierbare Solvenz.",

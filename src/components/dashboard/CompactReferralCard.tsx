@@ -70,7 +70,7 @@ export function CompactReferralCard() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "1DollarMillion — No-Loss Lottery",
+          title: "1DollarMillion — Win $1,000,000",
           text: shareText,
           url: referralLink,
         });

@@ -46,7 +46,6 @@
       "estimatePending": "Requête VRF en attente...",
       "activeUsersLabel": "Utilisateurs Actifs",
       "drawsLabel": "Tirages Totaux",
-      "bonusDrawsLabel": "Tirages Bonus",
       "viewOnEtherscan": "Voir sur Polygonscan"
     },
     "solvency": {
@@ -323,10 +322,7 @@
     "step2Title": "Restez Actif pour 1 $/Jour",
     "step2Description": "Le contrat déduit logiquement exactement 1 USDT par jour pour vous maintenir éligible au tirage. Cette déduction alimente la cagnotte. Avec 30 $ déposés, vous êtes inscrit pour 30 jours. Avec 1 000 $, vous êtes inscrit pour près de trois ans.",
     "step3Title": "Gagnez 995 350 $",
-    "step3Description": "Lorsque la cagnotte atteint exactement 1 000 000 $, Chainlink VRF sélectionne un gagnant prouvé aléatoire parmi tous les utilisateurs actifs. Le gagnant reçoit 995 350 $ directement sur son wallet — instantanément, de manière transparente, sans question posée.",
-    "bonusTitle": "بالإضافة: سحوبات تلقائية",
-    "bonusDescription": "اشتراكاتك اليومية بـ $1 تُموّل صندوق الجوائز. عند بلوغه 1,000,000$، يُطلَق سحب تلقائياً — نفس الجائزة، نفس العدالة.",
-    "bonusBadge": "Auto Draw"
+    "step3Description": "Lorsque la cagnotte atteint exactement 1 000 000 $, Chainlink VRF sélectionne un gagnant prouvé aléatoire parmi tous les utilisateurs actifs. Le gagnant reçoit 995 350 $ directement sur son wallet — instantanément, de manière transparente, sans question posée."
   },
   "transparency": {
     "title": "Transparence Radicale. Solvabilité Vérifiable.",

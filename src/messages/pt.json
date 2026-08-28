@@ -46,7 +46,6 @@
       "estimatePending": "Requisição VRF pendente...",
       "activeUsersLabel": "Usuários Ativos",
       "drawsLabel": "Sorteios Totais",
-      "bonusDrawsLabel": "Sorteios Bônus",
       "viewOnEtherscan": "Ver no Polygonscan"
     },
     "solvency": {
@@ -323,10 +322,7 @@
     "step2Title": "Mantenha-se Ativo por $1/Dia",
     "step2Description": "O contrato deduz logicamente exatamente 1 USDT por dia para mantê-lo elegível para o sorteio. Essa dedução alimenta o pool de prêmios. Com $30 depositados, você participa por 30 dias. Com $1,000, você participa por quase três anos.",
     "step3Title": "Ganhe $995,350",
-    "step3Description": "Quando o pool atinge exatamente $1,000,000, o Chainlink VRF seleciona um vencedor comprovadamente aleatório entre todos os usuários ativos. O vencedor recebe $995,350 diretamente em sua carteira — instantaneamente, de forma transparente, sem perguntas.",
-    "bonusTitle": "بالإضافة: سحوبات تلقائية",
-    "bonusDescription": "اشتراكاتك اليومية بـ $1 تُموّل صندوق الجوائز. عند بلوغه 1,000,000$، يُطلَق سحب تلقائياً — نفس الجائزة، نفس العدالة.",
-    "bonusBadge": "Auto Draw"
+    "step3Description": "Quando o pool atinge exatamente $1,000,000, o Chainlink VRF seleciona um vencedor comprovadamente aleatório entre todos os usuários ativos. O vencedor recebe $995,350 diretamente em sua carteira — instantaneamente, de forma transparente, sem perguntas."
   },
   "transparency": {
     "title": "Transparência Radical. Solvência Verificável.",

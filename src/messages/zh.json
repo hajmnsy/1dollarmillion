@@ -46,7 +46,6 @@
       "estimatePending": "VRF 请求中...",
       "activeUsersLabel": "活跃用户",
       "drawsLabel": "累计开奖",
-      "bonusDrawsLabel": "额外抽奖",
       "viewOnEtherscan": "在 Polygonscan 上查看"
     },
     "solvency": {
@@ -323,10 +322,7 @@
     "step2Title": "每日 $1 保持活跃",
     "step2Description": "合约按逻辑每日精确扣减 1 USDT 以维持您的开奖资格。该扣减将注入奖金池。存入 $30 即可参与 30 天，存入 $1,000 则可参与近三年。",
     "step3Title": "赢取 $995,350",
-    "step3Description": "当奖金池精确达到 $1,000,000 时，Chainlink VRF 将从所有活跃用户中选出一位可证明公平的中奖者。中奖者将直接在其钱包中收到 $995,350 — 即时、透明、毫无悬念。",
-    "bonusTitle": "بالإضافة: سحوبات تلقائية",
-    "bonusDescription": "اشتراكاتك اليومية بـ $1 تُموّل صندوق الجوائز. عند بلوغه 1,000,000$، يُطلَق سحب تلقائياً — نفس الجائزة، نفس العدالة.",
-    "bonusBadge": "Auto Draw"
+    "step3Description": "当奖金池精确达到 $1,000,000 时，Chainlink VRF 将从所有活跃用户中选出一位可证明公平的中奖者。中奖者将直接在其钱包中收到 $995,350 — 即时、透明、毫无悬念。"
   },
   "transparency": {
     "title": "极致透明，可验证的偿付能力。",

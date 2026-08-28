@@ -46,7 +46,6 @@
       "estimatePending": "VRF request pending...",
       "activeUsersLabel": "Active Users",
       "drawsLabel": "Total Draws",
-      "bonusDrawsLabel": "Bonus Draws",
       "viewOnEtherscan": "View on Polygonscan"
     },
     "solvency": {
@@ -323,10 +322,7 @@
     "step2Title": "Stay Active for $1/Day",
     "step2Description": "The contract logically deducts exactly 1 USDT per day to keep you eligible for the draw. This deduction feeds the prize pool. With $30 deposited, you're entered for 30 days. With $1,000, you're entered for nearly three years.",
     "step3Title": "Win $995,350",
-    "step3Description": "When the pool reaches exactly $1,000,000, Chainlink VRF selects one provably-random winner from all active users. The winner receives $995,350 directly to their wallet — instantly, transparently, no questions asked.",
-    "bonusTitle": "Plus: Automatic Draws",
-    "bonusDescription": "Your $1/day deductions fund the prize pool. When the pool reaches $1,000,000, a draw fires automatically — same prize, same fairness.",
-    "bonusBadge": "Auto Draw"
+    "step3Description": "When the pool reaches exactly $1,000,000, Chainlink VRF selects one provably-random winner from all active users. The winner receives $995,350 directly to their wallet — instantly, transparently, no questions asked."
   },
   "transparency": {
     "title": "Radical Transparency. Verifiable Solvency.",
@@ -334,7 +330,7 @@
     "poolCardTitle": "Live Prize Pool",
     "poolCardDesc": "Grows daily from $1 deductions across all active users. Triggers a draw at $1,000,000.",
     "yieldCardTitle": "Prize Pool Progress",
-    "yieldCardDesc": "Funded by $1/day deductions. Grows daily until $1,000,000.",
+    "yieldCardDesc": "Funded by /day deductions until reaching the ,000,000 target.",
     "solvencyCardTitle": "Solvency Proof",
     "solvencyCardDesc": "Total assets always exceed total principal owed. This is the core invariant — verifiable on-chain at any time.",
     "drawCardTitle": "Next Draw Estimate",
