@@ -3,6 +3,7 @@
 import { useAccount } from "wagmi";
 import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/card";
+import { Card3DTilt } from "@/components/ui/Card3DTilt";
 import { Button } from "@/components/ui/button";
 import { Gift, Copy, Check, Share2, Users, TrendingUp } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -38,44 +39,36 @@ export function ReferralCard() {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get("ref");
-    if (ref && ref.toLowerCase() !== address?.toLowerCase()) {
-      localStorage.setItem("1dm_referrer", ref);
+    if (ref && ref.startsWith("0x")) {
       setHasReferrer(true);
-    } else {
-      const stored = localStorage.getItem("1dm_referrer");
-      setHasReferrer(!!stored);
     }
-  }, [address]);
+  }, []);
 
-  // Generate referral link
+  // Set referral link when wallet connects
   useEffect(() => {
-    if (address) {
-      const baseUrl = window.location.origin;
-      setReferralLink(`${baseUrl}/en/dashboard?ref=${address}`);
+    if (address && typeof window !== "undefined") {
+      const origin = window.location.origin;
+      setReferralLink(`${origin}/?ref=${address}`);
     }
   }, [address]);
 
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(referralLink);
+  const handleCopy = () => {
+    if (referralLink) {
+      navigator.clipboard.writeText(referralLink);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (e) {
-      console.error("Copy failed:", e);
     }
   };
 
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "1DollarMillion — Win $1,000,000",
-          text: "Join me on 1DollarMillion! Deposit USDT, stay active for $1/day, and win $1,000,000. Your principal is always safe!",
-          url: referralLink,
-        });
-      } catch (e) {
-        // User cancelled share
-      }
+  const handleShare = () => {
+    if (navigator.share && referralLink) {
+      navigator.share({
+        title: "1DollarMillion — Win $1,000,000",
+        text: "Join 1DollarMillion with my referral link and win $1,000,000:",
+        url: referralLink,
+      }).catch(() => {
+        handleCopy();
+      });
     } else {
       handleCopy();
     }
@@ -84,22 +77,25 @@ export function ReferralCard() {
   // Show a placeholder when no wallet connected (instead of null)
   if (!address) {
     return (
-      <Card className="relative overflow-hidden border-emerald-500/20 bg-gradient-to-br from-emerald-500/[0.04] via-white/[0.02] to-transparent p-6 shadow-xl">
-        <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
-          <Gift className="h-3 w-3" />
-          {t("badge")}
-        </div>
-        <h3 className="text-sm font-bold text-white">{t("title")}</h3>
-        <p className="mt-1 text-xs text-white/50">{t("subtitle")}</p>
-        <p className="mt-3 text-xs text-white/40">
-          {t("connectPrompt")}
-        </p>
-      </Card>
+      <Card3DTilt glowColor="rgba(16, 185, 129, 0.15)">
+        <Card className="relative overflow-hidden border-emerald-500/20 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 shadow-2xl backdrop-blur-xl">
+          <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
+            <Gift className="h-3 w-3" />
+            {t("badge")}
+          </div>
+          <h3 className="text-sm font-bold text-white">{t("title")}</h3>
+          <p className="mt-1 text-xs text-white/50">{t("subtitle")}</p>
+          <p className="mt-3 text-xs text-white/40">
+            {t("connectPrompt")}
+          </p>
+        </Card>
+      </Card3DTilt>
     );
   }
 
   return (
-    <Card id="referral-card" className="relative overflow-hidden border-emerald-500/20 bg-gradient-to-br from-emerald-500/[0.04] via-white/[0.02] to-transparent p-6 shadow-xl scroll-mt-20">
+    <Card3DTilt glowColor="rgba(16, 185, 129, 0.2)">
+      <Card id="referral-card" className="relative overflow-hidden border-emerald-500/20 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 shadow-2xl backdrop-blur-xl scroll-mt-20">
       {/* Background glow */}
       <div className="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full bg-emerald-500/5 blur-3xl" />
 
@@ -213,5 +209,6 @@ export function ReferralCard() {
         )}
       </div>
     </Card>
-  );
+  </Card3DTilt>
+);
 }

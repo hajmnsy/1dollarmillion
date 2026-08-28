@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ShieldCheck, Layers, Lock, FileSearch } from "lucide-react";
 
+import { Card3DTilt } from "@/components/ui/Card3DTilt";
+
 export function TrustSection() {
   const t = useTranslations("trust");
 
@@ -18,7 +20,7 @@ export function TrustSection() {
       icon: <ShieldCheck className="h-7 w-7" />,
       title: t("aaveTitle"),
       desc: t("aaveDesc"),
-      badge: "$12B+ TVL",
+      badge: "Polygon Mainnet",
     },
     {
       icon: <Lock className="h-7 w-7" />,
@@ -54,22 +56,26 @@ export function TrustSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex items-start gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all hover:border-white/20 hover:bg-white/[0.04] sm:p-7"
+              className="h-full"
             >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-white/10 to-white/5 text-emerald-400 ring-1 ring-white/10">
-                {item.icon}
-              </div>
-              <div className="flex-1">
-                <div className="mb-2 flex items-center gap-3">
-                  <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                  <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-xs font-medium text-emerald-300 ring-1 ring-emerald-500/20">
-                    {item.badge}
-                  </span>
+              <Card3DTilt glowColor="rgba(16, 185, 129, 0.2)" className="h-full">
+                <div className="flex h-full items-start gap-5 rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-xl transition-all sm:p-7">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-white/10 to-white/5 text-emerald-400 ring-1 ring-white/10 shadow-lg shadow-emerald-500/10">
+                    {item.icon}
+                  </div>
+                  <div className="flex-1">
+                    <div className="mb-2 flex items-center gap-3">
+                      <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                      <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-xs font-medium text-emerald-300 ring-1 ring-emerald-500/20">
+                        {item.badge}
+                      </span>
+                    </div>
+                    <p className="text-sm leading-relaxed text-white/60">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm leading-relaxed text-white/60">
-                  {item.desc}
-                </p>
-              </div>
+              </Card3DTilt>
             </motion.div>
           ))}
         </div>

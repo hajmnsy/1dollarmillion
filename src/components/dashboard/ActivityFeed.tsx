@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/card";
+import { Card3DTilt } from "@/components/ui/Card3DTilt";
 import {
   ArrowDownToLine,
   ArrowUpFromLine,
@@ -81,60 +82,62 @@ export function ActivityFeed() {
   const { events, isLoading } = useActivityFeed();
 
   return (
-    <Card className="relative overflow-hidden border-white/10 bg-white/[0.02] p-6 shadow-xl">
-      {/* Background glow */}
-      <div className="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full bg-emerald-500/5 blur-3xl" />
+    <Card3DTilt glowColor="rgba(16, 185, 129, 0.15)">
+      <Card className="relative overflow-hidden border-emerald-500/20 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 shadow-2xl backdrop-blur-xl">
+        {/* Background glow */}
+        <div className="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full bg-emerald-500/5 blur-3xl" />
 
-      <div className="relative">
-        {/* Header */}
-        <div className="mb-5 flex items-start justify-between gap-4">
-          <div>
-            <h3 className="text-sm font-bold text-white">{t("title")}</h3>
-            <p className="mt-0.5 text-xs text-white/50">{t("subtitle")}</p>
+        <div className="relative">
+          {/* Header */}
+          <div className="mb-5 flex items-start justify-between gap-4">
+            <div>
+              <h3 className="text-sm font-bold text-white">{t("title")}</h3>
+              <p className="mt-0.5 text-xs text-white/50">{t("subtitle")}</p>
+            </div>
+            {events.length > 0 && (
+              <button
+                type="button"
+                className="text-xs font-medium text-emerald-400 transition-colors hover:text-emerald-300"
+              >
+                {t("viewAll")}
+              </button>
+            )}
           </div>
-          {events.length > 0 && (
-            <button
-              type="button"
-              className="text-xs font-medium text-emerald-400 transition-colors hover:text-emerald-300"
-            >
-              {t("viewAll")}
-            </button>
+
+          {/* Loading skeleton */}
+          {isLoading ? (
+            <div className="space-y-2">
+              {[...Array(4)].map((_, i) => (
+                <div
+                  key={i}
+                  className="h-12 animate-pulse rounded-lg bg-white/[0.02]"
+                />
+              ))}
+            </div>
+          ) : events.length === 0 ? (
+            /* Empty state */
+            <div className="flex flex-col items-center justify-center py-12 text-center">
+              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
+                <Calendar className="h-5 w-5 text-white/30" />
+              </div>
+              <p className="text-xs text-white/40">{t("empty")}</p>
+            </div>
+          ) : (
+            /* Events list */
+            <div className="-mx-2 max-h-96 space-y-1 overflow-y-auto pr-1">
+              {events.map((event, i) => (
+                <ActivityRow
+                  key={event.id}
+                  event={event}
+                  index={i}
+                  t={t}
+                />
+              ))}
+            </div>
           )}
         </div>
-
-        {/* Loading skeleton */}
-        {isLoading ? (
-          <div className="space-y-2">
-            {[...Array(4)].map((_, i) => (
-              <div
-                key={i}
-                className="h-12 animate-pulse rounded-lg bg-white/[0.02]"
-              />
-            ))}
-          </div>
-        ) : events.length === 0 ? (
-          /* Empty state */
-          <div className="flex flex-col items-center justify-center py-12 text-center">
-            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
-              <Calendar className="h-5 w-5 text-white/30" />
-            </div>
-            <p className="text-xs text-white/40">{t("empty")}</p>
-          </div>
-        ) : (
-          /* Events list */
-          <div className="-mx-2 max-h-96 space-y-1 overflow-y-auto pr-1">
-            {events.map((event, i) => (
-              <ActivityRow
-                key={event.id}
-                event={event}
-                index={i}
-                t={t}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-    </Card>
+      </Card>
+    </Card3DTilt>
   );
 }
 

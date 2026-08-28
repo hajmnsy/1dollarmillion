@@ -47,7 +47,7 @@ function DashboardContent() {
   const isLoading = isReconnecting || (isConnected && data.isLoading);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#0a0a0a]">
+    <div className="flex min-h-screen flex-col bg-transparent">
       <SiteHeader />
       <main className="flex-1">
         {isLoading ? (

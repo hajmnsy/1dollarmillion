@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Wallet, Calendar, Trophy } from "lucide-react";
 
+import { Card3DTilt } from "@/components/ui/Card3DTilt";
+
 export function HowItWorks() {
   const t = useTranslations("howItWorks");
 
@@ -50,24 +52,28 @@ export function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all hover:border-emerald-500/30 hover:bg-white/[0.04] sm:p-8"
+              className="h-full"
             >
-              {/* Number watermark */}
-              <span className="pointer-events-none absolute -top-4 -right-2 text-7xl font-bold text-white/[0.04] transition-colors group-hover:text-emerald-500/10">
-                {step.number}
-              </span>
+              <Card3DTilt glowColor="rgba(16, 185, 129, 0.25)" className="h-full">
+                <div className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-xl transition-all sm:p-8">
+                  {/* Number watermark */}
+                  <span className="pointer-events-none absolute -top-4 -right-2 text-7xl font-bold text-white/[0.04] transition-colors group-hover:text-emerald-500/10">
+                    {step.number}
+                  </span>
 
-              {/* Icon */}
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
-                {step.icon}
-              </div>
+                  {/* Icon */}
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20 shadow-lg shadow-emerald-500/10">
+                    {step.icon}
+                  </div>
 
-              <h3 className="mb-3 text-xl font-bold text-white">
-                {step.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/60">
-                {step.description}
-              </p>
+                  <h3 className="mb-3 text-xl font-bold text-white">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-white/60">
+                    {step.description}
+                  </p>
+                </div>
+              </Card3DTilt>
             </motion.div>
           ))}
         </div>

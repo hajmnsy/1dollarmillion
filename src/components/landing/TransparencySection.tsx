@@ -9,6 +9,7 @@ import {
   CHAINLINK_VRF_URL,
 } from "@/lib/contract/config";
 import { useDashboardData } from "@/hooks/useLottery";
+import { Card3DTilt } from "@/components/ui/Card3DTilt";
 import { formatUsd } from "@/hooks/useLottery";
 
 export function TransparencySection() {
@@ -32,7 +33,7 @@ export function TransparencySection() {
       ? `~${estDays}d`
       : "—";
 
-  // V4: Always solvent (no Aave risk)
+  // V9: Always solvent
   const isSolvent = true;
 
   const cards = [
@@ -98,57 +99,59 @@ export function TransparencySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 shadow-xl ${c.glow} ring-1 ${c.ring} transition-all hover:bg-white/[0.04] sm:p-7`}
+                className="h-full"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-base font-semibold text-white sm:text-lg">
-                      {card.title}
-                    </h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-white/50 sm:text-sm">
-                      {card.desc}
-                    </p>
-                  </div>
-                  {card.isStatus && (
-                    <div className="flex items-center gap-1 rounded-full bg-emerald-500/20 px-2.5 py-1 text-xs font-semibold text-emerald-300">
-                      <ShieldCheck className="h-3 w-3" />
+                <Card3DTilt glowColor={card.color === "emerald" ? "rgba(16, 185, 129, 0.25)" : "rgba(59, 130, 246, 0.25)"} className="h-full">
+                  <div className={`group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 shadow-xl backdrop-blur-xl ring-1 ${c.ring} sm:p-7`}>
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-base font-semibold text-white sm:text-lg">
+                          {card.title}
+                        </h3>
+                        <p className="mt-1.5 text-xs leading-relaxed text-white/50 sm:text-sm">
+                          {card.desc}
+                        </p>
+                      </div>
+                      {card.isStatus && (
+                        <div className="flex items-center gap-1 rounded-full bg-emerald-500/20 px-2.5 py-1 text-xs font-semibold text-emerald-300">
+                          <ShieldCheck className="h-3 w-3" />
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
 
-                <div className="mt-5">
-                  <div className={`text-3xl font-bold tracking-tight ${c.text} sm:text-4xl`}>
-                    {card.value}
+                    <div className="mt-5">
+                      <div className={`text-3xl font-bold tracking-tight ${c.text} sm:text-4xl`}>
+                        {card.value}
+                      </div>
+                      {card.isStatus && (
+                        <p className="mt-1 text-xs text-emerald-300/70">
+                          {t("solvencyHealthyDesc")}
+                        </p>
+                      )}
+
+                      <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${card.progress}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: 0.2 + i * 0.1, ease: "easeOut" }}
+                          className={`h-full rounded-full ${c.bar}`}
+                        />
+                      </div>
+
+                      <a
+                        href={card.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-1.5 text-xs text-white/40 transition-colors hover:text-white"
+                      >
+                        <span>{t("verifiableOn")}:</span>
+                        <span className="underline">{card.link}</span>
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    </div>
                   </div>
-                  {card.isStatus && (
-                    <p className="mt-1 text-xs text-emerald-300/70">
-                      {t("solvencyHealthyDesc")}
-                    </p>
-                  )}
-
-                  <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${card.progress}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.2 + i * 0.1, ease: "easeOut" }}
-                      className={`h-full rounded-full ${c.bar}`}
-                    />
-                  </div>
-
-                  <a
-                    href={card.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-xs text-white/40 transition-colors hover:text-white"
-                  >
-                    <span>{t("verifiableOn")}:</span>
-                    <span className="inline-flex items-center gap-1 font-medium text-white/60 transition-colors group-hover:text-white">
-                      {card.link}
-                      <ExternalLink className="h-3 w-3" />
-                    </span>
-                  </a>
-                </div>
+                </Card3DTilt>
               </motion.div>
             );
           })}

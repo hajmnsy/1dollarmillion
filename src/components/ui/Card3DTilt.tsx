@@ -13,7 +13,7 @@ interface Card3DTiltProps {
 export function Card3DTilt({
   children,
   className = "",
-  glowColor = "rgba(16, 185, 129, 0.15)",
+  glowColor = "rgba(16, 185, 129, 0.25)",
   enableGlow = true,
 }: Card3DTiltProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -23,13 +23,13 @@ export function Card3DTilt({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Smooth spring physics for rotation
-  const mouseXSpring = useSpring(x, { stiffness: 200, damping: 25 });
-  const mouseYSpring = useSpring(y, { stiffness: 200, damping: 25 });
+  // Fast responsive spring physics for 3D rotation
+  const mouseXSpring = useSpring(x, { stiffness: 260, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 260, damping: 20 });
 
-  // Rotate between -7deg and 7deg
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
+  // Rotate between -10deg and 10deg for prominent 3D feel
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
   // Glare position in percent (0% to 100%)
   const glareX = useTransform(mouseXSpring, [-0.5, 0.5], ["0%", "100%"]);
@@ -63,29 +63,34 @@ export function Card3DTilt({
 
   return (
     <div
-      style={{ perspective: 1200 }}
-      className="relative transition-all duration-200"
+      style={{ perspective: 1000 }}
+      className="relative transition-all duration-300"
     >
       <motion.div
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        animate={{
+          scale: isHovered ? 1.015 : 1,
+          translateZ: isHovered ? 20 : 0,
+        }}
+        transition={{ duration: 0.2 }}
         style={{
           rotateX,
           rotateY,
           transformStyle: "preserve-3d",
         }}
         className={`relative overflow-hidden rounded-2xl transition-shadow duration-300 ${
-          isHovered ? "shadow-2xl shadow-emerald-500/10" : ""
+          isHovered ? "shadow-2xl shadow-emerald-500/20" : "shadow-lg"
         } ${className}`}
       >
         {/* Dynamic Specular Light Glare */}
         {enableGlow && isHovered && (
           <motion.div
-            className="pointer-events-none absolute -inset-px z-10 rounded-2xl opacity-60 transition-opacity duration-300"
+            className="pointer-events-none absolute -inset-px z-10 rounded-2xl opacity-80 transition-opacity duration-300"
             style={{
-              background: `radial-gradient(400px circle at ${glareX} ${glareY}, ${glowColor}, transparent 70%)`,
+              background: `radial-gradient(500px circle at ${glareX} ${glareY}, ${glowColor}, transparent 70%)`,
             }}
           />
         )}

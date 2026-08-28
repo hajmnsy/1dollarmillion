@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Users, Gift, TrendingUp, Share2, Check, Award } from "lucide-react";
+import { Card3DTilt } from "@/components/ui/Card3DTilt";
 import { Link } from "@/i18n/navigation";
 
 export function ReferralSection() {
@@ -87,21 +88,25 @@ export function ReferralSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 shadow-xl transition-all hover:bg-white/[0.04] sm:p-7"
+              className="h-full"
             >
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10">
-                {benefit.icon}
-              </div>
-              <h3 className="mb-2 text-lg font-bold text-white">
-                {benefit.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/60">
-                {benefit.desc}
-              </p>
-              <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
-                <Check className="h-3 w-3" />
-                {benefit.value}
-              </div>
+              <Card3DTilt glowColor="rgba(16, 185, 129, 0.2)" className="h-full">
+                <div className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 shadow-xl backdrop-blur-xl sm:p-7">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 shadow-lg shadow-emerald-500/10">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="mb-2 text-lg font-bold text-white">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-white/60">
+                    {benefit.desc}
+                  </p>
+                  <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
+                    <Check className="h-3 w-3" />
+                    {benefit.value}
+                  </div>
+                </div>
+              </Card3DTilt>
             </motion.div>
           ))}
         </div>
