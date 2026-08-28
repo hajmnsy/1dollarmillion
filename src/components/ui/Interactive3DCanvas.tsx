@@ -2,15 +2,18 @@
 
 import { useEffect, useRef } from "react";
 
-interface Particle {
+interface Particle3D {
   x: number;
   y: number;
+  z: number;
   vx: number;
   vy: number;
+  vz: number;
   size: number;
   color: string;
   alpha: number;
-  baseAlpha: number;
+  pulseSpeed: number;
+  pulsePhase: number;
 }
 
 export function Interactive3DCanvas() {
@@ -26,33 +29,41 @@ export function Interactive3DCanvas() {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    // Mouse coordinates with smooth lerp
+    // Mouse coordinates with 3D depth reaction
     let mouse = {
       x: width / 2,
       y: height / 2,
       targetX: width / 2,
       targetY: height / 2,
-      radius: 180,
+      radius: 220,
     };
 
-    // Color palette: Web3 Emerald & Gold
-    const colors = ["#10b981", "#34d399", "#6ee7b7", "#fbbf24", "#f59e0b"];
+    // Color palette: Vivid Cyberpunk Web3 Emerald & Gold
+    const colors = [
+      "rgba(16, 185, 129, ",   // Emerald
+      "rgba(52, 211, 153, ",   // Mint
+      "rgba(251, 191, 36, ",   // Golden Yellow
+      "rgba(245, 158, 11, ",   // Amber Gold
+      "rgba(110, 231, 183, ",  // Aqua Emerald
+    ];
 
-    // Initialize particles
-    const particleCount = Math.min(Math.floor((width * height) / 14000), 75);
-    const particles: Particle[] = [];
+    // Initialize 3D particles
+    const particleCount = Math.min(Math.floor((width * height) / 10000), 90);
+    const particles: Particle3D[] = [];
 
     for (let i = 0; i < particleCount; i++) {
-      const baseAlpha = Math.random() * 0.4 + 0.15;
       particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        size: Math.random() * 2 + 1,
+        x: (Math.random() - 0.5) * width * 1.2,
+        y: (Math.random() - 0.5) * height * 1.2,
+        z: Math.random() * 600 + 100, // 3D depth (100 to 700)
+        vx: (Math.random() - 0.5) * 0.8,
+        vy: (Math.random() - 0.5) * 0.8,
+        vz: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 2.5 + 1.5,
         color: colors[Math.floor(Math.random() * colors.length)],
-        alpha: baseAlpha,
-        baseAlpha: baseAlpha,
+        alpha: Math.random() * 0.4 + 0.4,
+        pulseSpeed: Math.random() * 0.03 + 0.01,
+        pulsePhase: Math.random() * Math.PI * 2,
       });
     }
 
@@ -70,65 +81,97 @@ export function Interactive3DCanvas() {
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     window.addEventListener("resize", handleResize, { passive: true });
 
+    const fov = 400; // 3D field of view
+
     // Render loop
     const render = () => {
       // Smooth mouse lerp
-      mouse.x += (mouse.targetX - mouse.x) * 0.05;
-      mouse.y += (mouse.targetY - mouse.y) * 0.05;
+      mouse.x += (mouse.targetX - mouse.x) * 0.06;
+      mouse.y += (mouse.targetY - mouse.y) * 0.06;
 
       ctx.clearRect(0, 0, width, height);
 
-      // Draw subtle connections
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
+      const centerX = width / 2;
+      const centerY = height / 2;
+
+      // Calculate projected 2D coordinates for all particles
+      const projected = particles.map((p) => {
+        // Perspective projection
+        const scale = fov / (fov + p.z);
+        const projX = p.x * scale + centerX;
+        const projY = p.y * scale + centerY;
+        const projSize = Math.max(p.size * scale * 1.8, 0.8);
+
+        return {
+          p,
+          projX,
+          projY,
+          projSize,
+          scale,
+        };
+      });
+
+      // Draw 3D connecting filaments
+      for (let i = 0; i < projected.length; i++) {
+        for (let j = i + 1; j < projected.length; j++) {
+          const p1 = projected[i];
+          const p2 = projected[j];
+
+          const dx = p1.projX - p2.projX;
+          const dy = p1.projY - p2.projY;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 120) {
-            const alpha = (1 - dist / 120) * 0.15;
-            ctx.strokeStyle = `rgba(16, 185, 129, ${alpha})`;
-            ctx.lineWidth = 0.8;
+          if (dist < 140) {
+            const lineAlpha = (1 - dist / 140) * 0.35 * Math.min(p1.scale, p2.scale);
+            ctx.strokeStyle = `rgba(52, 211, 153, ${lineAlpha})`;
+            ctx.lineWidth = 1.0;
             ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.moveTo(p1.projX, p1.projY);
+            ctx.lineTo(p2.projX, p2.projY);
             ctx.stroke();
           }
         }
       }
 
       // Update and draw particles
-      particles.forEach((p) => {
-        // Subtle mouse repulsion & attraction
-        const dx = mouse.x - p.x;
-        const dy = mouse.y - p.y;
+      projected.forEach(({ p, projX, projY, projSize, scale }) => {
+        p.pulsePhase += p.pulseSpeed;
+        const pulse = Math.sin(p.pulsePhase) * 0.2 + 0.8;
+
+        // Mouse interaction in 2D projected space
+        const dx = mouse.x - projX;
+        const dy = mouse.y - projY;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < mouse.radius) {
-          const force = (1 - dist / mouse.radius) * 0.8;
-          p.x -= (dx / dist) * force;
-          p.y -= (dy / dist) * force;
-          p.alpha = Math.min(p.baseAlpha + 0.3, 0.8);
-        } else {
-          p.alpha += (p.baseAlpha - p.alpha) * 0.02;
+          const force = (1 - dist / mouse.radius) * 1.5;
+          p.x -= (dx / dist) * force * 5;
+          p.y -= (dy / dist) * force * 5;
         }
 
-        // Movement
+        // 3D physics movement
         p.x += p.vx;
         p.y += p.vy;
+        p.z += p.vz;
 
-        // Bounce off edges
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
+        // Wrap around 3D box
+        const boundX = width * 0.7;
+        const boundY = height * 0.7;
+        if (p.x < -boundX) p.x = boundX;
+        if (p.x > boundX) p.x = -boundX;
+        if (p.y < -boundY) p.y = boundY;
+        if (p.y > boundY) p.y = -boundY;
+        if (p.z < 50) p.z = 650;
+        if (p.z > 650) p.z = 50;
 
-        // Draw particle with subtle glow
+        // Draw particle with glowing halo
         ctx.save();
-        ctx.globalAlpha = p.alpha;
-        ctx.fillStyle = p.color;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = p.color;
+        const currentAlpha = Math.min(p.alpha * pulse * scale * 1.4, 0.95);
+        ctx.fillStyle = `${p.color}${currentAlpha})`;
+        ctx.shadowBlur = 12 * scale;
+        ctx.shadowColor = `${p.color}0.8)`;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.arc(projX, projY, projSize, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
       });
@@ -148,7 +191,7 @@ export function Interactive3DCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-60 transition-opacity duration-1000"
+      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-90"
       aria-hidden="true"
     />
   );

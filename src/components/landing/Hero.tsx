@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, TrendingUp, Users } from "lucide-react";
 import { useDashboardData, formatUsd, formatUsdCompact } from "@/hooks/useLottery";
 import { Card3DTilt } from "@/components/ui/Card3DTilt";
+import { LiquidVault3D } from "@/components/dashboard/LiquidVault3D";
+import { POOL_TARGET } from "@/lib/contract/config";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -39,7 +41,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-300"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-300 shadow-lg shadow-emerald-500/20 backdrop-blur-md"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -110,32 +112,41 @@ export function Hero() {
           </motion.p>
         </div>
 
-        {/* Live Stats Card */}
+        {/* Live Stats & 3D Liquid Vault Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mx-auto mt-16 max-w-4xl"
         >
-          <Card3DTilt glowColor="rgba(16, 185, 129, 0.2)">
-            <div className="grid grid-cols-1 gap-4 rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 shadow-2xl backdrop-blur-2xl sm:grid-cols-3 sm:p-8">
-              <LiveStat
-                icon={<TrendingUp className="h-5 w-5 text-emerald-400" />}
-                label={t("livePoolLabel")}
-                value={livePoolValue}
-                sub={t("livePoolTarget")}
-                accent
+          <Card3DTilt glowColor="rgba(16, 185, 129, 0.25)">
+            <div className="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 shadow-2xl backdrop-blur-2xl sm:p-8">
+              {/* 3D Kinetic Liquid Vault */}
+              <LiquidVault3D
+                progress={data.poolProgress}
+                currentAmountFormatted={livePoolValue}
+                targetAmountFormatted={formatUsd(POOL_TARGET, 0)}
               />
-              <LiveStat
-                icon={<Users className="h-5 w-5 text-blue-400" />}
-                label={t("activeUsersLabel")}
-                value={activeUsersValue}
-              />
-              <LiveStat
-                icon={<ShieldCheck className="h-5 w-5 text-purple-400" />}
-                label={t("poolLabel")}
-                value={poolValue}
-              />
+
+              <div className="mt-6 grid grid-cols-1 gap-4 border-t border-white/5 pt-6 sm:grid-cols-3">
+                <LiveStat
+                  icon={<TrendingUp className="h-5 w-5 text-emerald-400" />}
+                  label={t("livePoolLabel")}
+                  value={livePoolValue}
+                  sub={t("livePoolTarget")}
+                  accent
+                />
+                <LiveStat
+                  icon={<Users className="h-5 w-5 text-blue-400" />}
+                  label={t("activeUsersLabel")}
+                  value={activeUsersValue}
+                />
+                <LiveStat
+                  icon={<ShieldCheck className="h-5 w-5 text-purple-400" />}
+                  label={t("poolLabel")}
+                  value={poolValue}
+                />
+              </div>
             </div>
           </Card3DTilt>
 
