@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
-import { Web3ModalProvider } from "@/providers/Web3ModalProvider";
 
 export const metadata: Metadata = {
   title: "1DollarMillion — Win $1,000,000. Never Lose Your Funds.",
@@ -40,12 +38,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html suppressHydrationWarning>
-      <body className="antialiased bg-background text-foreground min-h-screen">
-        <Web3ModalProvider>{children}</Web3ModalProvider>
-        <Toaster />
-      </body>
-    </html>
-  );
+  return children;
 }

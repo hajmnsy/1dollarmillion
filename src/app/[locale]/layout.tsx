@@ -2,8 +2,10 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { getBodyClassName, fontVariables } from "@/lib/fonts";
+import { fontVariables } from "@/lib/fonts";
 import { Interactive3DCanvas } from "@/components/ui/Interactive3DCanvas";
+import { Web3ModalProvider } from "@/providers/Web3ModalProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 type Props = {
   children: React.ReactNode;
@@ -37,12 +39,15 @@ export default async function LocaleLayout({ children, params }: Props) {
     : `${fontVariables} font-sans antialiased`;
 
   return (
-    <html lang={locale} dir={dir} suppressHydrationWarning>
-      <body className={`${bodyClassName} bg-[#0a0a0a] text-white min-h-screen relative`}>
-        <Interactive3DCanvas />
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <div className="relative z-10">{children}</div>
-        </NextIntlClientProvider>
+    <html lang={locale} dir={dir} className="dark" suppressHydrationWarning>
+      <body className={`${bodyClassName} bg-[#0a0a0a] text-white min-h-screen relative selection:bg-emerald-500/30 selection:text-emerald-300`}>
+        <Web3ModalProvider>
+          <Interactive3DCanvas />
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <div className="relative z-10">{children}</div>
+          </NextIntlClientProvider>
+          <Toaster />
+        </Web3ModalProvider>
       </body>
     </html>
   );
